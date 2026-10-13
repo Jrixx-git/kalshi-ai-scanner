@@ -1,0 +1,42 @@
+
+name: Kalshi Market Scanner
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Scan Kalshi
+        run: |
+          if [ -f scanner.py ]; then
+            python scanner.py --pages 10
+          else
+            python kalshi_scanner/scanner.py --pages 10
+          fi
+
+      - name: Save results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kalshi-results
+          path: |
+            markets.csv
+            opportunities.csv
+            kalshi_scanner/markets.csv
+            kalshi_scanner/opportunities.csv
+          if-no-files-found: warn
