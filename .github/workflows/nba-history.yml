@@ -3,12 +3,23 @@ name: NBA Multi-Season Backtest
 
 on:
   workflow_dispatch:
+    inputs:
+      daily_predictions:
+        description: 'Run v0.6 daily predictions instead of historical backtest'
+        type: boolean
+        default: false
+      prediction_date:
+        description: 'NBA date YYYY-MM-DD (blank = today in New York)'
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: read
 
 jobs:
   backtest:
+    if: github.ref == 'refs/heads/develop/paper-trading-v02' && !inputs.daily_predictions
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -40,3 +51,32 @@ jobs:
             nba_history.csv
             nba_backtest_predictions.csv
           retention-days: 7
+
+  daily-predictions:
+    if: github.ref == 'refs/heads/develop/paper-trading-v02' && inputs.daily_predictions
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop/paper-trading-v02
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline tests
+        run: python -m unittest discover -v
+      - name: Daily predictions (GET only)
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+          PREDICTION_DATE: ${{ inputs.prediction_date }}
+        run: python nba_daily_predictions.py --date "$PREDICTION_DATE" --output-dir daily_predictions
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nba-v06-daily-predictions-${{ github.run_id }}
+          path: daily_predictions/
+          if-no-files-found: error
+          retention-days: 14
+

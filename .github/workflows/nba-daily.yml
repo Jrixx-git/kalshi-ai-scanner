@@ -1,0 +1,47 @@
+name: NBA v0.6 Daily Research Predictions
+
+on:
+  workflow_dispatch:
+    inputs:
+      prediction_date:
+        description: 'NBA date YYYY-MM-DD (blank = today in New York; up to 7 days ahead)'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nba-daily-research
+  cancel-in-progress: false
+
+jobs:
+  predictions:
+    if: github.ref == 'refs/heads/develop/paper-trading-v02'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop/paper-trading-v02
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run offline tests before API access
+        run: python -m unittest discover -v
+      - name: Retrieve data and export predictions (GET only)
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+          PREDICTION_DATE: ${{ inputs.prediction_date }}
+        run: python nba_daily_predictions.py --date "$PREDICTION_DATE" --output-dir daily_predictions
+      - name: Upload daily CSV and provenance
+        uses: actions/upload-artifact@v4
+        with:
+          name: nba-v06-daily-predictions-${{ github.run_id }}
+          path: daily_predictions/
+          if-no-files-found: error
+          retention-days: 14
