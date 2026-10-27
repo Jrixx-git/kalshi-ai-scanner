@@ -2,7 +2,7 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-10-27T21:24:30.390839+00:00
+Results checked: 2026-10-27T21:25:59.132217+00:00
 
 | NBA date | Archived | Scored | Accuracy | Brier | Log loss |
 |---|---:|---:|---:|---:|---:|
