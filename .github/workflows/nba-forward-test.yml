@@ -1,0 +1,88 @@
+name: NBA v0.7 Forward Testing
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [develop/paper-trading-v02]
+    paths: [forward_test/trigger.txt]
+  schedule:
+    - cron: '0 16 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-v07-forward-test
+  cancel-in-progress: false
+
+jobs:
+  research:
+    if: github.ref == 'refs/heads/develop/paper-trading-v02'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop/paper-trading-v02
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline tests
+        run: python -m unittest discover -v
+      - name: Record source commit
+        run: echo "SOURCE_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Import pinned immutable baseline
+        run: python nba_forward_test.py baseline
+      - uses: actions/cache@v4
+        with:
+          path: .nba_history_cache/
+          key: nba-v07-history-${{ github.run_id }}
+          restore-keys: nba-v07-history-
+      - name: Generate today's predictions and raw input snapshots
+        id: generate
+        continue-on-error: true
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+        run: python nba_daily_predictions.py --output-dir daily_predictions
+      - name: Seal predictions before results retrieval
+        if: steps.generate.outcome == 'success'
+        run: |
+          for file in daily_predictions/*.csv; do
+            python nba_forward_test.py archive --csv "$file" --commit "$SOURCE_COMMIT" --run-id "$GITHUB_RUN_ID"
+          done
+      - name: Persist pregame archive before scoring
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add forward_test/state
+          if ! git diff --cached --quiet; then
+            git commit -m "Archive NBA research predictions [skip ci]"
+            git push origin HEAD:develop/paper-trading-v02
+          fi
+      - name: Retrieve official provider results and score
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+        run: python nba_forward_test.py score
+      - name: Persist raw results and scoreboard
+        run: |
+          git add forward_test/state
+          if ! git diff --cached --quiet; then
+            git commit -m "Update NBA forward testing scoreboard [skip ci]"
+            git push origin HEAD:develop/paper-trading-v02
+          fi
+      - name: Export research evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nba-v07-forward-test-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            forward_test/state/
+            daily_predictions/
+          retention-days: 90
+          if-no-files-found: error
+      - name: Surface prediction retrieval failure
+        if: steps.generate.outcome != 'success'
+        run: exit 1

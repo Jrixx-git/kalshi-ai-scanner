@@ -1,0 +1,2 @@
+# Evidence hashes cover exact bytes, including original CSV line endings.
+forward_test/** binary

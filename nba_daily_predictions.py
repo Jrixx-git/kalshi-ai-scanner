@@ -341,6 +341,11 @@ def main():
     # Recheck time after downloads so no game that started during fetching is exported.
     rows, metadata = predict(history, schedule, target.isoformat(), datetime.now(timezone.utc))
     metadata['retrieved_history_sha256'] = hashlib.sha256(json.dumps(history,sort_keys=True).encode()).hexdigest()
+    # Preserve the exact inputs for prospective audits; baseline v0.6 lacks these.
+    output = Path(args.output_dir)
+    output.mkdir(parents=True, exist_ok=True)
+    for name, games in [('history.json', history), ('schedule.json', schedule)]:
+        (output / name).write_text(json.dumps(games, sort_keys=True), encoding='utf-8')
     path = export(rows, metadata, args.output_dir)
     print(f'Saved {len(rows)} research predictions to {path}; live trading disabled.')
 
