@@ -1,2 +1,2 @@
 2026-10-27
-NBA v0.7 initial research-only forward test
+NBA v0.8 independent identity verification
