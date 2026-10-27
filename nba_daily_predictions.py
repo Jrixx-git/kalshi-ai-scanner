@@ -87,10 +87,44 @@ def get_page(key, params):
             time.sleep(15 * (attempt + 1))
 
 
-def fetch_games(key, params, *, fetch=get_page, pause=13, max_pages=200):
+def positive_integer(value, label):
+    if isinstance(value, bool) or not (isinstance(value, int) or
+            isinstance(value, str) and re.fullmatch(r'[0-9]+', value)):
+        raise ValueError('Invalid ' + label)
+    value = int(value)
+    if value <= 0:
+        raise ValueError('Invalid ' + label)
+    return value
+
+
+def page_cursor(payload):
+    if not isinstance(payload, dict) or not isinstance(payload.get('data'), list):
+        raise ValueError('Malformed API page')
+    meta = payload.get('meta')
+    if not isinstance(meta, dict):
+        raise ValueError('Missing pagination metadata')
+    if any(k in meta for k in ('next_page', 'current_page', 'total_pages')):
+        raise ValueError('Unsupported page-number pagination on cursor endpoint')
+    # Cursor API: the final page may omit next_cursor, or explicitly set null.
+    # An omitted cursor requires the per_page envelope, never a bare data list.
+    if 'per_page' in meta:
+        size = positive_integer(meta['per_page'], 'per_page')
+        if size > 100 or len(payload['data']) > size:
+            raise ValueError('Invalid page size')
+    elif 'next_cursor' not in meta:
+        raise ValueError('Missing pagination metadata')
+    cursor = meta.get('next_cursor')
+    if cursor is not None:
+        cursor = positive_integer(cursor, 'pagination cursor')
+        if not payload['data']:
+            raise ValueError('Empty page with continuation cursor')
+    return cursor
+
+
+def fetch_games(key, params, *, fetch=get_page, pause=2, max_pages=200):
     if not key:
         raise ValueError('BALLDONTLIE_API_KEY is missing')
-    if max_pages < 1:
+    if max_pages < 1 or pause < 0:
         raise ValueError('Invalid page limit')
     result, ids, cursors = [], set(), set()
     cursor = None
@@ -99,15 +133,16 @@ def fetch_games(key, params, *, fetch=get_page, pause=13, max_pages=200):
         if cursor is not None:
             query.append(('cursor', str(cursor)))
         payload = fetch(key, query)
-        if not isinstance(payload.get('data'), list) or 'next_cursor' not in payload.get('meta', {}):
-            raise ValueError('Malformed API page or missing pagination metadata')
+        next_cursor = page_cursor(payload)
         for game in payload['data']:
-            gid = int(game['id'])
+            if not isinstance(game, dict):
+                raise ValueError('Malformed game')
+            gid = positive_integer(game.get('id'), 'game ID')
             if gid <= 0 or gid in ids:
                 raise ValueError('Invalid or duplicate game ID across API pages')
             ids.add(gid)
             result.append(game)
-        cursor = payload['meta']['next_cursor']
+        cursor = next_cursor
         if cursor is None:
             return result
         if str(cursor) in cursors:
@@ -115,6 +150,75 @@ def fetch_games(key, params, *, fetch=get_page, pause=13, max_pages=200):
         cursors.add(str(cursor))
         time.sleep(pause)
     raise ValueError('Page limit reached; refusing incomplete history/schedule')
+
+
+def validate_history(games, start, end):
+    if not isinstance(games, list):
+        raise ValueError('Malformed cached history')
+    seen = set()
+    for game in games:
+        if not isinstance(game, dict):
+            raise ValueError('Malformed historical game')
+        gid = positive_integer(game.get('id'), 'history game ID')
+        if gid in seen or not start <= game_date(game) <= end:
+            raise ValueError('Duplicate or out-of-range historical game')
+        seen.add(gid)
+        teams(game)
+        if lifecycle(game) == 'final':
+            hs = positive_integer(game.get('home_team_score'), 'final score')
+            av = positive_integer(game.get('visitor_team_score'), 'final score')
+            if hs == av:
+                raise ValueError('Invalid final score')
+    return games
+
+
+def history_digest(games):
+    return hashlib.sha256(json.dumps(games, sort_keys=True).encode()).hexdigest()
+
+
+def load_history(key, before, cache_dir, *, fetch=get_page, now=None):
+    """Cache complete monthly queries; interrupted runs retain completed chunks.
+
+    Old chunks expire after seven days to pick up provider corrections. Recent
+    chunks expire after five minutes. Cache failures never permit stale fallback.
+    """
+    if not key:
+        raise ValueError('BALLDONTLIE_API_KEY is missing')
+    now = now or datetime.now(timezone.utc)
+    end = date.fromisoformat(before) - timedelta(days=1)
+    start = date.fromisoformat(HISTORY_START)
+    directory = Path(cache_dir)
+    directory.mkdir(parents=True, exist_ok=True)
+    history = []
+    while start <= end:
+        following = (start.replace(day=28) + timedelta(days=4)).replace(day=1)
+        stop = min(end, following - timedelta(days=1))
+        lo, hi = start.isoformat(), stop.isoformat()
+        path = directory / f'games_{lo}_{hi}.json'
+        games = None
+        ttl = 300 if stop >= now.date() - timedelta(days=7) else 604800
+        try:
+            cached = json.loads(path.read_text(encoding='utf-8'))
+            age = (now - utc_timestamp(cached['retrieved_at'])).total_seconds()
+            if (cached['version'] == 1 and cached['endpoint'] == BASE and
+                    cached['start'] == lo and cached['end'] == hi and
+                    0 <= age < ttl and cached['sha256'] == history_digest(cached['games'])):
+                games = validate_history(cached['games'], lo, hi)
+        except (OSError, ValueError, TypeError, KeyError):
+            pass  # Invalid cache is refetched, never used as a fallback.
+        if games is None:
+            games = fetch_games(key, [('start_date', lo), ('end_date', hi)], fetch=fetch)
+            validate_history(games, lo, hi)
+            record = dict(version=1, endpoint=BASE, start=lo, end=hi,
+                          retrieved_at=now.isoformat(), games=games, sha256=history_digest(games))
+            temporary = path.with_suffix('.json.tmp')
+            temporary.write_text(json.dumps(record, allow_nan=False), encoding='utf-8')
+            temporary.replace(path)
+            time.sleep(2)  # Also pace boundaries between monthly queries.
+        history.extend(games)
+        start = following
+    validate_history(history, HISTORY_START, end.isoformat())
+    return history
 
 
 def build_ratings(history, before):
@@ -223,14 +327,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--date', default='', help='NBA league date YYYY-MM-DD; default today in New York')
     parser.add_argument('--output-dir', default='daily_predictions')
+    parser.add_argument('--cache-dir', default='.nba_history_cache',
+                        help='Validated monthly history cache; retain between runs')
     args = parser.parse_args()
     now = datetime.now(timezone.utc)
     target = date.fromisoformat(args.date) if args.date else now.astimezone(EASTERN).date()
     if target < now.astimezone(EASTERN).date() or target > now.astimezone(EASTERN).date()+timedelta(days=7):
         parser.error('Date must be today through seven days ahead in New York')
     key = os.environ.get('BALLDONTLIE_API_KEY', '')
-    history = fetch_games(key, [('start_date',HISTORY_START),('end_date',(target-timedelta(days=1)).isoformat())])
-    time.sleep(13)
+    history = load_history(key, target.isoformat(), args.cache_dir)
+    time.sleep(2)
     schedule = fetch_games(key, [('dates[]',target.isoformat())])
     # Recheck time after downloads so no game that started during fetching is exported.
     rows, metadata = predict(history, schedule, target.isoformat(), datetime.now(timezone.utc))
@@ -241,3 +347,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
