@@ -7,6 +7,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -58,20 +59,30 @@ def discover(fetch=get):
         seen_cursors.add(cursor)
 
 
-def capture(root, fetch=get):
+def capture(root, fetch=get, *, workers=4):
     started = datetime.now(timezone.utc).isoformat()
     markets = discover(fetch)
     books = {}
     errors = {}
-    for market in markets:
+    def read_book(market):
         ticker = market['ticker']
+        observed_at = datetime.now(timezone.utc).isoformat()
         try:
             book = fetch('/markets/' + ticker + '/orderbook', {'depth': 0})
             if not isinstance(book.get('orderbook_fp'), dict):
                 raise ValueError('Missing fixed-point orderbook')
-            books[ticker] = {'observed_at': datetime.now(timezone.utc).isoformat(), 'raw': book}
+            return ticker, {'observed_at': observed_at, 'received_at': datetime.now(timezone.utc).isoformat(), 'raw': book}, None
         except (OSError, ValueError, KeyError) as exc:
-            errors[ticker] = type(exc).__name__
+            return ticker, None, type(exc).__name__
+    if not isinstance(workers, int) or not 1 <= workers <= 4:
+        raise ValueError('Workers must be between 1 and 4')
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for future in as_completed([pool.submit(read_book, market) for market in markets]):
+            ticker, book, error = future.result()
+            if error:
+                errors[ticker] = error
+            else:
+                books[ticker] = book
     snapshot = {'schema': 'nba-kalshi-capture-v1', 'started_at': started,
                 'completed_at': datetime.now(timezone.utc).isoformat(),
                 'source': BASE, 'series': SERIES, 'markets': markets,

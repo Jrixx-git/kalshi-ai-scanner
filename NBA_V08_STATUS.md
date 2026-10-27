@@ -25,3 +25,34 @@ forecast-to-market provenance; ledger exit and verified settlement handling;
 reporting and automated scheduling with durable state; independent integration
 and risk tests. Do not run automated entries until these are implemented and
 validated. No conclusion about profitability follows from prediction accuracy.
+
+## Matcher and valuation prototype
+
+`nba_v08_valuation.py` adds strict pregame contract matching and a one-contract
+research valuation: displayed ask, a one-cent slippage assumption, and
+cent-rounded taker fee with verified standard series multiplier. It rejects
+unsupported fees, changed rules, invalid or crossed quotes, and quotes older
+than 30 seconds. This module is not wired to the existing paper runner and
+cannot execute or simulate an order by itself. It does not establish an edge.
+
+A live integration observation blocks deployment: on Oct 27, 2026 the
+archived BALLDONTLIE Brooklyn at Boston forecast gave tipoff as 23:30 UTC,
+while the corresponding Kalshi market's `occurrence_datetime` was 02:30 UTC
+on Oct 28. Kalshi documents this field as when the underlying event occurred,
+not specifically as its scheduled tipoff. Strict time matching currently rejects
+this case. An independent, authoritative schedule source and a documented
+contract-identity strategy are needed before relaxing this gate. Historical
+forecasts must remain untouched. Settlement still needs public finalized market
+results including scalar/fair-price treatment and independently auditable raw
+snapshots. Automated execution, durable scheduler, dashboard, and a real
+end-to-end paper cycle remain unimplemented.
+
+Potential future markets: Kalshi lists NBA player points and first-quarter
+winner and totals; first-quarter winner includes a tie contract, so a binary
+full-game Elo model cannot value it. Player props require player minutes,
+availability, and stat-distribution models. Quarter markets require separate
+period-level models. Combo pricing requires joint probabilities and correlation;
+RFQ communication is authenticated and can lead to execution, so it is outside
+the read-only pipeline. See https://docs.kalshi.com/getting_started/rfqs and
+https://kalshi.com/markets/kxnba1q/nba-1st-quarter-winner . No props or combo
+execution has been enabled.
