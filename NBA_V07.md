@@ -82,6 +82,23 @@ The pregame commit can succeed even if later result retrieval fails.
 
 ## GitHub Actions and daily scheduling
 
+Deployment on 2026-10-27: write access was restored by installing the ChatGPT
+Codex Connector on the repository owner's account. NBA v0.7 was published only
+to develop/paper-trading-v02 in commit 92d561c935dd4256145a09f7da1aadc5b0849ffd.
+A Codex chat automation named "Daily NBA v0.7 forward test" is ACTIVE at 19:00
+Europe/Istanbul and updates only forward_test/trigger.txt on the development
+branch. It is idempotent per local date and reports failures or required action.
+This external Codex trigger starts GitHub Actions without changing main or the
+default branch; GitHub's native cron limitation below still applies.
+
+The initial run succeeded end to end:
+https://github.com/Jrixx-git/kalshi-ai-scanner/actions/runs/40579880651
+It passed offline tests, verified the pinned baseline, generated and archived
+new raw input snapshots, pushed the pregame archive, retrieved provider results,
+pushed the scoreboard and uploaded evidence. At 2026-10-27T20:42:43Z, the four
+baseline games were unresolved (unknown/non-final), so scored=0 and all three
+metrics were null. No forecasting-performance claim is made before finals arrive.
+
 `nba-forward-test.yml` tests offline first, imports the baseline idempotently,
 generates today's predictions with raw snapshots, seals and pushes the pregame
 archive, retrieves results and pushes the scoreboard. Both pushes explicitly
