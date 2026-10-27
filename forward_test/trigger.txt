@@ -1,0 +1,2 @@
+2026-10-27
+NBA v0.7 initial research-only forward test
