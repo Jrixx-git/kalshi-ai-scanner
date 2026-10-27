@@ -33,11 +33,24 @@ jobs:
           python-version: '3.12'
       - name: Run offline tests before API access
         run: python -m unittest discover -v
+      - name: Restore validated NBA history cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .nba_history_cache/
+          key: nba-history-v1-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            nba-history-v1-${{ github.ref_name }}-
       - name: Retrieve data and export predictions (GET only)
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
           PREDICTION_DATE: ${{ inputs.prediction_date }}
         run: python nba_daily_predictions.py --date "$PREDICTION_DATE" --output-dir daily_predictions
+      - name: Save completed history chunks even if retrieval fails
+        if: ${{ always() }}
+        uses: actions/cache/save@v4
+        with:
+          path: .nba_history_cache/
+          key: nba-history-v1-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Upload daily CSV and provenance
         uses: actions/upload-artifact@v4
         with:
@@ -45,3 +58,4 @@ jobs:
           path: daily_predictions/
           if-no-files-found: error
           retention-days: 14
+
