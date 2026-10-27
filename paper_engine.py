@@ -18,6 +18,8 @@ class PaperEngine:
             price TEXT NOT NULL, contracts INTEGER NOT NULL, fee TEXT NOT NULL,
             status TEXT NOT NULL, opened_day TEXT NOT NULL,
             settled_day TEXT, payout TEXT, pnl TEXT)''')
+        self.db.execute('''CREATE TABLE IF NOT EXISTS paper_evidence (
+            signal_id TEXT PRIMARY KEY, entry_json TEXT NOT NULL, settlement_json TEXT)''')
 
     def close(self):
         self.db.close()
@@ -31,7 +33,7 @@ class PaperEngine:
         return PaperAccount(cash=D('5000')+all_pnl-exposure, open_exposure=exposure,
                             realized_daily_pnl=daily_pnl)
 
-    def enter(self, *, signal_id, ticker, side, ask, ask_size, contracts, fee, day=None):
+    def enter(self, *, signal_id, ticker, side, ask, ask_size, contracts, fee, day=None, evidence=None):
         """Record an assumed fill at a supplied ask; quote freshness is caller's duty."""
         day = day or today()
         if not signal_id or not ticker:
@@ -70,8 +72,55 @@ class PaperEngine:
                 (signal_id,ticker,side,price,contracts,fee,status,opened_day)
                 VALUES (?,?,?,?,?,?,'OPEN',?)''',
                 (signal_id,ticker,side,str(ask),contracts,str(fee),day))
+            if evidence is not None:
+                import json
+                self.db.execute('INSERT INTO paper_evidence (signal_id, entry_json) VALUES (?, ?)',
+                                (signal_id, json.dumps(evidence, sort_keys=True, allow_nan=False)))
             self.db.execute('COMMIT')
             return True, 'PAPER fill recorded (assumed at supplied ask)'
+        except Exception:
+            self.db.execute('ROLLBACK')
+            raise
+
+    def settle_finalized_market(self, signal_id, market, observed_at, day=None):
+        """Apply finalized public market payout; preserve raw settlement evidence."""
+        import json
+        from nba_v08_valuation import timestamp
+        try:
+            observed = timestamp(observed_at)
+            settled_at = timestamp(market['settlement_ts'])
+            if settled_at > observed or market['status'] != 'finalized':
+                return False, 'Market not finalized at observation'
+            yes_price = D(str(market['settlement_value_dollars']))
+            if not yes_price.is_finite() or not D('0') <= yes_price <= D('1'):
+                return False, 'Invalid settlement value'
+            result = market['result']
+            if result not in ('yes', 'no', 'scalar') or (result == 'yes' and yes_price != 1) or (result == 'no' and yes_price != 0):
+                return False, 'Contradictory settlement'
+            evidence = json.dumps({'observed_at':observed_at, 'market':market}, sort_keys=True, allow_nan=False)
+        except (KeyError, TypeError, ValueError, ArithmeticError):
+            return False, 'Invalid settlement evidence'
+        day = day or observed.date().isoformat()
+        self.db.execute('BEGIN IMMEDIATE')
+        try:
+            row = self.db.execute('SELECT ticker,side,price,contracts,fee,status FROM trades WHERE signal_id=?', (signal_id,)).fetchone()
+            if not row or row[5] != 'OPEN' or market.get('ticker') != row[0]:
+                self.db.execute('ROLLBACK')
+                return False, 'Position missing, settled, or ticker mismatch'
+            raw_entry = self.db.execute('SELECT entry_json FROM paper_evidence WHERE signal_id=?', (signal_id,)).fetchone()
+            if not raw_entry or settled_at < timestamp(json.loads(raw_entry[0])['decision_at']):
+                self.db.execute('ROLLBACK')
+                return False, 'Settlement precedes entry or provenance missing'
+            ticker, side, price, n, fee, _ = row
+            payout = D(n) * (yes_price if side == 'YES' else 1-yes_price)
+            pnl = payout - D(price)*n - D(fee)
+            updated = self.db.execute('UPDATE paper_evidence SET settlement_json=? WHERE signal_id=? AND settlement_json IS NULL', (evidence, signal_id)).rowcount
+            if updated != 1:
+                self.db.execute('ROLLBACK')
+                return False, 'Missing or conflicting provenance'
+            self.db.execute("UPDATE trades SET status='SETTLED',settled_day=?,payout=?,pnl=? WHERE signal_id=?", (day,str(payout),str(pnl),signal_id))
+            self.db.execute('COMMIT')
+            return True, str(pnl)
         except Exception:
             self.db.execute('ROLLBACK')
             raise

@@ -16,7 +16,7 @@ SERIES = 'KXNBAGAME'
 
 
 def get(path, params=None, *, attempts=4):
-    if not (path == '/markets' or re.fullmatch(r'/markets/KXNBAGAME-[A-Z0-9-]+/orderbook', path)):
+    if not (path in ('/markets', '/series/KXNBAGAME') or re.fullmatch(r'/markets/KXNBAGAME-[A-Z0-9-]+(?:/orderbook)?', path)):
         raise ValueError('Only NBA market GET endpoints allowed')
     url = BASE + path + ('?' + urllib.parse.urlencode(params) if params else '')
     for attempt in range(attempts):
@@ -59,9 +59,11 @@ def discover(fetch=get):
         seen_cursors.add(cursor)
 
 
-def capture(root, fetch=get, *, workers=4):
+def capture(root, fetch=get, *, workers=4, event_filter=None):
     started = datetime.now(timezone.utc).isoformat()
     markets = discover(fetch)
+    if event_filter is not None:
+        markets = [market for market in markets if market.get('event_ticker') in event_filter]
     books = {}
     errors = {}
     def read_book(market):

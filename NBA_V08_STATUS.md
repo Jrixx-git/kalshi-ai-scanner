@@ -56,3 +56,39 @@ RFQ communication is authenticated and can lead to execution, so it is outside
 the read-only pipeline. See https://docs.kalshi.com/getting_started/rfqs and
 https://kalshi.com/markets/kxnba1q/nba-1st-quarter-winner . No props or combo
 execution has been enabled.
+
+## Timestamp investigation and paper pipeline increment
+
+On 2026-10-27, the NBA schedule listed Brooklyn at Boston on Oct 27 at
+4:30 p.m. Pacific (23:30 UTC); NBA game identifier 0022600128 and the archived
+BALLDONTLIE home/away IDs 2 and 3 refer to that matchup. The Kalshi contract
+KXNBAGAME-26OCT27BKNBOS-BOS names Boston and Brooklyn in its primary rules,
+and names Boston as the Yes winner. ESPN also lists that matchup at 4:30 p.m.
+Pacific. Sources: https://www.nba.com/schedule ,
+https://www.nba.com/nets/game/0022600128-nets-vs-celtics-boston-ma-10-27-2026 ,
+https://www.espn.com/nba/game/_/gameId/401909877/nets-celtics . Kalshi's API
+changelog defines `occurrence_datetime` as the recorded datetime when the
+underlying event occurred, when available; it does not define it as scheduled
+tipoff: https://docs.kalshi.com/changelog . The observed Kalshi value was
+2026-10-28T02:30:00Z. We have not established why it differs. The matcher
+continues to reject this event; no three-hour correction is applied.
+
+`nba_v08_paper.py` adds a paper-only bridge. It checks v0.7 archive hashes,
+rejects late forecasts, reads content-addressed snapshots, rechecks active
+contracts and fees, and records at most one one-contract position per game.
+It uses a 30-second market and book age limit and an assumed one-cent adverse
+slippage. Ledger risk checks and provenance insertion are atomic. It records
+raw finalized public market settlements, including scalar fair-price payouts,
+and does not infer a result from a game score. Repeated cycles do not re-enter
+an existing game. The existing v0.7 workflow runs the v0.8 cycle after scoring,
+commits the separate `paper_v08/state` snapshots and SQLite ledger to the same
+development branch, uploads evidence, and fails visibly on collection errors.
+It is scheduled by the existing external trigger; branch-only GitHub cron does
+not run by itself. Forecast and paper states remain separate. Network or push
+failures can interrupt runs, and quotes may age out before evaluation.
+
+`latest.json` reports cost-based open exposure, cash, realized equity, and
+realized drawdown; these are paper estimates and not a mark-to-market balance.
+Holding until finalized settlement is the only supported exit. This is a
+research prototype pending live workflow verification. A complete synthetic
+entry/settlement lifecycle in tests is not a real forward-tested profit record.

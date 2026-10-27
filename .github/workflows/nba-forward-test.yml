@@ -73,6 +73,18 @@ jobs:
             git commit -m "Update NBA forward testing scoreboard [skip ci]"
             git push origin HEAD:develop/paper-trading-v02
           fi
+      - name: Capture and reconcile NBA paper research
+        id: paper_v08
+        continue-on-error: true
+        run: python nba_v08_paper.py --state-dir paper_v08/state
+      - name: Persist NBA paper evidence
+        if: always() && steps.paper_v08.outcome != 'skipped'
+        run: |
+          git add paper_v08/state
+          if ! git diff --cached --quiet; then
+            git commit -m "Archive NBA paper research [skip ci]"
+            git push origin HEAD:develop/paper-trading-v02
+          fi
       - name: Export research evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -81,8 +93,12 @@ jobs:
           path: |
             forward_test/state/
             daily_predictions/
+            paper_v08/state/
           retention-days: 90
           if-no-files-found: error
       - name: Surface prediction retrieval failure
         if: steps.generate.outcome != 'success'
+        run: exit 1
+      - name: Surface paper collection failure
+        if: steps.paper_v08.outcome == 'failure'
         run: exit 1
