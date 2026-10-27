@@ -8,9 +8,9 @@
     "games": 4,
     "matched_signals": 0,
     "rejected": 4,
-    "snapshot": "3ff4e198ac4aa222b2207dd76d1609afbe0b5d3c18eee5d5f89e9abaaadf654e"
+    "snapshot": "3c51dae95dfae7ac664eb4b2ebe35786d9e89378e26d67e808389a19a017954a"
   },
-  "generated_at": "2026-10-27T21:24:32.955730+00:00",
+  "generated_at": "2026-10-27T21:26:03.819155+00:00",
   "markets": 60,
   "max_realized_drawdown": "0",
   "open_cost": "0",
@@ -24,7 +24,7 @@
     "settled": 0
   },
   "settled_trades": 0,
-  "snapshot": "paper_v08/state/snapshots/85bc28595744a1d99705ed1976de0553f8c4b6137ec69bf64f4e10b53f65f7aa.json",
+  "snapshot": "paper_v08/state/snapshots/9c57720dc46ac17a2957d69da0196ca8346ee19fbafcf880c06ea337d4553dab.json",
   "target_collection_errors": 0,
-  "target_snapshot": "paper_v08/state/snapshots/3ff4e198ac4aa222b2207dd76d1609afbe0b5d3c18eee5d5f89e9abaaadf654e.json"
+  "target_snapshot": "paper_v08/state/snapshots/3c51dae95dfae7ac664eb4b2ebe35786d9e89378e26d67e808389a19a017954a.json"
 }
