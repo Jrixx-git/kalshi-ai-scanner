@@ -11,7 +11,7 @@ from nba_data import download, FIELDS
 def collect(seasons, key, fetch=None):
     result = {}
     for season in seasons:
-        kwargs = {'max_pages': 100, 'pause': 13}
+        kwargs = {'max_pages': 100, 'pause': 2}
         if fetch is not None:
             kwargs['fetch'] = fetch
         rows = download(season, key, **kwargs)
