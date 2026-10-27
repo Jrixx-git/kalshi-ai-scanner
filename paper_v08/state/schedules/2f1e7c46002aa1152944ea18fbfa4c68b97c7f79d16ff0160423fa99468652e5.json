@@ -1,0 +1,5058 @@
+{
+  "payload": {
+    "events": [
+      {
+        "competitions": [
+          {
+            "attendance": 0,
+            "broadcast": "",
+            "broadcasts": [
+              {
+                "market": "away",
+                "names": [
+                  "NBA League Pass",
+                  "DAZN (YES)"
+                ]
+              }
+            ],
+            "competitors": [
+              {
+                "homeAway": "home",
+                "id": "2",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Jayson Tatum",
+                          "fullName": "Jayson Tatum",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
+                          "id": "4065648",
+                          "jersey": "0",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4065648/jayson-tatum",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Tatum",
+                          "team": {
+                            "id": "2"
+                          }
+                        },
+                        "displayValue": "24.0",
+                        "team": {
+                          "id": "2"
+                        },
+                        "value": 24.0
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Jayson Tatum",
+                          "fullName": "Jayson Tatum",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
+                          "id": "4065648",
+                          "jersey": "0",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4065648/jayson-tatum",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Tatum",
+                          "team": {
+                            "id": "2"
+                          }
+                        },
+                        "displayValue": "6.7",
+                        "team": {
+                          "id": "2"
+                        },
+                        "value": 6.666666507720947
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Jayson Tatum",
+                          "fullName": "Jayson Tatum",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
+                          "id": "4065648",
+                          "jersey": "0",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4065648/jayson-tatum",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Tatum",
+                          "team": {
+                            "id": "2"
+                          }
+                        },
+                        "displayValue": "8.0",
+                        "team": {
+                          "id": "2"
+                        },
+                        "value": 8.0
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Jayson Tatum",
+                          "fullName": "Jayson Tatum",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4065648.png",
+                          "id": "4065648",
+                          "jersey": "0",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4065648/jayson-tatum",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Tatum",
+                          "team": {
+                            "id": "2"
+                          }
+                        },
+                        "displayValue": "24.0 PPG, 6.7 RPG, 8.0 APG, 1.3 SPG",
+                        "team": {
+                          "id": "2"
+                        },
+                        "value": 41.81666564941406
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 0,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "2-1",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "2-0",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "0-1",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "130",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "43.3",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "79",
+                    "name": "assists",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "268",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "3rd"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "126",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "47.0",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "1st"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "74.2",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "66",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "49",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "354",
+                    "name": "points",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "42.4",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "1st"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "125",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "53",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "1st"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "118.0",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "26.3",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "42.4",
+                    "name": "threePointFieldGoalPct"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "BOS",
+                  "alternateColor": "ffffff",
+                  "color": "008348",
+                  "displayName": "Boston Celtics",
+                  "id": "2",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/bos/boston-celtics",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/bos/boston-celtics",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:2&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/bos/boston-celtics",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:2&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/bos",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:2&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "Boston",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bos.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/bos.png",
+                  "name": "Celtics",
+                  "shortDisplayName": "Celtics",
+                  "uid": "s:40~l:46~t:2",
+                  "venue": {
+                    "id": "1824"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:2"
+              },
+              {
+                "homeAway": "away",
+                "id": "17",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Julius Randle",
+                          "fullName": "Julius Randle",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
+                          "id": "3064514",
+                          "jersey": "30",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3064514/julius-randle",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Randle",
+                          "team": {
+                            "id": "17"
+                          }
+                        },
+                        "displayValue": "22.0",
+                        "team": {
+                          "id": "17"
+                        },
+                        "value": 22.0
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Julius Randle",
+                          "fullName": "Julius Randle",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
+                          "id": "3064514",
+                          "jersey": "30",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3064514/julius-randle",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Randle",
+                          "team": {
+                            "id": "17"
+                          }
+                        },
+                        "displayValue": "7.0",
+                        "team": {
+                          "id": "17"
+                        },
+                        "value": 7.0
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Julius Randle",
+                          "fullName": "Julius Randle",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
+                          "id": "3064514",
+                          "jersey": "30",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3064514/julius-randle",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Randle",
+                          "team": {
+                            "id": "17"
+                          }
+                        },
+                        "displayValue": "6.3",
+                        "team": {
+                          "id": "17"
+                        },
+                        "value": 6.333333492279053
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Julius Randle",
+                          "fullName": "Julius Randle",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3064514.png",
+                          "id": "3064514",
+                          "jersey": "30",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3064514/julius-randle",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "J. Randle",
+                          "team": {
+                            "id": "17"
+                          }
+                        },
+                        "displayValue": "22.0 PPG, 7.0 RPG, 6.3 APG, 0.3 SPG, 0.3 BPG",
+                        "team": {
+                          "id": "17"
+                        },
+                        "value": 38.68333435058594
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 1,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "0-3",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "0-2",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "0-1",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "126",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "42.0",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "70",
+                    "name": "assists",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "264",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "110",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "41.7",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "76.4",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "89",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "68",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "Tied-2nd"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "333",
+                    "name": "points",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "37.8",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "119",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "3rd"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "45",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "111.0",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "23.3",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "37.8",
+                    "name": "threePointFieldGoalPct"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "BKN",
+                  "alternateColor": "ffffff",
+                  "color": "000000",
+                  "displayName": "Brooklyn Nets",
+                  "id": "17",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/bkn/brooklyn-nets",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/bkn/brooklyn-nets",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:17&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/bkn/brooklyn-nets",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:17&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/bkn",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:17&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "Brooklyn",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/bkn.png",
+                  "name": "Nets",
+                  "shortDisplayName": "Nets",
+                  "uid": "s:40~l:46~t:17",
+                  "venue": {
+                    "id": "1826"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:17"
+              }
+            ],
+            "conferenceCompetition": false,
+            "date": "2026-10-27T23:30Z",
+            "format": {
+              "regulation": {
+                "periods": 4
+              }
+            },
+            "geoBroadcasts": [
+              {
+                "lang": "en",
+                "market": {
+                  "id": "3",
+                  "type": "Away"
+                },
+                "media": {
+                  "shortName": "DAZN (YES)"
+                },
+                "region": "us",
+                "type": {
+                  "id": "4",
+                  "shortName": "Streaming"
+                }
+              }
+            ],
+            "highlights": [],
+            "id": "401909877",
+            "neutralSite": false,
+            "notes": [],
+            "odds": [
+              {
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "team": {
+                    "abbreviation": "BKN",
+                    "displayName": "Brooklyn Nets",
+                    "id": "17",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png",
+                    "name": "Nets",
+                    "uid": "s:40~l:46~t:17"
+                  },
+                  "underdog": true
+                },
+                "details": "BOS -12.5",
+                "footer": {
+                  "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+                },
+                "header": {
+                  "logo": {
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg"
+                  },
+                  "text": "Game Odds"
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "team": {
+                    "abbreviation": "BOS",
+                    "displayName": "Boston Celtics",
+                    "id": "2",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bos.png",
+                    "name": "Celtics",
+                    "uid": "s:40~l:46~t:2"
+                  },
+                  "underdog": false
+                },
+                "link": {
+                  "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901557",
+                  "isExternal": true,
+                  "isPremium": false,
+                  "language": "en-US",
+                  "rel": [
+                    "game",
+                    "desktop",
+                    "bets"
+                  ],
+                  "shortText": "Game",
+                  "text": "See More Odds",
+                  "tracking": {
+                    "campaign": "betting-integrations",
+                    "tags": {
+                      "betSide": "none",
+                      "betType": "straight",
+                      "gameId": 401909877,
+                      "league": "nba",
+                      "sport": "basketball"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "away": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901557%3Foutcomes%3D0ML86931378_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "away",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Away Bet",
+                        "text": "Away Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "away",
+                            "betType": "straight",
+                            "gameId": 401909877,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "+455"
+                    },
+                    "open": {
+                      "odds": "+425"
+                    }
+                  },
+                  "displayName": "Moneyline",
+                  "home": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901557%3Foutcomes%3D0ML86931378_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "home",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Home Bet",
+                        "text": "Home Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "home",
+                            "betType": "straight",
+                            "gameId": 401909877,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-625"
+                    },
+                    "open": {
+                      "odds": "-575"
+                    }
+                  },
+                  "shortDisplayName": "ML"
+                },
+                "overUnder": 222.5,
+                "pointSpread": {
+                  "away": {
+                    "close": {
+                      "line": "+12.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901557%3Foutcomes%3D0HC86931378P1250_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "awaySpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Away Point Spread",
+                        "text": "Away Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:BKN+12.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909877,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-110"
+                    },
+                    "open": {
+                      "line": "+11.5",
+                      "odds": "-105"
+                    }
+                  },
+                  "displayName": "Spread",
+                  "home": {
+                    "close": {
+                      "line": "-12.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901557%3Foutcomes%3D0HC86931378N1250_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "homeSpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Home Point Spread",
+                        "text": "Home Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:BOS-12.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909877,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-110"
+                    },
+                    "open": {
+                      "line": "-11.5",
+                      "odds": "-115"
+                    }
+                  },
+                  "shortDisplayName": "Spread"
+                },
+                "provider": {
+                  "displayName": "Draft Kings",
+                  "id": "100",
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ],
+                  "name": "Draft Kings",
+                  "priority": 1
+                },
+                "spread": -12.5,
+                "total": {
+                  "displayName": "Total",
+                  "over": {
+                    "close": {
+                      "line": "o222.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901557%3Foutcomes%3D0OU86931378O22250_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "over",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Over Odds",
+                        "text": "Over Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Over:222.5",
+                            "betSide": "over",
+                            "betType": "straight",
+                            "gameId": 401909877,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-110"
+                    },
+                    "open": {
+                      "line": "o222.5",
+                      "odds": "-110"
+                    }
+                  },
+                  "shortDisplayName": "Total",
+                  "under": {
+                    "close": {
+                      "line": "u222.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901557%3Foutcomes%3D0OU86931378U22250_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "under",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Under Odds",
+                        "text": "Under Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Under:222.5",
+                            "betSide": "under",
+                            "betType": "straight",
+                            "gameId": 401909877,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-110"
+                    },
+                    "open": {
+                      "line": "u222.5",
+                      "odds": "-110"
+                    }
+                  }
+                }
+              }
+            ],
+            "playByPlayAvailable": false,
+            "recent": true,
+            "startDate": "2026-10-27T23:30Z",
+            "status": {
+              "clock": 0.0,
+              "displayClock": "0.0",
+              "period": 0,
+              "type": {
+                "completed": false,
+                "description": "Scheduled",
+                "detail": "Tue, October 27th at 7:30 PM EDT",
+                "id": "1",
+                "name": "STATUS_SCHEDULED",
+                "shortDetail": "10/27 - 7:30 PM EDT",
+                "state": "pre"
+              }
+            },
+            "tickets": [
+              {
+                "links": [
+                  {
+                    "href": "https://www.vividseats.com/boston-celtics-tickets-td-garden-10-27-2026/production/7433154?wsUser=717"
+                  },
+                  {
+                    "href": "https://www.vividseats.com/td-garden-tickets/venue/573?wsUser=717"
+                  }
+                ],
+                "numberAvailable": 1126,
+                "summary": "Tickets as low as $44"
+              }
+            ],
+            "timeValid": true,
+            "type": {
+              "abbreviation": "STD",
+              "id": "1"
+            },
+            "uid": "s:40~l:46~e:401909877~c:401909877",
+            "venue": {
+              "address": {
+                "city": "Boston",
+                "state": "MA"
+              },
+              "fullName": "TD Garden",
+              "id": "1824",
+              "indoor": true
+            }
+          }
+        ],
+        "date": "2026-10-27T23:30Z",
+        "id": "401909877",
+        "links": [
+          {
+            "href": "https://www.espn.com/nba/game/_/gameId/401909877/nets-celtics",
+            "isExternal": false,
+            "isPremium": false,
+            "language": "en-US",
+            "rel": [
+              "summary",
+              "desktop",
+              "event"
+            ],
+            "shortText": "Gamecast",
+            "text": "Gamecast"
+          }
+        ],
+        "name": "Brooklyn Nets at Boston Celtics",
+        "season": {
+          "slug": "regular-season",
+          "type": 2,
+          "year": 2027
+        },
+        "shortName": "BKN @ BOS",
+        "status": {
+          "clock": 0.0,
+          "displayClock": "0.0",
+          "period": 0,
+          "type": {
+            "completed": false,
+            "description": "Scheduled",
+            "detail": "Tue, October 27th at 7:30 PM EDT",
+            "id": "1",
+            "name": "STATUS_SCHEDULED",
+            "shortDetail": "10/27 - 7:30 PM EDT",
+            "state": "pre"
+          }
+        },
+        "uid": "s:40~l:46~e:401909877"
+      },
+      {
+        "competitions": [
+          {
+            "attendance": 0,
+            "broadcast": "NBC",
+            "broadcasts": [
+              {
+                "market": "national",
+                "names": [
+                  "NBC"
+                ]
+              }
+            ],
+            "competitors": [
+              {
+                "homeAway": "home",
+                "id": "18",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Jalen Brunson",
+                          "fullName": "Jalen Brunson",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
+                          "id": "3934672",
+                          "jersey": "11",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3934672/jalen-brunson",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "J. Brunson",
+                          "team": {
+                            "id": "18"
+                          }
+                        },
+                        "displayValue": "22.7",
+                        "team": {
+                          "id": "18"
+                        },
+                        "value": 22.66666603088379
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Karl-Anthony Towns",
+                          "fullName": "Karl-Anthony Towns",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
+                          "id": "3136195",
+                          "jersey": "32",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3136195/karl-anthony-towns",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "C"
+                          },
+                          "shortName": "K. Towns",
+                          "team": {
+                            "id": "18"
+                          }
+                        },
+                        "displayValue": "12.0",
+                        "team": {
+                          "id": "18"
+                        },
+                        "value": 12.0
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Jalen Brunson",
+                          "fullName": "Jalen Brunson",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3934672.png",
+                          "id": "3934672",
+                          "jersey": "11",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3934672/jalen-brunson",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "J. Brunson",
+                          "team": {
+                            "id": "18"
+                          }
+                        },
+                        "displayValue": "3.7",
+                        "team": {
+                          "id": "18"
+                        },
+                        "value": 3.6666667461395264
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Karl-Anthony Towns",
+                          "fullName": "Karl-Anthony Towns",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3136195.png",
+                          "id": "3136195",
+                          "jersey": "32",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3136195/karl-anthony-towns",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "C"
+                          },
+                          "shortName": "K. Towns",
+                          "team": {
+                            "id": "18"
+                          }
+                        },
+                        "displayValue": "21.0 PPG, 12.0 RPG, 2.7 APG, 0.7 SPG, 1.0 BPG",
+                        "team": {
+                          "id": "18"
+                        },
+                        "value": 40.43333435058594
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 0,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "0-3",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "0-2",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "0-1",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "142",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "47.3",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "74",
+                    "name": "assists",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "267",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "109",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "40.8",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "70.8",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "72",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "51",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "305",
+                    "name": "points",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "32.4",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "3rd"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "111",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "36",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "101.7",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "24.7",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "32.4",
+                    "name": "threePointFieldGoalPct",
+                    "rankDisplayValue": "1st"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "NY",
+                  "alternateColor": "f58426",
+                  "color": "1d428a",
+                  "displayName": "New York Knicks",
+                  "id": "18",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/ny/new-york-knicks",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:18&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/ny/new-york-knicks",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:18&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/ny",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:18&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "New York",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/ny.png",
+                  "name": "Knicks",
+                  "shortDisplayName": "Knicks",
+                  "uid": "s:40~l:46~t:18",
+                  "venue": {
+                    "id": "1830"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:18"
+              },
+              {
+                "homeAway": "away",
+                "id": "8",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Cade Cunningham",
+                          "fullName": "Cade Cunningham",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
+                          "id": "4432166",
+                          "jersey": "2",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4432166/cade-cunningham",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "C. Cunningham",
+                          "team": {
+                            "id": "8"
+                          }
+                        },
+                        "displayValue": "21.3",
+                        "team": {
+                          "id": "8"
+                        },
+                        "value": 21.33333396911621
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Paul Reed",
+                          "fullName": "Paul Reed",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4278562.png",
+                          "id": "4278562",
+                          "jersey": "7",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4278562/paul-reed",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "P. Reed",
+                          "team": {
+                            "id": "8"
+                          }
+                        },
+                        "displayValue": "8.3",
+                        "team": {
+                          "id": "8"
+                        },
+                        "value": 8.333333015441895
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Cade Cunningham",
+                          "fullName": "Cade Cunningham",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
+                          "id": "4432166",
+                          "jersey": "2",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4432166/cade-cunningham",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "C. Cunningham",
+                          "team": {
+                            "id": "8"
+                          }
+                        },
+                        "displayValue": "8.0",
+                        "team": {
+                          "id": "8"
+                        },
+                        "value": 8.0
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Cade Cunningham",
+                          "fullName": "Cade Cunningham",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4432166.png",
+                          "id": "4432166",
+                          "jersey": "2",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4432166/cade-cunningham",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "C. Cunningham",
+                          "team": {
+                            "id": "8"
+                          }
+                        },
+                        "displayValue": "21.3 PPG, 4.7 RPG, 8.0 APG, 1.3 SPG, 2.0 BPG",
+                        "team": {
+                          "id": "8"
+                        },
+                        "value": 39.63333511352539
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 1,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "3-0",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "1-0",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "2-0",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "156",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "52.0",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "86",
+                    "name": "assists",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "262",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "124",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "47.3",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "77.9",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "77",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "60",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "355",
+                    "name": "points",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "42.0",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "1st"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "112",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "Tied-4th"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "47",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "3rd"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "118.3",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "28.7",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "42.0",
+                    "name": "threePointFieldGoalPct"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "DET",
+                  "alternateColor": "c8102e",
+                  "color": "1d428a",
+                  "displayName": "Detroit Pistons",
+                  "id": "8",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/det/detroit-pistons",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/det/detroit-pistons",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:8&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/det/detroit-pistons",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:8&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/det",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:8&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "Detroit",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/det.png",
+                  "name": "Pistons",
+                  "shortDisplayName": "Pistons",
+                  "uid": "s:40~l:46~t:8",
+                  "venue": {
+                    "id": "5311"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:8"
+              }
+            ],
+            "conferenceCompetition": false,
+            "date": "2026-10-28T00:00Z",
+            "format": {
+              "regulation": {
+                "periods": 4
+              }
+            },
+            "geoBroadcasts": [
+              {
+                "lang": "en",
+                "market": {
+                  "id": "1",
+                  "type": "National"
+                },
+                "media": {
+                  "shortName": "NBC"
+                },
+                "region": "us",
+                "type": {
+                  "id": "1",
+                  "shortName": "TV"
+                }
+              }
+            ],
+            "highlights": [],
+            "id": "401909878",
+            "neutralSite": false,
+            "notes": [],
+            "odds": [
+              {
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "team": {
+                    "abbreviation": "DET",
+                    "displayName": "Detroit Pistons",
+                    "id": "8",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png",
+                    "name": "Pistons",
+                    "uid": "s:40~l:46~t:8"
+                  },
+                  "underdog": true
+                },
+                "details": "NY -4.5",
+                "footer": {
+                  "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+                },
+                "header": {
+                  "logo": {
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg"
+                  },
+                  "text": "Game Odds"
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "team": {
+                    "abbreviation": "NY",
+                    "displayName": "New York Knicks",
+                    "id": "18",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png",
+                    "name": "Knicks",
+                    "uid": "s:40~l:46~t:18"
+                  },
+                  "underdog": false
+                },
+                "link": {
+                  "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901563",
+                  "isExternal": true,
+                  "isPremium": false,
+                  "language": "en-US",
+                  "rel": [
+                    "game",
+                    "desktop",
+                    "bets"
+                  ],
+                  "shortText": "Game",
+                  "text": "See More Odds",
+                  "tracking": {
+                    "campaign": "betting-integrations",
+                    "tags": {
+                      "betSide": "none",
+                      "betType": "straight",
+                      "gameId": 401909878,
+                      "league": "nba",
+                      "sport": "basketball"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "away": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901563%3Foutcomes%3D0ML86931384_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "away",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Away Bet",
+                        "text": "Away Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "away",
+                            "betType": "straight",
+                            "gameId": 401909878,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "+142"
+                    },
+                    "open": {
+                      "odds": "+136"
+                    }
+                  },
+                  "displayName": "Moneyline",
+                  "home": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901563%3Foutcomes%3D0ML86931384_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "home",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Home Bet",
+                        "text": "Home Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "home",
+                            "betType": "straight",
+                            "gameId": 401909878,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-170"
+                    },
+                    "open": {
+                      "odds": "-162"
+                    }
+                  },
+                  "shortDisplayName": "ML"
+                },
+                "overUnder": 219.5,
+                "pointSpread": {
+                  "away": {
+                    "close": {
+                      "line": "+4.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901563%3Foutcomes%3D0HC86931384P450_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "awaySpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Away Point Spread",
+                        "text": "Away Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:DET+4.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909878,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-115"
+                    },
+                    "open": {
+                      "line": "+3.5",
+                      "odds": "-105"
+                    }
+                  },
+                  "displayName": "Spread",
+                  "home": {
+                    "close": {
+                      "line": "-4.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901563%3Foutcomes%3D0HC86931384N450_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "homeSpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Home Point Spread",
+                        "text": "Home Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:NY-4.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909878,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-105"
+                    },
+                    "open": {
+                      "line": "-3.5",
+                      "odds": "-115"
+                    }
+                  },
+                  "shortDisplayName": "Spread"
+                },
+                "provider": {
+                  "id": "100",
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ],
+                  "name": "Draft Kings",
+                  "priority": 1
+                },
+                "spread": -4.5,
+                "total": {
+                  "displayName": "Total",
+                  "over": {
+                    "close": {
+                      "line": "o219.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901563%3Foutcomes%3D0OU86931384O21950_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "over",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Over Odds",
+                        "text": "Over Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Over:219.5",
+                            "betSide": "over",
+                            "betType": "straight",
+                            "gameId": 401909878,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-108"
+                    },
+                    "open": {
+                      "line": "o218.5",
+                      "odds": "-115"
+                    }
+                  },
+                  "shortDisplayName": "Total",
+                  "under": {
+                    "close": {
+                      "line": "u219.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901563%3Foutcomes%3D0OU86931384U21950_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "under",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Under Odds",
+                        "text": "Under Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Under:219.5",
+                            "betSide": "under",
+                            "betType": "straight",
+                            "gameId": 401909878,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-112"
+                    },
+                    "open": {
+                      "line": "u218.5",
+                      "odds": "-105"
+                    }
+                  }
+                }
+              }
+            ],
+            "playByPlayAvailable": false,
+            "recent": true,
+            "startDate": "2026-10-28T00:00Z",
+            "status": {
+              "clock": 0.0,
+              "displayClock": "0.0",
+              "period": 0,
+              "type": {
+                "completed": false,
+                "description": "Scheduled",
+                "detail": "Tue, October 27th at 8:00 PM EDT",
+                "id": "1",
+                "name": "STATUS_SCHEDULED",
+                "shortDetail": "10/27 - 8:00 PM EDT",
+                "state": "pre"
+              }
+            },
+            "tickets": [
+              {
+                "links": [
+                  {
+                    "href": "https://www.vividseats.com/new-york-knicks-tickets-madison-square-garden-10-27-2026/production/7432929?wsUser=717"
+                  },
+                  {
+                    "href": "https://www.vividseats.com/madison-square-garden-tickets/venue/973?wsUser=717"
+                  }
+                ],
+                "numberAvailable": 734,
+                "summary": "Tickets as low as $169"
+              }
+            ],
+            "timeValid": true,
+            "type": {
+              "abbreviation": "STD",
+              "id": "1"
+            },
+            "uid": "s:40~l:46~e:401909878~c:401909878",
+            "venue": {
+              "address": {
+                "city": "New York",
+                "state": "NY"
+              },
+              "fullName": "Madison Square Garden",
+              "id": "1830",
+              "indoor": true
+            }
+          }
+        ],
+        "date": "2026-10-28T00:00Z",
+        "id": "401909878",
+        "links": [
+          {
+            "href": "https://www.espn.com/nba/game/_/gameId/401909878/pistons-knicks",
+            "isExternal": false,
+            "isPremium": false,
+            "language": "en-US",
+            "rel": [
+              "summary",
+              "desktop",
+              "event"
+            ],
+            "shortText": "Gamecast",
+            "text": "Gamecast"
+          }
+        ],
+        "name": "Detroit Pistons at New York Knicks",
+        "season": {
+          "slug": "regular-season",
+          "type": 2,
+          "year": 2027
+        },
+        "shortName": "DET @ NY",
+        "status": {
+          "clock": 0.0,
+          "displayClock": "0.0",
+          "period": 0,
+          "type": {
+            "completed": false,
+            "description": "Scheduled",
+            "detail": "Tue, October 27th at 8:00 PM EDT",
+            "id": "1",
+            "name": "STATUS_SCHEDULED",
+            "shortDetail": "10/27 - 8:00 PM EDT",
+            "state": "pre"
+          }
+        },
+        "uid": "s:40~l:46~e:401909878"
+      },
+      {
+        "competitions": [
+          {
+            "attendance": 0,
+            "broadcast": "",
+            "broadcasts": [
+              {
+                "market": "away",
+                "names": [
+                  "NBA League Pass"
+                ]
+              }
+            ],
+            "competitors": [
+              {
+                "homeAway": "home",
+                "id": "24",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Dylan Harper",
+                          "fullName": "Dylan Harper",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/5037871.png",
+                          "id": "5037871",
+                          "jersey": "2",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/5037871/dylan-harper",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "D. Harper",
+                          "team": {
+                            "id": "24"
+                          }
+                        },
+                        "displayValue": "20.0",
+                        "team": {
+                          "id": "24"
+                        },
+                        "value": 20.0
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Victor Wembanyama",
+                          "fullName": "Victor Wembanyama",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/5104157.png",
+                          "id": "5104157",
+                          "jersey": "1",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/5104157/victor-wembanyama",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "V. Wembanyama",
+                          "team": {
+                            "id": "24"
+                          }
+                        },
+                        "displayValue": "11.0",
+                        "team": {
+                          "id": "24"
+                        },
+                        "value": 11.0
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "De'Aaron Fox",
+                          "fullName": "De'Aaron Fox",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4066259.png",
+                          "id": "4066259",
+                          "jersey": "4",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4066259/deaaron-fox",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "D. Fox",
+                          "team": {
+                            "id": "24"
+                          }
+                        },
+                        "displayValue": "8.3",
+                        "team": {
+                          "id": "24"
+                        },
+                        "value": 8.333333015441895
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "De'Aaron Fox",
+                          "fullName": "De'Aaron Fox",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4066259.png",
+                          "id": "4066259",
+                          "jersey": "4",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4066259/deaaron-fox",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "D. Fox",
+                          "team": {
+                            "id": "24"
+                          }
+                        },
+                        "displayValue": "17.3 PPG, 4.7 RPG, 8.3 APG, 2.0 SPG, 0.3 BPG",
+                        "team": {
+                          "id": "24"
+                        },
+                        "value": 37.43333435058594
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 0,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "1-2",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "0-2",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "1-0",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "128",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "42.7",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "76",
+                    "name": "assists",
+                    "rankDisplayValue": "Tied-9th"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "281",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "8th"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "124",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "10th"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "44.1",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "15th"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "77.3",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "7th"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "66",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "14th"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "51",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "Tied-13th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "336",
+                    "name": "points",
+                    "rankDisplayValue": "12th"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "31.9",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "12th"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "116",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "9th"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "37",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "11th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "112.0",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "25.3",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "31.9",
+                    "name": "threePointFieldGoalPct",
+                    "rankDisplayValue": "1st"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "SA",
+                  "alternateColor": "c4ced4",
+                  "color": "000000",
+                  "displayName": "San Antonio Spurs",
+                  "id": "24",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/sa/san-antonio-spurs",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/sa/san-antonio-spurs",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:24&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/sa/san-antonio-spurs",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:24&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/sa",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:24&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "San Antonio",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sa.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/sa.png",
+                  "name": "Spurs",
+                  "shortDisplayName": "Spurs",
+                  "uid": "s:40~l:46~t:24",
+                  "venue": {
+                    "id": "780"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:24"
+              },
+              {
+                "homeAway": "away",
+                "id": "23",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Zach LaVine",
+                          "fullName": "Zach LaVine",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3064440.png",
+                          "id": "3064440",
+                          "jersey": "8",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3064440/zach-lavine",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "Z. LaVine",
+                          "team": {
+                            "id": "23"
+                          }
+                        },
+                        "displayValue": "29.0",
+                        "team": {
+                          "id": "23"
+                        },
+                        "value": 29.0
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Domantas Sabonis",
+                          "fullName": "Domantas Sabonis",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
+                          "id": "3155942",
+                          "jersey": "11",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3155942/domantas-sabonis",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "D. Sabonis",
+                          "team": {
+                            "id": "23"
+                          }
+                        },
+                        "displayValue": "17.3",
+                        "team": {
+                          "id": "23"
+                        },
+                        "value": 17.33333396911621
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Domantas Sabonis",
+                          "fullName": "Domantas Sabonis",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
+                          "id": "3155942",
+                          "jersey": "11",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3155942/domantas-sabonis",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "D. Sabonis",
+                          "team": {
+                            "id": "23"
+                          }
+                        },
+                        "displayValue": "7.0",
+                        "team": {
+                          "id": "23"
+                        },
+                        "value": 7.0
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Domantas Sabonis",
+                          "fullName": "Domantas Sabonis",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3155942.png",
+                          "id": "3155942",
+                          "jersey": "11",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3155942/domantas-sabonis",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "D. Sabonis",
+                          "team": {
+                            "id": "23"
+                          }
+                        },
+                        "displayValue": "18.7 PPG, 17.3 RPG, 7.0 APG, 1.0 SPG",
+                        "team": {
+                          "id": "23"
+                        },
+                        "value": 50.383331298828125
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 1,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "0-3",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "0-2",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "0-1",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "128",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "42.7",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "63",
+                    "name": "assists",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "270",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "122",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "3rd"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "45.2",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "72.5",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "80",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "3rd"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "58",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "3rd"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "328",
+                    "name": "points",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "28.3",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "92",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "26",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "109.3",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "21.0",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "28.3",
+                    "name": "threePointFieldGoalPct",
+                    "rankDisplayValue": "1st"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "SAC",
+                  "alternateColor": "6a7a82",
+                  "color": "5a2d81",
+                  "displayName": "Sacramento Kings",
+                  "id": "23",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/sac/sacramento-kings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/sac/sacramento-kings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:23&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/sac/sacramento-kings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:23&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/sac",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:23&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "Sacramento",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/sac.png",
+                  "name": "Kings",
+                  "shortDisplayName": "Kings",
+                  "uid": "s:40~l:46~t:23",
+                  "venue": {
+                    "id": "2247"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:23"
+              }
+            ],
+            "conferenceCompetition": false,
+            "date": "2026-10-28T00:00Z",
+            "format": {
+              "regulation": {
+                "periods": 4
+              }
+            },
+            "geoBroadcasts": [],
+            "highlights": [],
+            "id": "401909879",
+            "neutralSite": false,
+            "notes": [],
+            "odds": [
+              {
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "team": {
+                    "abbreviation": "SAC",
+                    "displayName": "Sacramento Kings",
+                    "id": "23",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+                    "name": "Kings",
+                    "uid": "s:40~l:46~t:23"
+                  },
+                  "underdog": true
+                },
+                "details": "SA -18.5",
+                "footer": {
+                  "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+                },
+                "header": {
+                  "logo": {
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg"
+                  },
+                  "text": "Game Odds"
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "team": {
+                    "abbreviation": "SA",
+                    "displayName": "San Antonio Spurs",
+                    "id": "24",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sa.png",
+                    "name": "Spurs",
+                    "uid": "s:40~l:46~t:24"
+                  },
+                  "underdog": false
+                },
+                "link": {
+                  "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901564",
+                  "isExternal": true,
+                  "isPremium": false,
+                  "language": "en-US",
+                  "rel": [
+                    "game",
+                    "desktop",
+                    "bets"
+                  ],
+                  "shortText": "Game",
+                  "text": "See More Odds",
+                  "tracking": {
+                    "campaign": "betting-integrations",
+                    "tags": {
+                      "betSide": "none",
+                      "betType": "straight",
+                      "gameId": 401909879,
+                      "league": "nba",
+                      "sport": "basketball"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "away": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901564%3Foutcomes%3D0ML86931385_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "away",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Away Bet",
+                        "text": "Away Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "away",
+                            "betType": "straight",
+                            "gameId": 401909879,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "+1000"
+                    },
+                    "open": {
+                      "odds": "+1000"
+                    }
+                  },
+                  "displayName": "Moneyline",
+                  "home": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901564%3Foutcomes%3D0ML86931385_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "home",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Home Bet",
+                        "text": "Home Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "home",
+                            "betType": "straight",
+                            "gameId": 401909879,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-1800"
+                    },
+                    "open": {
+                      "odds": "-1800"
+                    }
+                  },
+                  "shortDisplayName": "ML"
+                },
+                "overUnder": 232.5,
+                "pointSpread": {
+                  "away": {
+                    "close": {
+                      "line": "+18.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901564%3Foutcomes%3D0HC86931385P1850_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "awaySpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Away Point Spread",
+                        "text": "Away Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:SAC+18.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909879,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-108"
+                    },
+                    "open": {
+                      "line": "+18.5",
+                      "odds": "-115"
+                    }
+                  },
+                  "displayName": "Spread",
+                  "home": {
+                    "close": {
+                      "line": "-18.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901564%3Foutcomes%3D0HC86931385N1850_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "homeSpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Home Point Spread",
+                        "text": "Home Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:SA-18.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909879,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-112"
+                    },
+                    "open": {
+                      "line": "-18.5",
+                      "odds": "-105"
+                    }
+                  },
+                  "shortDisplayName": "Spread"
+                },
+                "provider": {
+                  "id": "100",
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ],
+                  "name": "Draft Kings",
+                  "priority": 1
+                },
+                "spread": -18.5,
+                "total": {
+                  "displayName": "Total",
+                  "over": {
+                    "close": {
+                      "line": "o232.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901564%3Foutcomes%3D0OU86931385O23250_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "over",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Over Odds",
+                        "text": "Over Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Over:232.5",
+                            "betSide": "over",
+                            "betType": "straight",
+                            "gameId": 401909879,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-108"
+                    },
+                    "open": {
+                      "line": "o230.5",
+                      "odds": "-110"
+                    }
+                  },
+                  "shortDisplayName": "Total",
+                  "under": {
+                    "close": {
+                      "line": "u232.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901564%3Foutcomes%3D0OU86931385U23250_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "under",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Under Odds",
+                        "text": "Under Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Under:232.5",
+                            "betSide": "under",
+                            "betType": "straight",
+                            "gameId": 401909879,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-112"
+                    },
+                    "open": {
+                      "line": "u230.5",
+                      "odds": "-110"
+                    }
+                  }
+                }
+              }
+            ],
+            "playByPlayAvailable": false,
+            "recent": true,
+            "startDate": "2026-10-28T00:00Z",
+            "status": {
+              "clock": 0.0,
+              "displayClock": "0.0",
+              "period": 0,
+              "type": {
+                "completed": false,
+                "description": "Scheduled",
+                "detail": "Tue, October 27th at 8:00 PM EDT",
+                "id": "1",
+                "name": "STATUS_SCHEDULED",
+                "shortDetail": "10/27 - 8:00 PM EDT",
+                "state": "pre"
+              }
+            },
+            "tickets": [
+              {
+                "links": [
+                  {
+                    "href": "https://www.vividseats.com/san-antonio-spurs-tickets-frost-bank-center-10-27-2026/production/7432991?wsUser=717"
+                  },
+                  {
+                    "href": "https://www.vividseats.com/att-center-tickets/venue/2455?wsUser=717"
+                  }
+                ],
+                "numberAvailable": 674,
+                "summary": "Tickets as low as $25"
+              }
+            ],
+            "timeValid": true,
+            "type": {
+              "abbreviation": "STD",
+              "id": "1"
+            },
+            "uid": "s:40~l:46~e:401909879~c:401909879",
+            "venue": {
+              "address": {
+                "city": "San Antonio",
+                "state": "TX"
+              },
+              "fullName": "Frost Bank Center",
+              "id": "780",
+              "indoor": true
+            }
+          }
+        ],
+        "date": "2026-10-28T00:00Z",
+        "id": "401909879",
+        "links": [
+          {
+            "href": "https://www.espn.com/nba/game/_/gameId/401909879/kings-spurs",
+            "isExternal": false,
+            "isPremium": false,
+            "language": "en-US",
+            "rel": [
+              "summary",
+              "desktop",
+              "event"
+            ],
+            "shortText": "Gamecast",
+            "text": "Gamecast"
+          }
+        ],
+        "name": "Sacramento Kings at San Antonio Spurs",
+        "season": {
+          "slug": "regular-season",
+          "type": 2,
+          "year": 2027
+        },
+        "shortName": "SAC @ SA",
+        "status": {
+          "clock": 0.0,
+          "displayClock": "0.0",
+          "period": 0,
+          "type": {
+            "completed": false,
+            "description": "Scheduled",
+            "detail": "Tue, October 27th at 8:00 PM EDT",
+            "id": "1",
+            "name": "STATUS_SCHEDULED",
+            "shortDetail": "10/27 - 8:00 PM EDT",
+            "state": "pre"
+          }
+        },
+        "uid": "s:40~l:46~e:401909879"
+      },
+      {
+        "competitions": [
+          {
+            "attendance": 0,
+            "broadcast": "Peacock/NBC",
+            "broadcasts": [
+              {
+                "market": "national",
+                "names": [
+                  "Peacock",
+                  "NBC"
+                ]
+              },
+              {
+                "market": "home",
+                "names": [
+                  "Spectrum Sports Net",
+                  "Spectrum Sports Net +"
+                ]
+              }
+            ],
+            "competitors": [
+              {
+                "homeAway": "home",
+                "id": "13",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Luka Doncic",
+                          "fullName": "Luka Doncic",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
+                          "id": "3945274",
+                          "jersey": "77",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3945274/luka-doncic",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "L. Doncic",
+                          "team": {
+                            "id": "13"
+                          }
+                        },
+                        "displayValue": "34.3",
+                        "team": {
+                          "id": "13"
+                        },
+                        "value": 34.33333206176758
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Walker Kessler",
+                          "fullName": "Walker Kessler",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4433136.png",
+                          "id": "4433136",
+                          "jersey": "14",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4433136/walker-kessler",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "C"
+                          },
+                          "shortName": "W. Kessler",
+                          "team": {
+                            "id": "13"
+                          }
+                        },
+                        "displayValue": "8.0",
+                        "team": {
+                          "id": "13"
+                        },
+                        "value": 8.0
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Luka Doncic",
+                          "fullName": "Luka Doncic",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
+                          "id": "3945274",
+                          "jersey": "77",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3945274/luka-doncic",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "L. Doncic",
+                          "team": {
+                            "id": "13"
+                          }
+                        },
+                        "displayValue": "8.0",
+                        "team": {
+                          "id": "13"
+                        },
+                        "value": 8.0
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Luka Doncic",
+                          "fullName": "Luka Doncic",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/3945274.png",
+                          "id": "3945274",
+                          "jersey": "77",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/3945274/luka-doncic",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "L. Doncic",
+                          "team": {
+                            "id": "13"
+                          }
+                        },
+                        "displayValue": "34.3 PPG, 7.3 RPG, 8.0 APG, 1.7 SPG, 0.3 BPG",
+                        "team": {
+                          "id": "13"
+                        },
+                        "value": 54.60000228881836
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 0,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "3-0",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "2-0",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "1-0",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "111",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "37.0",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "76",
+                    "name": "assists",
+                    "rankDisplayValue": "Tied-3rd"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "242",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "5th"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "132",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "54.5",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "1st"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "83.3",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "1st"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "90",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "75",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "384",
+                    "name": "points",
+                    "rankDisplayValue": "2nd"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "42.1",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "1st"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "107",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "4th"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "45",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "Tied-2nd"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "128.0",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "25.3",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "42.1",
+                    "name": "threePointFieldGoalPct"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "LAL",
+                  "alternateColor": "fdb927",
+                  "color": "552583",
+                  "displayName": "Los Angeles Lakers",
+                  "id": "13",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/lal/los-angeles-lakers",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/lal/los-angeles-lakers",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:13&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/lal/los-angeles-lakers",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:13&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/lal",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:13&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "Los Angeles",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lal.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/lal.png",
+                  "name": "Lakers",
+                  "shortDisplayName": "Lakers",
+                  "uid": "s:40~l:46~t:13",
+                  "venue": {
+                    "id": "1841"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:13"
+              },
+              {
+                "homeAway": "away",
+                "id": "22",
+                "leaders": [
+                  {
+                    "abbreviation": "PTS",
+                    "displayName": "Points Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Damian Lillard",
+                          "fullName": "Damian Lillard",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/6606.png",
+                          "id": "6606",
+                          "jersey": "0",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/6606/damian-lillard",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "D. Lillard",
+                          "team": {
+                            "id": "22"
+                          }
+                        },
+                        "displayValue": "22.0",
+                        "team": {
+                          "id": "22"
+                        },
+                        "value": 22.0
+                      }
+                    ],
+                    "name": "pointsPerGame",
+                    "shortDisplayName": "PPG"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayName": "Rebounds Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Deni Avdija",
+                          "fullName": "Deni Avdija",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
+                          "id": "4683021",
+                          "jersey": "8",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4683021/deni-avdija",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "D. Avdija",
+                          "team": {
+                            "id": "22"
+                          }
+                        },
+                        "displayValue": "8.5",
+                        "team": {
+                          "id": "22"
+                        },
+                        "value": 8.5
+                      }
+                    ],
+                    "name": "reboundsPerGame",
+                    "shortDisplayName": "RPG"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayName": "Assists Per Game",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Ja Morant",
+                          "fullName": "Ja Morant",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4279888.png",
+                          "id": "4279888",
+                          "jersey": "1",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4279888/ja-morant",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "G"
+                          },
+                          "shortName": "J. Morant",
+                          "team": {
+                            "id": "22"
+                          }
+                        },
+                        "displayValue": "7.5",
+                        "team": {
+                          "id": "22"
+                        },
+                        "value": 7.5
+                      }
+                    ],
+                    "name": "assistsPerGame",
+                    "shortDisplayName": "APG"
+                  },
+                  {
+                    "abbreviation": "RAT",
+                    "displayName": "Rating",
+                    "leaders": [
+                      {
+                        "athlete": {
+                          "active": true,
+                          "displayName": "Deni Avdija",
+                          "fullName": "Deni Avdija",
+                          "headshot": "https://a.espncdn.com/i/headshots/nba/players/full/4683021.png",
+                          "id": "4683021",
+                          "jersey": "8",
+                          "links": [
+                            {
+                              "href": "https://www.espn.com/nba/player/_/id/4683021/deni-avdija",
+                              "rel": [
+                                "playercard",
+                                "desktop",
+                                "athlete"
+                              ]
+                            }
+                          ],
+                          "position": {
+                            "abbreviation": "F"
+                          },
+                          "shortName": "D. Avdija",
+                          "team": {
+                            "id": "22"
+                          }
+                        },
+                        "displayValue": "22.0 PPG, 8.5 RPG, 5.0 APG, 1.5 SPG",
+                        "team": {
+                          "id": "22"
+                        },
+                        "value": 38.07500076293945
+                      }
+                    ],
+                    "name": "rating",
+                    "shortDisplayName": "RAT"
+                  }
+                ],
+                "order": 1,
+                "records": [
+                  {
+                    "abbreviation": "Total",
+                    "name": "overall",
+                    "summary": "2-0",
+                    "type": "total"
+                  },
+                  {
+                    "name": "Home",
+                    "summary": "1-0",
+                    "type": "home"
+                  },
+                  {
+                    "name": "Road",
+                    "summary": "1-0",
+                    "type": "road"
+                  }
+                ],
+                "score": "0",
+                "statistics": [
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "101",
+                    "name": "rebounds"
+                  },
+                  {
+                    "abbreviation": "REB",
+                    "displayValue": "50.5",
+                    "name": "avgRebounds"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "62",
+                    "name": "assists",
+                    "rankDisplayValue": "15th"
+                  },
+                  {
+                    "abbreviation": "FGA",
+                    "displayValue": "190",
+                    "name": "fieldGoalsAttempted",
+                    "rankDisplayValue": "15th"
+                  },
+                  {
+                    "abbreviation": "FGM",
+                    "displayValue": "91",
+                    "name": "fieldGoalsMade",
+                    "rankDisplayValue": "15th"
+                  },
+                  {
+                    "abbreviation": "FG%",
+                    "displayValue": "47.9",
+                    "name": "fieldGoalPct",
+                    "rankDisplayValue": "7th"
+                  },
+                  {
+                    "abbreviation": "FT%",
+                    "displayValue": "77.1",
+                    "name": "freeThrowPct",
+                    "rankDisplayValue": "8th"
+                  },
+                  {
+                    "abbreviation": "FTA",
+                    "displayValue": "48",
+                    "name": "freeThrowsAttempted",
+                    "rankDisplayValue": "15th"
+                  },
+                  {
+                    "abbreviation": "FTM",
+                    "displayValue": "37",
+                    "name": "freeThrowsMade",
+                    "rankDisplayValue": "15th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "252",
+                    "name": "points",
+                    "rankDisplayValue": "15th"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "34.7",
+                    "name": "threePointPct",
+                    "rankDisplayValue": "7th"
+                  },
+                  {
+                    "abbreviation": "3PA",
+                    "displayValue": "95",
+                    "name": "threePointFieldGoalsAttempted",
+                    "rankDisplayValue": "13th"
+                  },
+                  {
+                    "abbreviation": "3PM",
+                    "displayValue": "33",
+                    "name": "threePointFieldGoalsMade",
+                    "rankDisplayValue": "Tied-12th"
+                  },
+                  {
+                    "abbreviation": "PTS",
+                    "displayValue": "126.0",
+                    "name": "avgPoints"
+                  },
+                  {
+                    "abbreviation": "AST",
+                    "displayValue": "31.0",
+                    "name": "avgAssists"
+                  },
+                  {
+                    "abbreviation": "3P%",
+                    "displayValue": "34.7",
+                    "name": "threePointFieldGoalPct"
+                  }
+                ],
+                "team": {
+                  "abbreviation": "POR",
+                  "alternateColor": "000000",
+                  "color": "e03a3e",
+                  "displayName": "Portland Trail Blazers",
+                  "id": "22",
+                  "isActive": true,
+                  "links": [
+                    {
+                      "href": "https://www.espn.com/nba/team/_/name/por/portland-trail-blazers",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Clubhouse"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:22&section=roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "roster",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Roster"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/stats/_/name/por/portland-trail-blazers",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:22&section=stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Statistics"
+                    },
+                    {
+                      "href": "https://www.espn.com/nba/team/schedule/_/name/por",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    },
+                    {
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:22&section=scores",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "text": "Schedule"
+                    }
+                  ],
+                  "location": "Portland",
+                  "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/por.png",
+                  "name": "Trail Blazers",
+                  "shortDisplayName": "Trail Blazers",
+                  "uid": "s:40~l:46~t:22",
+                  "venue": {
+                    "id": "3423"
+                  }
+                },
+                "type": "team",
+                "uid": "s:40~l:46~t:22"
+              }
+            ],
+            "conferenceCompetition": false,
+            "date": "2026-10-28T03:00Z",
+            "format": {
+              "regulation": {
+                "periods": 4
+              }
+            },
+            "geoBroadcasts": [
+              {
+                "lang": "en",
+                "market": {
+                  "id": "1",
+                  "type": "National"
+                },
+                "media": {
+                  "shortName": "Peacock"
+                },
+                "region": "us",
+                "type": {
+                  "id": "4",
+                  "shortName": "Streaming"
+                }
+              },
+              {
+                "lang": "en",
+                "market": {
+                  "id": "1",
+                  "type": "National"
+                },
+                "media": {
+                  "shortName": "NBC"
+                },
+                "region": "us",
+                "type": {
+                  "id": "1",
+                  "shortName": "TV"
+                }
+              },
+              {
+                "lang": "en",
+                "market": {
+                  "id": "2",
+                  "type": "Home"
+                },
+                "media": {
+                  "shortName": "Spectrum Sports Net"
+                },
+                "region": "us",
+                "type": {
+                  "id": "1",
+                  "shortName": "TV"
+                }
+              },
+              {
+                "lang": "en",
+                "market": {
+                  "id": "2",
+                  "type": "Home"
+                },
+                "media": {
+                  "shortName": "Spectrum Sports Net +"
+                },
+                "region": "us",
+                "type": {
+                  "id": "4",
+                  "shortName": "Streaming"
+                }
+              }
+            ],
+            "highlights": [],
+            "id": "401909880",
+            "neutralSite": false,
+            "notes": [],
+            "odds": [
+              {
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "team": {
+                    "abbreviation": "POR",
+                    "displayName": "Portland Trail Blazers",
+                    "id": "22",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+                    "name": "Trail Blazers",
+                    "uid": "s:40~l:46~t:22"
+                  },
+                  "underdog": true
+                },
+                "details": "LAL -1.5",
+                "footer": {
+                  "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+                },
+                "header": {
+                  "logo": {
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg"
+                  },
+                  "text": "Game Odds"
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "team": {
+                    "abbreviation": "LAL",
+                    "displayName": "Los Angeles Lakers",
+                    "id": "13",
+                    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lal.png",
+                    "name": "Lakers",
+                    "uid": "s:40~l:46~t:13"
+                  },
+                  "underdog": false
+                },
+                "link": {
+                  "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901566",
+                  "isExternal": true,
+                  "isPremium": false,
+                  "language": "en-US",
+                  "rel": [
+                    "game",
+                    "desktop",
+                    "bets"
+                  ],
+                  "shortText": "Game",
+                  "text": "See More Odds",
+                  "tracking": {
+                    "campaign": "betting-integrations",
+                    "tags": {
+                      "betSide": "none",
+                      "betType": "straight",
+                      "gameId": 401909880,
+                      "league": "nba",
+                      "sport": "basketball"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "away": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901566%3Foutcomes%3D0ML86931397_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "away",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Away Bet",
+                        "text": "Away Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "away",
+                            "betType": "straight",
+                            "gameId": 401909880,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "+105"
+                    },
+                    "open": {
+                      "odds": "+120"
+                    }
+                  },
+                  "displayName": "Moneyline",
+                  "home": {
+                    "close": {
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901566%3Foutcomes%3D0ML86931397_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "home",
+                          "desktop",
+                          "bets",
+                          "draft-kings"
+                        ],
+                        "shortText": "Home Bet",
+                        "text": "Home Bet",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betSide": "home",
+                            "betType": "straight",
+                            "gameId": 401909880,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-125"
+                    },
+                    "open": {
+                      "odds": "-142"
+                    }
+                  },
+                  "shortDisplayName": "ML"
+                },
+                "overUnder": 233.5,
+                "pointSpread": {
+                  "away": {
+                    "close": {
+                      "line": "+1.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901566%3Foutcomes%3D0HC86931397P150_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "awaySpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Away Point Spread",
+                        "text": "Away Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:POR+1.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909880,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-105"
+                    },
+                    "open": {
+                      "line": "+2.5",
+                      "odds": "-105"
+                    }
+                  },
+                  "displayName": "Spread",
+                  "home": {
+                    "close": {
+                      "line": "-1.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901566%3Foutcomes%3D0HC86931397N150_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "homeSpread",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Home Point Spread",
+                        "text": "Home Point Spread",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Spread:LAL-1.5",
+                            "betSide": "none",
+                            "betType": "straight",
+                            "gameId": 401909880,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-115"
+                    },
+                    "open": {
+                      "line": "-2.5",
+                      "odds": "-115"
+                    }
+                  },
+                  "shortDisplayName": "Spread"
+                },
+                "provider": {
+                  "id": "100",
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ],
+                  "name": "Draft Kings",
+                  "priority": 1
+                },
+                "spread": -1.5,
+                "total": {
+                  "displayName": "Total",
+                  "over": {
+                    "close": {
+                      "line": "o233.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901566%3Foutcomes%3D0OU86931397O23350_1",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "over",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Over Odds",
+                        "text": "Over Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Over:233.5",
+                            "betSide": "over",
+                            "betType": "straight",
+                            "gameId": 401909880,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-108"
+                    },
+                    "open": {
+                      "line": "o236.5",
+                      "odds": "-110"
+                    }
+                  },
+                  "shortDisplayName": "Total",
+                  "under": {
+                    "close": {
+                      "line": "u233.5",
+                      "link": {
+                        "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34901566%3Foutcomes%3D0OU86931397U23350_3",
+                        "isExternal": true,
+                        "isPremium": false,
+                        "language": "en-US",
+                        "rel": [
+                          "under",
+                          "desktop",
+                          "bets"
+                        ],
+                        "shortText": "Under Odds",
+                        "text": "Under Odds",
+                        "tracking": {
+                          "campaign": "betting-integrations",
+                          "tags": {
+                            "betDetails": "Under:233.5",
+                            "betSide": "under",
+                            "betType": "straight",
+                            "gameId": 401909880,
+                            "league": "nba",
+                            "sport": "basketball"
+                          }
+                        }
+                      },
+                      "odds": "-112"
+                    },
+                    "open": {
+                      "line": "u236.5",
+                      "odds": "-110"
+                    }
+                  }
+                }
+              }
+            ],
+            "playByPlayAvailable": false,
+            "recent": false,
+            "startDate": "2026-10-28T03:00Z",
+            "status": {
+              "clock": 0.0,
+              "displayClock": "0.0",
+              "period": 0,
+              "type": {
+                "completed": false,
+                "description": "Scheduled",
+                "detail": "Tue, October 27th at 11:00 PM EDT",
+                "id": "1",
+                "name": "STATUS_SCHEDULED",
+                "shortDetail": "10/27 - 11:00 PM EDT",
+                "state": "pre"
+              }
+            },
+            "tickets": [
+              {
+                "links": [
+                  {
+                    "href": "https://www.vividseats.com/los-angeles-lakers-tickets-cryptocom-arena-10-27-2026/production/7433104?wsUser=717"
+                  },
+                  {
+                    "href": "https://www.vividseats.com/crypto-arena-tickets/venue/1604?wsUser=717"
+                  }
+                ],
+                "numberAvailable": 1356,
+                "summary": "Tickets as low as $74"
+              }
+            ],
+            "timeValid": true,
+            "type": {
+              "abbreviation": "STD",
+              "id": "1"
+            },
+            "uid": "s:40~l:46~e:401909880~c:401909880",
+            "venue": {
+              "address": {
+                "city": "Los Angeles",
+                "state": "CA"
+              },
+              "fullName": "crypto.com Arena",
+              "id": "1841",
+              "indoor": true
+            }
+          }
+        ],
+        "date": "2026-10-28T03:00Z",
+        "id": "401909880",
+        "links": [
+          {
+            "href": "https://www.espn.com/nba/game/_/gameId/401909880/trail-blazers-lakers",
+            "isExternal": false,
+            "isPremium": false,
+            "language": "en-US",
+            "rel": [
+              "summary",
+              "desktop",
+              "event"
+            ],
+            "shortText": "Gamecast",
+            "text": "Gamecast"
+          }
+        ],
+        "name": "Portland Trail Blazers at Los Angeles Lakers",
+        "season": {
+          "slug": "regular-season",
+          "type": 2,
+          "year": 2027
+        },
+        "shortName": "POR @ LAL",
+        "status": {
+          "clock": 0.0,
+          "displayClock": "0.0",
+          "period": 0,
+          "type": {
+            "completed": false,
+            "description": "Scheduled",
+            "detail": "Tue, October 27th at 11:00 PM EDT",
+            "id": "1",
+            "name": "STATUS_SCHEDULED",
+            "shortDetail": "10/27 - 11:00 PM EDT",
+            "state": "pre"
+          }
+        },
+        "uid": "s:40~l:46~e:401909880"
+      }
+    ],
+    "leagues": [
+      {
+        "abbreviation": "NBA",
+        "calendar": [
+          "2026-10-03T07:00Z",
+          "2026-10-04T07:00Z",
+          "2026-10-05T07:00Z",
+          "2026-10-06T07:00Z",
+          "2026-10-07T07:00Z",
+          "2026-10-08T07:00Z",
+          "2026-10-09T07:00Z",
+          "2026-10-10T07:00Z",
+          "2026-10-11T07:00Z",
+          "2026-10-12T07:00Z",
+          "2026-10-13T07:00Z",
+          "2026-10-14T07:00Z",
+          "2026-10-15T07:00Z",
+          "2026-10-16T07:00Z",
+          "2026-10-20T07:00Z",
+          "2026-10-21T07:00Z",
+          "2026-10-22T07:00Z",
+          "2026-10-23T07:00Z",
+          "2026-10-24T07:00Z",
+          "2026-10-25T07:00Z",
+          "2026-10-26T07:00Z",
+          "2026-10-27T07:00Z",
+          "2026-10-28T07:00Z",
+          "2026-10-29T07:00Z",
+          "2026-10-30T07:00Z",
+          "2026-10-31T07:00Z",
+          "2026-11-01T07:00Z",
+          "2026-11-02T08:00Z",
+          "2026-11-04T08:00Z",
+          "2026-11-05T08:00Z",
+          "2026-11-06T08:00Z",
+          "2026-11-07T08:00Z",
+          "2026-11-08T08:00Z",
+          "2026-11-09T08:00Z",
+          "2026-11-10T08:00Z",
+          "2026-11-11T08:00Z",
+          "2026-11-12T08:00Z",
+          "2026-11-13T08:00Z",
+          "2026-11-14T08:00Z",
+          "2026-11-15T08:00Z",
+          "2026-11-16T08:00Z",
+          "2026-11-17T08:00Z",
+          "2026-11-18T08:00Z",
+          "2026-11-19T08:00Z",
+          "2026-11-20T08:00Z",
+          "2026-11-21T08:00Z",
+          "2026-11-22T08:00Z",
+          "2026-11-23T08:00Z",
+          "2026-11-24T08:00Z",
+          "2026-11-25T08:00Z",
+          "2026-11-27T08:00Z",
+          "2026-11-28T08:00Z",
+          "2026-11-29T08:00Z",
+          "2026-11-30T08:00Z",
+          "2026-12-01T08:00Z",
+          "2026-12-02T08:00Z",
+          "2026-12-03T08:00Z",
+          "2026-12-04T08:00Z",
+          "2026-12-05T08:00Z",
+          "2026-12-08T08:00Z",
+          "2026-12-11T08:00Z",
+          "2026-12-12T08:00Z",
+          "2026-12-13T08:00Z",
+          "2026-12-14T08:00Z",
+          "2026-12-15T08:00Z",
+          "2026-12-16T08:00Z",
+          "2026-12-17T08:00Z",
+          "2026-12-18T08:00Z",
+          "2026-12-19T08:00Z",
+          "2026-12-20T08:00Z",
+          "2026-12-21T08:00Z",
+          "2026-12-22T08:00Z",
+          "2026-12-23T08:00Z",
+          "2026-12-25T08:00Z",
+          "2026-12-26T08:00Z",
+          "2026-12-27T08:00Z",
+          "2026-12-28T08:00Z",
+          "2026-12-29T08:00Z",
+          "2026-12-30T08:00Z",
+          "2026-12-31T08:00Z",
+          "2027-01-01T08:00Z",
+          "2027-01-02T08:00Z",
+          "2027-01-03T08:00Z",
+          "2027-01-04T08:00Z",
+          "2027-01-05T08:00Z",
+          "2027-01-06T08:00Z",
+          "2027-01-07T08:00Z",
+          "2027-01-08T08:00Z",
+          "2027-01-09T08:00Z",
+          "2027-01-10T08:00Z",
+          "2027-01-11T08:00Z",
+          "2027-01-12T08:00Z",
+          "2027-01-13T08:00Z",
+          "2027-01-14T08:00Z",
+          "2027-01-15T08:00Z",
+          "2027-01-16T08:00Z",
+          "2027-01-17T08:00Z",
+          "2027-01-18T08:00Z",
+          "2027-01-19T08:00Z",
+          "2027-01-20T08:00Z",
+          "2027-01-21T08:00Z",
+          "2027-01-22T08:00Z",
+          "2027-01-23T08:00Z",
+          "2027-01-24T08:00Z",
+          "2027-01-25T08:00Z",
+          "2027-01-26T08:00Z",
+          "2027-01-27T08:00Z",
+          "2027-01-28T08:00Z",
+          "2027-01-29T08:00Z",
+          "2027-01-30T08:00Z",
+          "2027-01-31T08:00Z",
+          "2027-02-01T08:00Z",
+          "2027-02-02T08:00Z",
+          "2027-02-03T08:00Z",
+          "2027-02-04T08:00Z",
+          "2027-02-05T08:00Z",
+          "2027-02-06T08:00Z",
+          "2027-02-07T08:00Z",
+          "2027-02-08T08:00Z",
+          "2027-02-09T08:00Z",
+          "2027-02-10T08:00Z",
+          "2027-02-11T08:00Z",
+          "2027-02-12T08:00Z",
+          "2027-02-13T08:00Z",
+          "2027-02-14T08:00Z",
+          "2027-02-15T08:00Z",
+          "2027-02-16T08:00Z",
+          "2027-02-17T08:00Z",
+          "2027-02-18T08:00Z",
+          "2027-02-25T08:00Z",
+          "2027-02-26T08:00Z",
+          "2027-02-27T08:00Z",
+          "2027-02-28T08:00Z",
+          "2027-03-01T08:00Z",
+          "2027-03-02T08:00Z",
+          "2027-03-03T08:00Z",
+          "2027-03-04T08:00Z",
+          "2027-03-05T08:00Z",
+          "2027-03-06T08:00Z",
+          "2027-03-07T08:00Z",
+          "2027-03-08T08:00Z",
+          "2027-03-09T08:00Z",
+          "2027-03-10T08:00Z",
+          "2027-03-11T08:00Z",
+          "2027-03-12T08:00Z",
+          "2027-03-13T08:00Z",
+          "2027-03-14T08:00Z",
+          "2027-03-15T07:00Z",
+          "2027-03-16T07:00Z",
+          "2027-03-17T07:00Z",
+          "2027-03-18T07:00Z",
+          "2027-03-19T07:00Z",
+          "2027-03-20T07:00Z",
+          "2027-03-21T07:00Z",
+          "2027-03-22T07:00Z",
+          "2027-03-23T07:00Z",
+          "2027-03-24T07:00Z",
+          "2027-03-25T07:00Z",
+          "2027-03-26T07:00Z",
+          "2027-03-27T07:00Z",
+          "2027-03-28T07:00Z",
+          "2027-03-29T07:00Z",
+          "2027-03-30T07:00Z",
+          "2027-03-31T07:00Z",
+          "2027-04-01T07:00Z",
+          "2027-04-02T07:00Z",
+          "2027-04-03T07:00Z",
+          "2027-04-04T07:00Z",
+          "2027-04-05T07:00Z",
+          "2027-04-06T07:00Z",
+          "2027-04-07T07:00Z",
+          "2027-04-08T07:00Z",
+          "2027-04-09T07:00Z",
+          "2027-04-11T07:00Z"
+        ],
+        "calendarEndDate": "2027-06-26T06:59Z",
+        "calendarIsWhitelist": true,
+        "calendarStartDate": "2026-09-30T07:00Z",
+        "calendarType": "day",
+        "id": "46",
+        "logos": [
+          {
+            "alt": "",
+            "height": 500,
+            "href": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+            "lastUpdated": "2018-06-05T12:07Z",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "width": 500
+          },
+          {
+            "alt": "",
+            "height": 500,
+            "href": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/leagues/500-dark/nba.png&w=500&h=500&transparent=true",
+            "lastUpdated": "2026-10-27T09:08Z",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "width": 500
+          }
+        ],
+        "name": "National Basketball Association",
+        "season": {
+          "displayName": "2026-27",
+          "endDate": "2027-06-26T06:59Z",
+          "startDate": "2026-09-30T07:00Z",
+          "type": {
+            "abbreviation": "reg",
+            "id": "2",
+            "name": "Regular Season",
+            "type": 2
+          },
+          "year": 2027
+        },
+        "slug": "nba",
+        "uid": "s:40~l:46"
+      }
+    ],
+    "provider": {
+      "displayName": "Draft Kings",
+      "id": "100",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+          "rel": [
+            "light"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+          "rel": [
+            "dark"
+          ]
+        }
+      ],
+      "name": "Draft Kings",
+      "priority": 1
+    }
+  },
+  "received_at": "2026-10-27T21:39:47.322493+00:00",
+  "requested_at": "2026-10-27T21:39:47.211494+00:00",
+  "requested_date": "2026-10-27",
+  "schema": "espn-nba-schedule-v1",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261027"
+}
