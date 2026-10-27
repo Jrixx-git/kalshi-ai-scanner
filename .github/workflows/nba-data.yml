@@ -1,0 +1,47 @@
+
+name: NBA Historical Data Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  nba-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download NBA games
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+        run: |
+          python nba_data.py \
+            --season 2024 \
+            --max-pages 2 \
+            --output nba_games.csv
+
+      - name: Inspect downloaded dataset
+        run: |
+          python - <<'PY'
+          import csv
+          with open("nba_games.csv") as f:
+              rows = list(csv.DictReader(f))
+          print("Completed NBA games:", len(rows))
+          if not rows:
+              raise SystemExit("No completed games returned")
+          PY
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nba-historical-games
+          path: nba_games.csv
+          retention-days: 7
