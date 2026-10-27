@@ -1,0 +1,65 @@
+{
+  "daily": {
+    "2026-10-27": {
+      "accuracy": null,
+      "brier": null,
+      "log_loss": null,
+      "predicted": 4,
+      "scored": 0,
+      "statuses": {
+        "unknown": 4
+      }
+    }
+  },
+  "games": [
+    {
+      "archive": "b11e31933dbda09a62d6b59865ade009483ce3ca6cb44925c349c9c5fa46ccc8",
+      "date": "2026-10-27",
+      "game_id": "21717971",
+      "source_commit": "e58267c2a79ca43625a6cb7012c89d5940dd1bc6",
+      "status": "unknown"
+    },
+    {
+      "archive": "b11e31933dbda09a62d6b59865ade009483ce3ca6cb44925c349c9c5fa46ccc8",
+      "date": "2026-10-27",
+      "game_id": "21717972",
+      "source_commit": "e58267c2a79ca43625a6cb7012c89d5940dd1bc6",
+      "status": "unknown"
+    },
+    {
+      "archive": "b11e31933dbda09a62d6b59865ade009483ce3ca6cb44925c349c9c5fa46ccc8",
+      "date": "2026-10-27",
+      "game_id": "21717973",
+      "source_commit": "e58267c2a79ca43625a6cb7012c89d5940dd1bc6",
+      "status": "unknown"
+    },
+    {
+      "archive": "b11e31933dbda09a62d6b59865ade009483ce3ca6cb44925c349c9c5fa46ccc8",
+      "date": "2026-10-27",
+      "game_id": "21717974",
+      "source_commit": "e58267c2a79ca43625a6cb7012c89d5940dd1bc6",
+      "status": "unknown"
+    }
+  ],
+  "result_observations": {
+    "21717971": "2026-10-27T20:42:03.684097+00:00",
+    "21717972": "2026-10-27T20:42:16.788686+00:00",
+    "21717973": "2026-10-27T20:42:29.925839+00:00",
+    "21717974": "2026-10-27T20:42:43.063172+00:00"
+  },
+  "result_snapshot_sha256": "eaa4c492b64b40107b14fe59cac1896b0c654e1a3f72e934054d249e99a8d425",
+  "summary": {
+    "accuracy": null,
+    "brier": null,
+    "convention": "One home-win Bernoulli per game; p=0.5 picks home; log loss clips at 1e-15",
+    "live_trading_enabled": false,
+    "log_loss": null,
+    "predicted": 4,
+    "retrieved_at": "2026-10-27T20:42:43.063192+00:00",
+    "scored": 0,
+    "statuses": {
+      "unknown": 4
+    },
+    "version": "0.7"
+  }
+}
