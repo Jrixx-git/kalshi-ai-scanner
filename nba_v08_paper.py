@@ -7,11 +7,12 @@ from pathlib import Path
 from kalshi_orderbook import quote_from_orderbook
 from nba_forward_test import predictions
 from nba_v08_capture import capture, get
-from nba_v08_valuation import timestamp, value, TEAMS, ALIASES
+from nba_v08_valuation import timestamp, value, match, taker_fee, TEAMS, ALIASES
+from nba_v08_schedule import capture_schedule, verify
 from paper_engine import PaperEngine
 
 
-def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, now=None):
+def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, schedule_paths=None, now=None):
     """Evaluate immutable snapshots against the first sealed v0.7 forecast per game."""
     initial_now = now or datetime.now(timezone.utc)
     path = Path(snapshot_path)
@@ -25,18 +26,60 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, now=N
     if timestamp(snap['completed_at']) > initial_now or timestamp(snap['started_at']) > timestamp(snap['completed_at']):
         raise ValueError('Invalid snapshot timestamps')
     games = predictions(forecast_root)
+    game_keys = {}
+    for gid, (game, _, _) in games.items():
+        try:
+            key = (game['date'], *sorted((str(game['home_team_id']), str(game['away_team_id']))))
+            game_keys.setdefault(key, []).append(gid)
+        except KeyError:
+            continue
+    schedules = {}
+    for date, schedule_path in (schedule_paths or {}).items():
+        p = Path(schedule_path); raw = p.read_bytes(); digest = hashlib.sha256(raw).hexdigest()
+        if p.stem != digest: raise ValueError('Schedule digest mismatch')
+        schedules[date] = (json.loads(raw), digest)
     engine = PaperEngine(ledger_path)
-    summary = {'games':len(games),'matched_signals':0,'entries':0,'rejected':0,'snapshot':snapshot_sha}
+    summary = {'games':len(games),'matched_signals':0,'entries':0,'rejected':0,'snapshot':snapshot_sha,'decisions':[]}
     try:
         for gid, (game, archive, manifest) in sorted(games.items()):
             decision_time = now or datetime.now(timezone.utc)
+            try:
+                key = (game['date'], *sorted((str(game['home_team_id']),str(game['away_team_id']))))
+                if len(game_keys[key]) != 1:
+                    summary['rejected'] += 1
+                    summary['decisions'].append({'game_id':gid,'reason':'duplicate_forecast_identity'})
+                    continue
+            except KeyError:
+                summary['rejected'] += 1
+                summary['decisions'].append({'game_id':gid,'reason':'missing_forecast_identity'})
+                continue
             if not 0 <= (decision_time - timestamp(snap['started_at'])).total_seconds() <= 30:
                 summary['rejected'] += 1
+                summary['decisions'].append({'game_id':gid,'reason':'stale_market_snapshot'})
                 continue
             if timestamp(manifest['observed_at']) > timestamp(snap['started_at']) or timestamp(snap['started_at']) >= timestamp(game['tipoff_utc']):
+                summary['decisions'].append({'game_id':gid,'reason':'late_or_unsealed_forecast'})
+                continue
+            try:
+                schedule, schedule_hash = schedules[game['date']]
+                if timestamp(schedule['received_at']) > timestamp(snap['started_at']): raise ValueError('Schedule observed after market snapshot')
+                identity = verify(game, schedule, decision_time)
+                home = ALIASES.get(game['home_team'], game['home_team']); away = ALIASES.get(game['away_team'], game['away_team'])
+                date = datetime.strptime(game['date'], '%Y-%m-%d')
+                event = 'KXNBAGAME-' + date.strftime('%y%b%d').upper() + TEAMS[away][0] + TEAMS[home][0]
+                contracts = [m for m in snap['markets'] if m.get('event_ticker') == event]
+                required = {event+'-'+TEAMS[home][0], event+'-'+TEAMS[away][0]}
+                if len(contracts) != 2 or {m.get('ticker') for m in contracts} != required:
+                    raise ValueError('Duplicate, missing or ambiguous contract')
+                for market in contracts: match(game, market, schedule=schedule, now=decision_time)
+            except (KeyError, ValueError, TypeError, ArithmeticError) as exc:
+                summary['rejected'] += 1
+                summary['decisions'].append({'game_id':gid,'reason':'identity_rejected','detail':str(exc)})
                 continue
             eligible = []
-            for market in snap['markets']:
+            assessments = []
+            had_book = False; had_positive = False
+            for market in contracts:
                 ticker = market.get('ticker')
                 book = snap['orderbooks'].get(ticker)
                 if not book or ticker in snap['errors']:
@@ -47,23 +90,41 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, now=N
                     if not timestamp(snap['started_at']) <= observed <= received <= timestamp(snap['completed_at']):
                         continue
                     quote = quote_from_orderbook(ticker, book['raw'], book['observed_at'])
-                    signal = value(game, market, quote, series, now=decision_time)
+                    had_book = True
+                    selected = match(game, market, schedule=schedule, now=decision_time)
+                    hp = Decimal(str(game['home_win_probability']))
+                    yes_probability = hp if selected == home else 1-hp
+                    info = {'ticker':ticker, 'occurrence_datetime':market.get('occurrence_datetime'), 'quote_age_seconds':(decision_time-observed).total_seconds(), 'sides':[]}
+                    for side, probability in [('YES',yes_probability),('NO',1-yes_probability)]:
+                        k=side.lower()
+                        if k+'_ask' in quote:
+                            ask=Decimal(quote[k+'_ask']); assumed=ask+Decimal('.01')
+                            item={'side':side,'model_probability':str(probability),'ask':str(ask),'size':quote[k+'_ask_size']}
+                            if 0 < assumed < 1 and series.get('fee_multiplier') == 1 and series.get('fee_type') in ('quadratic','quadratic_with_maker_fees'):
+                                item['net_edge']=str(probability-assumed-taker_fee(assumed,1,1))
+                            info['sides'].append(item)
+                    assessments.append(info)
+                    had_positive = had_positive or value(game, market, quote, series, now=decision_time, schedule=schedule, min_edge=Decimal('0.000001')) is not None
+                    signal = value(game, market, quote, series, now=decision_time, schedule=schedule)
                     if signal:
                         eligible.append((Decimal(signal['net_edge']), ticker, signal, market, quote))
                 except (KeyError, ValueError, TypeError, ArithmeticError):
                     continue
             if not eligible:
                 summary['rejected'] += 1
+                summary['decisions'].append({'game_id':gid,'reason':'no_valid_quote' if not had_book else ('edge_below_threshold' if had_positive else 'no_positive_net_edge_or_invalid_quote'),'identity':identity,'assessments':assessments})
                 continue
             _, ticker, signal, market, quote = max(eligible, key=lambda x:(x[0],x[1]))
             summary['matched_signals'] += 1
             evidence = {'game_id':gid, 'archive':archive, 'forecast':game, 'snapshot_sha256':snapshot_sha,
                         'market':market, 'quote':quote, 'series':series, 'signal':signal,
+                        'schedule_sha256':schedule_hash, 'schedule_identity':identity,
                         'decision_at':decision_time.isoformat(), 'paper_only':True}
-            ok, _ = engine.enter(signal_id='nba-game:'+gid, ticker=ticker, side=signal['side'],
+            ok, reason = engine.enter(signal_id='nba-game:'+gid, ticker=ticker, side=signal['side'],
                                  ask=signal['assumed_price'], ask_size=signal['size'], contracts=1,
                                  fee=signal['fee'], day=decision_time.date().isoformat(), evidence=evidence)
             summary['entries'] += int(ok)
+            summary['decisions'].append({'game_id':gid,'ticker':ticker,'identity':identity,'signal':signal,'assessments':assessments,'reason':'paper_entry' if ok else reason})
         return summary
     finally:
         engine.close()
@@ -101,6 +162,7 @@ def cycle(root, forecast_root='forward_test/state'):
     series = get('/series/KXNBAGAME')['series']
     now = datetime.now(timezone.utc)
     events = set()
+    dates = set()
     for game, _, manifest in predictions(forecast_root).values():
         try:
             home = ALIASES.get(game['home_team'], game['home_team'])
@@ -108,10 +170,12 @@ def cycle(root, forecast_root='forward_test/state'):
             if timestamp(manifest['observed_at']) < now < timestamp(game['tipoff_utc']) and home != away:
                 date = datetime.strptime(game['date'], '%Y-%m-%d')
                 events.add('KXNBAGAME-' + date.strftime('%y%b%d').upper() + TEAMS[away][0] + TEAMS[home][0])
+                dates.add(game['date'])
         except (KeyError, ValueError, TypeError):
             continue
+    schedule_paths = {date:capture_schedule(date, root / 'schedules') for date in sorted(dates)}
     target, _, _, target_errors = capture(root / 'snapshots', event_filter=events)
-    entries = process_snapshot(target, forecast_root, ledger, series)
+    entries = process_snapshot(target, forecast_root, ledger, series, schedule_paths=schedule_paths)
     engine = PaperEngine(ledger)
     try:
         account = engine.account()

@@ -13,24 +13,31 @@ class LifecycleTests(unittest.TestCase):
     def setUp(self):
         sample = ValuationTests(); sample.setUp()
         self.game, self.market, self.now, self.series = sample.game, sample.market, sample.now, sample.series
+        self.game.update(home_team_id='2', away_team_id='3')
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
         self.ledger = self.root / 'ledger.db'
         self.bundle = {'observed_at': (self.now-timedelta(seconds=10)).isoformat()}
         self.forecasts = {'1': (self.game, 'a'*64, self.bundle)}
+        stamp=(self.now-timedelta(seconds=7)).isoformat()
+        self.schedule={'schema':'espn-nba-schedule-v1','requested_date':'2026-10-27','requested_at':stamp,'received_at':stamp,
+          'source':'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261027',
+          'payload':{'events':[{'id':'401909877','date':'2026-10-27T23:30:00Z','status':{'type':{'state':'pre','completed':False,'name':'STATUS_SCHEDULED'}},'competitions':[{'id':'401909877','competitors':[{'homeAway':'home','team':{'id':'2','abbreviation':'BOS'}},{'homeAway':'away','team':{'id':'17','abbreviation':'BKN'}}]}]}]}}
+        data=json.dumps(self.schedule,sort_keys=True).encode(); self.schedule_path=self.root/(hashlib.sha256(data).hexdigest()+'.json'); self.schedule_path.write_bytes(data)
     def tearDown(self): self.tmp.cleanup()
     def snapshot(self, market=None, *, old=False):
         stamp = (self.now-timedelta(seconds=40 if old else 5)).isoformat()
         market = market or self.market
+        away = dict(self.market, ticker='KXNBAGAME-26OCT27BKNBOS-BKN', title='Brooklyn wins', yes_sub_title='Brooklyn', rules_primary='If Brooklyn wins the Brooklyn vs Boston Pro Basketball game originally scheduled for Oct 27, 2026, then the market resolves to Yes.')
         snap = {'schema':'nba-kalshi-capture-v1','started_at':stamp,'completed_at':stamp,
-                'series':'KXNBAGAME','live_trading':False,'markets':[market],'errors':{},
-                'orderbooks':{market['ticker']:{'observed_at':stamp,'received_at':stamp,'raw':{'orderbook_fp':{'yes_dollars':[['.47','10']], 'no_dollars':[['.50','10']]}}}}}
+                'series':'KXNBAGAME','live_trading':False,'markets':[market,away],'errors':{},
+                'orderbooks':{m['ticker']:{'observed_at':stamp,'received_at':stamp,'raw':{'orderbook_fp':{'yes_dollars':[['.47','10']], 'no_dollars':[['.50','10']]}}} for m in [market,away]}}
         data = json.dumps(snap,sort_keys=True).encode()
         path = self.root / (hashlib.sha256(data).hexdigest()+'.json'); path.write_bytes(data)
         return path
     def process(self,path):
         with patch('nba_v08_paper.predictions',return_value=self.forecasts):
-            return process_snapshot(path,self.root,self.ledger,self.series,now=self.now)
+            return process_snapshot(path,self.root,self.ledger,self.series,schedule_paths={'2026-10-27':self.schedule_path},now=self.now)
     def test_entry_settlement_restart_and_idempotency(self):
         path = self.snapshot()
         self.assertEqual(self.process(path)['entries'],1)
@@ -46,7 +53,7 @@ class LifecycleTests(unittest.TestCase):
         self.assertTrue(all(evidence)); engine.close()
         self.assertEqual(self.process(path)['entries'],0)
     def test_ambiguous_time_and_stale_snapshot_rejected(self):
-        bad = dict(self.market, occurrence_datetime='2026-10-28T02:30:00Z')
+        bad = dict(self.market, ticker='KXNBAGAME-26OCT27BKNBOS-WRONG')
         self.assertEqual(self.process(self.snapshot(bad))['entries'],0)
         self.assertEqual(self.process(self.snapshot(old=True))['entries'],0)
     def test_scalar_fair_value_settlement(self):
@@ -68,5 +75,17 @@ class LifecycleTests(unittest.TestCase):
     def test_snapshot_tampering_rejected(self):
         path=self.snapshot(); path.write_text('{}')
         with self.assertRaises(ValueError): self.process(path)
+    def test_duplicate_contracts_rejected(self):
+        path=self.snapshot(); data=json.loads(path.read_text())
+        data['markets'].append(dict(data['markets'][0]))
+        raw=json.dumps(data,sort_keys=True).encode(); path=self.root/(hashlib.sha256(raw).hexdigest()+'.json'); path.write_bytes(raw)
+        result=self.process(path)
+        self.assertEqual(result['entries'],0)
+        self.assertIn('ambiguous', result['decisions'][0]['detail'])
+    def test_duplicate_forecast_game_rejected(self):
+        self.forecasts['2']=(dict(self.game), 'b'*64, self.bundle)
+        result=self.process(self.snapshot())
+        self.assertEqual(result['entries'],0)
+        self.assertEqual([d['reason'] for d in result['decisions']],['duplicate_forecast_identity']*2)
 
 if __name__ == '__main__': unittest.main()

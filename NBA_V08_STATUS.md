@@ -92,3 +92,33 @@ realized drawdown; these are paper estimates and not a mark-to-market balance.
 Holding until finalized settlement is the only supported exit. This is a
 research prototype pending live workflow verification. A complete synthetic
 entry/settlement lifecycle in tests is not a real forward-tested profit record.
+
+## Independent schedule identity gate
+
+The NBA's published October 27 schedule confirms the four archived tipoffs:
+https://www.nba.com/schedule/2026 . Kalshi documents occurrence_datetime as
+when an underlying event occurred, not a scheduled-start field:
+https://docs.kalshi.com/changelog . The observed +3-hour values are preserved
+as secondary metadata, not corrected or assumed to be a game-end timestamp.
+
+For automated entries the bridge now archives a fresh, unauthenticated ESPN NBA
+scoreboard response by date (ESPN is named in Kalshi's NBA game settlement
+sources). It requires one and only one scheduled ESPN event, ESPN numeric team
+IDs and abbreviations, archived BALLDONTLIE team IDs, matching home/away teams,
+league date, and tipoffs within one minute. It rejects stale, missing, ambiguous,
+postponed, or started games. It then requires the exact KXNBAGAME event ticker,
+both and only both team contracts, active binary status, exact selection and
+primary rules, and a recognized fair-price cancellation provision. The two
+sources' team IDs are explicitly mapped; they are never assumed equal. ISO
+instant parsing honors offsets and rejects naive timestamps. The previously
+archived v0.7 predictions are not changed.
+
+The occurrence metadata must remain a valid aware timestamp but is not compared
+to tipoff after the independent schedule gate succeeds. Matching does not imply
+an opportunity: only a sufficiently fresh order book, supported fee schedule,
+positive net edge of at least three cents after one-cent assumed slippage and
+fees, and paper risk checks can create a one-contract simulated position. The
+paper report lists identity evidence, quotes, computed side edges, and rejection
+reasons. Schedule, order book, prediction, and simulated fill evidence are
+archived separately. The default research workflow remains GET-only, and no
+Kalshi authentication or order placement is used.

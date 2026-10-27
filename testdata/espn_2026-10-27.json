@@ -1,0 +1,160 @@
+{
+  "events": [
+    {
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "abbreviation": "BOS",
+                "id": "2"
+              }
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "abbreviation": "BKN",
+                "id": "17"
+              }
+            }
+          ],
+          "id": "401909877"
+        }
+      ],
+      "date": "2026-10-27T23:30Z",
+      "id": "401909877",
+      "status": {
+        "clock": 0.0,
+        "displayClock": "0.0",
+        "period": 0,
+        "type": {
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Tue, October 27th at 7:30 PM EDT",
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "shortDetail": "10/27 - 7:30 PM EDT",
+          "state": "pre"
+        }
+      }
+    },
+    {
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "abbreviation": "NY",
+                "id": "18"
+              }
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "abbreviation": "DET",
+                "id": "8"
+              }
+            }
+          ],
+          "id": "401909878"
+        }
+      ],
+      "date": "2026-10-28T00:00Z",
+      "id": "401909878",
+      "status": {
+        "clock": 0.0,
+        "displayClock": "0.0",
+        "period": 0,
+        "type": {
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Tue, October 27th at 8:00 PM EDT",
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "shortDetail": "10/27 - 8:00 PM EDT",
+          "state": "pre"
+        }
+      }
+    },
+    {
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "abbreviation": "SA",
+                "id": "24"
+              }
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "abbreviation": "SAC",
+                "id": "23"
+              }
+            }
+          ],
+          "id": "401909879"
+        }
+      ],
+      "date": "2026-10-28T00:00Z",
+      "id": "401909879",
+      "status": {
+        "clock": 0.0,
+        "displayClock": "0.0",
+        "period": 0,
+        "type": {
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Tue, October 27th at 8:00 PM EDT",
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "shortDetail": "10/27 - 8:00 PM EDT",
+          "state": "pre"
+        }
+      }
+    },
+    {
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "abbreviation": "LAL",
+                "id": "13"
+              }
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "abbreviation": "POR",
+                "id": "22"
+              }
+            }
+          ],
+          "id": "401909880"
+        }
+      ],
+      "date": "2026-10-28T03:00Z",
+      "id": "401909880",
+      "status": {
+        "clock": 0.0,
+        "displayClock": "0.0",
+        "period": 0,
+        "type": {
+          "completed": false,
+          "description": "Scheduled",
+          "detail": "Tue, October 27th at 11:00 PM EDT",
+          "id": "1",
+          "name": "STATUS_SCHEDULED",
+          "shortDetail": "10/27 - 11:00 PM EDT",
+          "state": "pre"
+        }
+      }
+    }
+  ]
+}

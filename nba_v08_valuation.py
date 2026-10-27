@@ -27,7 +27,7 @@ def timestamp(value):
     return result.astimezone(timezone.utc)
 
 
-def match(game, market):
+def match(game, market, *, schedule=None, now=None):
     """Require exact event, team selection, rules and scheduled start agreement."""
     home = ALIASES.get(game['home_team'], game['home_team'])
     away = ALIASES.get(game['away_team'], game['away_team'])
@@ -42,8 +42,13 @@ def match(game, market):
     name = TEAMS[selected][1]
     if market.get('status') != 'active' or market.get('market_type') != 'binary':
         raise ValueError('Market not active binary')
-    if abs((timestamp(market['occurrence_datetime']) - timestamp(game['tipoff_utc'])).total_seconds()) > 300:
-        raise ValueError('Start time mismatch')
+    if schedule is None:
+        raise ValueError('Independent schedule evidence required')
+    from nba_v08_schedule import verify
+    verify(game, schedule, now or datetime.now(timezone.utc))
+    # occurrence_datetime is not documented as scheduled tipoff. Still require
+    # valid timezone-aware metadata, retain it as evidence, never adjust it.
+    timestamp(market['occurrence_datetime'])
     if market.get('yes_sub_title') != name or market.get('title') != name + ' wins':
         raise ValueError('Market outcome mismatch')
     rule = market.get('rules_primary', '')
@@ -63,11 +68,11 @@ def taker_fee(price, contracts, multiplier):
     return (D('.07') * multiplier * contracts * price * (1-price) * 100).to_integral_value(rounding=ROUND_CEILING) / 100
 
 
-def value(game, market, quote, series, *, now=None, slippage=D('.01'), min_edge=D('.03')):
+def value(game, market, quote, series, *, now=None, slippage=D('.01'), min_edge=D('.03'), schedule=None):
     """One-contract conservative paper signal; quote must be timestamped and fresh."""
     try:
-        selected = match(game, market)
         now = now or datetime.now(timezone.utc)
+        selected = match(game, market, schedule=schedule, now=now)
         if now.tzinfo is None or timestamp(game['tipoff_utc']) <= now:
             raise ValueError('Not pregame')
         age = (now - timestamp(quote['observed_at'])).total_seconds()
