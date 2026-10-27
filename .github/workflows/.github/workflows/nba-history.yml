@@ -1,0 +1,42 @@
+
+name: NBA Multi-Season Backtest
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download historical NBA games
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+        run: |
+          python nba_history.py \
+            --seasons 2022 2023 2024 2025 \
+            --output nba_history.csv
+
+      - name: Run Elo backtest
+        run: |
+          python nba_backtest.py \
+            --input nba_history.csv \
+            --cutoff 2025-10-01
+
+      - name: Upload backtest results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nba-backtest-results
+          path: |
+            nba_history.csv
+            nba_backtest_predictions.csv
+          retention-days: 7
