@@ -141,17 +141,17 @@ class DailyTests(unittest.TestCase):
     def test_full_cli_fetch_to_export_and_failure(self):
         with tempfile.TemporaryDirectory() as directory:
             args=['nba_daily_predictions.py','--date','2026-10-27','--output-dir',directory]
-            with patch.object(sys,'argv',args), patch.dict('os.environ',{'BALLDONTLIE_API_KEY':'test'}), patch.object(daily,'datetime',wraps=datetime) as clock, patch.object(daily,'fetch_games',side_effect=[self.history,self.schedule]) as fetch, patch.object(daily.time,'sleep'):
+            with patch.object(sys,'argv',args), patch.dict('os.environ',{'BALLDONTLIE_API_KEY':'test'}), patch.object(daily,'datetime',wraps=datetime) as clock, patch.object(daily,'load_history',return_value=self.history) as history, patch.object(daily,'fetch_games',return_value=self.schedule) as fetch, patch.object(daily.time,'sleep'):
                 clock.now.return_value=self.now
                 daily.main()
-                self.assertIn(('end_date','2026-10-26'),fetch.call_args_list[0].args[1])
-                self.assertIn(('dates[]','2026-10-27'),fetch.call_args_list[1].args[1])
+                self.assertEqual(history.call_args.args[1],'2026-10-27')
+                self.assertIn(('dates[]','2026-10-27'),fetch.call_args.args[1])
             csv_path=Path(directory)/'nba_predictions_2026-10-27.csv'
             self.assertTrue(csv_path.exists())
             with csv_path.open(newline='') as f: self.assertEqual(len(list(csv.DictReader(f))),1)
         with tempfile.TemporaryDirectory() as directory:
             args=['nba_daily_predictions.py','--date','2026-10-27','--output-dir',directory]
-            with patch.object(sys,'argv',args), patch.object(daily,'datetime',wraps=datetime) as clock, patch.object(daily,'fetch_games',side_effect=RuntimeError('API unavailable')):
+            with patch.object(sys,'argv',args), patch.object(daily,'datetime',wraps=datetime) as clock, patch.object(daily,'load_history',side_effect=RuntimeError('API unavailable')):
                 clock.now.return_value=self.now
                 with self.assertRaises(RuntimeError): daily.main()
             self.assertEqual(list(Path(directory).glob('*.csv')),[])
@@ -159,3 +159,4 @@ class DailyTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

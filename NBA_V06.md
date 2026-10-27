@@ -67,7 +67,21 @@ CSV hash, included history count, last history date, and skip reasons. Zero
 eligible games yields a header-only CSV and explicit zero count, not an error.
 API failures, malformed pagination, repeated cursors, duplicate IDs and page
 limits fail instead of silently exporting partial predictions. Requests pause
-13 seconds between pages, with bounded retries on rate limits/transient failures.
+2 seconds between pages and queries, with bounded retries on rate limits/transient failures.
+Cursor pages accept a positive integer continuation, explicit null, or an omitted
+next_cursor with a valid per_page envelope. Missing/malformed metadata and legacy
+page-number envelopes are rejected rather than interpreted as complete results.
+
+Validated monthly history chunks are saved under `.nba_history_cache/` (override
+with `--cache-dir`). Only fully retrieved, schema-checked chunks are saved, using
+atomic replacement and SHA-256 integrity checks. Old months expire after seven
+days; chunks ending within the last seven days or in the future expire after
+five minutes. Invalid or expired chunks are fetched again; API failure never
+falls back to stale data. Delete this directory to force a full refresh. The
+schedule is always fetched fresh. The two daily workflow entry points restore
+and save this cache, including completed chunks from a failed download. GitHub
+cache eviction can still require a fresh download. Cache checks cannot certify
+provider completeness or detect unpublished historical corrections.
 
 Historical corrections can affect later runs; provider availability timestamps
 and full independent schedule reconciliation remain unverified. The data is an
@@ -77,3 +91,4 @@ rating updates. No odds, fees, liquidity, injuries or market settlement rules
 are modeled. Existing scanner and paper simulator remain separate.
 
 API contract: https://docs.balldontlie.io/ (Games, lifecycle, cursor pagination).
+
