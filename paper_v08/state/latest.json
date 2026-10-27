@@ -1,0 +1,30 @@
+{
+  "bankroll_history": [],
+  "books": 60,
+  "cash": "5000",
+  "collection_errors": 0,
+  "entries": {
+    "entries": 0,
+    "games": 4,
+    "matched_signals": 0,
+    "rejected": 4,
+    "snapshot": "3ff4e198ac4aa222b2207dd76d1609afbe0b5d3c18eee5d5f89e9abaaadf654e"
+  },
+  "generated_at": "2026-10-27T21:24:32.955730+00:00",
+  "markets": 60,
+  "max_realized_drawdown": "0",
+  "open_cost": "0",
+  "open_positions": [],
+  "paper_only": true,
+  "realized_equity": "5000",
+  "reconciliation": {
+    "checked": 0,
+    "errors": 0,
+    "pending": 0,
+    "settled": 0
+  },
+  "settled_trades": 0,
+  "snapshot": "paper_v08/state/snapshots/85bc28595744a1d99705ed1976de0553f8c4b6137ec69bf64f4e10b53f65f7aa.json",
+  "target_collection_errors": 0,
+  "target_snapshot": "paper_v08/state/snapshots/3ff4e198ac4aa222b2207dd76d1609afbe0b5d3c18eee5d5f89e9abaaadf654e.json"
+}
