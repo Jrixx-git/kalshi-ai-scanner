@@ -51,7 +51,18 @@ class PaperEngine:
             if self.db.execute('SELECT 1 FROM trades WHERE signal_id=?', (signal_id,)).fetchone():
                 self.db.execute('ROLLBACK')
                 return False, 'Duplicate signal'
-            ok, reason = check_paper_trade(self.account(day), side, ask, contracts, fee)
+            account = self.account(day)
+            cost = ask * contracts + fee
+            ticker_cost = sum((D(p)*n+D(f) for p,n,f in self.db.execute(
+                "SELECT price,contracts,fee FROM trades WHERE status='OPEN' AND ticker=?", (ticker,))), D('0'))
+            if ticker_cost + cost > D('50'):
+                self.db.execute('ROLLBACK')
+                return False, 'Aggregate ticker loss limit exceeded'
+            # Reserve open stakes against the daily loss budget conservatively.
+            if max(D('0'), -account.realized_daily_pnl) + account.open_exposure + cost > D('150'):
+                self.db.execute('ROLLBACK')
+                return False, 'Daily worst-case loss budget exceeded'
+            ok, reason = check_paper_trade(account, side, ask, contracts, fee)
             if not ok:
                 self.db.execute('ROLLBACK')
                 return False, reason
