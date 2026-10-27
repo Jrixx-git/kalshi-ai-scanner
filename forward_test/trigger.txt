@@ -1,2 +1,2 @@
-2026-10-27
-NBA v0.7 initial research-only forward test
+2026-10-28
+NBA v0.8 paper lifecycle verification
