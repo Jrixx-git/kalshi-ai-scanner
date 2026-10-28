@@ -77,6 +77,11 @@ jobs:
         id: paper_v08
         continue-on-error: true
         run: python nba_v08_paper.py --state-dir paper_v08/state
+      - name: Audit NBA paper portfolio
+        id: paper_audit
+        if: steps.paper_v08.outcome == 'success'
+        continue-on-error: true
+        run: python nba_v08_daily.py
       - name: Persist NBA paper evidence
         if: always() && steps.paper_v08.outcome != 'skipped'
         run: |
@@ -101,4 +106,7 @@ jobs:
         run: exit 1
       - name: Surface paper collection failure
         if: steps.paper_v08.outcome == 'failure'
+        run: exit 1
+      - name: Surface paper audit failure
+        if: steps.paper_audit.outcome == 'failure'
         run: exit 1

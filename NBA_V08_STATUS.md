@@ -143,3 +143,34 @@ Git history is auditable but is not write-once storage against an administrator.
 Synthetic tests exercise the archived real entry with hypothetical finalized
 YES and NO outcomes, idempotent settlement, and immutable report history.
 They do not assert the actual game outcome or guarantee a simulated fill.
+
+## Portfolio audit and daily evidence
+
+`nba_v08_daily.py` separately verifies each entry's sealed forecast and game
+identity, archived schedule and market snapshot hashes, executable depth,
+quote age, assumed slippage, and recorded standard-series fee. It archives
+current public market, top-of-book, and paginated event fee-change observations.
+The independent report is stored at `paper_v08/state/daily.json` with immutable
+content-addressed copies under `audits/`; raw observations are under
+`audit_snapshots/`. The serialized research workflow runs it after paper
+reconciliation and fails visibly if the audit is incomplete.
+
+Unrealized estimates are available only for active books with displayed bid
+depth sufficient for the position. They use the bid minus recorded entry cost,
+before any exit fee and without a guarantee of an actual fill. Separate times
+mean values are not a simultaneous portfolio quote. Team exposure is the sum
+of recorded entry costs for open games involving each team and is not an
+estimate of correlation or a supplementary risk limit. Realized P&L remains
+based on the recorded paper fees.
+
+Kalshi publishes paginated `/events/fee_changes` history. That feed and current
+market observations do not replace event metadata captured at the entry time:
+all existing entry fees remain estimates. A returned empty list is not claimed
+as a guarantee of complete historical fee data. The valuation engine still
+uses the series-level fee assumption for new entries and does not enforce
+market-specific fee overrides; resulting edge and P&L estimates need that
+limitation. The audit does not send orders.
+
+A new entry requires its immutable first forecast to be no more than 24 hours
+old at decision time. Forecasts are not regenerated or replaced to pass the
+check. The existing one-signal-per-game and quote-age checks remain in force.

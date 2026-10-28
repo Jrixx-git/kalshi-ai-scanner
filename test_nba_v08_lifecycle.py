@@ -14,6 +14,7 @@ class LifecycleTests(unittest.TestCase):
         sample = ValuationTests(); sample.setUp()
         self.game, self.market, self.now, self.series = sample.game, sample.market, sample.now, sample.series
         self.game.update(home_team_id='2', away_team_id='3')
+        self.game['generated_at_utc']=(self.now-timedelta(minutes=1)).isoformat()
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)
         self.ledger = self.root / 'ledger.db'
@@ -93,6 +94,11 @@ class LifecycleTests(unittest.TestCase):
         result=self.process(self.snapshot())
         self.assertEqual(result['entries'],0)
         self.assertEqual([d['reason'] for d in result['decisions']],['duplicate_forecast_identity']*2)
+    def test_stale_forecast_rejected(self):
+        self.game['generated_at_utc']=(self.now-timedelta(hours=25)).isoformat()
+        result=self.process(self.snapshot())
+        self.assertEqual(result['entries'],0)
+        self.assertEqual(result['decisions'][0]['reason'],'stale_or_invalid_forecast')
     def test_reports_preserve_previous_decisions(self):
         previous=b'{"legacy":true}\n'
         (self.root/'latest.json').write_bytes(previous)

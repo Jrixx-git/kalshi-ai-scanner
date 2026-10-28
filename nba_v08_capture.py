@@ -16,7 +16,7 @@ SERIES = 'KXNBAGAME'
 
 
 def get(path, params=None, *, attempts=4):
-    if not (path in ('/markets', '/series/KXNBAGAME') or re.fullmatch(r'/markets/KXNBAGAME-[A-Z0-9-]+(?:/orderbook)?', path)):
+    if not (path in ('/markets', '/series/KXNBAGAME', '/events/fee_changes') or re.fullmatch(r'/markets/KXNBAGAME-[A-Z0-9-]+(?:/orderbook)?', path)):
         raise ValueError('Only NBA market GET endpoints allowed')
     url = BASE + path + ('?' + urllib.parse.urlencode(params) if params else '')
     for attempt in range(attempts):

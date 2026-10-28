@@ -74,6 +74,14 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
                 summary['decisions'].append({'game_id':gid,'reason':'late_or_unsealed_forecast'})
                 continue
             try:
+                forecast_age=(decision_time-timestamp(game['generated_at_utc'])).total_seconds()
+                if not 0 <= forecast_age <= 24*3600:
+                    raise ValueError('Forecast older than 24 hours or from future')
+            except (KeyError,ValueError,TypeError):
+                summary['rejected'] += 1
+                summary['decisions'].append({'game_id':gid,'reason':'stale_or_invalid_forecast'})
+                continue
+            try:
                 schedule, schedule_hash = schedules[game['date']]
                 if timestamp(schedule['received_at']) > timestamp(snap['started_at']): raise ValueError('Schedule observed after market snapshot')
                 identity = verify(game, schedule, decision_time)
