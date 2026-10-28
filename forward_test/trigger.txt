@@ -1,2 +1,2 @@
 2026-10-27
-NBA v0.8 portfolio audit verification
+NBA v0.8 event fees and correlation verification
