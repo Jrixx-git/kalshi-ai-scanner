@@ -1,2 +1,2 @@
-2026-10-27
-NBA v0.8 settlement and v0.9 research check 2026-10-28T07:52Z
+2026-10-28
+NBA daily research-only forward-test trigger; live trading disabled.
