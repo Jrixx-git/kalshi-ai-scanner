@@ -13,8 +13,8 @@
     "KXNBAGAME-26OCT28ORLTOR": "0.3900",
     "KXNBAGAME-26OCT28WASCLE": "0.8200"
   },
-  "generated_at": "2026-10-28T08:00:10.578431+00:00",
-  "gross_unrealized_before_exit_fee": "-0.3000",
+  "generated_at": "2026-10-28T16:06:36.153107+00:00",
+  "gross_unrealized_before_exit_fee": "-0.3500",
   "notes": "Cost risk assumes full stake loss and recorded entry fees; prices are observations, not guaranteed fills. Open marks omit exit fees and are not realized P&L. Cross-game dependence is not quantified.",
   "open_positions": 8,
   "paper_only": true,
@@ -98,7 +98,7 @@
       "ticker": "KXNBAGAME-26OCT27PORLAL-POR"
     },
     {
-      "current_evidence_sha256": "d504623cd759b8d3291504352ff78fd65afd90b9592530039047d9fc3b042705",
+      "current_evidence_sha256": "47fb1e963fa3a3cf74359e830563e1907f85732af54eefd49a2b780f7485caea",
       "displayed_depth": 2721,
       "entry_cost": "0.6100",
       "entry_verified": true,
@@ -106,8 +106,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.5700",
-      "mark_observed_at": "2026-10-28T08:00:09.761417+00:00",
+      "mark_bid": "0.5400",
+      "mark_observed_at": "2026-10-28T16:06:35.843943+00:00",
       "market_ask_probability": "0.5800",
       "market_result": "",
       "market_status": "active",
@@ -123,10 +123,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28MIAATL-MIA",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0700"
     },
     {
-      "current_evidence_sha256": "3bed374e868072128c7db0cd0d385adafadbe235a97885990112f9b5c0d382c3",
+      "current_evidence_sha256": "b0dab278be8a57828ace9bdfe9870a955c310c2dbc8181cf74ca3d122e243811",
       "displayed_depth": 8213,
       "entry_cost": "0.8200",
       "entry_verified": true,
@@ -134,8 +134,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.7800",
-      "mark_observed_at": "2026-10-28T08:00:09.755081+00:00",
+      "mark_bid": "0.7700",
+      "mark_observed_at": "2026-10-28T16:06:35.834736+00:00",
       "market_ask_probability": "0.7900",
       "market_result": "",
       "market_status": "active",
@@ -151,10 +151,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28WASCLE-WAS",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0500"
     },
     {
-      "current_evidence_sha256": "42f7d087b61722ea3337d165fd6417f7839d8e49d3de213a121fcfc1ac9733fa",
+      "current_evidence_sha256": "44a736358398a06d2e4c70e3a04f024f2fc47fa0ec64a64e04da95571ae6b383",
       "displayed_depth": 8622,
       "entry_cost": "0.3900",
       "entry_verified": true,
@@ -163,7 +163,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
       "mark_bid": "0.3600",
-      "mark_observed_at": "2026-10-28T08:00:09.771885+00:00",
+      "mark_observed_at": "2026-10-28T16:06:35.841499+00:00",
       "market_ask_probability": "0.3600",
       "market_result": "",
       "market_status": "active",
@@ -182,7 +182,7 @@
       "unrealized_before_exit_fee": "-0.0300"
     },
     {
-      "current_evidence_sha256": "91382f0d85470dda8b256346c7e6f490920e82469f55f538543de0fa8243de32",
+      "current_evidence_sha256": "f890d5e164c635267c42eadfacee949dcb8292c064f9f31e24d8d723c051cab5",
       "displayed_depth": 32664,
       "entry_cost": "0.7400",
       "entry_verified": true,
@@ -191,7 +191,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
       "mark_bid": "0.7000",
-      "mark_observed_at": "2026-10-28T08:00:09.773614+00:00",
+      "mark_observed_at": "2026-10-28T16:06:35.852045+00:00",
       "market_ask_probability": "0.7100",
       "market_result": "",
       "market_status": "active",
@@ -210,7 +210,7 @@
       "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "b3639f66c8bd09084679fded7a5cf1921fdb36f08407bda335ddd7e3b814f490",
+      "current_evidence_sha256": "fc950f28e235866c769fa06d4e25b80932fccb737b3f723ee3dcd0bed300742f",
       "displayed_depth": 299905,
       "entry_cost": "0.6200",
       "entry_verified": true,
@@ -218,8 +218,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.5900",
-      "mark_observed_at": "2026-10-28T08:00:10.295477+00:00",
+      "mark_bid": "0.6000",
+      "mark_observed_at": "2026-10-28T16:06:36.034608+00:00",
       "market_ask_probability": "0.5900",
       "market_result": "",
       "market_status": "active",
@@ -235,10 +235,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28GSWMIN-MIN",
-      "unrealized_before_exit_fee": "-0.0300"
+      "unrealized_before_exit_fee": "-0.0200"
     },
     {
-      "current_evidence_sha256": "b75ec13e824efc3ef1b998098e95bc697544f0cd441eabcee653f821cb2865ce",
+      "current_evidence_sha256": "612679cbe09ef09899bc22471c5ce0645506c8242957cbf6ea504965a285517e",
       "displayed_depth": 806,
       "entry_cost": "0.6800",
       "entry_verified": true,
@@ -246,8 +246,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.6400",
-      "mark_observed_at": "2026-10-28T08:00:10.328021+00:00",
+      "mark_bid": "0.6200",
+      "mark_observed_at": "2026-10-28T16:06:36.035246+00:00",
       "market_ask_probability": "0.6500",
       "market_result": "",
       "market_status": "active",
@@ -263,10 +263,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28DENNOP-DEN",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0600"
     },
     {
-      "current_evidence_sha256": "a66d5805cc979109a3484cadee102b197f10efa0e715257ad27642b88330e370",
+      "current_evidence_sha256": "99f767b39b60f2b8a705d6399e1be1c876f6e3a6e0acf9715ec209a6dbc5398e",
       "displayed_depth": 190045,
       "entry_cost": "0.7100",
       "entry_verified": true,
@@ -275,7 +275,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
       "mark_bid": "0.6600",
-      "mark_observed_at": "2026-10-28T08:00:10.319648+00:00",
+      "mark_observed_at": "2026-10-28T16:06:36.042818+00:00",
       "market_ask_probability": "0.6800",
       "market_result": "",
       "market_status": "active",
@@ -294,7 +294,7 @@
       "unrealized_before_exit_fee": "-0.0500"
     },
     {
-      "current_evidence_sha256": "8887810c12d07fd7f824eed90906b7fb2a1fbc3c975a7a9e83d550067c573b33",
+      "current_evidence_sha256": "8df518cd176bfc633a6d03fb56522deaabc9a434263f35002c66705f6d8ee713",
       "displayed_depth": 2734,
       "entry_cost": "0.4000",
       "entry_verified": true,
@@ -303,7 +303,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
       "mark_bid": "0.3700",
-      "mark_observed_at": "2026-10-28T08:00:10.331398+00:00",
+      "mark_observed_at": "2026-10-28T16:06:36.038509+00:00",
       "market_ask_probability": "0.3700",
       "market_result": "",
       "market_status": "active",
@@ -352,7 +352,7 @@
     },
     {
       "game_id": "21717977",
-      "reason": "no_positive_net_edge_or_invalid_quote"
+      "reason": "edge_below_threshold"
     },
     {
       "game_id": "21717978",
