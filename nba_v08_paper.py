@@ -5,11 +5,24 @@ from datetime import datetime, timezone
 from decimal import Decimal
 from pathlib import Path
 from kalshi_orderbook import quote_from_orderbook
-from nba_forward_test import predictions
+from nba_forward_test import predictions, immutable
 from nba_v08_capture import capture, get
 from nba_v08_valuation import timestamp, value, match, taker_fee, TEAMS, ALIASES
 from nba_v08_schedule import capture_schedule, verify
 from paper_engine import PaperEngine
+
+
+def save_report(root, result):
+    root = Path(root)
+    report = root / 'latest.json'
+    temp = root / 'latest.json.tmp'
+    if report.exists():
+        prior = report.read_bytes()
+        immutable(root / 'reports' / (hashlib.sha256(prior).hexdigest()+'.json'), prior)
+    encoded = (json.dumps(result, sort_keys=True, indent=2, allow_nan=False)+'\n').encode()
+    immutable(root / 'reports' / (hashlib.sha256(encoded).hexdigest()+'.json'), encoded)
+    temp.write_bytes(encoded)
+    temp.replace(report)
 
 
 def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, schedule_paths=None, now=None):
@@ -83,11 +96,13 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
                 ticker = market.get('ticker')
                 book = snap['orderbooks'].get(ticker)
                 if not book or ticker in snap['errors']:
+                    assessments.append({'ticker':ticker,'reason':'orderbook_unavailable','detail':snap['errors'].get(ticker)})
                     continue
                 try:
                     observed = timestamp(book['observed_at'])
                     received = timestamp(book['received_at'])
                     if not timestamp(snap['started_at']) <= observed <= received <= timestamp(snap['completed_at']):
+                        assessments.append({'ticker':ticker,'reason':'invalid_book_timestamps'})
                         continue
                     quote = quote_from_orderbook(ticker, book['raw'], book['observed_at'])
                     had_book = True
@@ -102,13 +117,20 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
                             item={'side':side,'model_probability':str(probability),'ask':str(ask),'size':quote[k+'_ask_size']}
                             if 0 < assumed < 1 and series.get('fee_multiplier') == 1 and series.get('fee_type') in ('quadratic','quadratic_with_maker_fees'):
                                 item['net_edge']=str(probability-assumed-taker_fee(assumed,1,1))
+                                edge=Decimal(item['net_edge'])
+                                item['reason']='eligible' if edge >= Decimal('.03') else ('edge_below_threshold' if edge > 0 else 'nonpositive_net_edge')
+                            else:
+                                item['reason']='invalid_price_or_fee_schedule'
                             info['sides'].append(item)
+                        else:
+                            info['sides'].append({'side':side,'model_probability':str(probability),'reason':'no_executable_ask'})
                     assessments.append(info)
                     had_positive = had_positive or value(game, market, quote, series, now=decision_time, schedule=schedule, min_edge=Decimal('0.000001')) is not None
                     signal = value(game, market, quote, series, now=decision_time, schedule=schedule)
                     if signal:
                         eligible.append((Decimal(signal['net_edge']), ticker, signal, market, quote))
-                except (KeyError, ValueError, TypeError, ArithmeticError):
+                except (KeyError, ValueError, TypeError, ArithmeticError) as exc:
+                    assessments.append({'ticker':ticker,'reason':'invalid_market_or_book','detail':type(exc).__name__})
                     continue
             if not eligible:
                 summary['rejected'] += 1
@@ -124,6 +146,11 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
                                  ask=signal['assumed_price'], ask_size=signal['size'], contracts=1,
                                  fee=signal['fee'], day=decision_time.date().isoformat(), evidence=evidence)
             summary['entries'] += int(ok)
+            for assessment in assessments:
+                for item in assessment.get('sides', []):
+                    if item.get('reason') == 'eligible':
+                        selected = assessment.get('ticker') == ticker and item['side'] == signal['side']
+                        item['reason'] = ('paper_entry' if ok else 'risk_or_duplicate_rejection: '+reason) if selected else 'not_selected_lower_or_tied_edge'
             summary['decisions'].append({'game_id':gid,'ticker':ticker,'identity':identity,'signal':signal,'assessments':assessments,'reason':'paper_entry' if ok else reason})
         return summary
     finally:
@@ -198,10 +225,7 @@ def cycle(root, forecast_root='forward_test/state'):
               'cash':str(account.cash), 'open_cost':str(account.open_exposure), 'settled_trades':len(settled),
               'realized_equity':str(equity), 'max_realized_drawdown':str(max_drawdown), 'bankroll_history':history, 'open_positions':positions,
               'generated_at':datetime.now(timezone.utc).isoformat()}
-    report = root / 'latest.json'
-    temp = root / 'latest.json.tmp'
-    temp.write_text(json.dumps(result, sort_keys=True, indent=2, allow_nan=False)+'\n', encoding='utf-8')
-    temp.replace(report)
+    save_report(root, result)
     print(json.dumps(result, sort_keys=True))
     if errors or target_errors or settlement['errors']:
         raise RuntimeError('Incomplete data; inspect paper report')

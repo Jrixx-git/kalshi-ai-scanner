@@ -122,3 +122,24 @@ paper report lists identity evidence, quotes, computed side edges, and rejection
 reasons. Schedule, order book, prediction, and simulated fill evidence are
 archived separately. The default research workflow remains GET-only, and no
 Kalshi authentication or order placement is used.
+
+## First position audit and per-run records
+
+The original Portland NO paper entry is backed by snapshot SHA-256
+`0502e3c11cfb67fc685ff65b2e07daf4d39b75dc09cebb10b300f7a10d3b498c`.
+Its YES bid was $0.4600 with 34,866.04 displayed contracts, equivalent to a
+$0.5400 NO ask. The simulated fill was one contract at $0.5500, including a
+one-cent adverse slippage assumption; displayed depth supports one contract
+at the observed instant, not proof of an actual fill or of future availability.
+The archived NBA series metadata reports quadratic fees and multiplier 1.
+For one contract at $0.55 the fee is ceil-to-cent(0.07*1*0.55*0.45)=$0.02.
+The position's total simulated stake and fee were $0.57.
+
+From this version, each run writes its report into a content-addressed
+`paper_v08/state/reports/` archive before replacing `latest.json`. On the
+first run, it also preserves the previous latest report. Individual side
+assessments record modeled edge or an explicit missing/invalid-book reason.
+Git history is auditable but is not write-once storage against an administrator.
+Synthetic tests exercise the archived real entry with hypothetical finalized
+YES and NO outcomes, idempotent settlement, and immutable report history.
+They do not assert the actual game outcome or guarantee a simulated fill.

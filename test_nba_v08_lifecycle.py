@@ -6,7 +6,7 @@ from datetime import timedelta
 from pathlib import Path
 from unittest.mock import patch
 from test_nba_v08_valuation import ValuationTests
-from nba_v08_paper import process_snapshot
+from nba_v08_paper import process_snapshot, save_report
 from paper_engine import PaperEngine
 
 class LifecycleTests(unittest.TestCase):
@@ -40,8 +40,14 @@ class LifecycleTests(unittest.TestCase):
             return process_snapshot(path,self.root,self.ledger,self.series,schedule_paths={'2026-10-27':self.schedule_path},now=self.now)
     def test_entry_settlement_restart_and_idempotency(self):
         path = self.snapshot()
-        self.assertEqual(self.process(path)['entries'],1)
-        self.assertEqual(self.process(path)['entries'],0)
+        first=self.process(path)
+        self.assertEqual(first['entries'],1)
+        reasons=[side['reason'] for assessment in first['decisions'][0]['assessments'] for side in assessment['sides']]
+        self.assertIn('paper_entry',reasons)
+        self.assertIn('not_selected_lower_or_tied_edge',reasons)
+        repeated=self.process(path)
+        self.assertEqual(repeated['entries'],0)
+        self.assertEqual(repeated['decisions'][0]['reason'],'Duplicate signal')
         engine = PaperEngine(self.ledger)
         self.assertEqual(str(engine.account('2026-10-27').open_exposure),'0.53')
         final = {'ticker':self.market['ticker'],'status':'finalized','result':'yes','settlement_value_dollars':'1.00','settlement_ts':'2026-10-28T03:00:00Z'}
@@ -87,5 +93,14 @@ class LifecycleTests(unittest.TestCase):
         result=self.process(self.snapshot())
         self.assertEqual(result['entries'],0)
         self.assertEqual([d['reason'] for d in result['decisions']],['duplicate_forecast_identity']*2)
+    def test_reports_preserve_previous_decisions(self):
+        previous=b'{"legacy":true}\n'
+        (self.root/'latest.json').write_bytes(previous)
+        save_report(self.root, {'decisions':[{'game_id':'1','reason':'edge_below_threshold'}]})
+        first=(self.root/'latest.json').read_bytes()
+        save_report(self.root, {'decisions':[{'game_id':'2','reason':'no_executable_ask'}]})
+        second=(self.root/'latest.json').read_bytes()
+        for data in (previous,first,second):
+            self.assertEqual((self.root/'reports'/(hashlib.sha256(data).hexdigest()+'.json')).read_bytes(),data)
 
 if __name__ == '__main__': unittest.main()
