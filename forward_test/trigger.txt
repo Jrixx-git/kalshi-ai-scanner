@@ -1,2 +1,2 @@
 2026-10-27
-NBA v0.8 independent identity verification
+NBA v0.8 settlement and audit verification
