@@ -2,11 +2,11 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-10-28T05:17:42.034905+00:00
+Results checked: 2026-10-28T07:59:59.432063+00:00
 
 | NBA date | Archived | Scored | Accuracy | Brier | Log loss |
 |---|---:|---:|---:|---:|---:|
-| 2026-10-27 | 4 | 3 | 1.000000 | 0.058843 | 0.245051 |
+| 2026-10-27 | 4 | 4 | 0.750000 | 0.155233 | 0.458418 |
 | 2026-10-28 | 12 | 0 | pending | pending | pending |
 
 Unresolved games are excluded from all metric denominators.
@@ -16,7 +16,7 @@ Unresolved games are excluded from all metric denominators.
 | 21717971 | 2026-10-27 | final |
 | 21717972 | 2026-10-27 | final |
 | 21717973 | 2026-10-27 | final |
-| 21717974 | 2026-10-27 | unknown |
+| 21717974 | 2026-10-27 | final |
 | 21717975 | 2026-10-28 | unknown |
 | 21717976 | 2026-10-28 | unknown |
 | 21717977 | 2026-10-28 | unknown |
