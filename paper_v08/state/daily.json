@@ -4,7 +4,6 @@
   "duplicate_games": [],
   "errors": [],
   "event_cost_exposure": {
-    "KXNBAGAME-26OCT27PORLAL": "0.5700",
     "KXNBAGAME-26OCT28DENNOP": "0.6800",
     "KXNBAGAME-26OCT28GSWMIN": "0.6200",
     "KXNBAGAME-26OCT28LALLAC": "0.4000",
@@ -14,42 +13,92 @@
     "KXNBAGAME-26OCT28ORLTOR": "0.3900",
     "KXNBAGAME-26OCT28WASCLE": "0.8200"
   },
-  "generated_at": "2026-10-28T05:17:53.031706+00:00",
-  "gross_unrealized_before_exit_fee": "-0.2700",
+  "generated_at": "2026-10-28T08:00:10.578431+00:00",
+  "gross_unrealized_before_exit_fee": "-0.3000",
   "notes": "Cost risk assumes full stake loss and recorded entry fees; prices are observations, not guaranteed fills. Open marks omit exit fees and are not realized P&L. Cross-game dependence is not quantified.",
-  "open_positions": 9,
+  "open_positions": 8,
   "paper_only": true,
   "positions": [
     {
-      "current_evidence_sha256": "db08936f139ec95758c966afb3beb9f0d7b7ae542d6d2822211b1668cecf0326",
       "displayed_depth": 34866,
       "entry_cost": "0.5700",
       "entry_verified": true,
       "estimated_net_edge": "0.096635",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.6200",
-      "mark_observed_at": "2026-10-28T05:17:51.802216+00:00",
       "market_ask_probability": "0.5400",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": true,
       "model_probability": "0.666635",
       "no_on_model_underdog": true,
       "original_ask": "0.5400",
-      "pnl": null,
+      "pnl": "-0.5700",
       "quote_age_seconds": 0.443621,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-10-28T05:57:43Z",
+          "created_time": "2026-10-24T03:02:07.51357Z",
+          "custom_strike": {
+            "basketball_team": "2229b01e-68eb-46ad-adf4-71a9533c84fc"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26OCT27PORLAL",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-10-28T06:00:00Z",
+          "expiration_time": "2026-10-30T03:00:00Z",
+          "expiration_value": "129-136",
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-10-30T03:00:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Portland",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-10-28T06:00:00Z",
+          "open_interest_fp": "5235958.08",
+          "open_time": "2026-10-24T03:06:30.095678Z",
+          "previous_price_dollars": "0.4200",
+          "previous_yes_ask_dollars": "0.4200",
+          "previous_yes_bid_dollars": "0.4100",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "yes",
+          "rules_primary": "If Portland wins the Portland vs Los Angeles L Pro Basketball game originally scheduled for Oct 27, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-10-28T06:01:45.313838Z",
+          "settlement_value_dollars": "1.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26OCT27PORLAL-POR",
+          "title": "Portland wins",
+          "updated_time": "2026-10-28T06:01:45.861223Z",
+          "volume_24h_fp": "11233604.05",
+          "volume_fp": "11286142.66",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Portland"
+        },
+        "observed_at": "2026-10-28T08:00:01.211209+00:00"
+      },
       "side": "NO",
       "signal_id": "nba-game:21717974",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26OCT27PORLAL-POR",
-      "unrealized_before_exit_fee": "0.0500"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26OCT27PORLAL-POR"
     },
     {
-      "current_evidence_sha256": "afae0f8a0a3cd7eb7d067c09a39844d7759fec0042fcec1e21ed45cf2a3db8f2",
+      "current_evidence_sha256": "d504623cd759b8d3291504352ff78fd65afd90b9592530039047d9fc3b042705",
       "displayed_depth": 2721,
       "entry_cost": "0.6100",
       "entry_verified": true,
@@ -58,7 +107,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
       "mark_bid": "0.5700",
-      "mark_observed_at": "2026-10-28T05:17:51.806179+00:00",
+      "mark_observed_at": "2026-10-28T08:00:09.761417+00:00",
       "market_ask_probability": "0.5800",
       "market_result": "",
       "market_status": "active",
@@ -77,7 +126,7 @@
       "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "1027c6d512f6719b24023f4da90338b61e64c514b6f150b24cadbec429572638",
+      "current_evidence_sha256": "3bed374e868072128c7db0cd0d385adafadbe235a97885990112f9b5c0d382c3",
       "displayed_depth": 8213,
       "entry_cost": "0.8200",
       "entry_verified": true,
@@ -86,7 +135,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
       "mark_bid": "0.7800",
-      "mark_observed_at": "2026-10-28T05:17:51.815197+00:00",
+      "mark_observed_at": "2026-10-28T08:00:09.755081+00:00",
       "market_ask_probability": "0.7900",
       "market_result": "",
       "market_status": "active",
@@ -105,7 +154,7 @@
       "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "e90ce08ff5671dfee48bc2d42c871810b042cd56bc0ffa65b8901a2d1bbfc91b",
+      "current_evidence_sha256": "42f7d087b61722ea3337d165fd6417f7839d8e49d3de213a121fcfc1ac9733fa",
       "displayed_depth": 8622,
       "entry_cost": "0.3900",
       "entry_verified": true,
@@ -113,8 +162,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.3500",
-      "mark_observed_at": "2026-10-28T05:17:51.796386+00:00",
+      "mark_bid": "0.3600",
+      "mark_observed_at": "2026-10-28T08:00:09.771885+00:00",
       "market_ask_probability": "0.3600",
       "market_result": "",
       "market_status": "active",
@@ -130,10 +179,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28ORLTOR-ORL",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0300"
     },
     {
-      "current_evidence_sha256": "3c9917fd8312c00807be0cea8e2883a1e3c046bb076c268f43246db221d8c85c",
+      "current_evidence_sha256": "91382f0d85470dda8b256346c7e6f490920e82469f55f538543de0fa8243de32",
       "displayed_depth": 32664,
       "entry_cost": "0.7400",
       "entry_verified": true,
@@ -141,8 +190,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.6900",
-      "mark_observed_at": "2026-10-28T05:17:52.313956+00:00",
+      "mark_bid": "0.7000",
+      "mark_observed_at": "2026-10-28T08:00:09.773614+00:00",
       "market_ask_probability": "0.7100",
       "market_result": "",
       "market_status": "active",
@@ -158,10 +207,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28NYKCHI-NYK",
-      "unrealized_before_exit_fee": "-0.0500"
+      "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "d4f861dee6519f56a4c6a72704ca51b03411b4ed7f5ade52279af2426a6fa5e5",
+      "current_evidence_sha256": "b3639f66c8bd09084679fded7a5cf1921fdb36f08407bda335ddd7e3b814f490",
       "displayed_depth": 299905,
       "entry_cost": "0.6200",
       "entry_verified": true,
@@ -169,8 +218,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.5800",
-      "mark_observed_at": "2026-10-28T05:17:52.322083+00:00",
+      "mark_bid": "0.5900",
+      "mark_observed_at": "2026-10-28T08:00:10.295477+00:00",
       "market_ask_probability": "0.5900",
       "market_result": "",
       "market_status": "active",
@@ -186,10 +235,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28GSWMIN-MIN",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0300"
     },
     {
-      "current_evidence_sha256": "9e9d0fb9a325c362f0057c0dd370d73b047ac6014b035cf3300ecf81d26605b3",
+      "current_evidence_sha256": "b75ec13e824efc3ef1b998098e95bc697544f0cd441eabcee653f821cb2865ce",
       "displayed_depth": 806,
       "entry_cost": "0.6800",
       "entry_verified": true,
@@ -197,8 +246,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.6500",
-      "mark_observed_at": "2026-10-28T05:17:52.341876+00:00",
+      "mark_bid": "0.6400",
+      "mark_observed_at": "2026-10-28T08:00:10.328021+00:00",
       "market_ask_probability": "0.6500",
       "market_result": "",
       "market_status": "active",
@@ -214,10 +263,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28DENNOP-DEN",
-      "unrealized_before_exit_fee": "-0.0300"
+      "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "9b9ea662c9cdfa59ab7ee7733aab1f604b8eb8b89d539722e45483817e732412",
+      "current_evidence_sha256": "a66d5805cc979109a3484cadee102b197f10efa0e715257ad27642b88330e370",
       "displayed_depth": 190045,
       "entry_cost": "0.7100",
       "entry_verified": true,
@@ -225,8 +274,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.6700",
-      "mark_observed_at": "2026-10-28T05:17:52.334861+00:00",
+      "mark_bid": "0.6600",
+      "mark_observed_at": "2026-10-28T08:00:10.319648+00:00",
       "market_ask_probability": "0.6800",
       "market_result": "",
       "market_status": "active",
@@ -242,10 +291,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28OKCDAL-OKC",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0500"
     },
     {
-      "current_evidence_sha256": "6aae3bb804d32106bfc1c26eaab191ae77b9ba89ea9f49d49e00242477050bac",
+      "current_evidence_sha256": "8887810c12d07fd7f824eed90906b7fb2a1fbc3c975a7a9e83d550067c573b33",
       "displayed_depth": 2734,
       "entry_cost": "0.4000",
       "entry_verified": true,
@@ -253,8 +302,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "estimate; event fee history not captured at entry",
-      "mark_bid": "0.3600",
-      "mark_observed_at": "2026-10-28T05:17:52.818526+00:00",
+      "mark_bid": "0.3700",
+      "mark_observed_at": "2026-10-28T08:00:10.331398+00:00",
       "market_ask_probability": "0.3700",
       "market_result": "",
       "market_status": "active",
@@ -270,12 +319,12 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT28LALLAC-LAL",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0300"
     }
   ],
-  "realized_equity": "5000",
-  "realized_pnl": "0",
-  "recorded_open_cost": "5.5400",
+  "realized_equity": "4999.4300",
+  "realized_pnl": "-0.5700",
+  "recorded_open_cost": "4.9700",
   "rejected": [
     {
       "game_id": "21717971",
@@ -327,7 +376,7 @@
     },
     {
       "game_id": "21717983",
-      "reason": "edge_below_threshold"
+      "reason": "Duplicate signal"
     },
     {
       "game_id": "21717984",
@@ -348,7 +397,7 @@
     "no_on_model_underdog": 3,
     "total": 9
   },
-  "settled_positions": 0,
+  "settled_positions": 1,
   "team_cost_exposure": {
     "ATL": "0.6100",
     "CHI": "0.7400",
@@ -357,14 +406,13 @@
     "DEN": "0.6800",
     "GSW": "0.6200",
     "LAC": "0.4000",
-    "LAL": "0.9700",
+    "LAL": "0.4000",
     "MIA": "0.6100",
     "MIN": "0.6200",
     "NOP": "0.6800",
     "NYK": "0.7400",
     "OKC": "0.7100",
     "ORL": "0.3900",
-    "POR": "0.5700",
     "TOR": "0.3900",
     "WAS": "0.8200"
   }
