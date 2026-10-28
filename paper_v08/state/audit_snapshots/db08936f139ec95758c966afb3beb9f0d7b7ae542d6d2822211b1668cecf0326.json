@@ -1,0 +1,79 @@
+{
+  "book_received_at": "2026-10-28T05:17:51.802216+00:00",
+  "fee_change_pages": [
+    {
+      "cursor": "",
+      "event_fee_changes": []
+    }
+  ],
+  "fee_observed_at": "2026-10-28T05:17:51.967014+00:00",
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-10-30T03:00:00Z",
+    "created_time": "2026-10-24T03:02:07.51357Z",
+    "custom_strike": {
+      "basketball_team": "2229b01e-68eb-46ad-adf4-71a9533c84fc"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNBAGAME-26OCT27PORLAL",
+    "exchange_index": 3,
+    "expected_expiration_time": "2026-10-28T06:00:00Z",
+    "expiration_time": "2026-10-30T03:00:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.3800",
+    "latest_expiration_time": "2026-10-30T03:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.6300",
+    "no_bid_dollars": "0.6200",
+    "no_sub_title": "Portland",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-10-28T06:00:00Z",
+    "open_interest_fp": "5149807.86",
+    "open_time": "2026-10-24T03:06:30.095678Z",
+    "previous_price_dollars": "0.4200",
+    "previous_yes_ask_dollars": "0.4200",
+    "previous_yes_bid_dollars": "0.4100",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Portland wins the Portland vs Los Angeles L Pro Basketball game originally scheduled for Oct 27, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 45,
+    "status": "active",
+    "strike_type": "structured",
+    "ticker": "KXNBAGAME-26OCT27PORLAL-POR",
+    "title": "Portland wins",
+    "updated_time": "2026-10-24T03:06:30.816996Z",
+    "volume_24h_fp": "6905853.50",
+    "volume_fp": "7317717.36",
+    "yes_ask_dollars": "0.3800",
+    "yes_ask_size_fp": "172794.15",
+    "yes_bid_dollars": "0.3700",
+    "yes_bid_size_fp": "119829.13",
+    "yes_sub_title": "Portland"
+  },
+  "orderbook": {
+    "orderbook_fp": {
+      "no_dollars": [
+        [
+          "0.6200",
+          "126000.89"
+        ]
+      ],
+      "yes_dollars": [
+        [
+          "0.3700",
+          "119828.31"
+        ]
+      ]
+    }
+  },
+  "request_started_at": "2026-10-28T05:17:51.445162+00:00"
+}
