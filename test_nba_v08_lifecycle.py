@@ -25,6 +25,10 @@ class LifecycleTests(unittest.TestCase):
           'source':'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261027',
           'payload':{'events':[{'id':'401909877','date':'2026-10-27T23:30:00Z','status':{'type':{'state':'pre','completed':False,'name':'STATUS_SCHEDULED'}},'competitions':[{'id':'401909877','competitors':[{'homeAway':'home','team':{'id':'2','abbreviation':'BOS'}},{'homeAway':'away','team':{'id':'17','abbreviation':'BKN'}}]}]}]}}
         data=json.dumps(self.schedule,sort_keys=True).encode(); self.schedule_path=self.root/(hashlib.sha256(data).hexdigest()+'.json'); self.schedule_path.write_bytes(data)
+        event='KXNBAGAME-26OCT27BKNBOS'
+        fees={'event_ticker':event,'series':self.series,'series_observed_at':stamp,'requested_at':stamp,'received_at':stamp,
+              'event':{'event_ticker':event,'series_ticker':'KXNBAGAME'},'pages':[{'event_fee_changes':[],'cursor':''}]}
+        data=json.dumps(fees,sort_keys=True).encode(); self.fee_path=self.root/(hashlib.sha256(data).hexdigest()+'.json'); self.fee_path.write_bytes(data)
     def tearDown(self): self.tmp.cleanup()
     def snapshot(self, market=None, *, old=False):
         stamp = (self.now-timedelta(seconds=40 if old else 5)).isoformat()
@@ -38,7 +42,7 @@ class LifecycleTests(unittest.TestCase):
         return path
     def process(self,path):
         with patch('nba_v08_paper.predictions',return_value=self.forecasts):
-            return process_snapshot(path,self.root,self.ledger,self.series,schedule_paths={'2026-10-27':self.schedule_path},now=self.now)
+            return process_snapshot(path,self.root,self.ledger,self.series,schedule_paths={'2026-10-27':self.schedule_path},fee_paths={'KXNBAGAME-26OCT27BKNBOS':self.fee_path},now=self.now)
     def test_entry_settlement_restart_and_idempotency(self):
         path = self.snapshot()
         first=self.process(path)
@@ -99,6 +103,11 @@ class LifecycleTests(unittest.TestCase):
         result=self.process(self.snapshot())
         self.assertEqual(result['entries'],0)
         self.assertEqual(result['decisions'][0]['reason'],'stale_or_invalid_forecast')
+    def test_unverified_fee_is_rejected(self):
+        with patch('nba_v08_paper.predictions',return_value=self.forecasts):
+            result=process_snapshot(self.snapshot(),self.root,self.ledger,self.series,schedule_paths={'2026-10-27':self.schedule_path},now=self.now)
+        self.assertEqual(result['entries'],0)
+        self.assertEqual(result['decisions'][0]['reason'],'fee_unverified')
     def test_reports_preserve_previous_decisions(self):
         previous=b'{"legacy":true}\n'
         (self.root/'latest.json').write_bytes(previous)

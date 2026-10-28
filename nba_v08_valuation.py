@@ -81,8 +81,8 @@ def value(game, market, quote, series, *, now=None, slippage=D('.01'), min_edge=
         if series.get('ticker') != 'KXNBAGAME' or series.get('fee_type') not in ('quadratic','quadratic_with_maker_fees'):
             raise ValueError('Unsupported fee schedule')
         mult = D(str(series['fee_multiplier']))
-        if mult != 1:
-            raise ValueError('Fee multiplier requires review')
+        if not mult.is_finite() or not D('0') < mult <= D('10'):
+            raise ValueError('Unsupported fee multiplier')
         slip = D(str(slippage))
         threshold = D(str(min_edge))
         if not slip.is_finite() or not threshold.is_finite() or slip < 0 or threshold < 0:

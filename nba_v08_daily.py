@@ -21,7 +21,7 @@ def fee_history(event, fetch=get):
         params={'event_ticker':event,'limit':100}
         if cursor: params['cursor']=cursor
         page=fetch('/events/fee_changes',params)
-        if not isinstance(page.get('event_fee_changes'),list): raise ValueError('Invalid fee history')
+        if not isinstance(page.get('event_fee_changes'),list) or not isinstance(page.get('cursor'),str): raise ValueError('Invalid fee history')
         if any(x.get('event_ticker')!=event for x in page['event_fee_changes']): raise ValueError('Wrong event fee history')
         pages.append(page); cursor=page.get('cursor')
         if not cursor:return pages
@@ -55,13 +55,14 @@ def run(root='paper_v08/state', forecast_root='forward_test/state', *, fetch=get
     rows=db.execute('SELECT t.signal_id,t.ticker,t.side,t.price,t.contracts,t.fee,t.status,t.pnl,e.entry_json,e.settlement_json FROM trades t LEFT JOIN paper_evidence e ON t.signal_id=e.signal_id ORDER BY t.signal_id').fetchall(); db.close()
     with ThreadPoolExecutor(max_workers=4) as pool:
         futures={ticker:pool.submit(current_evidence,ticker,fetch) for _,ticker,_,_,_,_,status,_,_,_ in rows if status=='OPEN'}
-    ids=Counter(); events=Counter(); team_cost=defaultdict(lambda:D(0)); positions=[]; errors=[]; totals=D(0); marks=D(0); complete_mark=True
+    ids=Counter(); events=Counter(); team_cost=defaultdict(lambda:D(0)); event_cost=defaultdict(lambda:D(0)); positions=[]; errors=[]; totals=D(0); marks=D(0); complete_mark=True
     for sid,ticker,side,price,n,fee,status,pnl,entry,settlement in rows:
         try:
             e=json.loads(entry); game=e['forecast']; event=e['market']['event_ticker']; ids[game['game_id']]+=1; events[event]+=1
             entry_cost=D(price)*n+D(fee)
             if status=='OPEN':
                 totals+=entry_cost
+                event_cost[event]+=entry_cost
                 for team in (game['home_team'],game['away_team']):team_cost[team]+=entry_cost
             sp=root/'snapshots'/(e['snapshot_sha256']+'.json'); sr=sp.read_bytes()
             ep=root/'schedules'/(e['schedule_sha256']+'.json'); er=ep.read_bytes()
@@ -73,8 +74,21 @@ def run(root='paper_v08/state', forecast_root='forward_test/state', *, fetch=get
             verify(game,schedule,now); match(game,e['market'],schedule=schedule,now=now)
             book=snap['orderbooks'][ticker]; quote=quote_from_orderbook(ticker,book['raw'],book['observed_at'])
             ask=D(quote[side.lower()+'_ask']); age=(now-timestamp(book['observed_at'])).total_seconds()
-            if not 0<=age<=30 or n>quote[side.lower()+'_ask_size'] or D(price)!=ask+D('.01') or D(fee)!=taker_fee(price,n,1):raise ValueError('Entry depth, quote, price or fee mismatch')
-            p={'signal_id':sid,'ticker':ticker,'side':side,'status':status,'entry_cost':str(entry_cost),'original_ask':str(ask),'displayed_depth':quote[side.lower()+'_ask_size'],'quote_age_seconds':age,'fee_estimate':fee,'entry_verified':True,'pnl':pnl,'fee_verification':'estimate; event fee history not captured at entry'}
+            if not 0<=age<=30 or n>quote[side.lower()+'_ask_size'] or D(price)!=ask+D('.01'):raise ValueError('Entry depth, quote or price mismatch')
+            fee_status='estimate; event fee history not captured at entry'
+            if e.get('fee_evidence_sha256'):
+                from nba_v08_fees import effective
+                fh=e['fee_evidence_sha256']; fr=(root/'fees'/(fh+'.json')).read_bytes()
+                if hashlib.sha256(fr).hexdigest()!=fh:raise ValueError('Fee evidence digest mismatch')
+                verified=effective(json.loads(fr),event,now)
+                if D(fee)!=taker_fee(price,n,verified['fee_multiplier']):raise ValueError('Verified fee mismatch')
+                fee_status='event and series evidence captured at entry'
+            elif D(fee)!=taker_fee(price,n,1):raise ValueError('Original fee assumption mismatch')
+            prob=D(e['signal']['probability']); baseline_fee=taker_fee(price,n,1)
+            p={'signal_id':sid,'ticker':ticker,'side':side,'status':status,'entry_cost':str(entry_cost),'original_ask':str(ask),'displayed_depth':quote[side.lower()+'_ask_size'],'quote_age_seconds':age,'fee_estimate':fee,'entry_verified':True,'pnl':pnl,'fee_verification':fee_status,
+               'model_probability':str(prob),'market_ask_probability':str(ask),'estimated_net_edge':e['signal']['net_edge'],
+               'model_favorite':prob>D('.5'),'no_on_model_underdog':side=='NO' and prob>D('.5'),
+               'standard_fee_scenario':str(baseline_fee),'standard_fee_delta_vs_recorded':str(baseline_fee-D(fee))}
             if status=='OPEN':
                 try:
                     raw=futures[ticker].result(); market=raw['market']; booknow=raw['orderbook']; received=raw['book_received_at']; pages=raw['fee_change_pages']
@@ -104,7 +118,11 @@ def run(root='paper_v08/state', forecast_root='forward_test/state', *, fetch=get
             'recorded_open_cost':str(totals),'realized_pnl':str(sum((D(x[7]) for x in rows if x[6]=='SETTLED'),D(0))),
             'cash':latest['cash'],'realized_equity':latest['realized_equity'],'gross_unrealized_before_exit_fee':str(marks) if complete_mark else None,
             'team_cost_exposure':{k:str(v) for k,v in sorted(team_cost.items())},'duplicate_games':[k for k,v in ids.items() if v>1],
+            'event_cost_exposure':{k:str(v) for k,v in sorted(event_cost.items())},
             'duplicate_events':[k for k,v in events.items() if v>1],
+            'selection_counts':{'total':len(positions),'model_favorites':sum(p.get('model_favorite',False) for p in positions),
+                                'no_contracts':sum(p.get('side')=='NO' for p in positions),
+                                'no_on_model_underdog':sum(p.get('no_on_model_underdog',False) for p in positions)},
             'notes':'Cost risk assumes full stake loss and recorded entry fees; prices are observations, not guaranteed fills. Open marks omit exit fees and are not realized P&L. Cross-game dependence is not quantified.'}
     sha=publish(root,report); print(json.dumps({'report_sha256':sha,'open':report['open_positions'],'settled':report['settled_positions'],'errors':errors}))
     if errors:raise RuntimeError('Daily audit incomplete')

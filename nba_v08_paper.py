@@ -4,11 +4,13 @@ import json
 from datetime import datetime, timezone
 from decimal import Decimal
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor,as_completed
 from kalshi_orderbook import quote_from_orderbook
 from nba_forward_test import predictions, immutable
 from nba_v08_capture import capture, get
 from nba_v08_valuation import timestamp, value, match, taker_fee, TEAMS, ALIASES
 from nba_v08_schedule import capture_schedule, verify
+from nba_v08_fees import capture as capture_fee, effective as effective_fee
 from paper_engine import PaperEngine
 
 
@@ -25,7 +27,7 @@ def save_report(root, result):
     temp.replace(report)
 
 
-def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, schedule_paths=None, now=None):
+def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, schedule_paths=None, fee_paths=None, now=None):
     """Evaluate immutable snapshots against the first sealed v0.7 forecast per game."""
     initial_now = now or datetime.now(timezone.utc)
     path = Path(snapshot_path)
@@ -47,6 +49,11 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
         except KeyError:
             continue
     schedules = {}
+    fees = {}
+    for event, fee_path in (fee_paths or {}).items():
+        p=Path(fee_path); raw=p.read_bytes(); digest=hashlib.sha256(raw).hexdigest()
+        if p.stem!=digest:raise ValueError('Fee evidence digest mismatch')
+        fees[event]=(json.loads(raw),digest)
     for date, schedule_path in (schedule_paths or {}).items():
         p = Path(schedule_path); raw = p.read_bytes(); digest = hashlib.sha256(raw).hexdigest()
         if p.stem != digest: raise ValueError('Schedule digest mismatch')
@@ -97,6 +104,14 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
                 summary['rejected'] += 1
                 summary['decisions'].append({'game_id':gid,'reason':'identity_rejected','detail':str(exc)})
                 continue
+            try:
+                fee_record, fee_hash=fees[event]
+                if timestamp(fee_record['received_at']) > timestamp(snap['started_at']):raise ValueError('Fee evidence after market snapshot')
+                applied_series=effective_fee(fee_record,event,decision_time)
+            except (KeyError,ValueError,TypeError,ArithmeticError) as exc:
+                summary['rejected']+=1
+                summary['decisions'].append({'game_id':gid,'reason':'fee_unverified','detail':str(exc),'identity':identity})
+                continue
             eligible = []
             assessments = []
             had_book = False; had_positive = False
@@ -123,8 +138,8 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
                         if k+'_ask' in quote:
                             ask=Decimal(quote[k+'_ask']); assumed=ask+Decimal('.01')
                             item={'side':side,'model_probability':str(probability),'ask':str(ask),'size':quote[k+'_ask_size']}
-                            if 0 < assumed < 1 and series.get('fee_multiplier') == 1 and series.get('fee_type') in ('quadratic','quadratic_with_maker_fees'):
-                                item['net_edge']=str(probability-assumed-taker_fee(assumed,1,1))
+                            if 0 < assumed < 1:
+                                item['net_edge']=str(probability-assumed-taker_fee(assumed,1,applied_series['fee_multiplier']))
                                 edge=Decimal(item['net_edge'])
                                 item['reason']='eligible' if edge >= Decimal('.03') else ('edge_below_threshold' if edge > 0 else 'nonpositive_net_edge')
                             else:
@@ -133,8 +148,8 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
                         else:
                             info['sides'].append({'side':side,'model_probability':str(probability),'reason':'no_executable_ask'})
                     assessments.append(info)
-                    had_positive = had_positive or value(game, market, quote, series, now=decision_time, schedule=schedule, min_edge=Decimal('0.000001')) is not None
-                    signal = value(game, market, quote, series, now=decision_time, schedule=schedule)
+                    had_positive = had_positive or value(game, market, quote, applied_series, now=decision_time, schedule=schedule, min_edge=Decimal('0.000001')) is not None
+                    signal = value(game, market, quote, applied_series, now=decision_time, schedule=schedule)
                     if signal:
                         eligible.append((Decimal(signal['net_edge']), ticker, signal, market, quote))
                 except (KeyError, ValueError, TypeError, ArithmeticError) as exc:
@@ -147,7 +162,7 @@ def process_snapshot(snapshot_path, forecast_root, ledger_path, series, *, sched
             _, ticker, signal, market, quote = max(eligible, key=lambda x:(x[0],x[1]))
             summary['matched_signals'] += 1
             evidence = {'game_id':gid, 'archive':archive, 'forecast':game, 'snapshot_sha256':snapshot_sha,
-                        'market':market, 'quote':quote, 'series':series, 'signal':signal,
+                        'market':market, 'quote':quote, 'series':applied_series, 'signal':signal, 'fee_evidence_sha256':fee_hash,
                         'schedule_sha256':schedule_hash, 'schedule_identity':identity,
                         'decision_at':decision_time.isoformat(), 'paper_only':True}
             ok, reason = engine.enter(signal_id='nba-game:'+gid, ticker=ticker, side=signal['side'],
@@ -194,6 +209,7 @@ def cycle(root, forecast_root='forward_test/state'):
     ledger = root / 'ledger.sqlite3'
     settlement = reconcile(ledger)
     path, markets, books, errors = capture(root / 'snapshots')
+    series_observed_at=datetime.now(timezone.utc).isoformat()
     series = get('/series/KXNBAGAME')['series']
     now = datetime.now(timezone.utc)
     events = set()
@@ -209,8 +225,15 @@ def cycle(root, forecast_root='forward_test/state'):
         except (KeyError, ValueError, TypeError):
             continue
     schedule_paths = {date:capture_schedule(date, root / 'schedules') for date in sorted(dates)}
+    fee_paths={}; fee_errors={}
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        pending={pool.submit(capture_fee,event,root/'fees',series,series_observed_at):event for event in events}
+        for future in as_completed(pending):
+            event=pending[future]
+            try:fee_paths[event]=future.result()
+            except (OSError,ValueError,KeyError,TypeError) as exc:fee_errors[event]=type(exc).__name__
     target, _, _, target_errors = capture(root / 'snapshots', event_filter=events)
-    entries = process_snapshot(target, forecast_root, ledger, series, schedule_paths=schedule_paths)
+    entries = process_snapshot(target, forecast_root, ledger, series, schedule_paths=schedule_paths, fee_paths=fee_paths)
     engine = PaperEngine(ledger)
     try:
         account = engine.account()
@@ -229,13 +252,13 @@ def cycle(root, forecast_root='forward_test/state'):
     finally:
         engine.close()
     result = {'paper_only':True, 'snapshot':str(path), 'target_snapshot':str(target), 'markets':markets, 'books':books,
-              'collection_errors':errors, 'target_collection_errors':target_errors, 'reconciliation':settlement, 'entries':entries,
+              'collection_errors':errors, 'target_collection_errors':target_errors, 'fee_capture_errors':fee_errors, 'reconciliation':settlement, 'entries':entries,
               'cash':str(account.cash), 'open_cost':str(account.open_exposure), 'settled_trades':len(settled),
               'realized_equity':str(equity), 'max_realized_drawdown':str(max_drawdown), 'bankroll_history':history, 'open_positions':positions,
               'generated_at':datetime.now(timezone.utc).isoformat()}
     save_report(root, result)
     print(json.dumps(result, sort_keys=True))
-    if errors or target_errors or settlement['errors']:
+    if errors or target_errors or fee_errors or settlement['errors']:
         raise RuntimeError('Incomplete data; inspect paper report')
     return result
 

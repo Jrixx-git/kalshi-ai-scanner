@@ -38,6 +38,8 @@ class PaperEngine:
         day = day or today()
         if not signal_id or not ticker:
             return False, 'Missing signal ID or ticker'
+        if ticker.startswith('KXNBAGAME-') and evidence is None:
+            return False, 'NBA portfolio correlation evidence required'
         if not isinstance(ask_size, int) or isinstance(ask_size, bool) or ask_size < 0:
             return False, 'Invalid displayed liquidity'
         if not isinstance(contracts, int) or isinstance(contracts, bool) or contracts > ask_size:
@@ -60,6 +62,30 @@ class PaperEngine:
             if ticker_cost + cost > D('50'):
                 self.db.execute('ROLLBACK')
                 return False, 'Aggregate ticker loss limit exceeded'
+            if evidence is not None:
+                import json
+                try:
+                    game=evidence['forecast']; teams={str(game['home_team_id']),str(game['away_team_id'])}
+                    event=evidence['market']['event_ticker']
+                    if len(teams)!=2 or not event or evidence['market']['ticker']!=ticker:
+                        raise ValueError('Invalid game identity')
+                    shared={team:D('0') for team in teams}; event_cost=D('0')
+                    rows=self.db.execute("SELECT t.price,t.contracts,t.fee,e.entry_json FROM trades t LEFT JOIN paper_evidence e ON t.signal_id=e.signal_id WHERE t.status='OPEN'")
+                    for p,n,f,raw in rows:
+                        prior=json.loads(raw); prior_game=prior['forecast']; prior_teams={str(prior_game['home_team_id']),str(prior_game['away_team_id'])}
+                        if len(prior_teams)!=2:raise ValueError('Invalid existing game')
+                        stake=D(p)*n+D(f)
+                        for team in teams & prior_teams:shared[team]+=stake
+                        if prior['market']['event_ticker']==event:event_cost+=stake
+                    if event_cost>0:
+                        self.db.execute('ROLLBACK')
+                        return False, 'Existing position for event'
+                    if event_cost+cost>D('50') or any(v+cost>D('50') for v in shared.values()):
+                        self.db.execute('ROLLBACK')
+                        return False, 'Correlated team/event exposure limit exceeded'
+                except (TypeError,ValueError,KeyError):
+                    self.db.execute('ROLLBACK')
+                    return False, 'Missing portfolio correlation evidence'
             # Reserve open stakes against the daily loss budget conservatively.
             if max(D('0'), -account.realized_daily_pnl) + account.open_exposure + cost > D('150'):
                 self.db.execute('ROLLBACK')

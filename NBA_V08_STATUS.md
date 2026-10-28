@@ -174,3 +174,27 @@ limitation. The audit does not send orders.
 A new entry requires its immutable first forecast to be no more than 24 hours
 old at decision time. Forecasts are not regenerated or replaced to pass the
 check. The existing one-signal-per-game and quote-age checks remain in force.
+
+## Event fees and correlation guard
+
+For new paper entries, each event's public metadata, the complete paginated
+fee-change feed, and series fee details are captured before the target snapshot.
+The decision requires fresh timestamped evidence, matching event/series IDs,
+consistent current override and effective historical changes, and a supported
+quadratic fee schedule. Ambiguous, changing, stale, unavailable, or unsupported
+fee evidence rejects the opportunity. Effective event overrides take precedence;
+fee is rounded up to the cent. Actual exchange execution fees can still differ
+because no real order exists. Historical entry evidence is never rewritten.
+For original positions, the daily report lists the recorded fee alongside a
+standard-series fee scenario and delta; it cannot certify historical event fees.
+
+In addition to the existing $50 per-position, $150 daily worst-case reservation,
+$500 open exposure and $5,000 bankroll checks, new NBA entries require portfolio
+identity evidence. Under the same SQLite write transaction, an already-open
+contract in the same event is rejected and a new position cannot bring total
+open cost involving either shared team above $50. All open risk is reserved
+without assuming diversification or hedging. Overlapping unrelated games remain
+covered by the aggregate limits; dependence beyond common teams/events is not
+modeled. The daily report records each entry's model probability, executable ask
+as a market-implied price (not a de-vigged probability), estimated edge and
+selection direction. Counts are descriptive, not proof of a systematic bias.

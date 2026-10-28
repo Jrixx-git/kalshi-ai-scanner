@@ -27,7 +27,7 @@ class ValuationTests(unittest.TestCase):
         self.assertIsNone(value(self.game,self.market,self.quote,self.series,now=self.now+timedelta(seconds=31),schedule=self.schedule))
         self.assertIsNone(value(self.game,self.market,self.quote,self.series,now=datetime(2026,10,28,tzinfo=timezone.utc),schedule=self.schedule))
     def test_fee_or_liquidity_unknown_rejected(self):
-        self.assertIsNone(value(self.game,self.market,self.quote,dict(self.series,fee_multiplier=2),now=self.now,schedule=self.schedule))
+        self.assertIsNone(value(self.game,self.market,self.quote,dict(self.series,fee_multiplier=20),now=self.now,schedule=self.schedule))
         self.assertIsNone(value(self.game,self.market,dict(self.quote,yes_ask_size=0),self.series,now=self.now,schedule=self.schedule))
     def test_negative_edge_rejected(self):
         game = dict(self.game,home_win_probability='.5')
