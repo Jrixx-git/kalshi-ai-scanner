@@ -1,0 +1,51 @@
+name: Authentic research evidence
+on:
+  push:
+    branches: [research/authentic-evidence-2026-10-29]
+  pull_request:
+    branches: [develop/paper-trading-v02]
+    paths: ['research_lab/**', 'research_tests/**', '.github/workflows/authentic-research.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: All existing and research tests
+        run: python -m unittest discover -v
+  existing-access-survey:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Bounded GET-only evidence collection
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python -m research_lab.survey
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: authentic-research-${{ github.run_id }}
+          path: research_outputs/authentic/
+          retention-days: 90
+          if-no-files-found: error
