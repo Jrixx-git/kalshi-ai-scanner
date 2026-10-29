@@ -1,0 +1,23 @@
+name: NBA and comparative research validation
+on:
+  push:
+    branches: [research/comparative-lab-2026-10-29]
+  pull_request:
+    branches: [develop/paper-trading-v02]
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run existing and research tests together
+        run: python -m unittest discover -v -p 'test_*.py'
