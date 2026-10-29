@@ -13,6 +13,7 @@ BDL = {
     'games': ('/v1/games', {'dates[]': None}),
     'player_stats': ('/v1/stats', {'game_ids[]': [21717975]}),
     'advanced_stats': ('/nba/v2/stats/advanced', {'game_ids[]': [21717975], 'period': 0}),
+    'advanced_stats_v1': ('/v1/stats/advanced', {'game_ids[]': [21717975]}),
     'injuries': ('/v1/player_injuries', {}),
     'lineups': ('/v1/lineups', {'game_ids[]': [21717987]}),
 }
@@ -72,7 +73,7 @@ def survey(root, *, pause=13):
                             sample_fields=sorted(payload['data'][0]) if payload.get('data') else [],
                             complete=not payload.get('meta', {}).get('next_cursor'))
             item['pregame_use'] = ('excluded: provider documents post-tipoff availability' if name == 'lineups' else
-                                   'lagged completed games only' if name in ('advanced_stats', 'player_stats') else
+                                   'lagged completed games only' if name in ('advanced_stats', 'advanced_stats_v1', 'player_stats') else
                                    'capture time is availability; no historical backdating')
             report['sports'].append(item)
     report['sports'].append({'name': 'player_projections', 'result': 'no_documented_dedicated_endpoint_verified',
@@ -87,7 +88,7 @@ def survey(root, *, pause=13):
         try:
             parsed = weather_members(root/'raw', item['evidence_sha256'], item['received_at'], start, end)
             item.update(parsed, target_day=day, window_start=start, window_end=end,
-                        benchmark_eligible=False, reason='unverified exact run identity and NWS contract mapping; future outcome pending')
+                        benchmark_eligible=False, reason='unverified exact run identity and contract settlement mapping; future outcome pending')
         except (ValueError, KeyError, TypeError) as exc:
             item.update(benchmark_eligible=False, reason=str(exc))
     report['weather'].append(item)

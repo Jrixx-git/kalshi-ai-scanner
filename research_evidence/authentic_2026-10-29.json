@@ -1,0 +1,397 @@
+{
+  "source_run": 40937660925,
+  "source_commit": "60283bb4e806920535549ddd7eec0e4f09d51dac",
+  "raw_zip_sha256": "5fa290331c78e7dc5aee903ea13f240dcf4e3f7dbf08ef76e1df0555fe15ce31",
+  "raw_zip": "authentic_2026-10-29_40937660925.zip",
+  "report_sha256": "6135c54d0aaabfdd9a85571144e55f2bbf2c544b8a5f9ec3ffede0b98690e8e7",
+  "report": {
+    "observed_at": "2026-10-29T19:10:51.616704+00:00",
+    "paper_only": true,
+    "operations": [
+      {
+        "name": "outstanding_paper_market",
+        "status": 200,
+        "evidence_sha256": "17ca6fb4d819c6ad5798b502b6ba870e496d37f31c699c8c363d668129cd5cf4",
+        "received_at": "2026-10-29T19:10:51.730990+00:00",
+        "result": "captured",
+        "ticker": "KXNBAGAME-26OCT29SACNOP-SAC",
+        "market_status": "active",
+        "market_result": "",
+        "action": "await finalization; no ledger change"
+      }
+    ],
+    "sports": [
+      {
+        "name": "games",
+        "status": 200,
+        "evidence_sha256": "74f1d62c218f4d2670613b2aeca6f34a19f8b7233149620c848c7ebb157139ac",
+        "received_at": "2026-10-29T19:10:51.960878+00:00",
+        "result": "captured",
+        "access": "accessible_nonempty_sample",
+        "sample_rows": 1,
+        "sample_fields": [
+          "date",
+          "datetime",
+          "home_in_bonus",
+          "home_ot1",
+          "home_ot2",
+          "home_ot3",
+          "home_q1",
+          "home_q2",
+          "home_q3",
+          "home_q4",
+          "home_team",
+          "home_team_score",
+          "home_timeouts_remaining",
+          "id",
+          "ist_stage",
+          "period",
+          "postponed",
+          "postseason",
+          "season",
+          "status",
+          "status_state",
+          "time",
+          "visitor_in_bonus",
+          "visitor_ot1",
+          "visitor_ot2",
+          "visitor_ot3",
+          "visitor_q1",
+          "visitor_q2",
+          "visitor_q3",
+          "visitor_q4",
+          "visitor_team",
+          "visitor_team_score",
+          "visitor_timeouts_remaining"
+        ],
+        "complete": false,
+        "pregame_use": "capture time is availability; no historical backdating"
+      },
+      {
+        "name": "player_stats",
+        "status": 200,
+        "evidence_sha256": "b18abb18ef14032956131f85182f4ca4cf7b4be9fc0fd3e2954aeb2c34f197dd",
+        "received_at": "2026-10-29T19:11:05.132510+00:00",
+        "result": "captured",
+        "access": "accessible_nonempty_sample",
+        "sample_rows": 1,
+        "sample_fields": [
+          "ast",
+          "blk",
+          "dreb",
+          "fg3_pct",
+          "fg3a",
+          "fg3m",
+          "fg_pct",
+          "fga",
+          "fgm",
+          "ft_pct",
+          "fta",
+          "ftm",
+          "game",
+          "id",
+          "min",
+          "oreb",
+          "pf",
+          "player",
+          "plus_minus",
+          "pts",
+          "reb",
+          "stl",
+          "team",
+          "turnover"
+        ],
+        "complete": false,
+        "pregame_use": "lagged completed games only"
+      },
+      {
+        "name": "advanced_stats",
+        "status": 401,
+        "error": "HTTPError",
+        "received_at": "2026-10-29T19:11:18.239166+00:00",
+        "evidence_sha256": "047c551b0fa1d298ad7056a8998f1ccae4f60b35ee17268ae7a9b8322619227c",
+        "result": "blocked",
+        "access": "unauthorized_or_not_entitled",
+        "pregame_use": "lagged completed games only"
+      },
+      {
+        "name": "injuries",
+        "status": 200,
+        "evidence_sha256": "5a4291a5ab2163eb17ccd2b1116d4d8b37160966ee0467869c1976c396f4dfe2",
+        "received_at": "2026-10-29T19:11:31.359996+00:00",
+        "result": "captured",
+        "access": "accessible_nonempty_sample",
+        "sample_rows": 1,
+        "sample_fields": [
+          "description",
+          "player",
+          "return_date",
+          "status"
+        ],
+        "complete": false,
+        "pregame_use": "capture time is availability; no historical backdating"
+      },
+      {
+        "name": "lineups",
+        "status": 401,
+        "error": "HTTPError",
+        "received_at": "2026-10-29T19:11:44.454005+00:00",
+        "evidence_sha256": "2555c84e3b1afd87a6779f6b9cfcab8979cc180c83205b97a94e0c42fef91a05",
+        "result": "blocked",
+        "access": "unauthorized_or_not_entitled",
+        "pregame_use": "excluded: provider documents post-tipoff availability"
+      },
+      {
+        "name": "player_projections",
+        "result": "no_documented_dedicated_endpoint_verified",
+        "note": "Do not substitute completed-game minutes, betting props or DFS rows for pregame minutes projections."
+      }
+    ],
+    "weather": [
+      {
+        "name": "prospective_ensemble",
+        "status": 200,
+        "evidence_sha256": "75d072df12b9eb5fa4bbe44a1613ef6a286ed4401a5dc40b8c0781ebb18b88d1",
+        "received_at": "2026-10-29T19:11:45.053963+00:00",
+        "result": "captured",
+        "member_maxima_C": [
+          19.3,
+          20.3,
+          18.7,
+          20.3,
+          22,
+          21.1,
+          20,
+          20.4,
+          17.4,
+          20.2,
+          20,
+          19.8,
+          20.8,
+          18.4,
+          18.7,
+          18.8,
+          21.3,
+          19.9,
+          20.7,
+          19.1,
+          18.2,
+          19.8,
+          18.6,
+          18.9,
+          20.6,
+          18.6,
+          20.5,
+          20.8,
+          21.2,
+          19,
+          21.3
+        ],
+        "member_count": 31,
+        "available_at": "2026-10-29T19:11:45.053963+00:00",
+        "basis": "captured_forecast_snapshot",
+        "run_identity_verified": false,
+        "target_day": "2026-10-30",
+        "window_start": "2026-10-30T04:00:00+00:00",
+        "window_end": "2026-10-31T04:00:00+00:00",
+        "benchmark_eligible": false,
+        "reason": "unverified exact run identity and NWS contract mapping; future outcome pending"
+      },
+      {
+        "name": "archived_deterministic",
+        "status": 200,
+        "evidence_sha256": "1b70d2fff4db9095728c952cb595cf01e6945a889abeeecb2a3951d2ff34d0cd",
+        "received_at": "2026-10-29T19:11:45.546392+00:00",
+        "result": "captured",
+        "benchmark_eligible": false,
+        "reason": "initialization is not publication; historical availability unverified"
+      },
+      {
+        "name": "official_station_observations",
+        "status": 200,
+        "evidence_sha256": "bc21fd0b30c855655527bcb31f5fec68c57a0fb5d6c68f153c1da9fa80336f91",
+        "received_at": "2026-10-29T19:11:46.037810+00:00",
+        "result": "captured",
+        "benchmark_eligible": false,
+        "reason": "GHCN summary is not automatically the NWS CLI settlement report"
+      },
+      {
+        "name": "temperature_contract_rules",
+        "status": 200,
+        "evidence_sha256": "0683dd6bb2f67cd7f4e1cd87a6636f6f880d421030abebc355c03b51d451f7ac",
+        "received_at": "2026-10-29T19:11:46.093006+00:00",
+        "result": "captured"
+      },
+      {
+        "name": "temperature_contracts",
+        "status": 200,
+        "evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+        "received_at": "2026-10-29T19:11:46.210435+00:00",
+        "result": "captured",
+        "contracts": [
+          {
+            "ticker": "KXHIGHNY-26OCT30-T76",
+            "settlement_source": "The Weather Company",
+            "strike_type": "greater",
+            "floor_strike": 76,
+            "cap_strike": null,
+            "rules_sha256": "873946d5b83e7464861d4415d82de8b73527a8a161a55cf70cb4b4b781106601",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT30-T69",
+            "settlement_source": "The Weather Company",
+            "strike_type": "less",
+            "floor_strike": null,
+            "cap_strike": 69,
+            "rules_sha256": "0054337e5517a823ed4a76bd4f28b15be6826469b47bcc9ae746e555ac83ad3e",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT30-B75.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 75,
+            "cap_strike": 76,
+            "rules_sha256": "f25d296edc57e949bfda8a9efb26be3d92379e4542222fda30df0f03d1951a50",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT30-B73.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 73,
+            "cap_strike": 74,
+            "rules_sha256": "bbdd086eb80e4994c285a0e08ed7d6f863c0982629427aa6e2d43cf7a7245b35",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT30-B71.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 71,
+            "cap_strike": 72,
+            "rules_sha256": "5748d5b7c8429b95128c4f6be03b04dff95989dbddf4fd63627643f97be4b5bd",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT30-B69.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 69,
+            "cap_strike": 70,
+            "rules_sha256": "d0c8d5fcb86a2c00e5067bc911d22759a8fd2e4f31939de1aecd375632cc8dd3",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT29-T74",
+            "settlement_source": "The Weather Company",
+            "strike_type": "greater",
+            "floor_strike": 74,
+            "cap_strike": null,
+            "rules_sha256": "3b925361cbf6cc36393055545ec231092a085011ec8828621c65c7f33c0414d5",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT29-T67",
+            "settlement_source": "The Weather Company",
+            "strike_type": "less",
+            "floor_strike": null,
+            "cap_strike": 67,
+            "rules_sha256": "c3dccd4ba19d7b026c28473bdf3cd98da0eb3a4fa3af89fac3500fe7b3dd46aa",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT29-B73.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 73,
+            "cap_strike": 74,
+            "rules_sha256": "6dac4135c80e357a03e805f52f98500dd3ef9b82ad54a3e47e9dd4321496abdf",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT29-B71.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 71,
+            "cap_strike": 72,
+            "rules_sha256": "6b42f915f0cd66e0d175655dbb69c53bb2abcae931aae678f62c347e5c180391",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT29-B69.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 69,
+            "cap_strike": 70,
+            "rules_sha256": "e2b847f0aa6b74d27ecb889b3e484b03478db53517873b8552c2174a129bb1e1",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          },
+          {
+            "ticker": "KXHIGHNY-26OCT29-B67.5",
+            "settlement_source": "The Weather Company",
+            "strike_type": "between",
+            "floor_strike": 67,
+            "cap_strike": 68,
+            "rules_sha256": "7083ec9d4476c482bde139f98fc79dd8d8ed95424b498a56260fce6372ac39e6",
+            "raw_evidence_sha256": "4f50d018091e6a9f875682e1d84a7f4f119f647e06712ac5de3f9a35a9af338d",
+            "source_mapping_verified": false,
+            "blocked_reason": "final Weather Company observations, contract day boundary and rounding must be verified"
+          }
+        ]
+      }
+    ],
+    "finance": [
+      {
+        "name": "cpi_initial_release_mom",
+        "result": "missing_existing_FRED_credential",
+        "benchmark_eligible": false
+      },
+      {
+        "name": "bls_archived_first_release",
+        "status": 403,
+        "error": "HTTPError",
+        "received_at": "2026-10-29T19:11:46.296891+00:00",
+        "evidence_sha256": "feed8261f37ba651565aee9f0f2e07c5ba5a6189f5673478577793f9b4183bc0",
+        "result": "blocked"
+      },
+      {
+        "name": "alfred_vintage_csv",
+        "result": "blocked",
+        "reason": "TimeoutError: evidence 6fab3c96062c3b961046b6782c1e210ec0823f429d8410e53d8e89562adabdfe"
+      }
+    ],
+    "empirical_comparisons": 0,
+    "superiority_claim": false,
+    "performance_gate": "No authentic matched labeled panel; do not score software fixtures as predictive evidence.",
+    "runtime": {
+      "wall_seconds": 74.875,
+      "cpu_seconds": 0.119,
+      "hosting_note": "Collection smoke workload only; not a 24/7 load, latency or availability benchmark.",
+      "linux_peak_rss_KiB": 34068
+    }
+  }
+}
