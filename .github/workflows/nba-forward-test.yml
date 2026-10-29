@@ -2,11 +2,13 @@ name: NBA v0.7 Forward Testing
 
 on:
   workflow_dispatch:
+  workflow_call:
+    secrets:
+      BALLDONTLIE_API_KEY:
+        required: true
   push:
     branches: [develop/paper-trading-v02]
     paths: [forward_test/trigger.txt]
-  schedule:
-    - cron: '0 16 * * *'
 
 permissions:
   contents: write
@@ -17,7 +19,8 @@ concurrency:
 
 jobs:
   research:
-    if: github.ref == 'refs/heads/develop/paper-trading-v02'
+    # Scheduled calls originate on default main; execution still checks out develop.
+    if: github.ref == 'refs/heads/develop/paper-trading-v02' || github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
