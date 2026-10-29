@@ -1,0 +1,305 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Europe/Istanbul",
+  "title": "SportsDataIO trial: verified access, integration value and modeling limits",
+  "conclusion": "Trial supports schema and integration evaluation. It does not support a valid predictive-quality comparison or authentic pregame player-feature training.",
+  "run": {
+    "id": 40956348029,
+    "url": "https://github.com/Jrixx-git/kalshi-ai-scanner/actions/runs/40956348029",
+    "commit": "4c45db31cb1e018be5711714417845a0bbd219f2",
+    "branch": "research/sportsdataio-trial-2026-10-30",
+    "status": "success",
+    "offline_tests_passed": 3,
+    "secret_name": "SPORTSDATAIO_API_KEY",
+    "secret_present": true,
+    "calls_sportsdataio": 11,
+    "calls_balldontlie": 3,
+    "all_http_200": true,
+    "artifact_sha256": "d18bb201e6f0a22b406d6e071b8137a86414c3483ca00fb1f48ad170549c6bbd",
+    "report_sha256": "2893f174849e397f70f3403945ad5cf58f09e3b5265bf804a3e9da925196d4e4"
+  },
+  "access": [
+    {
+      "name": "nba_projections",
+      "endpoint": "https://api.sportsdata.io/v3/nba/projections/json/PlayerGameProjectionStatsByDate/2026-10-30",
+      "parameters": {},
+      "status": 200,
+      "rows": 348,
+      "result": "accessible_nonempty",
+      "response_sha256": "14e2b5e39ea7bdb6ea33143a8f583cfbd7c2b5eddda56c9859a8f6fb1bc27564",
+      "evidence_sha256": "6a2bf163c194245a677c6d1b6f937ad6c57548ca126f3424a193f958e8b058e0"
+    },
+    {
+      "name": "nba_lineups",
+      "endpoint": "https://api.sportsdata.io/v3/nba/projections/json/StartingLineupsByDate/2026-10-30",
+      "parameters": {},
+      "status": 200,
+      "rows": 10,
+      "result": "accessible_nonempty",
+      "response_sha256": "bb968a3ff0555b0cf52c7438a916c3eb4c7e2ab0e152435b2ebd1305b2bf9ba3",
+      "evidence_sha256": "30d3769b1ce17855646032a1d6c034910bd2aa2404004ab99ff8203930c98c21"
+    },
+    {
+      "name": "nba_injuries",
+      "endpoint": "https://api.sportsdata.io/v3/nba/projections/json/InjuredPlayers",
+      "parameters": {},
+      "status": 200,
+      "rows": 90,
+      "result": "accessible_nonempty",
+      "response_sha256": "e94d53d0a62702daa50fc524428b7ba752ed334c39c7e6f3c133cefbe92ef3b1",
+      "evidence_sha256": "d8f0c919dd386d0fb10928217bb5a419f26d0f79d496480dee09c864c8297fb4"
+    },
+    {
+      "name": "nba_roster",
+      "endpoint": "https://api.sportsdata.io/v3/nba/scores/json/Players",
+      "parameters": {},
+      "status": 200,
+      "rows": 524,
+      "result": "accessible_nonempty",
+      "response_sha256": "755fef7c9e7a20dd6072a44afa6a3397369a03d4ea72e5703489763770966edd",
+      "evidence_sha256": "b51273c02a5a0f6892b0c8de797cf663a0f7a76fc3a592160e9df9b41f889db3"
+    },
+    {
+      "name": "nba_games",
+      "endpoint": "https://api.sportsdata.io/v3/nba/scores/json/GamesByDate/2026-10-30",
+      "parameters": {},
+      "status": 200,
+      "rows": 10,
+      "result": "accessible_nonempty",
+      "response_sha256": "474768811d5ac0e2bfb26d54f34f1eabe84ea8878284bc2f826172e0645e8c83",
+      "evidence_sha256": "4c0017748230cd94b08ded6f63979bac848b2e960605bcd199e99a1c11094a42"
+    },
+    {
+      "name": "nba_historical_projections",
+      "endpoint": "https://api.sportsdata.io/v3/nba/projections/json/PlayerGameProjectionStatsByDate/2026-10-28",
+      "parameters": {},
+      "status": 200,
+      "rows": 418,
+      "result": "accessible_nonempty",
+      "response_sha256": "c6f6025cdb37de11572e8708f52596e127c1c98b239e1f5f1c31e7051b262f7d",
+      "evidence_sha256": "69130873609c5ea83677335ec27f529ab78d7d77d504c46a4e761cee30c87c49"
+    },
+    {
+      "name": "nhl_projections",
+      "endpoint": "https://api.sportsdata.io/v3/nhl/projections/json/PlayerGameProjectionStatsByDate/2026-10-30",
+      "parameters": {},
+      "status": 200,
+      "rows": 231,
+      "result": "accessible_nonempty",
+      "response_sha256": "b09950c3603c0446fb9b757f728292f3caf23212bd9505abe346a409a4751c6c",
+      "evidence_sha256": "0adf3f67d604f213e326a804b0f039100dfffff0654088979f56a02155edf4ef"
+    },
+    {
+      "name": "nfl_week",
+      "endpoint": "https://api.sportsdata.io/v3/nfl/scores/json/CurrentWeek",
+      "parameters": {},
+      "status": 200,
+      "rows": 0,
+      "result": "accessible_empty_or_scalar",
+      "response_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+      "evidence_sha256": "4d25050dcfd74c8cb18729565687177189ede12b28b561f4fc9bd1adfc0ff304"
+    },
+    {
+      "name": "nfl_projections",
+      "endpoint": "https://api.sportsdata.io/v3/nfl/projections/json/PlayerGameProjectionStatsByWeek/2026REG/8",
+      "parameters": {},
+      "status": 200,
+      "rows": 715,
+      "result": "accessible_nonempty",
+      "response_sha256": "7dfb66e6c05a5c7ff87f2b4bd5a3fbba5aa90b875ece4a3172bc3c5031b9ef3f",
+      "evidence_sha256": "ca6fd502948cacf0e57a7ea9d24665be4cea98dcad57961ec495294f4313df0c"
+    },
+    {
+      "name": "soccer_projections",
+      "endpoint": "https://api.sportsdata.io/v4/soccer/projections/json/PlayerGameProjectionStatsByDate/3/2026-10-30",
+      "parameters": {},
+      "status": 200,
+      "rows": 0,
+      "result": "accessible_empty_or_scalar",
+      "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "evidence_sha256": "6b524b706c0a8efd1c3390e71c63eb8cdfc79fbe24ddc793329c8fba2d310598"
+    },
+    {
+      "name": "soccer_competitions",
+      "endpoint": "https://api.sportsdata.io/v4/soccer/scores/json/Competitions",
+      "parameters": {},
+      "status": 200,
+      "rows": 93,
+      "result": "accessible_nonempty",
+      "response_sha256": "a27b43a0ba8008bbdf8eae164bf8c3561d09d74ff519480a0e183d98d844091a",
+      "evidence_sha256": "a0f44540a062725b9b78203e593e3fa9bbdd794b52434ce18d57407767216375"
+    },
+    {
+      "name": "bdl_games",
+      "endpoint": "https://api.balldontlie.io/v1/games",
+      "parameters": {
+        "dates[]": "2026-10-30",
+        "per_page": 100
+      },
+      "status": 200,
+      "rows": 10,
+      "result": "accessible_nonempty",
+      "response_sha256": "f63e75104ef58e6f5c9b995351f8c1b92940149f0bc86a01bbe539e852e99625",
+      "evidence_sha256": "7f2117ba6e611b1df8000489e1cc74b720b5d001152bfeda620c593252f79edd"
+    },
+    {
+      "name": "bdl_players",
+      "endpoint": "https://api.balldontlie.io/v1/players/active",
+      "parameters": {
+        "per_page": 100
+      },
+      "status": 200,
+      "rows": 100,
+      "result": "accessible_nonempty",
+      "response_sha256": "3c5584a32e047ae2e36370a533b3c78e1ccd8189d7505d94248e033fae78f816",
+      "evidence_sha256": "a00c9dc2949d686bd2a501804f0a4f439a3c453ef6715210c93974db3aacd7fc"
+    },
+    {
+      "name": "bdl_injuries",
+      "endpoint": "https://api.balldontlie.io/v1/player_injuries",
+      "parameters": {
+        "per_page": 100
+      },
+      "status": 200,
+      "rows": 100,
+      "result": "accessible_nonempty",
+      "response_sha256": "a56900559c8c18128e99986fbfcd982b3075f7735348128a2562401fb3f1e279",
+      "evidence_sha256": "35890747073ce07d91812c17c7a9c6fa87a306ba60803c32d1ddd14f2b0533c9"
+    }
+  ],
+  "nba_additions": {
+    "projected_minutes": {
+      "rows": 348,
+      "nonnull": 348,
+      "field": "Minutes",
+      "kind": "pregame_projection",
+      "usable_for_model": false,
+      "reason": "dictionary marks Minutes and Seconds scrambled"
+    },
+    "injury_fields": "InjuryStatus, InjuryBodyPart, InjuryNotes, InjuryStartDate; status/body/notes marked scrambled. 90 injured-player records, not 90 verified current injuries.",
+    "lineups": "Projected and confirmed lineup structures for 10 games; no evidence that these future lineups were already confirmed. Trial correctness not certified.",
+    "advanced_fields": "PlayerEfficiencyRating, UsageRatePercentage, AssistsPercentage, StealsPercentage, BlocksPercentage, rebound percentages and TurnOversPercentage present but NULL in all 348 projection rows. They do not supply usable advanced-player ratings.",
+    "baker": "Unverified. Coverage describes a separate direct engine JSON Query API; no approved GET-only NBA BAKER route or account entitlement established. Legacy projections are not BAKER."
+  },
+  "identity_review": {
+    "source": "github_run_summary.json; joins performed in-memory by audit code using matching home/away team abbreviations",
+    "reviewed_game_pairs": 7,
+    "unique_provider_ids": true,
+    "utc_tipoffs_exact_match": true,
+    "game_pairs": [
+      {
+        "sdio_game_id": 23894,
+        "bdl_game_id": 21717990,
+        "sdio_tipoff_utc": "2026-10-30T23:00:00",
+        "bdl_tipoff": "2026-10-30T23:00:00.000Z",
+        "status": "reviewed_game_identity_only_not_model_eligible"
+      },
+      {
+        "sdio_game_id": 23895,
+        "bdl_game_id": 21717992,
+        "sdio_tipoff_utc": "2026-10-30T23:30:00",
+        "bdl_tipoff": "2026-10-30T23:30:00.000Z",
+        "status": "reviewed_game_identity_only_not_model_eligible"
+      },
+      {
+        "sdio_game_id": 23896,
+        "bdl_game_id": 21717993,
+        "sdio_tipoff_utc": "2026-10-30T23:30:00",
+        "bdl_tipoff": "2026-10-30T23:30:00.000Z",
+        "status": "reviewed_game_identity_only_not_model_eligible"
+      },
+      {
+        "sdio_game_id": 23898,
+        "bdl_game_id": 21717995,
+        "sdio_tipoff_utc": "2026-10-30T23:30:00",
+        "bdl_tipoff": "2026-10-30T23:30:00.000Z",
+        "status": "reviewed_game_identity_only_not_model_eligible"
+      },
+      {
+        "sdio_game_id": 23899,
+        "bdl_game_id": 21717996,
+        "sdio_tipoff_utc": "2026-10-31T00:00:00",
+        "bdl_tipoff": "2026-10-31T00:00:00.000Z",
+        "status": "reviewed_game_identity_only_not_model_eligible"
+      },
+      {
+        "sdio_game_id": 23900,
+        "bdl_game_id": 21717997,
+        "sdio_tipoff_utc": "2026-10-31T00:00:00",
+        "bdl_tipoff": "2026-10-31T00:00:00.000Z",
+        "status": "reviewed_game_identity_only_not_model_eligible"
+      },
+      {
+        "sdio_game_id": 23901,
+        "bdl_game_id": 21717998,
+        "sdio_tipoff_utc": "2026-10-31T00:00:00",
+        "bdl_tipoff": "2026-10-31T00:00:00.000Z",
+        "status": "reviewed_game_identity_only_not_model_eligible"
+      }
+    ],
+    "unmatched_games": 3,
+    "unmatched_reason": "Only seven of ten games matched exact team abbreviations. Remaining aliases or mismatches were not guessed.",
+    "player_pairs_verified": 0,
+    "player_reason": "SDIO roster has 524 unique PlayerID and NbaDotComPlayerID values. BDL's sampled 100 active-player rows expose its own id but no nba_id/nba_player_id. No independently corroborated player crosswalk. Do not equate integer IDs or use name-only joins.",
+    "coverage_caveat": "BDL active-player and injury responses each have next_cursor; samples are incomplete. Non-null external-ID strings are not automatically valid cross-provider IDs."
+  },
+  "limits": {
+    "sportsdataio_exact_numeric_quota": "Unknown: no quota/remaining/reset/Retry-After headers returned in the allowlisted captures; official portal says small daily call limit without numeric value.",
+    "sportsdataio_observed": "11 successful calls; no 429. This establishes a successful batch, not daily capacity or remaining quota.",
+    "balldontlie_headers": "x-ratelimit-limit=60, remaining 59/58/57, reset=1793308681. Do not infer subscription tier or total daily entitlement from this header alone.",
+    "scrambling": "Free trial uses scrambled data. NBA dictionary explicitly marks Minutes, Seconds, InjuryStatus, InjuryBodyPart, InjuryNotes and many statistical projections as scrambled. Names and IDs may be marked nonscrambled per field; do not infer all fields are fake or all are authentic.",
+    "delay": "No exact account-specific trial latency or artificial delay verified. Separate Discovery Lab is next-day delayed; that rule was not applied to this trial.",
+    "soccer": "Competition 3 projections returned 200 with empty array for 2026-10-30. Competition listing returned 93 rows; listing a competition does not grant its projections. Official trial documentation restricts soccer to UEFA Champions League. Turkish Super Lig projection entitlement not established.",
+    "expiration": "Account UI previously displayed start October 29, 2026 and expiration None. No guarantee of unlimited future access.",
+    "rights": "Official portal describes free trial for integration evaluation and says scrambled trial data cannot be used for analysis or display. Permission for model training, retained authentic snapshots or live Kalshi/prediction-market use not established; commercial prediction-market marketing is not this account's license."
+  },
+  "timing": {
+    "nba_projection_updated": {
+      "nonnull": 348,
+      "minimum": "2026-10-29T17:14:03",
+      "maximum": "2026-10-29T17:14:03"
+    },
+    "nba_projection_received": "2026-10-29T21:16:24.305392+00:00",
+    "timezone": "Provider Updated and DateTime fields documented as US Eastern time; HTTP Date is GMT. On October 29 Eastern is UTC-4.",
+    "interpretation": "Updated is last record modification, not first publication. HTTP Date is response date; DateTime is scheduled event time. None certify historical pregame availability.",
+    "historical": {
+      "date": "2026-10-28",
+      "status": 200,
+      "rows": 418,
+      "updated": {
+        "nonnull": 418,
+        "minimum": "2026-10-28T23:56:15",
+        "maximum": "2026-10-29T01:03:57"
+      },
+      "result": "Date-addressable historical projections exist for this date; latest Updates extend into October 29. No version-at-cutoff parameter or archived publication sequence verified. Cannot use these as pregame vintages."
+    },
+    "documented_refresh": "NBA Legacy projections documented five days ahead; game-day customization by 9 am EST, updates every 15 minutes until tipoff. API recommended call intervals: projections 5 minutes, lineups 3 minutes. Publishing cadence, cache interval and account request quota are distinct."
+  },
+  "research_lab": {
+    "authentic_pregame_samples_accepted": 0,
+    "gate": "Reject all trial player performance values from training/evaluation. No predictive advantage measured.",
+    "allowed_result": "Integration schema/provenance evidence and seven reviewed game identity pairs only. No synthetic data relabeled authentic.",
+    "bdl_comparison": "Current run confirmed games, active players and injuries. Prior run 40937660925 confirmed completed-game stats, returned 401 for v2 advanced stats and lineups. Those denied endpoints were not re-probed here. BDL documents lineups only once a game begins, so that feed is not a pregame lineup substitute.",
+    "next": "Obtain an approved authentic unscrambled sample with retention/modeling rights, timestamped pregame versions and a vetted player identity crosswalk. Then capture prospective paired same-game/cutoff features and apply existing lab gates."
+  },
+  "scope": {
+    "operational_workflows_modified": false,
+    "ledger_or_forecasts_modified": false,
+    "merged": false,
+    "paid_subscription": false,
+    "cloud_deployment": false,
+    "real_money": false,
+    "master_plan": "Sports, weather and finance remain in scope. This is one sports-provider feasibility audit, not a change to the platform vision."
+  },
+  "sources": [
+    "https://sportsdata.io/developers",
+    "https://sportsdata.io/developers/data-dictionary/nba",
+    "https://sportsdata.io/developers/api-documentation/nba",
+    "https://sportsdata.io/developers/coverages/nba",
+    "https://sportsdata.io/developers/workflow-guide/nba",
+    "https://sportsdata.io/developers/api-documentation/nfl",
+    "https://sportsdata.io/developers/api-documentation/nhl",
+    "https://sportsdata.io/developers/api-documentation/soccer",
+    "https://docs.balldontlie.io/"
+  ]
+}
