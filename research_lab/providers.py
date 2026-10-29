@@ -25,14 +25,18 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 ALLOWED = {'api.balldontlie.io', 'api.sportsdata.io', 'api.stlouisfed.org',
            'single-runs-api.open-meteo.com', 'ensemble-api.open-meteo.com',
-           'www.ncei.noaa.gov', 'api.weather.gov', 'external-api.kalshi.com', 'alfred.stlouisfed.org'}
+           'www.ncei.noaa.gov', 'api.weather.gov', 'external-api.kalshi.com', 'alfred.stlouisfed.org', 'www.bls.gov'}
 
 
 def get_json(url, params, evidence_root, headers=None, response_format='json'):
     parsed = urllib.parse.urlsplit(url)
     if parsed.scheme != 'https' or parsed.hostname not in ALLOWED or parsed.query or parsed.fragment or parsed.username or parsed.port:
         raise ValueError('unsupported_endpoint')
-    safe_params = {k: ('REDACTED' if k.lower() in ('api_key','key') else v) for k,v in params.items()}
+    secret_names = ('api_key', 'apikey', 'key', 'access_token', 'token', 'authorization')
+    safe_params = {k: ('REDACTED' if k.lower() in secret_names else v) for k,v in params.items()}
+    credentials = [str(v) for k,v in params.items() if k.lower() in secret_names and v]
+    credentials += [str(v) for k,v in (headers or {}).items()
+                    if k.lower() in ('authorization', 'ocp-apim-subscription-key') and v]
     stamp = lambda: datetime.now(timezone.utc).isoformat()
     envelope = dict(endpoint=url, parameters=safe_params, requested_at=stamp(), method='GET')
     request = urllib.request.Request(url+'?'+urllib.parse.urlencode(params, doseq=True),
@@ -43,7 +47,10 @@ def get_json(url, params, evidence_root, headers=None, response_format='json'):
             raw = response.read(20_000_001)
             if len(raw)>20_000_000:
                 raise ValueError('response_too_large')
-            envelope.update(status=response.status, received_at=stamp(), raw_utf8=raw.decode('utf-8'))
+            decoded = raw.decode('utf-8')
+            if any(secret in decoded for secret in credentials):
+                raise ValueError('credential_echo_rejected')
+            envelope.update(status=response.status, received_at=stamp(), raw_utf8=decoded)
             payload = json.loads(envelope['raw_utf8']) if response_format=='json' else envelope['raw_utf8']
     except Exception as exc:
         # Never log exception URLs: FRED API keys are query parameters.
