@@ -6,8 +6,8 @@
   "event_cost_exposure": {
     "KXNBAGAME-26OCT29SACNOP": "0.3600"
   },
-  "generated_at": "2026-10-29T16:08:11.877478+00:00",
-  "gross_unrealized_before_exit_fee": "-0.0400",
+  "generated_at": "2026-10-29T18:49:57.260220+00:00",
+  "gross_unrealized_before_exit_fee": "-0.0500",
   "notes": "Cost risk assumes full stake loss and recorded entry fees; prices are observations, not guaranteed fills. Open marks omit exit fees and are not realized P&L. Cross-game dependence is not quantified.",
   "open_positions": 1,
   "paper_only": true,
@@ -715,7 +715,7 @@
       "ticker": "KXNBAGAME-26OCT28LALLAC-LAL"
     },
     {
-      "current_evidence_sha256": "01cc1ff9fc32e9a6f43580b5692b8c186fb5954641f4806b9fbfdc5c3c61e61e",
+      "current_evidence_sha256": "da57baa216746af97ce518e977f85cf3d7bf21d619e6fd7016dbfc931e8c0329",
       "displayed_depth": 561270,
       "entry_cost": "0.3600",
       "entry_verified": true,
@@ -723,8 +723,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.3200",
-      "mark_observed_at": "2026-10-29T16:08:11.629878+00:00",
+      "mark_bid": "0.3100",
+      "mark_observed_at": "2026-10-29T18:49:57.155845+00:00",
       "market_ask_probability": "0.3300",
       "market_result": "",
       "market_status": "active",
@@ -740,7 +740,7 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26OCT29SACNOP-SAC",
-      "unrealized_before_exit_fee": "-0.0400"
+      "unrealized_before_exit_fee": "-0.0500"
     }
   ],
   "realized_equity": "4997.4600",
@@ -814,6 +814,10 @@
     {
       "game_id": "21717987",
       "reason": "no_positive_net_edge_or_invalid_quote"
+    },
+    {
+      "game_id": "21717988",
+      "reason": "Duplicate signal"
     },
     {
       "game_id": "21717989",
