@@ -25,7 +25,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 ALLOWED = {'api.balldontlie.io', 'api.sportsdata.io', 'api.stlouisfed.org',
            'single-runs-api.open-meteo.com', 'ensemble-api.open-meteo.com',
-           'www.ncei.noaa.gov', 'api.weather.gov', 'external-api.kalshi.com', 'alfred.stlouisfed.org'}
+           'www.ncei.noaa.gov', 'api.weather.gov', 'external-api.kalshi.com', 'alfred.stlouisfed.org', 'www.bls.gov'}
 
 
 def get_json(url, params, evidence_root, headers=None, response_format='json'):

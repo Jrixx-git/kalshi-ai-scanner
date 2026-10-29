@@ -4,6 +4,7 @@ import hashlib
 import io
 import json
 import re
+from html.parser import HTMLParser
 from datetime import date, datetime, time, timedelta, timezone
 from decimal import Decimal, ROUND_HALF_UP
 from statistics import mean
@@ -179,7 +180,9 @@ def nba_market(root, market_digest, book_digest, game, decision):
     captured(root, market_digest, decision, 'https://external-api.kalshi.com/trade-api/v2/markets/'+ticker)
     if market.get('status') != 'active' or market.get('result'):
         raise ValueError('market_not_pregame_active')
-    payload, _ = captured(root, book_digest, decision, 'https://external-api.kalshi.com/trade-api/v2/markets/'+ticker+'/orderbook')
+    payload, book_env = captured(root, book_digest, decision, 'https://external-api.kalshi.com/trade-api/v2/markets/'+ticker+'/orderbook')
+    if (instant(decision)-instant(book_env['received_at'])).total_seconds() > 30:
+        raise ValueError('stale_market_comparator')
     def bid(side):
         levels = payload['orderbook_fp'][side+'_dollars']
         valid = [(probability(p), number(n)) for p,n in levels]
@@ -211,7 +214,7 @@ def compare_nba_events(root, events, archive_root):
             g = result['data']
             if str(g['id']) != gid or int(g['home_team']['id']) != int(game['home_team_id']) or int(g['visitor_team']['id']) != int(game['away_team_id']):
                 raise ValueError('outcome_game_identity')
-            if g.get('status') != 'Final' or instant(result_env['received_at']) < instant(game['tipoff_utc']):
+            if g.get('status') != 'Final' or g.get('postponed') or g.get('date', '')[:10] != game['date'] or instant(result_env['received_at']) < instant(game['tipoff_utc']):
                 raise ValueError('outcome_not_final')
             h,a = number(g['home_team_score']),number(g['visitor_team_score'])
             if h == a or min(h,a) <= 0: raise ValueError('invalid_final_score')
@@ -240,6 +243,8 @@ def contract_window(day, zone, *, fixed_standard_offset=None):
 
 
 def weather_members(root, digest, decision, start, end):
+    if instant(decision) >= instant(start):
+        raise ValueError('weather_capture_not_before_target_window')
     payload, env = captured(root, digest, decision, 'https://ensemble-api.open-meteo.com/v1/ensemble')
     if env['parameters'].get('timezone') != 'UTC' or payload.get('utc_offset_seconds') != 0:
         raise ValueError('weather_timezone')
@@ -274,6 +279,38 @@ def weather_settlement(value_C, spec):
     raise ValueError('unsupported_operator')
 
 
+def weather_contract(root, digest, ticker, cutoff):
+    """Bind strike/source metadata to captured Kalshi rules, never to a template."""
+    envelope=read_sealed(root,digest)
+    payload, _=captured(root,digest,cutoff,'https://external-api.kalshi.com/trade-api/v2/markets')
+    if envelope['parameters'].get('series_ticker') != 'KXHIGHNY': raise ValueError('wrong_weather_series')
+    matches=[m for m in payload['markets'] if m['ticker']==ticker]
+    if len(matches)!=1: raise ValueError('weather_contract_identity')
+    market=matches[0]; primary=market['rules_primary']; secondary=market.get('rules_secondary','')
+    if 'according to The Weather Company' in primary:
+        source='The Weather Company'
+    elif 'National Weather Service' in primary:
+        source='NWS'
+    else: raise ValueError('unrecognized_weather_settlement_source')
+    kind=market['strike_type']
+    if kind not in ('greater','less','between'): raise ValueError('unsupported_weather_strike')
+    floor=market.get('floor_strike'); cap=market.get('cap_strike')
+    if kind=='greater' and (floor is None or cap is not None): raise ValueError('invalid_greater_strike')
+    if kind=='less' and (cap is None or floor is not None): raise ValueError('invalid_less_strike')
+    if kind=='between' and (floor is None or cap is None or number(floor)>number(cap)): raise ValueError('invalid_between_strike')
+    return {'ticker':ticker,'settlement_source':source,'strike_type':kind,'floor_strike':floor,'cap_strike':cap,
+        'rules_sha256':hashlib.sha256((primary+'\n'+secondary).encode()).hexdigest(),
+        'raw_evidence_sha256':digest,'source_mapping_verified':False,
+        'blocked_reason':'final Weather Company observations, contract day boundary and rounding must be verified' if source=='The Weather Company' else 'exact CLI station/day/finality and rounding must be verified'}
+
+
+def require_weather_label_source(contract, observation_source):
+    if observation_source != contract['settlement_source']:
+        raise ValueError('weather_settlement_source_mismatch')
+    if not contract.get('source_mapping_verified'):
+        raise ValueError('weather_settlement_mapping_unverified')
+
+
 def first_release(root, digest, target_period):
     """Use provider's first-release MoM transform; never difference revised levels."""
     env = read_sealed(root, digest); p = env['parameters']
@@ -294,3 +331,48 @@ def first_release(root, digest, target_period):
     return {'value': number(r['value']), 'target_period': target_period, 'series_id': 'CPIAUCSL',
             'kind': 'first_release_mom_percent', 'outcome_available_at': available,
             'timing_resolution': 'daily_conservative_next_UTC_day', 'evidence_sha256': digest}
+
+
+def bls_first_release(root, digest):
+    """Parse the archived headline MoM, not today's revised historical CPI series."""
+    env=read_sealed(root,digest)
+    endpoint=env['endpoint']
+    if not re.fullmatch(r'https://www\.bls\.gov/news\.release/archives/cpi_\d{8}\.htm',endpoint) or env.get('status') != 200:
+        raise ValueError('archived_bls_cpi_required')
+    class Text(HTMLParser):
+        def __init__(self): super().__init__(); self.parts=[]
+        def handle_data(self,data): self.parts.append(data)
+    parser=Text();parser.feed(env['raw_utf8']);text=' '.join(' '.join(parser.parts).split())
+    heading=re.search(r'CONSUMER PRICE INDEX\s*-\s*([A-Z]+)\s+(\d{4})',text)
+    headline=re.search(r'The Consumer Price Index for All Urban Consumers \(CPI-U\) (?:(increased|decreased|rose|fell) (\d+(?:\.\d+)?) percent|was unchanged) in ([A-Za-z]+) on a seasonally adjusted basis',text)
+    embargo=re.search(r'8:30 a\.m\. \(ET\) [A-Za-z]+, ([A-Za-z]+ \d{1,2}, \d{4})',text)
+    if not heading or not headline or not embargo: raise ValueError('unrecognized_bls_release_layout')
+    month=datetime.strptime(heading[1].title(),'%B').month;year=int(heading[2])
+    if headline[3].lower()!=heading[1].lower():raise ValueError('bls_target_identity')
+    release=datetime.strptime(embargo[1],'%B %d, %Y').replace(hour=8,minute=30,tzinfo=ZoneInfo('America/New_York'))
+    if endpoint.rsplit('_',1)[1] != release.strftime('%m%d%Y')+'.htm':raise ValueError('bls_archive_date_mismatch')
+    if instant(env['received_at']) < release:raise ValueError('bls_future_release')
+    value=number(headline[2]) if headline[2] else 0.
+    if headline[1] in ('decreased','fell'):value=-value
+    return {'kind':'first_release_mom_percent','value':value,'target_period':f'{year:04d}-{month:02d}-01',
+        'series_id':'CPIAUCSL','source':'BLS archived CPI release','publication_at_utc':release.astimezone(timezone.utc).isoformat(),
+        'timing_basis':'archived release embargo attestation; not contemporaneous capture',
+        'rounding':'published_headline_percent','evidence_sha256':digest}
+
+
+def main():
+    import argparse
+    from pathlib import Path
+    from .core import seal
+    p=argparse.ArgumentParser(description='Reconstruct a source-bound offline NBA comparison; no trading.')
+    p.add_argument('panel',help='JSON array of source descriptors; values are derived from raw hashes')
+    p.add_argument('--evidence-root',required=True)
+    p.add_argument('--archive-root',default='forward_test/state/predictions')
+    p.add_argument('--output',default='research_outputs/bound')
+    args=p.parse_args();output=Path(args.output).resolve()
+    if any(v in ('paper_v08','forward_test','.github') for v in output.parts):raise ValueError('operational_output_forbidden')
+    report=compare_nba_events(args.evidence_root,json.loads(Path(args.panel).read_text()),args.archive_root)
+    digest=seal(output,report);print(json.dumps({'report_sha256':digest,**report},indent=2))
+
+
+if __name__=='__main__':main()

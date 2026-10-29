@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from .core import read_sealed, seal
 from .providers import get_json, AlfredCSV
-from .authentic import weather_members, contract_window, first_release
+from .authentic import weather_members, contract_window, weather_contract, bls_first_release
 
 BDL = {
     'games': ('/v1/games', {'dates[]': None}),
@@ -43,12 +43,20 @@ def attempt(name, url, params, root, headers=None, response_format='json'):
 
 
 def survey(root, *, pause=13):
+    wall_start=time.perf_counter();cpu_start=time.process_time()
     root = Path(root).resolve()
     if any(p in ('paper_v08', 'forward_test', '.github') for p in root.parts):
         raise ValueError('operational_output_forbidden')
     now = datetime.now(timezone.utc); today = now.date().isoformat()
-    report = {'observed_at': now.isoformat(), 'paper_only': True, 'sports': [], 'weather': [], 'finance': [],
+    report = {'observed_at': now.isoformat(), 'paper_only': True, 'operations': [], 'sports': [], 'weather': [], 'finance': [],
               'empirical_comparisons': 0, 'superiority_claim': False}
+    item, position = attempt('outstanding_paper_market',
+        'https://external-api.kalshi.com/trade-api/v2/markets/KXNBAGAME-26OCT29SACNOP-SAC', {}, root)
+    if isinstance(position, dict):
+        market = position['market']
+        item.update(ticker=market['ticker'], market_status=market['status'], market_result=market.get('result'),
+                    action='existing paper reconciliation required' if market['status']=='finalized' else 'await finalization; no ledger change')
+    report['operations'].append(item)
     key = os.environ.get('BALLDONTLIE_API_KEY')
     if not key:
         report['sports'].append({'result': 'missing_existing_BALLDONTLIE_credential'})
@@ -85,7 +93,7 @@ def survey(root, *, pause=13):
     report['weather'].append(item)
     run = (now-timedelta(days=1)).strftime('%Y-%m-%dT00:00')
     item, _ = attempt('archived_deterministic', 'https://single-runs-api.open-meteo.com/v1/forecast',
-                      {**base, 'models': 'gfs_seamless', 'run': run}, root)
+                      {**base, 'forecast_days': 7, 'models': 'gfs_seamless', 'run': run}, root)
     item.update(benchmark_eligible=False, reason='initialization is not publication; historical availability unverified')
     report['weather'].append(item)
     item, _ = attempt('official_station_observations', 'https://www.ncei.noaa.gov/access/services/data/v1',
@@ -98,7 +106,7 @@ def survey(root, *, pause=13):
                                ('temperature_contracts', '/markets', {'series_ticker': 'KXHIGHNY', 'status': 'open', 'limit': 20})]:
         item, payload = attempt(name, 'https://external-api.kalshi.com/trade-api/v2'+path, params, root)
         if isinstance(payload, dict) and name == 'temperature_contracts':
-            item['contracts'] = [{k: m.get(k) for k in ('ticker', 'rules_primary', 'rules_secondary', 'strike_type', 'floor_strike', 'cap_strike', 'close_time')} for m in payload.get('markets', [])]
+            item['contracts'] = [weather_contract(root/'raw', item['evidence_sha256'], m['ticker'], item['received_at']) for m in payload.get('markets', [])]
         report['weather'].append(item)
     fred = os.environ.get('FRED_API_KEY')
     if fred:
@@ -111,6 +119,13 @@ def survey(root, *, pause=13):
         report['finance'].append(item)
     else:
         report['finance'].append({'name': 'cpi_initial_release_mom', 'result': 'missing_existing_FRED_credential', 'benchmark_eligible': False})
+    item, html = attempt('bls_archived_first_release', 'https://www.bls.gov/news.release/archives/cpi_02132024.htm', {}, root, response_format='html')
+    if html is not None:
+        try:
+            item.update(label=bls_first_release(root/'raw', item['evidence_sha256']), benchmark_eligible=False,
+                        reason='authentic outcome only; matched pre-release vintage features still missing')
+        except (ValueError,KeyError,TypeError) as exc:item.update(result='parser_blocked',reason=str(exc))
+    report['finance'].append(item)
     try:
         vintage = AlfredCSV().request(series_id='CPIAUCSL', cutoff=now.isoformat(), evidence_root=root/'raw')
         report['finance'].append({'name': 'alfred_vintage_csv', 'result': 'captured', 'evidence_sha256': vintage['evidence_sha256'],
@@ -119,6 +134,13 @@ def survey(root, *, pause=13):
     except (ValueError, RuntimeError) as exc:
         report['finance'].append({'name': 'alfred_vintage_csv', 'result': 'blocked', 'reason': str(exc)})
     report['performance_gate'] = 'No authentic matched labeled panel; do not score software fixtures as predictive evidence.'
+    report['runtime']={'wall_seconds':round(time.perf_counter()-wall_start,3),
+        'cpu_seconds':round(time.process_time()-cpu_start,3),
+        'hosting_note':'Collection smoke workload only; not a 24/7 load, latency or availability benchmark.'}
+    try:
+        import resource
+        report['runtime']['linux_peak_rss_KiB']=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    except ImportError:pass
     digest = seal(root/'reports', report)
     (root/'latest.json').write_text(json.dumps(report, indent=2, allow_nan=False)+'\n')
     print(json.dumps({'report_sha256': digest, 'report': report}, indent=2))

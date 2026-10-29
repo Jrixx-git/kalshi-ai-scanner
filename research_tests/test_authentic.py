@@ -8,9 +8,11 @@ from pathlib import Path
 from unittest.mock import patch, MagicMock
 from research_lab.core import seal, instant
 from research_lab.authentic import (captured, complete_pages, nba_features, nba_challenger,
-    contract_window, weather_members, weather_settlement, first_release, market_probability)
+    contract_window, weather_members, weather_settlement, first_release, market_probability,
+    nba_market, compare_nba_events, weather_contract, require_weather_label_source, bls_first_release)
 from research_lab.survey import classify
 from research_lab.providers import get_json
+from research_lab.continuity import inventory
 
 
 class AuthenticTests(unittest.TestCase):
@@ -105,6 +107,16 @@ class AuthenticTests(unittest.TestCase):
         self.assertEqual(weather_settlement(20,spec),1)
         spec['operator']='>';self.assertEqual(weather_settlement(20,spec),0)
 
+    def test_actual_contract_source_overrides_old_nws_assumption(self):
+        ticker='KXHIGHNY-26OCT30-T76'
+        market={'ticker':ticker,'rules_primary':'Maximum in NYC according to The Weather Company',
+            'rules_secondary':'final publication only','strike_type':'greater','floor_strike':76,'cap_strike':None}
+        d=self.envelope('https://external-api.kalshi.com/trade-api/v2/markets',{'markets':[market]},{'series_ticker':'KXHIGHNY'})
+        contract=weather_contract(self.root,d,ticker,self.cutoff)
+        self.assertEqual(contract['settlement_source'],'The Weather Company')
+        with self.assertRaisesRegex(ValueError,'source_mismatch'):require_weather_label_source(contract,'NWS')
+        with self.assertRaisesRegex(ValueError,'unverified'):require_weather_label_source(contract,'The Weather Company')
+
     def test_first_release_rejects_revised_levels(self):
         payload={'count':1,'observations':[{'date':'2026-09-01','value':'0.2','realtime_start':'2026-10-14'}], 'output_type':4,'units':'pch'}
         params={'series_id':'CPIAUCSL','output_type':4,'units':'pch'}
@@ -121,13 +133,49 @@ class AuthenticTests(unittest.TestCase):
             {'count':2,'observations':[], 'output_type':4,'units':'pch'}, {'series_id':'CPIAUCSL','output_type':4,'units':'pch'})
         with self.assertRaisesRegex(ValueError,'incomplete'):first_release(self.root,d,'2026-09-01')
 
+    def test_bls_archived_headline_is_separate_from_revised_levels(self):
+        html='<pre>8:30 a.m. (ET) Tuesday, February 13, 2024 CONSUMER PRICE INDEX - JANUARY 2024 The Consumer Price Index for All Urban Consumers (CPI-U) increased 0.3 percent in January on a seasonally adjusted basis</pre>'
+        d=seal(self.root,{'endpoint':'https://www.bls.gov/news.release/archives/cpi_02132024.htm',
+            'status':200,'received_at':self.cutoff,'raw_utf8':html})
+        result=bls_first_release(self.root,d)
+        self.assertEqual(result['value'],.3);self.assertEqual(result['target_period'],'2024-01-01')
+        self.assertEqual(result['publication_at_utc'],'2024-02-13T13:30:00+00:00')
+        d=seal(self.root,{'endpoint':'https://www.bls.gov/news.release/archives/cpi_02142024.htm',
+            'status':200,'received_at':self.cutoff,'raw_utf8':html})
+        with self.assertRaisesRegex(ValueError,'date_mismatch'):bls_first_release(self.root,d)
+
     def test_market_midpoint_is_not_ask_or_wrong_side(self):
         self.assertAlmostEqual(market_probability(.4,.5),.45)
         with self.assertRaises(ValueError):market_probability(.8,.5)
 
+    def test_bound_market_orientation_and_quote_age(self):
+        game={**self.game,'home_team':'ATL','away_team':'CLE'}
+        ticker='KXNBAGAME-26OCT29CLEATL-CLE'
+        m=self.envelope('https://external-api.kalshi.com/trade-api/v2/markets/'+ticker,
+            {'market':{'ticker':ticker,'event_ticker':ticker.rsplit('-',1)[0],'status':'active','result':''}})
+        payload={'orderbook_fp':{'yes_dollars':[['0.40','10']], 'no_dollars':[['0.50','10']]}}
+        b=self.envelope('https://external-api.kalshi.com/trade-api/v2/markets/'+ticker+'/orderbook',payload)
+        self.assertAlmostEqual(nba_market(self.root,m,b,game,'2026-10-29T17:00:10Z'),.55)
+        with self.assertRaisesRegex(ValueError,'stale'):nba_market(self.root,m,b,game,self.cutoff)
+        with self.assertRaisesRegex(ValueError,'identity'):nba_market(self.root,m,b,{**game,'away_team':'SAC'},self.cutoff)
+
+    def test_missing_authentic_panel_is_reported_not_imputed(self):
+        events=[{'game_id':'99','decision_at':self.cutoff,'archive':'a'*64}]
+        r=compare_nba_events(self.root,events,self.root)
+        self.assertEqual(r['accepted'],0);self.assertEqual(len(r['rejections']),1)
+        self.assertEqual(r['elo_comparison']['status'],'no_valid_comparisons')
+        with self.assertRaisesRegex(ValueError,'duplicate'):compare_nba_events(self.root,events*2,self.root)
+
     def test_access_classification_never_inferrs_paid_tier(self):
         self.assertEqual(classify(200,{'data':[]}), 'accessible_empty_sample')
         self.assertIn('unknown',classify(429));self.assertIn('or_not_entitled',classify(401))
+
+    def test_real_inventory_distinguishes_missing_day_and_no_trades(self):
+        report=inventory('.', ['2026-10-28','2026-10-29'])
+        self.assertTrue(report['complete'])
+        self.assertEqual([(r['eligible'],r['paper_entries'],r['no_trades']) for r in report['daily']],[(12,8,4),(3,1,2)])
+        missing=inventory('.', ['2099-01-01'])
+        self.assertFalse(missing['complete']);self.assertFalse(missing['daily'][0]['schedule_archived'])
 
     def test_credential_echo_is_not_written_to_evidence(self):
         response=MagicMock();response.__enter__.return_value=response;response.status=200
