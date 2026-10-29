@@ -1,0 +1,20 @@
+name: Daily NBA paper research
+
+on:
+  schedule:
+    # 16:17 UTC = 19:17 Europe/Istanbul; avoid the top-of-hour queue.
+    - cron: '17 16 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/nba-paper-daily.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  paper-research:
+    # Pin orchestration; the reusable workflow checks out current develop data/code.
+    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-forward-test.yml@107daf1dffdc53c68b14019aeeb3e72f6bd245e7
+    secrets:
+      BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
