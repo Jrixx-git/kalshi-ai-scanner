@@ -1,0 +1,47 @@
+{
+  "certificate_verification": true,
+  "results": [
+    {
+      "elapsed_seconds": 0.029,
+      "error": "gaierror",
+      "host": "external-api.kalshi.com",
+      "observed_at": "2026-10-29T18:01:32.394962+00:00"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "error": "gaierror",
+      "host": "api.balldontlie.io",
+      "observed_at": "2026-10-29T18:01:32.423851+00:00"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "error": "gaierror",
+      "host": "api.sportsdata.io",
+      "observed_at": "2026-10-29T18:01:32.424720+00:00"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "error": "gaierror",
+      "host": "api.stlouisfed.org",
+      "observed_at": "2026-10-29T18:01:32.425503+00:00"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "error": "gaierror",
+      "host": "single-runs-api.open-meteo.com",
+      "observed_at": "2026-10-29T18:01:32.426266+00:00"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "error": "gaierror",
+      "host": "www.ncei.noaa.gov",
+      "observed_at": "2026-10-29T18:01:32.426968+00:00"
+    },
+    {
+      "elapsed_seconds": 0.001,
+      "error": "gaierror",
+      "host": "github.com",
+      "observed_at": "2026-10-29T18:01:32.427647+00:00"
+    }
+  ]
+}

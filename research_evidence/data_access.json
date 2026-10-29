@@ -1,0 +1,36 @@
+{
+  "actual_access_checks": [
+    {
+      "benchmark_eligible": false,
+      "endpoint": "https://single-runs-api.open-meteo.com/v1/forecast",
+      "evidence_sha256": "4f58119a55b3fedbed7190c41aead5c7b6ca17399e518b40c9e8337f9d56df9f",
+      "example_utc_day": "2026-10-21",
+      "hourly_max_C": 14.7,
+      "hourly_values": 168,
+      "reason": "historical availability and settlement day mapping unverified; no matched archived ensemble",
+      "received_at": "2026-10-29T18:02:00.503746+00:00",
+      "requested_at": "2026-10-29T18:02:00.230884+00:00"
+    },
+    {
+      "benchmark_eligible": false,
+      "endpoint": "https://www.ncei.noaa.gov/access/services/data/v1",
+      "evidence_sha256": "600fc8d6044a3a3a5e99386e0c6c6abc2ce4756bcf8f098504774c3a7fd871f8",
+      "example_day": "2026-10-20",
+      "observation_rows": 50,
+      "official_TMAX_C": 19.4,
+      "reason": "current observation vintage; first report and Kalshi settlement source not established",
+      "received_at": "2026-10-29T18:02:03.075400+00:00",
+      "requested_at": "2026-10-29T18:02:01.599924+00:00",
+      "station": "USW00094728"
+    },
+    {
+      "endpoint": "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
+      "error": "TimeoutError",
+      "evidence_sha256": "cca092305820079d14ec123ad9ecbd32ebfdd3462f9669efb8c02024294e7492",
+      "received_at": "2026-10-29T18:04:24.449818+00:00",
+      "requested_at": "2026-10-29T18:04:04.318793+00:00"
+    }
+  ],
+  "empirical_benchmark_results": null,
+  "superiority_claim": false
+}
