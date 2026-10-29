@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-29",
+  "python": "3.15.0",
+  "command": "python -m unittest discover -s research_tests -v",
+  "tests_run": 24,
+  "failures": 0,
+  "errors": 0,
+  "synthetic_demonstrations": {
+    "sports": {"scored": 27, "rejected": 0, "report_sha256": "0cf37ec128c2c227837ba434ba8cff424d5907948d6e4ce41d2971826c380473"},
+    "weather": {"scored": 27, "rejected": 0, "report_sha256": "d847c12ef6d9cf79e2eb323b95aa82bc431f349d68d3566b5aea5c23dff254cf"},
+    "finance": {"scored": 28, "rejected": 0, "report_sha256": "8bb69ff782dd8a05d51dd9bd864b0f82f9e81db868403b170d5eaa0eff69815e"}
+  },
+  "empirical_benchmark_results": null,
+  "superiority_claim": false,
+  "production_tests_rerun_locally": false
+}
