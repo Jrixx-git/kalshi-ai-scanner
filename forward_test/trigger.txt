@@ -1,2 +1,2 @@
-2026-10-28
+2026-10-29
 NBA daily research-only forward-test trigger; live trading disabled.
