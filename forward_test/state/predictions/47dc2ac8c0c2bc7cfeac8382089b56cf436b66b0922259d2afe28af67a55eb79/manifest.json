@@ -1,0 +1,13 @@
+{
+  "baseline": false,
+  "csv_sha256": "f733a8e3c487707662cbf25a0ecea37a8785baf1c2586805d725124db1e13fa3",
+  "metadata_sha256": "dbafd86a3cb4386eecdbf7385cdd749804ab1a6fc9a9d20a66881783b5efa073",
+  "observed_at": "2026-10-31T16:47:41.472878+00:00",
+  "run_id": "41221362351",
+  "schema_version": 1,
+  "snapshots": {
+    "history.json": "dfcb792b18d097d6a1dd70af334cde3e07687b2216477d2e5e92544541098834",
+    "schedule.json": "50cf70981e2d0dd836999b5d01e923deaa8b1f55d1fe68c044601912dfa94f6d"
+  },
+  "source_commit": "fa603aad613558804a5c6a2e3999fb6a5cb5a3fe"
+}
