@@ -1,0 +1,79 @@
+{
+  "book_received_at": "2026-10-31T16:55:30.566878+00:00",
+  "fee_change_pages": [
+    {
+      "cursor": "",
+      "event_fee_changes": []
+    }
+  ],
+  "fee_observed_at": "2026-10-31T16:55:30.678666+00:00",
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-03T00:00:00Z",
+    "created_time": "2026-10-28T00:02:00.706521Z",
+    "custom_strike": {
+      "basketball_team": "ad36c3e8-4194-4e63-920f-7c50f46191a6"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNBAGAME-26OCT31MINSAS",
+    "exchange_index": 3,
+    "expected_expiration_time": "2026-11-01T03:00:00Z",
+    "expiration_time": "2026-11-03T00:00:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.8300",
+    "latest_expiration_time": "2026-11-03T00:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.1800",
+    "no_bid_dollars": "0.1700",
+    "no_sub_title": "San Antonio",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-01T03:00:00Z",
+    "open_interest_fp": "38001.83",
+    "open_time": "2026-10-28T00:06:19.469061Z",
+    "previous_price_dollars": "0.8000",
+    "previous_yes_ask_dollars": "0.8000",
+    "previous_yes_bid_dollars": "0.7900",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If San Antonio wins the Minnesota vs San Antonio Pro Basketball game originally scheduled for Oct 31, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 45,
+    "status": "active",
+    "strike_type": "structured",
+    "ticker": "KXNBAGAME-26OCT31MINSAS-SAS",
+    "title": "San Antonio wins",
+    "updated_time": "2026-10-28T00:06:20.431665Z",
+    "volume_24h_fp": "43887.79",
+    "volume_fp": "47603.12",
+    "yes_ask_dollars": "0.8300",
+    "yes_ask_size_fp": "212893.30",
+    "yes_bid_dollars": "0.8200",
+    "yes_bid_size_fp": "5191.37",
+    "yes_sub_title": "San Antonio"
+  },
+  "orderbook": {
+    "orderbook_fp": {
+      "no_dollars": [
+        [
+          "0.1700",
+          "212893.30"
+        ]
+      ],
+      "yes_dollars": [
+        [
+          "0.8200",
+          "5191.37"
+        ]
+      ]
+    }
+  },
+  "request_started_at": "2026-10-31T16:55:30.369790+00:00"
+}
