@@ -2,7 +2,7 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-10-31T16:55:24.974085+00:00
+Results checked: 2026-11-01T16:56:24.321536+00:00
 
 | NBA date | Archived | Scored | Accuracy | Brier | Log loss |
 |---|---:|---:|---:|---:|---:|
@@ -10,7 +10,8 @@ Results checked: 2026-10-31T16:55:24.974085+00:00
 | 2026-10-28 | 12 | 12 | 0.750000 | 0.218984 | 0.634594 |
 | 2026-10-29 | 3 | 3 | 0.666667 | 0.335806 | 0.896267 |
 | 2026-10-30 | 10 | 10 | 0.500000 | 0.253436 | 0.693831 |
-| 2026-10-31 | 7 | 0 | pending | pending | pending |
+| 2026-10-31 | 7 | 7 | 0.571429 | 0.214399 | 0.617259 |
+| 2026-11-01 | 4 | 0 | pending | pending | pending |
 
 Unresolved games are excluded from all metric denominators.
 
@@ -45,10 +46,14 @@ Unresolved games are excluded from all metric denominators.
 | 21717998 | 2026-10-30 | final |
 | 21717999 | 2026-10-30 | final |
 | 21718000 | 2026-10-30 | final |
-| 21718001 | 2026-10-31 | unknown |
-| 21718002 | 2026-10-31 | unknown |
-| 21718003 | 2026-10-31 | unknown |
-| 21718004 | 2026-10-31 | unknown |
-| 21718005 | 2026-10-31 | unknown |
-| 21718006 | 2026-10-31 | unknown |
-| 21718007 | 2026-10-31 | unknown |
+| 21718001 | 2026-10-31 | final |
+| 21718002 | 2026-10-31 | final |
+| 21718003 | 2026-10-31 | final |
+| 21718004 | 2026-10-31 | final |
+| 21718005 | 2026-10-31 | final |
+| 21718006 | 2026-10-31 | final |
+| 21718007 | 2026-10-31 | final |
+| 21718008 | 2026-11-01 | unknown |
+| 21718009 | 2026-11-01 | unknown |
+| 21718010 | 2026-11-01 | unknown |
+| 21718011 | 2026-11-01 | unknown |
