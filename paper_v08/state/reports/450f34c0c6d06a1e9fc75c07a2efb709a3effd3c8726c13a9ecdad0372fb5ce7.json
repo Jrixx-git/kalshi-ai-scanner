@@ -1,0 +1,416 @@
+{
+  "bankroll_history": [
+    {
+      "equity": "4999.4300",
+      "realized_pnl": "-0.5700",
+      "settled_at": "2026-10-28T08:00:01.211209+00:00",
+      "signal_id": "nba-game:21717974"
+    },
+    {
+      "equity": "4998.8200",
+      "realized_pnl": "-0.6100",
+      "settled_at": "2026-10-29T16:08:04.603506+00:00",
+      "signal_id": "nba-game:21717975"
+    },
+    {
+      "equity": "4999.0000",
+      "realized_pnl": "0.1800",
+      "settled_at": "2026-10-29T16:08:04.836946+00:00",
+      "signal_id": "nba-game:21717976"
+    },
+    {
+      "equity": "4998.6100",
+      "realized_pnl": "-0.3900",
+      "settled_at": "2026-10-29T16:08:05.082049+00:00",
+      "signal_id": "nba-game:21717979"
+    },
+    {
+      "equity": "4998.8700",
+      "realized_pnl": "0.2600",
+      "settled_at": "2026-10-29T16:08:05.324058+00:00",
+      "signal_id": "nba-game:21717980"
+    },
+    {
+      "equity": "4998.2500",
+      "realized_pnl": "-0.6200",
+      "settled_at": "2026-10-29T16:08:05.565257+00:00",
+      "signal_id": "nba-game:21717982"
+    },
+    {
+      "equity": "4998.5700",
+      "realized_pnl": "0.3200",
+      "settled_at": "2026-10-29T16:08:05.804794+00:00",
+      "signal_id": "nba-game:21717983"
+    },
+    {
+      "equity": "4997.8600",
+      "realized_pnl": "-0.7100",
+      "settled_at": "2026-10-29T16:08:06.028440+00:00",
+      "signal_id": "nba-game:21717985"
+    },
+    {
+      "equity": "4997.4600",
+      "realized_pnl": "-0.4000",
+      "settled_at": "2026-10-29T16:08:06.271649+00:00",
+      "signal_id": "nba-game:21717986"
+    },
+    {
+      "equity": "4997.1000",
+      "realized_pnl": "-0.3600",
+      "settled_at": "2026-10-30T17:03:09.701211+00:00",
+      "signal_id": "nba-game:21717988"
+    },
+    {
+      "equity": "4996.5700",
+      "realized_pnl": "-0.5300",
+      "settled_at": "2026-10-31T16:55:26.423450+00:00",
+      "signal_id": "nba-game:21717990"
+    },
+    {
+      "equity": "4996.8100",
+      "realized_pnl": "0.2400",
+      "settled_at": "2026-10-31T16:55:26.565173+00:00",
+      "signal_id": "nba-game:21717993"
+    },
+    {
+      "equity": "4996.2500",
+      "realized_pnl": "-0.5600",
+      "settled_at": "2026-10-31T16:55:26.687260+00:00",
+      "signal_id": "nba-game:21717994"
+    },
+    {
+      "equity": "4996.8800",
+      "realized_pnl": "0.6300",
+      "settled_at": "2026-10-31T16:55:26.827622+00:00",
+      "signal_id": "nba-game:21717995"
+    },
+    {
+      "equity": "4996.6000",
+      "realized_pnl": "-0.2800",
+      "settled_at": "2026-11-01T16:56:25.511055+00:00",
+      "signal_id": "nba-game:21718004"
+    },
+    {
+      "equity": "4996.3400",
+      "realized_pnl": "-0.2600",
+      "settled_at": "2026-11-01T16:56:25.599313+00:00",
+      "signal_id": "nba-game:21718005"
+    },
+    {
+      "equity": "4996.1300",
+      "realized_pnl": "-0.2100",
+      "settled_at": "2026-11-01T16:56:25.686392+00:00",
+      "signal_id": "nba-game:21718006"
+    },
+    {
+      "equity": "4995.6500",
+      "realized_pnl": "-0.4800",
+      "settled_at": "2026-11-01T16:56:25.737106+00:00",
+      "signal_id": "nba-game:21718007"
+    },
+    {
+      "equity": "4995.3200",
+      "realized_pnl": "-0.3300",
+      "settled_at": "2026-11-02T17:26:59.139406+00:00",
+      "signal_id": "nba-game:21718008"
+    },
+    {
+      "equity": "4995.7200",
+      "realized_pnl": "0.4000",
+      "settled_at": "2026-11-02T17:26:59.181504+00:00",
+      "signal_id": "nba-game:21718011"
+    },
+    {
+      "equity": "4996.2900",
+      "realized_pnl": "0.5700",
+      "settled_at": "2026-11-03T17:19:10.272916+00:00",
+      "signal_id": "nba-game:21718012"
+    },
+    {
+      "equity": "4995.9100",
+      "realized_pnl": "-0.3800",
+      "settled_at": "2026-11-03T17:19:10.403176+00:00",
+      "signal_id": "nba-game:21718013"
+    },
+    {
+      "equity": "4995.3000",
+      "realized_pnl": "-0.6100",
+      "settled_at": "2026-11-03T17:19:10.534183+00:00",
+      "signal_id": "nba-game:21718016"
+    },
+    {
+      "equity": "4996.0600",
+      "realized_pnl": "0.7600",
+      "settled_at": "2026-11-03T17:19:10.809479+00:00",
+      "signal_id": "nba-game:21718018"
+    },
+    {
+      "equity": "4995.6700",
+      "realized_pnl": "-0.3900",
+      "settled_at": "2026-11-03T17:19:11.066824+00:00",
+      "signal_id": "nba-game:21718021"
+    },
+    {
+      "equity": "4995.2900",
+      "realized_pnl": "-0.3800",
+      "settled_at": "2026-11-03T17:19:11.230940+00:00",
+      "signal_id": "nba-game:21718025"
+    },
+    {
+      "equity": "4995.7100",
+      "realized_pnl": "0.4200",
+      "settled_at": "2026-11-03T17:19:11.350041+00:00",
+      "signal_id": "nba-game:21718026"
+    }
+  ],
+  "books": 50,
+  "cash": "4995.7100",
+  "collection_errors": 0,
+  "entries": {
+    "decisions": [
+      {
+        "game_id": "21717971",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717972",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717973",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717974",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717975",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717976",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717977",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717978",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717979",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717980",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717981",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717982",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717983",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717984",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717985",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717986",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717987",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717988",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717989",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717990",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717992",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717993",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717994",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717995",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717996",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717997",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717998",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21717999",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718000",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718001",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718002",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718003",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718004",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718005",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718006",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718007",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718008",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718009",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718010",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718011",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718012",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718013",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718014",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718015",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718016",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718017",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718018",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718019",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718020",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718021",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718022",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718023",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718024",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718025",
+        "reason": "late_or_unsealed_forecast"
+      },
+      {
+        "game_id": "21718026",
+        "reason": "late_or_unsealed_forecast"
+      }
+    ],
+    "entries": 0,
+    "games": 55,
+    "matched_signals": 0,
+    "rejected": 0,
+    "snapshot": "3a2b6d0a1eafc2876125015168f1bcaa793b5ae5de681d82b3171a90639d6f00"
+  },
+  "fee_capture_errors": {},
+  "generated_at": "2026-11-03T17:19:13.784622+00:00",
+  "markets": 50,
+  "max_realized_drawdown": "4.7100",
+  "open_cost": "0",
+  "open_positions": [],
+  "paper_only": true,
+  "realized_equity": "4995.7100",
+  "reconciliation": {
+    "checked": 7,
+    "errors": 0,
+    "pending": 0,
+    "settled": 7
+  },
+  "settled_trades": 27,
+  "snapshot": "paper_v08/state/snapshots/600bb0f16cbc9d0ba017e4ab40383db42d317ce489f53e141e4c3d32b96b4ae0.json",
+  "target_collection_errors": 0,
+  "target_snapshot": "paper_v08/state/snapshots/3a2b6d0a1eafc2876125015168f1bcaa793b5ae5de681d82b3171a90639d6f00.json"
+}

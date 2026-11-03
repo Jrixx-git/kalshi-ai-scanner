@@ -1,21 +1,13 @@
 {
-  "cash": "4992.7100",
+  "cash": "4995.7100",
   "duplicate_events": [],
   "duplicate_games": [],
   "errors": [],
-  "event_cost_exposure": {
-    "KXNBAGAME-26NOV02BOSHOU": "0.3900",
-    "KXNBAGAME-26NOV02DETCHA": "0.3800",
-    "KXNBAGAME-26NOV02MIALAL": "0.5800",
-    "KXNBAGAME-26NOV02OKCCLE": "0.4300",
-    "KXNBAGAME-26NOV02SACDAL": "0.2400",
-    "KXNBAGAME-26NOV02TORLAC": "0.3800",
-    "KXNBAGAME-26NOV02WASORL": "0.6100"
-  },
-  "generated_at": "2026-11-02T17:27:02.074066+00:00",
-  "gross_unrealized_before_exit_fee": "-0.2900",
+  "event_cost_exposure": {},
+  "generated_at": "2026-11-03T17:19:14.125245+00:00",
+  "gross_unrealized_before_exit_fee": "0",
   "notes": "Cost risk assumes full stake loss and recorded entry fees; prices are observations, not guaranteed fills. Open marks omit exit fees and are not realized P&L. Cross-game dependence is not quantified.",
-  "open_positions": 7,
+  "open_positions": 0,
   "paper_only": true,
   "positions": [
     {
@@ -1579,205 +1571,555 @@
       "ticker": "KXNBAGAME-26NOV01TORLAL-LAL"
     },
     {
-      "current_evidence_sha256": "b14d2a4985a888301e14b362c9b1d0e55d9c15add94c00cb7f94b81a3714a38b",
       "displayed_depth": 317007,
       "entry_cost": "0.4300",
       "entry_verified": true,
       "estimated_net_edge": "0.175705",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.3800",
-      "mark_observed_at": "2026-11-02T17:27:01.784323+00:00",
       "market_ask_probability": "0.4000",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": true,
       "model_probability": "0.605705",
       "no_on_model_underdog": false,
       "original_ask": "0.4000",
-      "pnl": null,
+      "pnl": "0.5700",
       "quote_age_seconds": 0.116,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-11-03T02:36:02Z",
+          "created_time": "2026-10-30T00:02:17.134525Z",
+          "custom_strike": {
+            "basketball_team": "a85f6eca-2f3b-4f61-83ab-8d049f59ce2c"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26NOV02OKCCLE",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-11-03T03:00:00Z",
+          "expiration_time": "2026-11-05T00:00:00Z",
+          "expiration_value": "112-117",
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-11-05T00:00:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Oklahoma City",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-11-03T03:00:00Z",
+          "open_interest_fp": "1228184.53",
+          "open_time": "2026-10-30T00:06:02.132129Z",
+          "previous_price_dollars": "0.4000",
+          "previous_yes_ask_dollars": "0.4000",
+          "previous_yes_bid_dollars": "0.3800",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "yes",
+          "rules_primary": "If Oklahoma City wins the Oklahoma City vs Cleveland Pro Basketball game originally scheduled for Nov 2, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-11-03T02:37:47.452567Z",
+          "settlement_value_dollars": "1.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26NOV02OKCCLE-OKC",
+          "title": "Oklahoma City wins",
+          "updated_time": "2026-11-03T02:37:47.920761Z",
+          "volume_24h_fp": "3025110.46",
+          "volume_fp": "3105942.23",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Oklahoma City"
+        },
+        "observed_at": "2026-11-03T17:19:10.272916+00:00"
+      },
       "side": "YES",
       "signal_id": "nba-game:21718012",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26NOV02OKCCLE-OKC",
-      "unrealized_before_exit_fee": "-0.0500"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26NOV02OKCCLE-OKC"
     },
     {
-      "current_evidence_sha256": "b5a61c376de72576364ae2bb197ae5ad1e81c7f5b7e01fe5ee3d77fdafd62314",
       "displayed_depth": 96680,
       "entry_cost": "0.3800",
       "entry_verified": true,
       "estimated_net_edge": "0.035504",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.3400",
-      "mark_observed_at": "2026-11-02T17:27:01.790591+00:00",
       "market_ask_probability": "0.3500",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": false,
       "model_probability": "0.415504",
       "no_on_model_underdog": false,
       "original_ask": "0.3500",
-      "pnl": null,
+      "pnl": "-0.3800",
       "quote_age_seconds": 0.162098,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-11-03T03:04:14Z",
+          "created_time": "2026-10-30T00:32:20.273244Z",
+          "custom_strike": {
+            "basketball_team": "65569528-1888-40aa-9d62-2b0e8142a9b4"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26NOV02DETCHA",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-11-03T03:30:00Z",
+          "expiration_time": "2026-11-05T00:30:00Z",
+          "expiration_value": "91-124",
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-11-05T00:30:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Detroit",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-11-03T03:30:00Z",
+          "open_interest_fp": "430288.36",
+          "open_time": "2026-10-30T00:36:25.819998Z",
+          "previous_price_dollars": "0.6600",
+          "previous_yes_ask_dollars": "0.6600",
+          "previous_yes_bid_dollars": "0.6500",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "yes",
+          "rules_primary": "If Detroit wins the Detroit vs Charlotte Pro Basketball game originally scheduled for Nov 2, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-11-03T03:06:02.374623Z",
+          "settlement_value_dollars": "1.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26NOV02DETCHA-DET",
+          "title": "Detroit wins",
+          "updated_time": "2026-11-03T03:06:02.409231Z",
+          "volume_24h_fp": "523397.41",
+          "volume_fp": "635351.72",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Detroit"
+        },
+        "observed_at": "2026-11-03T17:19:10.403176+00:00"
+      },
       "side": "NO",
       "signal_id": "nba-game:21718013",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26NOV02DETCHA-DET",
-      "unrealized_before_exit_fee": "-0.0400"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26NOV02DETCHA-DET"
     },
     {
-      "current_evidence_sha256": "ad8aace2ed95e3d5f208460bef30dc861a668dbdedcc878268da3bfcfb026fe8",
       "displayed_depth": 35,
       "entry_cost": "0.6100",
       "entry_verified": true,
       "estimated_net_edge": "0.22333",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.5700",
-      "mark_observed_at": "2026-11-02T17:27:01.789595+00:00",
       "market_ask_probability": "0.5800",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": true,
       "model_probability": "0.83333",
       "no_on_model_underdog": true,
       "original_ask": "0.5800",
-      "pnl": null,
+      "pnl": "-0.6100",
       "quote_age_seconds": 0.236497,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-11-03T02:51:58Z",
+          "created_time": "2026-10-30T00:32:24.190936Z",
+          "custom_strike": {
+            "basketball_team": "0464e75c-8bc8-4f18-9ee2-577832b889d6"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26NOV02WASORL",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-11-03T03:30:00Z",
+          "expiration_time": "2026-11-05T00:30:00Z",
+          "expiration_value": "94-103",
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-11-05T00:30:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Washington",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-11-03T03:30:00Z",
+          "open_interest_fp": "1163300.90",
+          "open_time": "2026-10-30T00:36:28.836355Z",
+          "previous_price_dollars": "0.4300",
+          "previous_yes_ask_dollars": "0.4300",
+          "previous_yes_bid_dollars": "0.4200",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "yes",
+          "rules_primary": "If Washington wins the Washington vs Orlando Pro Basketball game originally scheduled for Nov 2, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-11-03T02:53:42.408452Z",
+          "settlement_value_dollars": "1.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26NOV02WASORL-WAS",
+          "title": "Washington wins",
+          "updated_time": "2026-11-03T02:53:42.917059Z",
+          "volume_24h_fp": "1834578.49",
+          "volume_fp": "1969956.89",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Washington"
+        },
+        "observed_at": "2026-11-03T17:19:10.534183+00:00"
+      },
       "side": "NO",
       "signal_id": "nba-game:21718016",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26NOV02WASORL-WAS",
-      "unrealized_before_exit_fee": "-0.0400"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26NOV02WASORL-WAS"
     },
     {
-      "current_evidence_sha256": "9cc7710d9a474945ab57117b4bf682c46f5436e8b5717b383268c99c6d7a66b2",
       "displayed_depth": 202971,
       "entry_cost": "0.2400",
       "entry_verified": true,
       "estimated_net_edge": "0.075048",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.2000",
-      "mark_observed_at": "2026-11-02T17:27:01.788096+00:00",
       "market_ask_probability": "0.2100",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": false,
       "model_probability": "0.315048",
       "no_on_model_underdog": false,
       "original_ask": "0.2100",
-      "pnl": null,
+      "pnl": "0.7600",
       "quote_age_seconds": 0.286773,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-11-03T03:30:29Z",
+          "created_time": "2026-10-30T01:02:12.452988Z",
+          "custom_strike": {
+            "basketball_team": "ab9e2e9a-3243-41b6-a291-95f4d9c6edf7"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26NOV02SACDAL",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-11-03T04:00:00Z",
+          "expiration_time": "2026-11-05T01:00:00Z",
+          "expiration_value": "100-115",
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-11-05T01:00:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Sacramento",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-11-03T04:00:00Z",
+          "open_interest_fp": "569830.37",
+          "open_time": "2026-10-30T01:06:18.212392Z",
+          "previous_price_dollars": "0.2100",
+          "previous_yes_ask_dollars": "0.2100",
+          "previous_yes_bid_dollars": "0.2000",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "yes",
+          "rules_primary": "If Sacramento wins the Sacramento vs Dallas Pro Basketball game originally scheduled for Nov 2, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-11-03T03:32:17.411662Z",
+          "settlement_value_dollars": "1.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26NOV02SACDAL-SAC",
+          "title": "Sacramento wins",
+          "updated_time": "2026-11-03T03:32:17.911362Z",
+          "volume_24h_fp": "942405.15",
+          "volume_fp": "955936.92",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Sacramento"
+        },
+        "observed_at": "2026-11-03T17:19:10.809479+00:00"
+      },
       "side": "YES",
       "signal_id": "nba-game:21718018",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26NOV02SACDAL-SAC",
-      "unrealized_before_exit_fee": "-0.0400"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26NOV02SACDAL-SAC"
     },
     {
-      "current_evidence_sha256": "0edabd4a5ca14bb90d08d1a9c8769334910a09482cf585da78c41093871f1142",
       "displayed_depth": 122915,
       "entry_cost": "0.3900",
       "entry_verified": true,
       "estimated_net_edge": "0.073624",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.3500",
-      "mark_observed_at": "2026-11-02T17:27:01.922365+00:00",
       "market_ask_probability": "0.3600",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": false,
       "model_probability": "0.463624",
       "no_on_model_underdog": false,
       "original_ask": "0.3600",
-      "pnl": null,
+      "pnl": "-0.3900",
       "quote_age_seconds": 0.364259,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-11-03T04:01:33Z",
+          "created_time": "2026-10-30T01:32:08.210413Z",
+          "custom_strike": {
+            "basketball_team": "6dd427f5-fa02-40ef-aa90-cfa73e0c539e"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26NOV02BOSHOU",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-11-03T04:30:00Z",
+          "expiration_time": "2026-11-05T01:30:00Z",
+          "expiration_value": "109-93",
+          "last_price_dollars": "0.0100",
+          "latest_expiration_time": "2026-11-05T01:30:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Boston",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-11-03T04:30:00Z",
+          "open_interest_fp": "1669489.61",
+          "open_time": "2026-10-30T01:36:38.868854Z",
+          "previous_price_dollars": "0.3600",
+          "previous_yes_ask_dollars": "0.3600",
+          "previous_yes_bid_dollars": "0.3500",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "no",
+          "rules_primary": "If Boston wins the Boston vs Houston Pro Basketball game originally scheduled for Nov 2, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-11-03T04:03:17.435581Z",
+          "settlement_value_dollars": "0.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26NOV02BOSHOU-BOS",
+          "title": "Boston wins",
+          "updated_time": "2026-11-03T04:03:17.91398Z",
+          "volume_24h_fp": "2480731.93",
+          "volume_fp": "2574386.75",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Boston"
+        },
+        "observed_at": "2026-11-03T17:19:11.066824+00:00"
+      },
       "side": "YES",
       "signal_id": "nba-game:21718021",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26NOV02BOSHOU-BOS",
-      "unrealized_before_exit_fee": "-0.0400"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26NOV02BOSHOU-BOS"
     },
     {
-      "current_evidence_sha256": "e2e17a8caf24252cb8ac562dabc2226effda0c13a9c2b51b327ae5abd0da4dd3",
       "displayed_depth": 59,
       "entry_cost": "0.3800",
       "entry_verified": true,
       "estimated_net_edge": "0.175873",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.3400",
-      "mark_observed_at": "2026-11-02T17:27:01.925947+00:00",
       "market_ask_probability": "0.3500",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": true,
       "model_probability": "0.555873",
       "no_on_model_underdog": false,
       "original_ask": "0.3500",
-      "pnl": null,
+      "pnl": "-0.3800",
       "quote_age_seconds": 0.487844,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-11-03T05:57:43Z",
+          "created_time": "2026-10-30T03:01:41.022997Z",
+          "custom_strike": {
+            "basketball_team": "daca4413-0ea1-4db2-a815-f05c181ef0a6"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26NOV02TORLAC",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-11-03T06:00:00Z",
+          "expiration_time": "2026-11-05T03:00:00Z",
+          "expiration_value": "118-125",
+          "last_price_dollars": "0.0100",
+          "latest_expiration_time": "2026-11-05T03:00:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Los Angeles C",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-11-03T06:00:00Z",
+          "open_interest_fp": "1880811.85",
+          "open_time": "2026-10-30T03:06:09.931622Z",
+          "previous_price_dollars": "0.3600",
+          "previous_yes_ask_dollars": "0.3600",
+          "previous_yes_bid_dollars": "0.3400",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "no",
+          "rules_primary": "If Los Angeles C wins the Toronto vs Los Angeles C Pro Basketball game originally scheduled for Nov 2, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-11-03T05:59:27.394017Z",
+          "settlement_value_dollars": "0.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26NOV02TORLAC-LAC",
+          "title": "Los Angeles C wins",
+          "updated_time": "2026-11-03T05:59:27.910918Z",
+          "volume_24h_fp": "4383008.39",
+          "volume_fp": "4385818.84",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Los Angeles C"
+        },
+        "observed_at": "2026-11-03T17:19:11.230940+00:00"
+      },
       "side": "YES",
       "signal_id": "nba-game:21718025",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26NOV02TORLAC-LAC",
-      "unrealized_before_exit_fee": "-0.0400"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26NOV02TORLAC-LAC"
     },
     {
-      "current_evidence_sha256": "780f0244ada23c8fdcfbf0ec8a8eb6790d4c9d78f9a68bb66fc7f02f009c8650",
       "displayed_depth": 34995,
       "entry_cost": "0.5800",
       "entry_verified": true,
       "estimated_net_edge": "0.139955",
-      "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.5400",
-      "mark_observed_at": "2026-11-02T17:27:01.939019+00:00",
       "market_ask_probability": "0.5500",
-      "market_result": "",
-      "market_status": "active",
       "model_favorite": true,
       "model_probability": "0.719955",
       "no_on_model_underdog": true,
       "original_ask": "0.5500",
-      "pnl": null,
+      "pnl": "0.4200",
       "quote_age_seconds": 0.490444,
+      "settlement": {
+        "market": {
+          "can_close_early": true,
+          "close_time": "2026-11-03T05:33:28Z",
+          "created_time": "2026-10-30T03:01:42.177449Z",
+          "custom_strike": {
+            "basketball_team": "a17e4a68-2999-4f60-b67e-3e80aa9e198b"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26NOV02MIALAL",
+          "exchange_index": 3,
+          "expected_expiration_time": "2026-11-03T06:00:00Z",
+          "expiration_time": "2026-11-05T03:00:00Z",
+          "expiration_value": "138-117",
+          "last_price_dollars": "0.0100",
+          "latest_expiration_time": "2026-11-05T03:00:00Z",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Miami",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-11-03T06:00:00Z",
+          "open_interest_fp": "2419693.92",
+          "open_time": "2026-10-30T03:06:10.761197Z",
+          "previous_price_dollars": "0.4600",
+          "previous_yes_ask_dollars": "0.4600",
+          "previous_yes_bid_dollars": "0.4500",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "no",
+          "rules_primary": "If Miami wins the Miami vs Los Angeles L Pro Basketball game originally scheduled for Nov 2, 2026, then the market resolves to Yes.",
+          "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+          "settlement_bounds_type": "default",
+          "settlement_timer_seconds": 45,
+          "settlement_ts": "2026-11-03T05:35:12.422132Z",
+          "settlement_value_dollars": "0.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26NOV02MIALAL-MIA",
+          "title": "Miami wins",
+          "updated_time": "2026-11-03T05:35:12.913996Z",
+          "volume_24h_fp": "3505891.74",
+          "volume_fp": "3540142.46",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Miami"
+        },
+        "observed_at": "2026-11-03T17:19:11.350041+00:00"
+      },
       "side": "NO",
       "signal_id": "nba-game:21718026",
       "standard_fee_delta_vs_recorded": "0.00",
       "standard_fee_scenario": "0.02",
-      "status": "OPEN",
-      "ticker": "KXNBAGAME-26NOV02MIALAL-MIA",
-      "unrealized_before_exit_fee": "-0.0400"
+      "status": "SETTLED",
+      "ticker": "KXNBAGAME-26NOV02MIALAL-MIA"
     }
   ],
-  "realized_equity": "4995.7200",
-  "realized_pnl": "-4.2800",
-  "recorded_open_cost": "3.0100",
+  "realized_equity": "4995.7100",
+  "realized_pnl": "-4.2900",
+  "recorded_open_cost": "0",
   "rejected": [
     {
       "game_id": "21717971",
@@ -1940,36 +2282,64 @@
       "reason": "late_or_unsealed_forecast"
     },
     {
+      "game_id": "21718012",
+      "reason": "late_or_unsealed_forecast"
+    },
+    {
+      "game_id": "21718013",
+      "reason": "late_or_unsealed_forecast"
+    },
+    {
       "game_id": "21718014",
-      "reason": "no_positive_net_edge_or_invalid_quote"
+      "reason": "late_or_unsealed_forecast"
     },
     {
       "game_id": "21718015",
-      "reason": "no_positive_net_edge_or_invalid_quote"
+      "reason": "late_or_unsealed_forecast"
+    },
+    {
+      "game_id": "21718016",
+      "reason": "late_or_unsealed_forecast"
     },
     {
       "game_id": "21718017",
-      "reason": "no_positive_net_edge_or_invalid_quote"
+      "reason": "late_or_unsealed_forecast"
+    },
+    {
+      "game_id": "21718018",
+      "reason": "late_or_unsealed_forecast"
     },
     {
       "game_id": "21718019",
-      "reason": "edge_below_threshold"
+      "reason": "late_or_unsealed_forecast"
     },
     {
       "game_id": "21718020",
-      "reason": "no_positive_net_edge_or_invalid_quote"
+      "reason": "late_or_unsealed_forecast"
+    },
+    {
+      "game_id": "21718021",
+      "reason": "late_or_unsealed_forecast"
     },
     {
       "game_id": "21718022",
-      "reason": "no_positive_net_edge_or_invalid_quote"
+      "reason": "late_or_unsealed_forecast"
     },
     {
       "game_id": "21718023",
-      "reason": "edge_below_threshold"
+      "reason": "late_or_unsealed_forecast"
     },
     {
       "game_id": "21718024",
-      "reason": "no_positive_net_edge_or_invalid_quote"
+      "reason": "late_or_unsealed_forecast"
+    },
+    {
+      "game_id": "21718025",
+      "reason": "late_or_unsealed_forecast"
+    },
+    {
+      "game_id": "21718026",
+      "reason": "late_or_unsealed_forecast"
     }
   ],
   "selection_counts": {
@@ -1978,21 +2348,6 @@
     "no_on_model_underdog": 7,
     "total": 27
   },
-  "settled_positions": 20,
-  "team_cost_exposure": {
-    "BOS": "0.3900",
-    "CHA": "0.3800",
-    "CLE": "0.4300",
-    "DAL": "0.2400",
-    "DET": "0.3800",
-    "HOU": "0.3900",
-    "LAC": "0.3800",
-    "LAL": "0.5800",
-    "MIA": "0.5800",
-    "OKC": "0.4300",
-    "ORL": "0.6100",
-    "SAC": "0.2400",
-    "TOR": "0.3800",
-    "WAS": "0.6100"
-  }
+  "settled_positions": 27,
+  "team_cost_exposure": {}
 }
