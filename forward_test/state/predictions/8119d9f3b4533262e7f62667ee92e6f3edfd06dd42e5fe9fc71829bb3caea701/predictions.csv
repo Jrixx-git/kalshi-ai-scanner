@@ -1,0 +1,1 @@
+game_id,date,tipoff_utc,home_team_id,away_team_id,home_team,away_team,home_elo,away_elo,raw_home_win_probability,home_win_probability,away_win_probability,calibration_temperature,generated_at_utc,history_before,mode
