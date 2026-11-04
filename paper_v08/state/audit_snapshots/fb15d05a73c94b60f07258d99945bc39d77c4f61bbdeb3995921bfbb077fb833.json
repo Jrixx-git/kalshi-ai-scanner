@@ -1,0 +1,79 @@
+{
+  "book_received_at": "2026-11-04T17:21:15.813463+00:00",
+  "fee_change_pages": [
+    {
+      "cursor": "",
+      "event_fee_changes": []
+    }
+  ],
+  "fee_observed_at": "2026-11-04T17:21:15.861360+00:00",
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-07T03:30:00Z",
+    "created_time": "2026-11-01T03:31:25.433729Z",
+    "custom_strike": {
+      "basketball_team": "a17e4a68-2999-4f60-b67e-3e80aa9e198b"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNBAGAME-26NOV04MIALAC",
+    "exchange_index": 3,
+    "expected_expiration_time": "2026-11-05T06:30:00Z",
+    "expiration_time": "2026-11-07T03:30:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.6500",
+    "latest_expiration_time": "2026-11-07T03:30:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.3600",
+    "no_bid_dollars": "0.3500",
+    "no_sub_title": "Miami",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-05T06:30:00Z",
+    "open_interest_fp": "32230.70",
+    "open_time": "2026-11-01T03:35:53.542923Z",
+    "previous_price_dollars": "0.6600",
+    "previous_yes_ask_dollars": "0.6600",
+    "previous_yes_bid_dollars": "0.6300",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Miami wins the Miami vs Los Angeles C Pro Basketball game originally scheduled for Nov 4, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 45,
+    "status": "active",
+    "strike_type": "structured",
+    "ticker": "KXNBAGAME-26NOV04MIALAC-MIA",
+    "title": "Miami wins",
+    "updated_time": "2026-11-01T03:35:53.799376Z",
+    "volume_24h_fp": "28761.89",
+    "volume_fp": "34290.13",
+    "yes_ask_dollars": "0.6500",
+    "yes_ask_size_fp": "45301.91",
+    "yes_bid_dollars": "0.6400",
+    "yes_bid_size_fp": "27886.88",
+    "yes_sub_title": "Miami"
+  },
+  "orderbook": {
+    "orderbook_fp": {
+      "no_dollars": [
+        [
+          "0.3500",
+          "45301.91"
+        ]
+      ],
+      "yes_dollars": [
+        [
+          "0.6400",
+          "27886.88"
+        ]
+      ]
+    }
+  },
+  "request_started_at": "2026-11-04T17:21:15.719459+00:00"
+}
