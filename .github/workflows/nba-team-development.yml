@@ -40,7 +40,7 @@ jobs:
           branch=research/nba-team-development-evidence
           if git ls-remote --exit-code origin "refs/heads/$branch" > /dev/null; then
             git fetch --depth=1 origin "refs/heads/$branch:refs/remotes/origin/team-development"
-            git archive refs/remotes/origin/team-development | tar -x
+            git archive refs/remotes/origin/team-development team-development | tar -x
           else
             code=$?
             test "$code" -eq 2

@@ -46,7 +46,9 @@ not become an eligible training row.
 Source preparation is checkpointed in an Actions artifact and the isolated
 `research/nba-team-development-evidence` branch **before waiting**. The final
 full or partial run is retained again. Artifacts last 90 days; the branch is
-the persistent copy. Archives use normal fast-forward pushes, reject changes
+the persistent copy. Git attributes preserve exact raw and baseline bytes on
+Windows and Linux. Restore imports only the evidence directory, preserving the
+pinned executable source. Archives use normal fast-forward pushes, reject changes
 or deletions of existing evidence, verify the remote head, and never push
 to operational branches. A failed checkpoint prevents supervision. If a runner
 is forcibly terminated, its prepared receipts still survive. Any unarchived
@@ -81,7 +83,8 @@ split is the earliest tipoff admitting 100 previously received outcomes; it
 never chooses a split using outcomes or performance. At least 30 later eligible
 games must also exist. No scheduled workflow fits or freezes a model.
 
-Offline verification: 274 tests pass, including late starts, clock reversal,
+Offline verification: 275 tests pass, including a real Git stage/checkout round
+trip with Windows line-ending conversion enabled, late starts, clock reversal,
 budget expiry, simultaneous cutoffs, independent omissions, immutable game and
 slot duplicates, source-plan tampering, receipt tampering, and delayed outcomes
 at the train/validation boundary. Existing strategy and risk tests still pass.
