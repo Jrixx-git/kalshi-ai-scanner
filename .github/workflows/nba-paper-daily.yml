@@ -15,6 +15,6 @@ permissions:
 jobs:
   paper-research:
     # Pin orchestration; the reusable workflow checks out current develop data/code.
-    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-forward-test.yml@fa28af82093ca58c69b986271e9781577208b60d
+    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-forward-test.yml@bf6dac8434201d4f8960bc3c32f3ef38d4ab2702
     secrets:
       BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
