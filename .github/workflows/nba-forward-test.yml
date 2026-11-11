@@ -63,7 +63,16 @@ jobs:
           git add forward_test/state
           if ! git diff --cached --quiet; then
             git commit -m "Archive NBA research predictions [skip ci]"
-            git push origin HEAD:develop/paper-trading-v02
+            for attempt in 1 2 3 4; do
+              if git push origin HEAD:develop/paper-trading-v02; then
+                break
+              fi
+              if [ "$attempt" -eq 4 ]; then
+                echo "::error::GitHub rejected archive push after four attempts; evidence remains in run artifact"
+                exit 1
+              fi
+              sleep $((attempt * 10))
+            done
           fi
       - name: Retrieve official provider results and score
         env:
@@ -74,7 +83,16 @@ jobs:
           git add forward_test/state
           if ! git diff --cached --quiet; then
             git commit -m "Update NBA forward testing scoreboard [skip ci]"
-            git push origin HEAD:develop/paper-trading-v02
+            for attempt in 1 2 3 4; do
+              if git push origin HEAD:develop/paper-trading-v02; then
+                break
+              fi
+              if [ "$attempt" -eq 4 ]; then
+                echo "::error::GitHub rejected archive push after four attempts; evidence remains in run artifact"
+                exit 1
+              fi
+              sleep $((attempt * 10))
+            done
           fi
       - name: Capture and reconcile NBA paper research
         id: paper_v08
@@ -91,7 +109,16 @@ jobs:
           git add paper_v08/state
           if ! git diff --cached --quiet; then
             git commit -m "Archive NBA paper research [skip ci]"
-            git push origin HEAD:develop/paper-trading-v02
+            for attempt in 1 2 3 4; do
+              if git push origin HEAD:develop/paper-trading-v02; then
+                break
+              fi
+              if [ "$attempt" -eq 4 ]; then
+                echo "::error::GitHub rejected archive push after four attempts; evidence remains in run artifact"
+                exit 1
+              fi
+              sleep $((attempt * 10))
+            done
           fi
       - name: Export research evidence
         if: always()
