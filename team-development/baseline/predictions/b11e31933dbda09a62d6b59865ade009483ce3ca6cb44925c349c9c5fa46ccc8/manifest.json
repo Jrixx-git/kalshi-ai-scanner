@@ -1,0 +1,10 @@
+{
+  "baseline": true,
+  "csv_sha256": "23d114b82d8be42022695a8a3dd8a6926acc7bb652f951c2f0f2d765212f98b5",
+  "metadata_sha256": "4f1719802aa9b05e8eb63970945bdd7883f13f98bd22b354ed3244b521529424",
+  "observed_at": "2026-10-27T20:17:26Z",
+  "run_id": "40576182725",
+  "schema_version": 1,
+  "snapshots": {},
+  "source_commit": "e58267c2a79ca43625a6cb7012c89d5940dd1bc6"
+}
