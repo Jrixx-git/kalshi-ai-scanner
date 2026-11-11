@@ -1,0 +1,18 @@
+name: NBA v0.9 bounded research pilot
+on:
+  schedule:
+    # UTC; hourly at :17. Collector refuses all calls after 2026-11-25 18:00 UTC.
+    - cron: '17 * 11-25 11 *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/nba-v09-pilot.yml]
+permissions:
+  contents: write
+jobs:
+  prospective-evidence:
+    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-v09-prospective.yml@e7c442883796df80b3376f8c04e7e84052756ce9
+    with:
+      source_ref: e7c442883796df80b3376f8c04e7e84052756ce9
+    secrets:
+      BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
