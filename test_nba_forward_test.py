@@ -165,9 +165,10 @@ class ForwardTest(unittest.TestCase):
     def test_failed_fetch_no_result(self):
         def fail(*args, **kwargs):
             raise RuntimeError('offline')
-        with self.assertRaises(RuntimeError):
-            f.retrieve(self.root, 'secret', fetch=fail)
-        self.assertFalse((self.root/'results').exists())
+        report = f.retrieve(self.root, 'secret', fetch=fail, pause=0)
+        self.assertEqual(len(report['retrieval']['errors']), 4)
+        self.assertEqual(report['summary']['scored'], 0)
+        self.assertTrue(report['summary']['partial_refresh'])
 
     def test_daily_denominators_and_markdown(self):
         self.games[0]['status'] = 'Postponed'
@@ -213,8 +214,75 @@ class ForwardTest(unittest.TestCase):
                 raise RuntimeError('must use cache')
             report = f.retrieve(self.root, 'secret', fetch=fail, pause=0)
             self.assertEqual(report['summary']['scored'], 4)
-            with self.assertRaises(RuntimeError):
-                f.retrieve(self.root, 'secret', fetch=fail, pause=0, refresh_all=True)
+            report = f.retrieve(self.root, 'secret', fetch=fail, pause=0, refresh_all=True)
+            self.assertEqual(len(report['retrieval']['errors']), 4)
+            self.assertEqual(report['summary']['scored'], 4)
+
+    def test_bounded_refresh_rotates_and_preserves_timestamps(self):
+        def fetch(key, gid):
+            return next(g for g in self.games if str(g['id']) == gid)
+        first = f.retrieve(self.root, 'secret', fetch=fetch, pause=0, max_requests=2)
+        second = f.retrieve(self.root, 'secret', fetch=fetch, pause=0, max_requests=2)
+        self.assertTrue(set(first['retrieval']['attempted_ids']).isdisjoint(second['retrieval']['attempted_ids']))
+        self.assertEqual(second['summary']['scored'], 4)
+        for gid, stamp in first['result_observations'].items():
+            self.assertEqual(second['result_observations'][gid], stamp)
+
+    def test_time_budget_and_bad_cache(self):
+        report = f.retrieve(self.root, 'secret', fetch=lambda *a: self.fail('over budget'), max_seconds=200)
+        self.assertEqual(report['retrieval']['requests'], 0)
+        row, _, bundle = self.rows[0]
+        bad = copy.deepcopy(self.games[0])
+        bad['home_team']['id'] = 99
+        now = f.utc_timestamp('2026-11-11T12:00:00Z')
+        self.assertFalse(f.verified_final(bad, row, bundle, '2026-11-10T12:00:00Z', now))
+        bad = copy.deepcopy(self.games[0])
+        bad['home_team_score'] = 0
+        self.assertFalse(f.verified_final(bad, row, bundle, '2026-11-10T12:00:00Z', now))
+
+    def test_daily_correction_window_and_freeze_boundary(self):
+        from datetime import datetime
+        def fetch(key, gid):
+            return next(g for g in self.games if str(g['id']) == gid)
+        with patch('nba_forward_test.datetime') as clock:
+            clock.now.return_value = datetime.fromisoformat('2026-10-29T12:00:00+00:00')
+            f.retrieve(self.root, 'secret', fetch=fetch, pause=0)
+            report = f.retrieve(self.root, 'secret', fetch=lambda *a: self.fail('fresh'), pause=0)
+            self.assertEqual(report['retrieval']['requests'], 0)
+            clock.now.return_value = datetime.fromisoformat('2026-11-05T12:00:00+00:00')
+            self.games[0]['visitor_team_score'] = 120
+            report = f.retrieve(self.root, 'secret', fetch=fetch, pause=0)
+            self.assertEqual(report['retrieval']['requests'], 4)
+            self.assertEqual(report['summary']['accuracy'], .75)
+            clock.now.return_value = datetime.fromisoformat('2026-11-07T12:00:00+00:00')
+            report = f.retrieve(self.root, 'secret', fetch=lambda *a: self.fail('frozen'), pause=0)
+            self.assertEqual(report['retrieval']['requests'], 0)
+
+    def test_failed_refresh_keeps_source_observations_and_rotates_errors(self):
+        def fetch(key, gid):
+            return next(g for g in self.games if str(g['id']) == gid)
+        from datetime import datetime
+        with patch('nba_forward_test.datetime') as clock:
+            clock.now.return_value = datetime.fromisoformat('2026-11-08T12:00:00+00:00')
+            original = f.retrieve(self.root, 'secret', fetch=fetch, pause=0)
+        def fail(*args):
+            raise RuntimeError('secret must not appear in diagnostics')
+        with patch('nba_forward_test.datetime') as clock:
+            clock.now.return_value = datetime.fromisoformat('2026-11-09T12:00:00+00:00')
+            partial = f.retrieve(self.root, 'secret', fetch=fail, pause=0, refresh_all=True, max_requests=2)
+            clock.now.return_value = datetime.fromisoformat('2026-11-10T12:00:00+00:00')
+            next_run = f.retrieve(self.root, 'secret', fetch=fail, pause=0, refresh_all=True, max_requests=2)
+        self.assertEqual(partial['result_observations'], original['result_observations'])
+        self.assertEqual(partial['summary']['scored'], 4)
+        self.assertTrue(set(partial['retrieval']['attempted_ids']).isdisjoint(next_run['retrieval']['attempted_ids']))
+        self.assertNotIn('secret', json.dumps(partial))
+
+    def test_result_snapshot_tampering_fails_closed(self):
+        f.retrieve(self.root, 'secret', fetch=lambda key, gid: None, pause=0)
+        path = next((self.root/'results').glob('*.json'))
+        path.write_bytes(path.read_bytes()+b' ')
+        with self.assertRaisesRegex(ValueError, 'integrity'):
+            f.retrieve(self.root, 'secret', pause=0)
 
     def test_http_get_single_game_and_404(self):
         import urllib.error

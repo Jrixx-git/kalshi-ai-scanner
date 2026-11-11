@@ -234,10 +234,31 @@ def get_result(key, gid):
         time.sleep(15 * (attempt + 1))
 
 
-def retrieve(root, key, *, fetch=get_result, pause=13, refresh_all=False):
+def verified_final(game, row, bundle, stamp, now):
+    """Only identity-, score- and time-verified finals qualify for cache reuse."""
+    try:
+        observed = utc_timestamp(stamp)
+        tip = utc_timestamp(game['datetime'])
+        hs = positive_integer(game.get('home_team_score'), 'score')
+        av = positive_integer(game.get('visitor_team_score'), 'score')
+        return (result_state(game) == 'final' and hs != av
+                and str(game['id']) == row['game_id']
+                and str(game['home_team']['id']) == row['home_team_id']
+                and str(game['visitor_team']['id']) == row['away_team_id']
+                and utc_timestamp(bundle['observed_at']) < tip < observed <= now)
+    except (ValueError, KeyError, TypeError):
+        return False
+
+
+def retrieve(root, key, *, fetch=get_result, pause=13, refresh_all=False,
+             max_requests=60, max_seconds=1200):
     # Query IDs, not dates: postponements may move to another league date.
-    ids = sorted(predictions(root), key=int)
-    games, observations, previous = [], {}, {}
+    selected = predictions(root)
+    ids = sorted(selected, key=int)
+    if min(max_requests, max_seconds, pause) < 0:
+        raise ValueError('Budgets must be nonnegative')
+    started = time.monotonic()
+    games, observations, previous, attempts = [], {}, {}, {}
     now_dt = datetime.now(timezone.utc)
     # Final results are refreshed through seven days after tipoff, then frozen.
     # An explicit refresh-all can audit later provider corrections.
@@ -246,38 +267,68 @@ def retrieve(root, key, *, fetch=get_result, pause=13, refresh_all=False):
         if digest(raw) != path.stem:
             raise ValueError('Result snapshot integrity failure')
         snapshot = json.loads(raw)
+        for gid in snapshot.get('diagnostics', {}).get('attempted_ids', []):
+            attempts[gid] = max(attempts.get(gid, ''), snapshot['retrieved_at'])
         for game in snapshot['games']:
             gid = str(game['id'])
             stamp = snapshot['observations'][gid]
             if gid not in previous or utc_timestamp(stamp) > utc_timestamp(previous[gid][1]):
                 previous[gid] = game, stamp
     requests = 0
-    for index, gid in enumerate(ids):
+    diagnostics = dict(fetched=0, cached=0, deferred=0, upcoming=0, errors={}, attempted_ids=[])
+    ids.sort(key=lambda gid: (attempts.get(gid, previous.get(gid, (None, '0001-01-01T00:00:00Z'))[1]), int(gid)))
+    for gid in ids:
         cached, stamp = previous.get(gid, (None, None))
         frozen = False
-        if cached and not refresh_all and result_state(cached) == 'final':
+        verified = cached is not None and verified_final(cached, selected[gid][0], selected[gid][2], stamp, now_dt)
+        if verified and not refresh_all:
             try:
                 frozen = utc_timestamp(cached['datetime']) + timedelta(days=7) <= utc_timestamp(stamp) <= now_dt
             except (KeyError, ValueError, TypeError):
                 pass
-        if frozen:
-            game = cached
+        fresh = verified and not refresh_all and now_dt - utc_timestamp(stamp) < timedelta(hours=24)
+        future = not refresh_all and utc_timestamp(selected[gid][0]['tipoff_utc']) > now_dt
+        game = cached
+        if future:
+            diagnostics['upcoming'] += 1
+        elif frozen or fresh:
+            diagnostics['cached'] += 1
+        elif requests >= max_requests or time.monotonic()-started + (pause if requests else 0) + 210 > max_seconds:
+            # Reserve four 30-second timeouts and retry backoffs before starting.
+            diagnostics['deferred'] += 1
         else:
             if requests:
                 time.sleep(pause)
-            game = fetch(key, gid)
-            stamp = datetime.now(timezone.utc).isoformat()
             requests += 1
+            diagnostics['attempted_ids'].append(gid)
+            try:
+                fetched = fetch(key, gid)
+                if fetched is not None:
+                    if str(fetched.get('id')) != gid:
+                        raise ValueError('Result ID mismatch')
+                    game = fetched
+                    stamp = datetime.now(timezone.utc).isoformat()
+                else:
+                    diagnostics['errors'][gid] = 'not_found'
+                diagnostics['fetched'] += 1
+            except (RuntimeError, OSError, ValueError, KeyError, TypeError) as error:
+                # Fallback retains its original source observation timestamp.
+                diagnostics['errors'][gid] = type(error).__name__
+            print(json.dumps(dict(result_progress=gid, requests=requests,
+                                  errors=len(diagnostics['errors']))), flush=True)
         if game is not None:
             games.append(game)
             observations[gid] = stamp
     now = datetime.now(timezone.utc).isoformat()
+    diagnostics.update(requests=requests, max_requests=max_requests, max_seconds=max_seconds)
     raw = encode(dict(endpoint=BASE, retrieved_at=now, requested_ids=ids, games=games,
-                      observations=observations, refresh_all=refresh_all))
+                      observations=observations, refresh_all=refresh_all, diagnostics=diagnostics))
     immutable(Path(root) / 'results' / (digest(raw) + '.json'), raw)
     report = scoreboard(root, games, now)
     report['result_snapshot_sha256'] = digest(raw)
     report['result_observations'] = observations
+    report['retrieval'] = diagnostics
+    report['summary']['partial_refresh'] = bool(diagnostics['errors'] or diagnostics['deferred'])
     return report
 
 
@@ -289,6 +340,9 @@ def markdown(report):
              f"Results checked: {s['retrieved_at']}", '',
              '| NBA date | Archived | Scored | Accuracy | Brier | Log loss |',
              '|---|---:|---:|---:|---:|---:|']
+    if 'retrieval' in report:
+        r = report['retrieval']
+        lines[6:6] = [f"Refresh: {r['requests']} requests; {r['cached']} reused; {r['deferred']} deferred; {len(r['errors'])} errors. Cached source timestamps are retained.", '']
     for day, row in report['daily'].items():
         lines.append(f"| {day} | {row['predicted']} | {row['scored']} | {number(row['accuracy'])} | {number(row['brier'])} | {number(row['log_loss'])} |")
     lines += ['', 'Unresolved games are excluded from all metric denominators.', '',
@@ -309,6 +363,8 @@ def main():
     a.add_argument('--run-id', required=True)
     score = sub.add_parser('score')
     score.add_argument('--refresh-all', action='store_true')
+    score.add_argument('--max-requests', type=int, default=60)
+    score.add_argument('--max-seconds', type=int, default=1200)
     args = p.parse_args()
     if args.command == 'baseline':
         print(import_baseline(args.zip, args.root))
@@ -319,13 +375,13 @@ def main():
                       commit=args.commit, run_id=args.run_id,
                       observed_at=datetime.now(timezone.utc).isoformat(), snapshots=snapshots))
     else:
-        report = retrieve(args.root, os.environ.get('BALLDONTLIE_API_KEY', ''), refresh_all=args.refresh_all)
+        report = retrieve(args.root, os.environ.get('BALLDONTLIE_API_KEY', ''), refresh_all=args.refresh_all, max_requests=args.max_requests, max_seconds=args.max_seconds)
         path = Path(args.root) / 'scoreboard.json'
         temporary = path.with_suffix('.tmp')
         temporary.write_bytes(encode(report))
         temporary.replace(path)
         path.with_suffix('.md').write_text(markdown(report), encoding='utf-8')
-        print(json.dumps(report['summary'], indent=2))
+        print(json.dumps(dict(summary=report['summary'], retrieval=report['retrieval']), indent=2))
 
 
 if __name__ == '__main__':
