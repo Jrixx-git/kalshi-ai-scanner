@@ -1,9 +1,13 @@
-"""Manual bounded development-input collection; deliberately no model argument."""
+"""Bounded prospective development collection; no fitting or trading entry point."""
 import argparse
 import json
 from pathlib import Path
-from nba_v09_challenger import run_cutoffs, sha
-from nba_v09_prospective import collect
+from datetime import datetime, timedelta, timezone
+import time
+from nba_v09_challenger import seal_input, collect_history, save, sha
+from nba_v09_prospective import collect, active, STOP
+from nba_v08_valuation import timestamp
+from nba_forward_test import immutable, encode
 
 
 def targets(root):
@@ -28,14 +32,128 @@ def targets(root):
     return list(found.values())
 
 
+def supervise(history, games, operational, output, *, launched_at, max_wait=3600,
+              clock=None, sleep=time.sleep, monotonic=time.monotonic, seal=seal_input,
+              preflight=None):
+    """Use actual wall time for seals and monotonic time only for the wait budget."""
+    if not 0 <= max_wait <= 14400:
+        raise ValueError('Wait budget must be 0..14400 seconds')
+    clock = clock or (lambda: datetime.now(timezone.utc))
+    started = clock()
+    deadline = monotonic() + max_wait
+    horizon = min(started + timedelta(seconds=max_wait), STOP)
+    rows, groups = [], {}
+
+    def record(t, reason, **extra):
+        row = dict(game_id=str(t['id']), reason=reason, observed_at=clock().isoformat(),
+                   launched_at=launched_at.isoformat(), no_trade=True, **extra)
+        save(output, 'coverage', row)
+        rows.append(row)
+
+    for t in games:
+        try:
+            due = timestamp(t['datetime']) - timedelta(hours=1)
+            if 'home_team' not in t:
+                raise KeyError('identity')
+        except (KeyError, ValueError, TypeError):
+            record(t, 'independent_only_or_unknown_identity')
+            continue
+        if (Path(output)/'inputs'/(str(t['id'])+'.json')).exists():
+            record(t, 'already_sealed')
+        elif launched_at >= due or started > due + timedelta(seconds=30):
+            record(t, 'missed_cutoff', cutoff=due.isoformat())
+        elif due >= horizon:
+            record(t, 'outside_worker_horizon', cutoff=due.isoformat())
+        else:
+            groups.setdefault(due, []).append(t)
+    for due, group in sorted(groups.items()):
+        check_at = due - timedelta(seconds=90)
+        while clock() < check_at and monotonic() < deadline and active(clock()):
+            sleep(min(5, (check_at-clock()).total_seconds(), max(0, deadline-monotonic())))
+        allowed = []
+        for t in group:
+            if monotonic() >= deadline or not active(clock()):
+                record(t, 'worker_budget_or_window_expired', cutoff=due.isoformat())
+                continue
+            try:
+                if preflight is not None:
+                    preflight(t)
+                allowed.append(t)
+            except (ValueError, OSError, KeyError, TypeError) as exc:
+                record(t, 'fresh_schedule_unverified', error_type=type(exc).__name__)
+        while clock() < due and monotonic() < deadline and active(clock()):
+            sleep(min(5, (due-clock()).total_seconds(), max(0, deadline-monotonic())))
+        for t in allowed:
+            if clock() < due or monotonic() >= deadline or not active(clock()):
+                record(t, 'worker_budget_or_window_expired', cutoff=due.isoformat())
+                continue
+            try:
+                row = seal(history, t, operational, output)
+                record(t, 'sealed', baseline_available=row['elo'] is not None,
+                       complete_features=all(v is not None for v in row['features']['x']),
+                       sealed_at=row['sealed_at'])
+            except (ValueError, KeyError, OSError, TypeError) as exc:
+                # Exception text may include provider data or credentials.
+                record(t, 'seal_failed', error_type=type(exc).__name__, cutoff=due.isoformat())
+    return rows
+
+
+def run(history, output, *, max_wait=3600, operational='forward_test/state'):
+    if not 0 <= max_wait <= 14400:
+        raise ValueError('Wait budget must be 0..14400 seconds')
+    launched = datetime.now(timezone.utc)
+    if not active(launched):
+        raise ValueError('Outside approved collection window')
+    root = Path(output)
+    slot = launched.strftime('%Y%m%dT%H')
+    claim = root/'slots'/slot/'claim.json'
+    claim.parent.mkdir(parents=True, exist_ok=True)
+    # A durable restored claim suppresses reruns, including failed partial runs.
+    with claim.open('x') as f:
+        json.dump(dict(started_at=launched.isoformat(), stop_at=STOP.isoformat(),
+                       no_trade=True, max_wait_seconds=max_wait), f)
+    evidence = claim.parent
+    errors = {}
+    for season in (2025, 2026):
+        try:
+            collect_history(history, season, max_pages=20)
+        except (ValueError, OSError, KeyError, TypeError) as exc:
+            errors['history-'+str(season)] = type(exc).__name__
+    # Provider failure never removes the independent universe from the receipt.
+    sources = collect(evidence/'source')
+    games = targets(evidence/'source')
+    print(json.dumps(dict(stage='supervising', slot=slot, actual_at=datetime.now(timezone.utc).isoformat(),
+          targets=[dict(id=str(t['id']), tipoff=t.get('datetime')) for t in games],
+          source_errors=sources['source_errors'], history_errors=errors)), flush=True)
+    from nba_v09_prospective import capture_schedule, game_record
+    from nba_v08_schedule import verify
+    schedules = {}
+
+    def preflight(t):
+        # Refresh independently shortly before each cutoff, not after sealing.
+        day = t['date'][:10]
+        now = datetime.now(timezone.utc)
+        if day not in schedules or (now-timestamp(schedules[day]['requested_at'])).total_seconds() > 120:
+            schedules[day] = json.loads(capture_schedule(day, evidence/'fresh-schedules').read_bytes())
+        row = game_record(t, now)
+        verify(row, schedules[day], now)
+
+    rows = supervise(history, games, operational, root,
+                     launched_at=launched, max_wait=max_wait, preflight=preflight)
+    report = dict(schema='nba-team-development-run-v1', launched_at=launched.isoformat(),
+                  completed_at=datetime.now(timezone.utc).isoformat(), slot=slot,
+                  source_errors=sources['source_errors'], history_errors=errors,
+                  coverage=rows, no_trade=True, live_trading=False)
+    immutable(evidence/'result.json', encode(report))
+    print(json.dumps(report, sort_keys=True))
+    return report
+
+
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--history', required=True)
     p.add_argument('--output', required=True)
-    p.add_argument('--max-wait-seconds', type=int, default=7200, choices=range(0,14401))
+    p.add_argument('--operational', default='forward_test/state')
+    p.add_argument('--max-wait-seconds', type=int, default=3600, choices=range(0,14401))
     a = p.parse_args()
-    root = Path(a.output)
-    collect(root/'source')
-    # Explicit correct archive location; no mutable Elo regeneration or fallback.
-    run_cutoffs(a.history, targets(root/'source'), 'forward_test/state', root,
-                model=None, max_wait=a.max_wait_seconds)
+    run(a.history, a.output, max_wait=a.max_wait_seconds, operational=a.operational)

@@ -311,8 +311,8 @@ def seal_input(root, target, operational_root, output, *, clock=None, purpose='d
     return row
 
 
-def train(root, inputs, operational_root, output, *, freeze_at, validation_start):
-    """Verify sealed raw-derived inputs and final receipts before fitting/freezing."""
+def verified_development_rows(root, inputs, operational_root, *, freeze_at):
+    """Shared read-only verifier for readiness counts and actual model fitting."""
     results = {r['game_id']:r for r in history(root, freeze_at)}
     rows = []
     for path in sorted((Path(inputs)/'inputs').glob('*.json')):
@@ -340,6 +340,12 @@ def train(root, inputs, operational_root, output, *, freeze_at, validation_start
         rows.append(dict(features=f, elo=p, outcome=int(result['hs'] > result['aw']),
                          tipoff_utc=t['datetime'], outcome_received_at=result['received_at'],
                          baseline_verified=True, feature_verified=True))
+    return rows
+
+
+def train(root, inputs, operational_root, output, *, freeze_at, validation_start):
+    """Verify sealed raw-derived inputs and final receipts before fitting/freezing."""
+    rows = verified_development_rows(root, inputs, operational_root, freeze_at=freeze_at)
     model = _fit(rows, freeze_at=freeze_at, validation_start=validation_start)
     # A supplied data cutoff never backdates the actual model freeze.
     model['training_cutoff_at'] = freeze_at
