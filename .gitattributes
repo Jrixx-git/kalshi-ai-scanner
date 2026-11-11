@@ -1,2 +1,6 @@
 # Evidence hashes cover exact bytes, including original CSV line endings.
 forward_test/** binary
+# Preserve official raw evidence exactly; HTML whitespace is source evidence.
+research/nba_v09/injuries/raw/** binary
+research/nba_v09/injuries/records/** -text
+research/nba_v09/validation/*.log -text whitespace=cr-at-eol
