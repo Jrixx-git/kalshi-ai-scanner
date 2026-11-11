@@ -1639,15 +1639,27 @@
     "21718089": "2026-11-11T16:08:07.236023+00:00",
     "21718090": "2026-11-11T16:08:20.388824+00:00"
   },
-  "result_snapshot_sha256": "8558654493db2e3180dddb673e7c629f5f550edbccf5e39ccc0a42201eb02a67",
+  "result_snapshot_sha256": "072c14b8614247bb7317cc4db52f0e0a35e5400a41c7ff0982e04af6ef11ab4a",
+  "retrieval": {
+    "attempted_ids": [],
+    "cached": 108,
+    "deferred": 0,
+    "errors": {},
+    "fetched": 0,
+    "max_requests": 60,
+    "max_seconds": 1200,
+    "requests": 0,
+    "upcoming": 10
+  },
   "summary": {
     "accuracy": 0.7314814814814815,
     "brier": 0.19692113698869443,
     "convention": "One home-win Bernoulli per game; p=0.5 picks home; log loss clips at 1e-15",
     "live_trading_enabled": false,
     "log_loss": 0.5748799668817441,
+    "partial_refresh": false,
     "predicted": 118,
-    "retrieved_at": "2026-11-11T16:08:20.388842+00:00",
+    "retrieved_at": "2026-11-11T16:18:25.712888+00:00",
     "scored": 108,
     "statuses": {
       "final": 108,
