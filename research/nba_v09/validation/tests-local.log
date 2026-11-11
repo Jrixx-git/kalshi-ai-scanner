@@ -1,0 +1,274 @@
+test_access_classification_never_inferrs_paid_tier (research_tests.test_authentic.AuthenticTests.test_access_classification_never_inferrs_paid_tier) ... ok
+test_actual_contract_source_overrides_old_nws_assumption (research_tests.test_authentic.AuthenticTests.test_actual_contract_source_overrides_old_nws_assumption) ... ok
+test_bls_archived_headline_is_separate_from_revised_levels (research_tests.test_authentic.AuthenticTests.test_bls_archived_headline_is_separate_from_revised_levels) ... ok
+test_bound_features_derive_values_and_empty_injuries_are_not_missing (research_tests.test_authentic.AuthenticTests.test_bound_features_derive_values_and_empty_injuries_are_not_missing) ... ok
+test_bound_market_orientation_and_quote_age (research_tests.test_authentic.AuthenticTests.test_bound_market_orientation_and_quote_age) ... ok
+test_credential_echo_is_not_written_to_evidence (research_tests.test_authentic.AuthenticTests.test_credential_echo_is_not_written_to_evidence) ... ok
+test_cursor_truncation_never_means_complete (research_tests.test_authentic.AuthenticTests.test_cursor_truncation_never_means_complete) ... ok
+test_dst_contract_windows_and_fixed_standard_day (research_tests.test_authentic.AuthenticTests.test_dst_contract_windows_and_fixed_standard_day) ... ok
+test_first_release_missing_panel_never_scores_zero (research_tests.test_authentic.AuthenticTests.test_first_release_missing_panel_never_scores_zero) ... ok
+test_first_release_rejects_revised_levels (research_tests.test_authentic.AuthenticTests.test_first_release_rejects_revised_levels) ... ok
+test_future_capture_cannot_be_backdated_by_importer (research_tests.test_authentic.AuthenticTests.test_future_capture_cannot_be_backdated_by_importer) ... ok
+test_incomplete_minutes_and_duplicate_player_are_rejected (research_tests.test_authentic.AuthenticTests.test_incomplete_minutes_and_duplicate_player_are_rejected) ... ok
+test_labels_unavailable_at_decision_do_not_train_challenger (research_tests.test_authentic.AuthenticTests.test_labels_unavailable_at_decision_do_not_train_challenger) ... ok
+test_market_midpoint_is_not_ask_or_wrong_side (research_tests.test_authentic.AuthenticTests.test_market_midpoint_is_not_ask_or_wrong_side) ... ok
+test_members_bound_to_complete_trajectories (research_tests.test_authentic.AuthenticTests.test_members_bound_to_complete_trajectories) ... ok
+test_missing_authentic_panel_is_reported_not_imputed (research_tests.test_authentic.AuthenticTests.test_missing_authentic_panel_is_reported_not_imputed) ... ok
+test_nonfinal_history_is_rejected (research_tests.test_authentic.AuthenticTests.test_nonfinal_history_is_rejected) ... ok
+test_real_inventory_distinguishes_missing_day_and_no_trades (research_tests.test_authentic.AuthenticTests.test_real_inventory_distinguishes_missing_day_and_no_trades) ... ok
+test_settlement_requires_explicit_rules_and_rounding (research_tests.test_authentic.AuthenticTests.test_settlement_requires_explicit_rules_and_rounding) ... ok
+test_tampered_raw_is_rejected (research_tests.test_authentic.AuthenticTests.test_tampered_raw_is_rejected) ... ok
+test_target_game_stats_cannot_be_features (research_tests.test_authentic.AuthenticTests.test_target_game_stats_cannot_be_features) ... ok
+test_actual_provenance_requires_evidence (research_tests.test_research.ResearchTests.test_actual_provenance_requires_evidence) ... ok
+test_alfred_requests_previous_day (research_tests.test_research.ResearchTests.test_alfred_requests_previous_day) ... ok
+test_alfred_wrong_vintage_rejected (research_tests.test_research.ResearchTests.test_alfred_wrong_vintage_rejected) ... ok
+test_all_prototypes_run (research_tests.test_research.ResearchTests.test_all_prototypes_run) ... ok
+test_csv_latest_fallback_rejected (research_tests.test_research.ResearchTests.test_csv_latest_fallback_rejected) ... ok
+test_delayed_labels_excluded_from_training (research_tests.test_research.ResearchTests.test_delayed_labels_excluded_from_training) ... ok
+test_duplicate_event_fails (research_tests.test_research.ResearchTests.test_duplicate_event_fails) ... ok
+test_empty_is_not_zero_loss (research_tests.test_research.ResearchTests.test_empty_is_not_zero_loss) ... ok
+test_few_clusters_suppress_interval (research_tests.test_research.ResearchTests.test_few_clusters_suppress_interval) ... ok
+test_finance_future_and_gaps_rejected (research_tests.test_research.ResearchTests.test_finance_future_and_gaps_rejected) ... ok
+test_future_labels_do_not_change_earlier_predictions (research_tests.test_research.ResearchTests.test_future_labels_do_not_change_earlier_predictions) ... ok
+test_game_and_weather_identity (research_tests.test_research.ResearchTests.test_game_and_weather_identity) ... ok
+test_hash_tampering (research_tests.test_research.ResearchTests.test_hash_tampering) ... ok
+test_hourly_aggregation_requires_complete_day (research_tests.test_research.ResearchTests.test_hourly_aggregation_requires_complete_day) ... ok
+test_macro_outcome_identity (research_tests.test_research.ResearchTests.test_macro_outcome_identity) ... ok
+test_naive_and_future_availability (research_tests.test_research.ResearchTests.test_naive_and_future_availability) ... ok
+test_no_operational_imports_or_order_requests (research_tests.test_research.ResearchTests.test_no_operational_imports_or_order_requests) ... ok
+test_official_quality_flag (research_tests.test_research.ResearchTests.test_official_quality_flag) ... ok
+test_proper_scores (research_tests.test_research.ResearchTests.test_proper_scores) ... ok
+test_realized_minutes_cannot_be_features (research_tests.test_research.ResearchTests.test_realized_minutes_cannot_be_features) ... ok
+test_reanalysis_and_scrambled_rejected (research_tests.test_research.ResearchTests.test_reanalysis_and_scrambled_rejected) ... ok
+test_sportsdata_endpoint (research_tests.test_research.ResearchTests.test_sportsdata_endpoint) ... ok
+test_synthetic_cannot_masquerade_as_real (research_tests.test_research.ResearchTests.test_synthetic_cannot_masquerade_as_real) ... ok
+test_unapproved_endpoint_rejected (research_tests.test_research.ResearchTests.test_unapproved_endpoint_rejected) ... ok
+test_bad_probability (test_auto_paper.BridgeTests.test_bad_probability) ... ok
+test_eligible (test_auto_paper.BridgeTests.test_eligible) ... ok
+test_low_edge (test_auto_paper.BridgeTests.test_low_edge) ... ok
+test_mismatch (test_auto_paper.BridgeTests.test_mismatch) ... ok
+test_missing_fees (test_auto_paper.BridgeTests.test_missing_fees) ... ok
+test_no_liquidity (test_auto_paper.BridgeTests.test_no_liquidity) ... ok
+test_stale (test_auto_paper.BridgeTests.test_stale) ... ok
+test_crossed_book (test_kalshi_orderbook.OrderbookTests.test_crossed_book) ... ok
+test_empty_book (test_kalshi_orderbook.OrderbookTests.test_empty_book) ... ok
+test_fractional_size_not_overstated (test_kalshi_orderbook.OrderbookTests.test_fractional_size_not_overstated) ... ok
+test_invalid_size (test_kalshi_orderbook.OrderbookTests.test_invalid_size) ... ok
+test_missing_schema (test_kalshi_orderbook.OrderbookTests.test_missing_schema) ... ok
+test_opposite_bid_becomes_ask (test_kalshi_orderbook.OrderbookTests.test_opposite_bid_becomes_ask) ... ok
+test_duplicate_rejected (test_nba_backtest.BacktestTests.test_duplicate_rejected) ... ok
+test_same_day_results_do_not_leak (test_nba_backtest.BacktestTests.test_same_day_results_do_not_leak) ... ok
+test_csv_integrity (test_nba_calibration.CalibrationTests.test_csv_integrity) ... ok
+test_earlier_rows_excluded (test_nba_calibration.CalibrationTests.test_earlier_rows_excluded) ... ok
+test_empty_and_bad_windows (test_nba_calibration.CalibrationTests.test_empty_and_bad_windows) ... ok
+test_invalid (test_nba_calibration.CalibrationTests.test_invalid) ... ok
+test_metrics_edges (test_nba_calibration.CalibrationTests.test_metrics_edges) ... ok
+test_overconfidence (test_nba_calibration.CalibrationTests.test_overconfidence) ... ok
+test_test_outcomes_do_not_affect_fit (test_nba_calibration.CalibrationTests.test_test_outcomes_do_not_affect_fit) ... ok
+test_transform (test_nba_calibration.CalibrationTests.test_transform) ... ok
+test_completed_month_survives_later_failure (test_nba_daily_fetch.CacheTests.test_completed_month_survives_later_failure) ... ok
+test_corruption_refetch_and_no_stale_fallback (test_nba_daily_fetch.CacheTests.test_corruption_refetch_and_no_stale_fallback) ... ok
+test_invalid_history_never_cached (test_nba_daily_fetch.CacheTests.test_invalid_history_never_cached) ... ok
+test_old_month_ttl_and_future_timestamp (test_nba_daily_fetch.CacheTests.test_old_month_ttl_and_future_timestamp) ... ok
+test_reuse_and_expiration (test_nba_daily_fetch.CacheTests.test_reuse_and_expiration) ... ok
+test_cursor_and_default_pacing (test_nba_daily_fetch.FetchTests.test_cursor_and_default_pacing) ... ok
+test_malformed_envelopes_and_cursors (test_nba_daily_fetch.FetchTests.test_malformed_envelopes_and_cursors) ... ok
+test_repeated_cursor_duplicate_id_and_page_limit (test_nba_daily_fetch.FetchTests.test_repeated_cursor_duplicate_id_and_page_limit) ... ok
+test_terminal_variants_including_full_and_empty_pages (test_nba_daily_fetch.FetchTests.test_terminal_variants_including_full_and_empty_pages) ... ok
+test_auth_failure_redacted_and_transient_retry (test_nba_daily_predictions.DailyTests.test_auth_failure_redacted_and_transient_retry) ... ok
+test_date_batch_updates_and_order_invariance (test_nba_daily_predictions.DailyTests.test_date_batch_updates_and_order_invariance) ... ok
+test_exact_elo_and_frozen_calibration (test_nba_daily_predictions.DailyTests.test_exact_elo_and_frozen_calibration) ... ok
+test_export_and_empty_schedule (test_nba_daily_predictions.DailyTests.test_export_and_empty_schedule) ... ok
+test_full_cli_fetch_to_export_and_failure (test_nba_daily_predictions.DailyTests.test_full_cli_fetch_to_export_and_failure) ... C:\Users\bryan\AppData\Local\Python\pythoncore-3.15-64\Lib\tempfile.py:538: ResourceWarning: Implicitly cleaning up <HTTPError 401: 'unauthorized'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+C:\Users\bryan\AppData\Local\Python\pythoncore-3.15-64\Lib\tempfile.py:538: ResourceWarning: Implicitly cleaning up <HTTPError 429: 'limit'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_future_and_same_day_outcomes_do_not_leak (test_nba_daily_predictions.DailyTests.test_future_and_same_day_outcomes_do_not_leak) ... ok
+test_http_get_only (test_nba_daily_predictions.DailyTests.test_http_get_only) ... ok
+test_matches_existing_backtest (test_nba_daily_predictions.DailyTests.test_matches_existing_backtest) ... ok
+test_missing_history_and_bad_scores (test_nba_daily_predictions.DailyTests.test_missing_history_and_bad_scores) ... ok
+test_nonfinal_history_ignored (test_nba_daily_predictions.DailyTests.test_nonfinal_history_ignored) ... ok
+test_old_api_status_fallback (test_nba_daily_predictions.DailyTests.test_old_api_status_fallback) ... ok
+test_pagination (test_nba_daily_predictions.DailyTests.test_pagination) ... ok
+test_pagination_failures (test_nba_daily_predictions.DailyTests.test_pagination_failures) ... ok
+test_retrospective_date_rejected (test_nba_daily_predictions.DailyTests.test_retrospective_date_rejected) ... ok
+test_unsafe_schedule_skipped (test_nba_daily_predictions.DailyTests.test_unsafe_schedule_skipped) ... ok
+test_even_teams_home_advantage (test_nba_elo.NbaTests.test_even_teams_home_advantage) ... ok
+test_holdout_only (test_nba_elo.NbaTests.test_holdout_only) ... ok
+test_normalize_incomplete (test_nba_elo.NbaTests.test_normalize_incomplete) ... ok
+test_pagination (test_nba_elo.NbaTests.test_pagination) ... ok
+test_pre_game_probability_not_leaked (test_nba_elo.NbaTests.test_pre_game_probability_not_leaked) ... ok
+test_copy_preserves_seal_timestamps_and_is_idempotent (test_nba_forecast_recovery.RecoveryTests.test_copy_preserves_seal_timestamps_and_is_idempotent) ... ok
+test_existing_conflict_is_never_overwritten (test_nba_forecast_recovery.RecoveryTests.test_existing_conflict_is_never_overwritten) ... ok
+test_modified_artifact_rejected_without_state (test_nba_forecast_recovery.RecoveryTests.test_modified_artifact_rejected_without_state) ... ok
+test_actual_tip_before_observation (test_nba_forward_test.ForwardTest.test_actual_tip_before_observation) ... ok
+test_away_win (test_nba_forward_test.ForwardTest.test_away_win) ... ok
+test_bad_baseline (test_nba_forward_test.ForwardTest.test_bad_baseline) ... ok
+test_bad_scores (test_nba_forward_test.ForwardTest.test_bad_scores) ... ok
+test_baseline_exact_and_idempotent (test_nba_forward_test.ForwardTest.test_baseline_exact_and_idempotent) ... ok
+Saved 1 research predictions to C:\Users\bryan\AppData\Local\Packages\openai.codex_2p2nqsd0c76g0\AC\#!sandbox.{a922557e-8c8d-48d0-8bb1-ebb46dfc9e43}\Temp\tmpk6d7rr1q\nba_predictions_2026-10-27.csv; live trading disabled.
+{"result_progress": "21717971", "requests": 1, "errors": 0}
+{"result_progress": "21717972", "requests": 2, "errors": 0}
+{"result_progress": "21717973", "requests": 1, "errors": 0}
+{"result_progress": "21717974", "requests": 2, "errors": 0}
+test_bounded_refresh_rotates_and_preserves_timestamps (test_nba_forward_test.ForwardTest.test_bounded_refresh_rotates_and_preserves_timestamps) ... ok
+test_conflicting_lifecycle (test_nba_forward_test.ForwardTest.test_conflicting_lifecycle) ... ok
+{"result_progress": "21717971", "requests": 1, "errors": 0}
+{"result_progress": "21717972", "requests": 2, "errors": 0}
+{"result_progress": "21717973", "requests": 3, "errors": 0}
+{"result_progress": "21717974", "requests": 4, "errors": 0}
+{"result_progress": "21717971", "requests": 1, "errors": 0}
+{"result_progress": "21717972", "requests": 2, "errors": 0}
+{"result_progress": "21717973", "requests": 3, "errors": 0}
+{"result_progress": "21717974", "requests": 4, "errors": 0}
+test_daily_correction_window_and_freeze_boundary (test_nba_forward_test.ForwardTest.test_daily_correction_window_and_freeze_boundary) ... ok
+test_daily_denominators_and_markdown (test_nba_forward_test.ForwardTest.test_daily_denominators_and_markdown) ... ok
+test_duplicates (test_nba_forward_test.ForwardTest.test_duplicates) ... ok
+{"result_progress": "21717971", "requests": 1, "errors": 1}
+{"result_progress": "21717972", "requests": 2, "errors": 2}
+{"result_progress": "21717973", "requests": 3, "errors": 3}
+{"result_progress": "21717974", "requests": 4, "errors": 4}
+test_failed_fetch_no_result (test_nba_forward_test.ForwardTest.test_failed_fetch_no_result) ... ok
+{"result_progress": "21717971", "requests": 1, "errors": 0}
+{"result_progress": "21717972", "requests": 2, "errors": 0}
+{"result_progress": "21717973", "requests": 3, "errors": 0}
+{"result_progress": "21717974", "requests": 4, "errors": 0}
+{"result_progress": "21717971", "requests": 1, "errors": 1}
+{"result_progress": "21717972", "requests": 2, "errors": 2}
+{"result_progress": "21717973", "requests": 1, "errors": 1}
+{"result_progress": "21717974", "requests": 2, "errors": 2}
+test_failed_refresh_keeps_source_observations_and_rotates_errors (test_nba_forward_test.ForwardTest.test_failed_refresh_keeps_source_observations_and_rotates_errors) ... ok
+{"result_progress": "21717971", "requests": 1, "errors": 0}
+{"result_progress": "21717972", "requests": 2, "errors": 0}
+{"result_progress": "21717973", "requests": 3, "errors": 0}
+{"result_progress": "21717974", "requests": 4, "errors": 0}
+{"result_progress": "21717971", "requests": 1, "errors": 1}
+{"result_progress": "21717972", "requests": 2, "errors": 2}
+{"result_progress": "21717973", "requests": 3, "errors": 3}
+{"result_progress": "21717974", "requests": 4, "errors": 4}
+test_final_cache_freeze_and_refresh (test_nba_forward_test.ForwardTest.test_final_cache_freeze_and_refresh) ... ok
+test_first_archive_wins (test_nba_forward_test.ForwardTest.test_first_archive_wins) ... ok
+test_future_final (test_nba_forward_test.ForwardTest.test_future_final) ... ok
+test_http_auth_redaction_and_missing_key (test_nba_forward_test.ForwardTest.test_http_auth_redaction_and_missing_key) ... ok
+test_http_get_single_game_and_404 (test_nba_forward_test.ForwardTest.test_http_get_single_game_and_404) ... ok
+test_identity (test_nba_forward_test.ForwardTest.test_identity) ... ok
+test_integrity (test_nba_forward_test.ForwardTest.test_integrity) ... ok
+test_invalid_prediction (test_nba_forward_test.ForwardTest.test_invalid_prediction) ... ok
+test_late_or_backdated_archive (test_nba_forward_test.ForwardTest.test_late_or_backdated_archive) ... ok
+test_log_loss_endpoints_and_tie (test_nba_forward_test.ForwardTest.test_log_loss_endpoints_and_tie) ... ok
+test_metadata_leakage_and_safety (test_nba_forward_test.ForwardTest.test_metadata_leakage_and_safety) ... ok
+test_metrics_hand_calculation (test_nba_forward_test.ForwardTest.test_metrics_hand_calculation) ... ok
+test_missing (test_nba_forward_test.ForwardTest.test_missing) ... ok
+test_prediction_identity_conflict (test_nba_forward_test.ForwardTest.test_prediction_identity_conflict) ... ok
+test_rescheduled_same_id (test_nba_forward_test.ForwardTest.test_rescheduled_same_id) ... ok
+{"result_progress": "21717971", "requests": 1, "errors": 1}
+{"result_progress": "21717972", "requests": 2, "errors": 2}
+{"result_progress": "21717973", "requests": 3, "errors": 3}
+{"result_progress": "21717974", "requests": 4, "errors": 4}
+test_result_snapshot_tampering_fails_closed (test_nba_forward_test.ForwardTest.test_result_snapshot_tampering_fails_closed) ... ok
+{"result_progress": "21717971", "requests": 1, "errors": 0}
+{"result_progress": "21717972", "requests": 2, "errors": 0}
+{"result_progress": "21717973", "requests": 3, "errors": 0}
+{"result_progress": "21717974", "requests": 4, "errors": 0}
+test_retrieve_get_ids_and_snapshot (test_nba_forward_test.ForwardTest.test_retrieve_get_ids_and_snapshot) ... ok
+test_time_budget_and_bad_cache (test_nba_forward_test.ForwardTest.test_time_budget_and_bad_cache) ... ok
+test_unresolved_excluded (test_nba_forward_test.ForwardTest.test_unresolved_excluded) ... ok
+test_paper_evidence_precedes_bounded_scoring (test_nba_result_workflow.ResultWorkflowTest.test_paper_evidence_precedes_bounded_scoring) ... ok
+test_failed_book_is_visible (test_nba_v08_capture.CaptureTests.test_failed_book_is_visible) ... ok
+test_order_endpoint_forbidden (test_nba_v08_capture.CaptureTests.test_order_endpoint_forbidden) ... ok
+test_paginated_and_archive (test_nba_v08_capture.CaptureTests.test_paginated_and_archive) ... ok
+test_repeated_cursor_fails (test_nba_v08_capture.CaptureTests.test_repeated_cursor_fails) ... ok
+test_unrelated_market_fails (test_nba_v08_capture.CaptureTests.test_unrelated_market_fails) ... ok
+test_nba_entry_requires_correlation_evidence (test_nba_v08_correlation.CorrelationTests.test_nba_entry_requires_correlation_evidence) ... ok
+test_shared_team_and_same_event_caps_are_atomic (test_nba_v08_correlation.CorrelationTests.test_shared_team_and_same_event_caps_are_atomic) ... ok
+test_audit_history_content_addressed (test_nba_v08_daily.DailyAuditTests.test_audit_history_content_addressed) ... ok
+test_pagination_and_cursor_loop (test_nba_v08_daily.DailyAuditTests.test_pagination_and_cursor_loop) ... ok
+test_real_archives_with_fixture_current_data (test_nba_v08_daily.DailyAuditTests.test_real_archives_with_fixture_current_data) ... C:\Users\bryan\AppData\Local\Python\pythoncore-3.15-64\Lib\tempfile.py:538: ResourceWarning: Implicitly cleaning up <HTTPError 401: 'secret'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+C:\Users\bryan\AppData\Local\Python\pythoncore-3.15-64\Lib\tempfile.py:538: ResourceWarning: Implicitly cleaning up <HTTPError 404: 'missing'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_wrong_event_fails (test_nba_v08_daily.DailyAuditTests.test_wrong_event_fails) ... ok
+test_conflict_and_partial_override_rejected (test_nba_v08_fees.FeeTests.test_conflict_and_partial_override_rejected) ... ok
+test_fee_change_during_observation_rejected (test_nba_v08_fees.FeeTests.test_fee_change_during_observation_rejected) ... ok
+test_future_change_and_incomplete_page (test_nba_v08_fees.FeeTests.test_future_change_and_incomplete_page) ... ok
+test_series_and_override (test_nba_v08_fees.FeeTests.test_series_and_override) ... ok
+test_stale_wrong_and_unsupported (test_nba_v08_fees.FeeTests.test_stale_wrong_and_unsupported) ... ok
+test_dst_offsets_are_instant_based (test_nba_v08_identity.IdentityTests.test_dst_offsets_are_instant_based) ... ok
+test_duplicate_events_are_ambiguous (test_nba_v08_identity.IdentityTests.test_duplicate_events_are_ambiguous) ... ok
+test_four_archived_games_and_eight_real_contracts (test_nba_v08_identity.IdentityTests.test_four_archived_games_and_eight_real_contracts) ... ok
+test_spring_dst_offset (test_nba_v08_identity.IdentityTests.test_spring_dst_offset) ... ok
+test_stale_live_and_unaware_time_rejected (test_nba_v08_identity.IdentityTests.test_stale_live_and_unaware_time_rejected) ... ok
+test_team_ids_and_date_rejected (test_nba_v08_identity.IdentityTests.test_team_ids_and_date_rejected) ... ok
+test_ambiguous_time_and_stale_snapshot_rejected (test_nba_v08_lifecycle.LifecycleTests.test_ambiguous_time_and_stale_snapshot_rejected) ... ok
+test_duplicate_contracts_rejected (test_nba_v08_lifecycle.LifecycleTests.test_duplicate_contracts_rejected) ... ok
+test_duplicate_forecast_game_rejected (test_nba_v08_lifecycle.LifecycleTests.test_duplicate_forecast_game_rejected) ... ok
+test_entry_settlement_restart_and_idempotency (test_nba_v08_lifecycle.LifecycleTests.test_entry_settlement_restart_and_idempotency) ... ok
+test_reports_preserve_previous_decisions (test_nba_v08_lifecycle.LifecycleTests.test_reports_preserve_previous_decisions) ... ok
+test_scalar_fair_value_settlement (test_nba_v08_lifecycle.LifecycleTests.test_scalar_fair_value_settlement) ... ok
+test_settlement_rejects_wrong_ticker_and_contradiction (test_nba_v08_lifecycle.LifecycleTests.test_settlement_rejects_wrong_ticker_and_contradiction) ... ok
+test_snapshot_tampering_rejected (test_nba_v08_lifecycle.LifecycleTests.test_snapshot_tampering_rejected) ... ok
+test_stale_forecast_rejected (test_nba_v08_lifecycle.LifecycleTests.test_stale_forecast_rejected) ... ok
+test_unverified_fee_is_rejected (test_nba_v08_lifecycle.LifecycleTests.test_unverified_fee_is_rejected) ... ok
+test_crossed_and_negative_slippage_rejected (test_nba_v08_valuation.ValuationTests.test_crossed_and_negative_slippage_rejected) ... ok
+test_fee_or_liquidity_unknown_rejected (test_nba_v08_valuation.ValuationTests.test_fee_or_liquidity_unknown_rejected) ... ok
+test_independent_schedule_required (test_nba_v08_valuation.ValuationTests.test_independent_schedule_required) ... ok
+test_match_and_fee (test_nba_v08_valuation.ValuationTests.test_match_and_fee) ... ok
+test_negative_edge_rejected (test_nba_v08_valuation.ValuationTests.test_negative_edge_rejected) ... ok
+test_occurrence_is_secondary_when_schedule_confirms (test_nba_v08_valuation.ValuationTests.test_occurrence_is_secondary_when_schedule_confirms) ... ok
+test_reject_wrong_identity_and_rules (test_nba_v08_valuation.ValuationTests.test_reject_wrong_identity_and_rules) ... ok
+test_stale_or_post_tipoff (test_nba_v08_valuation.ValuationTests.test_stale_or_post_tipoff) ... ok
+test_hypothetical_final_results_are_idempotent (test_nba_v08_real_entry_audit.ArchivedEntryAudit.test_hypothetical_final_results_are_idempotent) ... ok
+test_snapshot_depth_fee_and_provenance (test_nba_v08_real_entry_audit.ArchivedEntryAudit.test_snapshot_depth_fee_and_provenance) ... ok
+test_crossed_and_negative_slippage_rejected (test_nba_v08_valuation.ValuationTests.test_crossed_and_negative_slippage_rejected) ... ok
+test_fee_or_liquidity_unknown_rejected (test_nba_v08_valuation.ValuationTests.test_fee_or_liquidity_unknown_rejected) ... ok
+test_independent_schedule_required (test_nba_v08_valuation.ValuationTests.test_independent_schedule_required) ... ok
+test_match_and_fee (test_nba_v08_valuation.ValuationTests.test_match_and_fee) ... ok
+test_negative_edge_rejected (test_nba_v08_valuation.ValuationTests.test_negative_edge_rejected) ... ok
+test_occurrence_is_secondary_when_schedule_confirms (test_nba_v08_valuation.ValuationTests.test_occurrence_is_secondary_when_schedule_confirms) ... ok
+test_reject_wrong_identity_and_rules (test_nba_v08_valuation.ValuationTests.test_reject_wrong_identity_and_rules) ... ok
+test_stale_or_post_tipoff (test_nba_v08_valuation.ValuationTests.test_stale_or_post_tipoff) ... ok
+test_allowlist_and_eastern_publication (test_nba_v09_research.InjuryTests.test_allowlist_and_eastern_publication) ... ok
+test_bounded_immutable_raw_and_asof (test_nba_v09_research.InjuryTests.test_bounded_immutable_raw_and_asof) ... ok
+test_failure_does_not_claim_healthy_or_retry (test_nba_v09_research.InjuryTests.test_failure_does_not_claim_healthy_or_retry) ... ok
+test_limits_and_invalid_pdf (test_nba_v09_research.InjuryTests.test_limits_and_invalid_pdf) ... ok
+test_missing_existing_key_fails_before_quote_collection (test_nba_v09_research.ProspectiveTests.test_missing_existing_key_fails_before_quote_collection) ... ok
+test_retrospective_capture_rejected_before_network (test_nba_v09_research.ProspectiveTests.test_retrospective_capture_rejected_before_network) ... ok
+test_all_forecasts_accounted_no_admissions (test_nba_v09_research.ResearchTests.test_all_forecasts_accounted_no_admissions) ... ok
+test_future_fees_cannot_justify_earlier_entry (test_nba_v09_research.ResearchTests.test_future_fees_cannot_justify_earlier_entry) ... ok
+test_future_seal_and_post_tip_quote_rejected (test_nba_v09_research.ResearchTests.test_future_seal_and_post_tip_quote_rejected) ... ok
+test_identity_and_book_time_rejected (test_nba_v09_research.ResearchTests.test_identity_and_book_time_rejected) ... ok
+test_metrics_known_values_and_empty (test_nba_v09_research.ResearchTests.test_metrics_known_values_and_empty) ... ok
+test_schedule_game_without_forecast_stays_in_denominator (test_nba_v09_research.ResearchTests.test_schedule_game_without_forecast_stays_in_denominator) ... ok
+test_spurs_divergence_and_missing_fees_fail_closed (test_nba_v09_research.ResearchTests.test_spurs_divergence_and_missing_fees_fail_closed) ... ok
+test_tampered_evidence_rejected (test_nba_v09_research.ResearchTests.test_tampered_evidence_rejected) ... ok
+test_aggregate_ticker_limit (test_paper_engine.PaperEngineTests.test_aggregate_ticker_limit) ... ok
+test_daily_cutoff (test_paper_engine.PaperEngineTests.test_daily_cutoff) ... ok
+test_duplicate (test_paper_engine.PaperEngineTests.test_duplicate) ... ok
+test_entry (test_paper_engine.PaperEngineTests.test_entry) ... ok
+test_exposure_limit (test_paper_engine.PaperEngineTests.test_exposure_limit) ... ok
+test_invalid_price (test_paper_engine.PaperEngineTests.test_invalid_price) ... ok
+test_liquidity (test_paper_engine.PaperEngineTests.test_liquidity) ... ok
+test_persistence (test_paper_engine.PaperEngineTests.test_persistence) ... ok
+test_position_limit (test_paper_engine.PaperEngineTests.test_position_limit) ... ok
+test_settle_once (test_paper_engine.PaperEngineTests.test_settle_once) ... ok
+test_enters_one_paper_trade (test_paper_runner.RunnerTests.test_enters_one_paper_trade) ... ok
+test_invalid_probability_ignored (test_paper_runner.RunnerTests.test_invalid_probability_ignored) ... ok
+test_missing_fee_rejected (test_paper_runner.RunnerTests.test_missing_fee_rejected) ... ok
+test_missing_probability_rejected (test_paper_runner.RunnerTests.test_missing_probability_rejected) ... ok
+test_non_sports_ignored (test_paper_runner.RunnerTests.test_non_sports_ignored) ... ok
+test_repeated_run_no_duplicate_position (test_paper_runner.RunnerTests.test_repeated_run_no_duplicate_position) ... ok
+test_stale_quote_rejected (test_paper_runner.RunnerTests.test_stale_quote_rejected) ... ok
+test_daily_cutoff (test_risk_engine.RiskTests.test_daily_cutoff) ... ok
+test_exposure_cap (test_risk_engine.RiskTests.test_exposure_cap) ... ok
+test_fees_count_toward_limit (test_risk_engine.RiskTests.test_fees_count_toward_limit) ... ok
+test_invalid_contracts (test_risk_engine.RiskTests.test_invalid_contracts) ... ok
+test_position_cap (test_risk_engine.RiskTests.test_position_cap) ... ok
+test_small_trade_passes (test_risk_engine.RiskTests.test_small_trade_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 219 tests in 12.569s
+
+OK
+{"report_sha256": "5c5ff09fe8c897fddc4925a189f6eabb46ab7e684f5f77c6bcd3bb5d04b244f6", "open": 8, "settled": 59, "errors": []}
