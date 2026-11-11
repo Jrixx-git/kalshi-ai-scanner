@@ -1,0 +1,31 @@
+name: Isolated November 11 position research
+on:
+  push:
+    branches: [research/sportsdataio-positions-2026-11-11]
+    paths: [research/nov11/collect.py, research/nov11/test_collect.py, .github/workflows/sportsdataio-positions.yml]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test audit safeguards
+        run: python -m unittest discover -s research/nov11 -p 'test_*.py' -v
+      - name: Run existing offline tests
+        run: python -m unittest discover -v -p 'test_*.py'
+      - name: Four bounded provider GET requests
+        env:
+          SPORTSDATAIO_API_KEY: ${{ secrets.SPORTSDATAIO_API_KEY }}
+        run: python research/nov11/collect.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nov11-position-evidence
+          path: research/nov11/evidence/summary.json
+          if-no-files-found: error
