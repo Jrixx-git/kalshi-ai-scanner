@@ -4,7 +4,7 @@ import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
-from nba_team_development import supervise, run
+from nba_team_development import supervise, run, resume
 from nba_team_inventory import inventory
 from nba_forward_test import immutable, encode
 
@@ -99,6 +99,35 @@ class WorkerTests(unittest.TestCase):
         with patch('nba_team_inventory.verified_development_rows', return_value=[]):
             r = inventory(self.root, self.root, self.root)
         self.assertEqual((r['eligible_training'], r['eligible_later_validation']), (0,0))
+        self.assertFalse(r['ready'])
+
+    def test_resume_refuses_path_escape(self):
+        with self.assertRaisesRegex(ValueError, 'Invalid slot'):
+            resume(self.root, self.root, '../outside')
+
+    def test_resume_refuses_changed_prepared_universe(self):
+        slot = '20261112T00'
+        immutable(self.root/'slots'/slot/'plan.json', encode(dict(
+            launched_at=self.now.isoformat(), max_wait_seconds=60,
+            source_targets_sha256='wrong')))
+        with patch('nba_team_development.active', return_value=True):
+            with self.assertRaisesRegex(ValueError, 'universe changed'):
+                resume(self.root, self.root, slot)
+
+    def test_chronological_inventory_does_not_count_delayed_outcomes_as_training(self):
+        base = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        rows = [dict(features=dict(x=[1.]*7, cutoff=(base+timedelta(days=i)).isoformat()),
+                     tipoff_utc=(base+timedelta(days=i, hours=1)).isoformat(),
+                     outcome_received_at=(base+timedelta(days=i, hours=5)).isoformat())
+                for i in range(130)]
+        with patch('nba_team_inventory.verified_development_rows', return_value=rows):
+            r = inventory(self.root, self.root, self.root)
+        self.assertEqual((r['eligible_training'],r['eligible_later_validation']), (100,30))
+        self.assertTrue(r['ready'])
+        rows[0]['outcome_received_at'] = (base+timedelta(days=110)).isoformat()
+        with patch('nba_team_inventory.verified_development_rows', return_value=rows):
+            r = inventory(self.root, self.root, self.root)
+        self.assertEqual((r['eligible_training'],r['eligible_later_validation']), (100,29))
         self.assertFalse(r['ready'])
 
 

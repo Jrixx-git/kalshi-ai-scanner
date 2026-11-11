@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 import time
+import os
+import re
 from nba_v09_challenger import seal_input, collect_history, save, sha
 from nba_v09_prospective import collect, active, STOP
 from nba_v08_valuation import timestamp
@@ -98,7 +100,7 @@ def supervise(history, games, operational, output, *, launched_at, max_wait=3600
     return rows
 
 
-def run(history, output, *, max_wait=3600, operational='forward_test/state'):
+def prepare(history, output, *, max_wait=3600):
     if not 0 <= max_wait <= 14400:
         raise ValueError('Wait budget must be 0..14400 seconds')
     launched = datetime.now(timezone.utc)
@@ -125,15 +127,43 @@ def run(history, output, *, max_wait=3600, operational='forward_test/state'):
     print(json.dumps(dict(stage='supervising', slot=slot, actual_at=datetime.now(timezone.utc).isoformat(),
           targets=[dict(id=str(t['id']), tipoff=t.get('datetime')) for t in games],
           source_errors=sources['source_errors'], history_errors=errors)), flush=True)
+    plan = dict(launched_at=launched.isoformat(), slot=slot, history_errors=errors,
+                source_errors=sources['source_errors'], max_wait_seconds=max_wait,
+                source_targets_sha256=sha(games), no_trade=True)
+    immutable(evidence/'plan.json', encode(plan))
+    return slot
+
+
+def resume(history, output, slot, *, operational='forward_test/state'):
+    if not re.fullmatch(r'\d{8}T\d{2}', slot):
+        raise ValueError('Invalid slot')
+    root = Path(output)
+    evidence = root/'slots'/slot
+    plan = json.loads((evidence/'plan.json').read_bytes())
+    launched = timestamp(plan['launched_at'])
+    max_wait = plan['max_wait_seconds']
+    if not active(datetime.now(timezone.utc)) or not 0 <= max_wait <= 14400:
+        raise ValueError('Expired worker or invalid budget')
+    games = targets(evidence/'source')
+    if plan['source_targets_sha256'] != sha(games):
+        raise ValueError('Prepared universe changed')
+    # A worker cannot be resumed twice, even after an incomplete attempt.
+    with (evidence/'worker-claim.json').open('x') as f:
+        json.dump(dict(started_at=datetime.now(timezone.utc).isoformat(), no_trade=True), f)
     from nba_v09_prospective import capture_schedule, game_record
     from nba_v08_schedule import verify
     schedules = {}
+    schedule_requests = 0
 
     def preflight(t):
+        nonlocal schedule_requests
         # Refresh independently shortly before each cutoff, not after sealing.
         day = t['date'][:10]
         now = datetime.now(timezone.utc)
         if day not in schedules or (now-timestamp(schedules[day]['requested_at'])).total_seconds() > 120:
+            if schedule_requests >= 12:
+                raise ValueError('Fresh schedule request budget')
+            schedule_requests += 1
             schedules[day] = json.loads(capture_schedule(day, evidence/'fresh-schedules').read_bytes())
         row = game_record(t, now)
         verify(row, schedules[day], now)
@@ -142,11 +172,16 @@ def run(history, output, *, max_wait=3600, operational='forward_test/state'):
                      launched_at=launched, max_wait=max_wait, preflight=preflight)
     report = dict(schema='nba-team-development-run-v1', launched_at=launched.isoformat(),
                   completed_at=datetime.now(timezone.utc).isoformat(), slot=slot,
-                  source_errors=sources['source_errors'], history_errors=errors,
+                  source_errors=plan['source_errors'], history_errors=plan['history_errors'],
                   coverage=rows, no_trade=True, live_trading=False)
     immutable(evidence/'result.json', encode(report))
     print(json.dumps(report, sort_keys=True))
     return report
+
+
+def run(history, output, *, max_wait=3600, operational='forward_test/state'):
+    slot = prepare(history, output, max_wait=max_wait)
+    return resume(history, output, slot, operational=operational)
 
 
 if __name__ == '__main__':
@@ -155,5 +190,17 @@ if __name__ == '__main__':
     p.add_argument('--output', required=True)
     p.add_argument('--operational', default='forward_test/state')
     p.add_argument('--max-wait-seconds', type=int, default=3600, choices=range(0,14401))
+    p.add_argument('--phase', choices=('all', 'prepare', 'supervise'), default='all')
+    p.add_argument('--slot')
     a = p.parse_args()
-    run(a.history, a.output, max_wait=a.max_wait_seconds, operational=a.operational)
+    if a.phase == 'prepare':
+        slot = prepare(a.history, a.output, max_wait=a.max_wait_seconds)
+        if os.environ.get('GITHUB_OUTPUT'):
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write('slot='+slot+'\n')
+    elif a.phase == 'supervise':
+        if not a.slot:
+            p.error('--slot required for supervise')
+        resume(a.history, a.output, a.slot, operational=a.operational)
+    else:
+        run(a.history, a.output, max_wait=a.max_wait_seconds, operational=a.operational)
