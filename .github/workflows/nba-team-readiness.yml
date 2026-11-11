@@ -4,6 +4,11 @@ on:
     branches: [develop/paper-trading-v02]
     paths: [research/nba_v09/history-request.json]
   workflow_dispatch:
+    inputs:
+      collect_development:
+        description: Wait up to two hours for pregame development seals (no model)
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -12,7 +17,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 150
     permissions:
       contents: write
     env:
@@ -26,6 +31,26 @@ jobs:
           python-version: '3.12'
       - name: Offline safeguards
         run: python -m unittest discover -q
+      - name: Restore prior immutable history receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=research/nba-team-history-evidence
+          if git ls-remote --exit-code origin "refs/heads/$branch" > /dev/null; then
+            git fetch --depth=1 origin "refs/heads/$branch:refs/remotes/origin/team-history-evidence"
+            mkdir prior-history
+            git archive refs/remotes/origin/team-history-evidence | tar -x -C prior-history
+            python - <<'PY'
+          from pathlib import Path
+          from nba_forward_test import immutable
+          for source in Path('prior-history/team-history-runs').glob('*/team-history/*/*'):
+              if source.is_file():
+                  immutable(Path('team-readiness/team-history')/source.parent.name/source.name, source.read_bytes())
+          PY
+          else
+            code=$?
+            test "$code" -eq 2
+          fi
       - name: Collect both authentic seasons with actual receipts
         env:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
@@ -39,6 +64,11 @@ jobs:
       - name: Verify pages and audit eligibility
         if: always()
         run: python nba_team_readiness.py --history team-readiness/team-history --output team-readiness/readiness.json
+      - name: Optional bounded prospective development collection
+        if: github.event_name == 'workflow_dispatch' && inputs.collect_development
+        env:
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+        run: python nba_team_development.py --history team-readiness/team-history --output team-readiness/development --max-wait-seconds 7200
       - name: Preserve full and partial raw evidence
         if: always()
         uses: actions/upload-artifact@v4
