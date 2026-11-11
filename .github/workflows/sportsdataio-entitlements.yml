@@ -1,0 +1,37 @@
+name: Isolated SportsDataIO trial entitlements
+on:
+  workflow_dispatch:
+  push:
+    branches: [research/sportsdataio-entitlements-2026-11-11]
+    paths: [.github/workflows/sportsdataio-entitlements.yml]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify read-only probe and credential protection
+        working-directory: isolated_sportsdataio
+        run: python -m unittest -v
+      - name: Five bounded GET requests using trial secret
+        working-directory: isolated_sportsdataio
+        env:
+          SPORTSDATAIO_API_KEY: ${{ secrets.SPORTSDATAIO_API_KEY }}
+        run: python trial_entitlements.py
+      - name: Preserve sanitized entitlement evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sportsdataio-entitlements-${{ github.run_id }}-${{ github.run_attempt }}
+          path: isolated_sportsdataio/entitlement_evidence/
+          retention-days: 90
+          if-no-files-found: error
