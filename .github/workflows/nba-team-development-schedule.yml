@@ -8,9 +8,9 @@ permissions:
   contents: write
 jobs:
   development:
-    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-team-development.yml@f7d43430bbb50b1838f9ca3f3dd3045678ea5b4a
+    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-team-development.yml@aca3287d01913a244559ed3e2d3237f68ca6772c
     with:
-      source_ref: f7d43430bbb50b1838f9ca3f3dd3045678ea5b4a
+      source_ref: aca3287d01913a244559ed3e2d3237f68ca6772c
       max_wait_seconds: 3600
     secrets:
       BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
