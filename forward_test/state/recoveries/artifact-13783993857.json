@@ -1,0 +1,18 @@
+{
+  "artifact_created_at": "2026-11-10T17:02:44Z",
+  "artifact_id": 13783993857,
+  "artifact_sha256": "9f465d48d6e09b5d486284add58f96251204d52d355246154e9ccd6a3c1f52c4",
+  "bundle": "b8e4d2b8e4d6d7bd86bfc2c2a8b6c0a2dc30b2eefaa2bef5872583801e430106",
+  "files": {
+    "history.json": "99e813857925bf49b5eb87fe198c154a52dc81f8df9cc10e405a153a27dbf81f",
+    "manifest.json": "b8e4d2b8e4d6d7bd86bfc2c2a8b6c0a2dc30b2eefaa2bef5872583801e430106",
+    "metadata.json": "8129e875dcecf19cf98a2cb1bcd3c4717cbf99e61a98e64754e127d5f25c2e5c",
+    "predictions.csv": "f32c020f4c6e1e770f0fc45065e76b69f6e2a667415262dfcdc374deeafece7d",
+    "schedule.json": "5ad6f4ab1fd8787d56d33a6173a1ae30800ca28e821145bbcd4935986a5dc39f"
+  },
+  "method": "Copy original sealed bytes from checksum-verified Actions artifact; no predictions regenerated",
+  "original_observed_at": "2026-11-10T17:02:39.419340+00:00",
+  "recovered_at": "2026-11-11T15:48:25.525630+00:00",
+  "source_commit": "9047ba40486343c6c7e438b1b04e734bc28ede78",
+  "source_run": "https://github.com/Jrixx-git/kalshi-ai-scanner/actions/runs/42860751065"
+}
