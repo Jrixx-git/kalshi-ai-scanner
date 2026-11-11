@@ -52,9 +52,12 @@ Any fee-adjusted trading analysis remains a separate counterfactual requiring
 contemporaneous fees, depth and slippage. No promotion to the paper engine or
 live trading is authorized by prediction accuracy alone.
 
-## Remaining implementation work
+## Implementation status, November 11
 
-Implement timestamped team-history archive, feature builder and leakage tests;
-fit/freeze a versioned candidate; add precise cutoff capture; seal a separate
-research forecast stream; add same-game scoring and date-block intervals.
-This file scopes that work. No trained challenger or prospective edge is claimed.
+The timestamped archive, feature builder, fixed regularized fitter, immutable
+model writer, bounded cutoff runner, separate forecast stream and same-game
+comparison are implemented in `nba_v09_challenger.py`. See
+`TEAM_CHALLENGER.md` for the frozen candidate specification and run commands.
+Real history collection, qualifying sealed development rows, a fitted model
+and deployed cutoff-service reliability remain unverified. No trained
+challenger, real shadow result or prospective edge is claimed.
