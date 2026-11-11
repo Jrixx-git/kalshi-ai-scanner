@@ -1639,7 +1639,7 @@
     "21718089": "2026-11-11T16:08:07.236023+00:00",
     "21718090": "2026-11-11T16:08:20.388824+00:00"
   },
-  "result_snapshot_sha256": "072c14b8614247bb7317cc4db52f0e0a35e5400a41c7ff0982e04af6ef11ab4a",
+  "result_snapshot_sha256": "e31836fcca9d5cce1a77676595995b33d965b16acb847085d60a0f16ac1e7fb4",
   "retrieval": {
     "attempted_ids": [],
     "cached": 108,
@@ -1659,7 +1659,7 @@
     "log_loss": 0.5748799668817441,
     "partial_refresh": false,
     "predicted": 118,
-    "retrieved_at": "2026-11-11T16:18:25.712888+00:00",
+    "retrieved_at": "2026-11-11T17:07:14.371533+00:00",
     "scored": 108,
     "statuses": {
       "final": 108,
