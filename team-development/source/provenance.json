@@ -1,0 +1,120 @@
+{
+  "admitted_to_cohort": false,
+  "code_commit": "aca3287d01913a244559ed3e2d3237f68ca6772c",
+  "history_archive_commit": "ee30520b91c013c39f1818c94f6b5b96aee95ef0",
+  "independent_games": [
+    {
+      "date": "2026-11-11",
+      "event_id": "401909966",
+      "provider_ids": [
+        21718081
+      ],
+      "tipoff_utc": "2026-11-12T00:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909967",
+      "provider_ids": [
+        21718082
+      ],
+      "tipoff_utc": "2026-11-12T00:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909968",
+      "provider_ids": [
+        21718083
+      ],
+      "tipoff_utc": "2026-11-12T00:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909969",
+      "provider_ids": [
+        21718084
+      ],
+      "tipoff_utc": "2026-11-12T01:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909970",
+      "provider_ids": [
+        21718085
+      ],
+      "tipoff_utc": "2026-11-12T01:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909971",
+      "provider_ids": [
+        21718086
+      ],
+      "tipoff_utc": "2026-11-12T01:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909972",
+      "provider_ids": [
+        21718087
+      ],
+      "tipoff_utc": "2026-11-12T01:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909973",
+      "provider_ids": [
+        21718088
+      ],
+      "tipoff_utc": "2026-11-12T02:00Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909974",
+      "provider_ids": [
+        21718089
+      ],
+      "tipoff_utc": "2026-11-12T02:30Z"
+    },
+    {
+      "date": "2026-11-11",
+      "event_id": "401909975",
+      "provider_ids": [
+        21718090
+      ],
+      "tipoff_utc": "2026-11-12T03:00Z"
+    },
+    {
+      "date": "2026-11-12",
+      "event_id": "401909976",
+      "provider_ids": [],
+      "tipoff_utc": "2026-11-13T00:00Z"
+    },
+    {
+      "date": "2026-11-12",
+      "event_id": "401909977",
+      "provider_ids": [],
+      "tipoff_utc": "2026-11-13T00:00Z"
+    },
+    {
+      "date": "2026-11-12",
+      "event_id": "401909978",
+      "provider_ids": [],
+      "tipoff_utc": "2026-11-13T01:00Z"
+    },
+    {
+      "date": "2026-11-12",
+      "event_id": "401909979",
+      "provider_ids": [],
+      "tipoff_utc": "2026-11-13T02:00Z"
+    }
+  ],
+  "live_trading": false,
+  "no_trade": true,
+  "original_provider_bundle": "a4ac56badc64783b5ca6c9eaecc245bdad4f8415e1c8ff9780c22339e1e82395",
+  "original_provider_observed_at": "2026-11-11T15:51:22.346850+00:00",
+  "prepared_at": "2026-11-11T21:17:31.496716+00:00",
+  "priority": "cloud_primary_local_backup_only",
+  "provider_source": "authentic_legacy_fixture_snapshot_no_pagination_claim",
+  "targets_sha256": "bcc966817cc0b154bd4546c299347e30f9e0719dc1132f4bddc932d6e12b9f57",
+  "verified_history_finals": 1482
+}

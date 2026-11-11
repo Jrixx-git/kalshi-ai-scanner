@@ -1,0 +1,23 @@
+{
+  "admitted_to_cohort": false,
+  "checks": [
+    {
+      "complete": true,
+      "elo": 0.632431,
+      "id": 21718081
+    },
+    {
+      "complete": true,
+      "elo": 0.710505,
+      "id": 21718082
+    },
+    {
+      "complete": true,
+      "elo": 0.39542,
+      "id": 21718083
+    }
+  ],
+  "sealed_inputs_created": false,
+  "verified_at": "2026-11-11T21:18:03.258886+00:00",
+  "wrapper_sha256": "c86e39f0623ce228f6f38b3c5c9e37bbdcec6cf1110d672194f3afda2f49fd77"
+}

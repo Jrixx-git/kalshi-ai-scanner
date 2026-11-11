@@ -1,0 +1,6 @@
+{
+  "no_trade": true,
+  "admitted_to_cohort": false,
+  "priority": "Use cloud primary when available. Never union conflicting per-game seals.",
+  "purpose": "Outage backup for actual 2026-11-11T23:00Z future cutoff; no inputs existed at checkpoint."
+}
