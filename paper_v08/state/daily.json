@@ -1,9 +1,10 @@
 {
-  "cash": "4992.2500",
+  "cash": "4991.6200",
   "duplicate_events": [],
   "duplicate_games": [],
   "errors": [],
   "event_cost_exposure": {
+    "KXNBAGAME-26NOV11BKNNOP": "0.6300",
     "KXNBAGAME-26NOV11BOSTOR": "0.3500",
     "KXNBAGAME-26NOV11CLENYK": "0.6700",
     "KXNBAGAME-26NOV11DENMEM": "0.6400",
@@ -12,10 +13,10 @@
     "KXNBAGAME-26NOV11ORLUTA": "0.6300",
     "KXNBAGAME-26NOV11SASCHI": "0.1200"
   },
-  "generated_at": "2026-11-11T16:18:24.307239+00:00",
-  "gross_unrealized_before_exit_fee": "-0.2700",
+  "generated_at": "2026-11-11T17:07:12.419201+00:00",
+  "gross_unrealized_before_exit_fee": "-0.3200",
   "notes": "Cost risk assumes full stake loss and recorded entry fees; prices are observations, not guaranteed fills. Open marks omit exit fees and are not realized P&L. Cross-game dependence is not quantified.",
-  "open_positions": 7,
+  "open_positions": 8,
   "paper_only": true,
   "positions": [
     {
@@ -4621,7 +4622,7 @@
       "ticker": "KXNBAGAME-26NOV09NOPGSW-NOP"
     },
     {
-      "current_evidence_sha256": "f3c262abedfcd248e9c636d76f6a7a595fd2b1e89b450adcb7ba85fd34f92381",
+      "current_evidence_sha256": "b57e3918386ae24402df487aeb65ad7c904262d1040d8415e25a2fa787bc6155",
       "displayed_depth": 248035,
       "entry_cost": "0.6700",
       "entry_verified": true,
@@ -4630,7 +4631,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
       "mark_bid": "0.6300",
-      "mark_observed_at": "2026-11-11T16:18:23.720970+00:00",
+      "mark_observed_at": "2026-11-11T17:07:11.809400+00:00",
       "market_ask_probability": "0.6400",
       "market_result": "",
       "market_status": "active",
@@ -4649,7 +4650,7 @@
       "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "3ec80791606bfe78e32b6bfa48c8b4ce52014cb0e14433bdcac2734c5825ad6a",
+      "current_evidence_sha256": "8f1d3ba707e3aa4e29a8f014bcaa69f0ccf127563445b46b708b8d67b332047d",
       "displayed_depth": 108905,
       "entry_cost": "0.3500",
       "entry_verified": true,
@@ -4658,7 +4659,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
       "mark_bid": "0.3100",
-      "mark_observed_at": "2026-11-11T16:18:23.705392+00:00",
+      "mark_observed_at": "2026-11-11T17:07:11.712618+00:00",
       "market_ask_probability": "0.3200",
       "market_result": "",
       "market_status": "active",
@@ -4677,7 +4678,7 @@
       "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "94bce32f29284e567932e6a7d184fa30c95ff4719a77f8ce5982291ff286959a",
+      "current_evidence_sha256": "232eda4ab2bd991b36bf18c12be452aea5eb42ac0f9356c0e765a1d04cb63099",
       "displayed_depth": 4187,
       "entry_cost": "0.1200",
       "entry_verified": true,
@@ -4686,7 +4687,7 @@
       "fee_estimate": "0.01",
       "fee_verification": "event and series evidence captured at entry",
       "mark_bid": "0.0900",
-      "mark_observed_at": "2026-11-11T16:18:23.704187+00:00",
+      "mark_observed_at": "2026-11-11T17:07:11.736901+00:00",
       "market_ask_probability": "0.1000",
       "market_result": "",
       "market_status": "active",
@@ -4705,7 +4706,7 @@
       "unrealized_before_exit_fee": "-0.0300"
     },
     {
-      "current_evidence_sha256": "9375a3d4671b842d26d9f1385520307df0bdd63f20d8f2804267d53a8720c5cf",
+      "current_evidence_sha256": "d116fbd4c5655c489b282c1c1c70ca971c5d9312dd4fff08d6ef79eaff8a24fd",
       "displayed_depth": 1245,
       "entry_cost": "0.6400",
       "entry_verified": true,
@@ -4714,7 +4715,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
       "mark_bid": "0.6000",
-      "mark_observed_at": "2026-11-11T16:18:23.706216+00:00",
+      "mark_observed_at": "2026-11-11T17:07:11.772823+00:00",
       "market_ask_probability": "0.6100",
       "market_result": "",
       "market_status": "active",
@@ -4733,7 +4734,7 @@
       "unrealized_before_exit_fee": "-0.0400"
     },
     {
-      "current_evidence_sha256": "c4d1e73d28abf3f5b0059e90f92f2a3f3be8b0d92dc55dbcc158a4a366645a5f",
+      "current_evidence_sha256": "388677ec2c7facb0ee061bd1bb0359b55762564fab782faf8ffb423d80623049",
       "displayed_depth": 8801,
       "entry_cost": "0.1500",
       "entry_verified": true,
@@ -4742,7 +4743,7 @@
       "fee_estimate": "0.01",
       "fee_verification": "event and series evidence captured at entry",
       "mark_bid": "0.1200",
-      "mark_observed_at": "2026-11-11T16:18:23.904575+00:00",
+      "mark_observed_at": "2026-11-11T17:07:12.051394+00:00",
       "market_ask_probability": "0.1300",
       "market_result": "",
       "market_status": "active",
@@ -4761,7 +4762,35 @@
       "unrealized_before_exit_fee": "-0.0300"
     },
     {
-      "current_evidence_sha256": "0a3a7c8a3eb6dfa980c04b88ff8ecdb7b9e06c21dd771e05723eeb1404fc7b0f",
+      "current_evidence_sha256": "62c809efdbfd736a7646ace181782f88a0c4a8e7286645ad950a2f04877b6491",
+      "displayed_depth": 1339,
+      "entry_cost": "0.6300",
+      "entry_verified": true,
+      "estimated_net_edge": "0.047012",
+      "fee_changes_returned": 0,
+      "fee_estimate": "0.02",
+      "fee_verification": "event and series evidence captured at entry",
+      "mark_bid": "0.5900",
+      "mark_observed_at": "2026-11-11T17:07:12.070753+00:00",
+      "market_ask_probability": "0.6000",
+      "market_result": "",
+      "market_status": "active",
+      "model_favorite": true,
+      "model_probability": "0.677012",
+      "no_on_model_underdog": true,
+      "original_ask": "0.6000",
+      "pnl": null,
+      "quote_age_seconds": 0.217397,
+      "side": "NO",
+      "signal_id": "nba-game:21718087",
+      "standard_fee_delta_vs_recorded": "0.00",
+      "standard_fee_scenario": "0.02",
+      "status": "OPEN",
+      "ticker": "KXNBAGAME-26NOV11BKNNOP-BKN",
+      "unrealized_before_exit_fee": "-0.0400"
+    },
+    {
+      "current_evidence_sha256": "6831be13d573878df70f16005570e2c5b5433399b4071bec05195643162d4b6e",
       "displayed_depth": 63311,
       "entry_cost": "0.6300",
       "entry_verified": true,
@@ -4769,8 +4798,8 @@
       "fee_changes_returned": 0,
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
-      "mark_bid": "0.5800",
-      "mark_observed_at": "2026-11-11T16:18:23.903651+00:00",
+      "mark_bid": "0.5700",
+      "mark_observed_at": "2026-11-11T17:07:12.076504+00:00",
       "market_ask_probability": "0.6000",
       "market_result": "",
       "market_status": "active",
@@ -4786,10 +4815,10 @@
       "standard_fee_scenario": "0.02",
       "status": "OPEN",
       "ticker": "KXNBAGAME-26NOV11ORLUTA-UTA",
-      "unrealized_before_exit_fee": "-0.0500"
+      "unrealized_before_exit_fee": "-0.0600"
     },
     {
-      "current_evidence_sha256": "dafb5afe2c2334718177cc986e60ef413d5c953581cbed224502c445e9c415e4",
+      "current_evidence_sha256": "96f88c0455cffb9a5d22e1b34192efa5cced0fd6dc400cfa450800353ee62f61",
       "displayed_depth": 11124,
       "entry_cost": "0.5500",
       "entry_verified": true,
@@ -4798,7 +4827,7 @@
       "fee_estimate": "0.02",
       "fee_verification": "event and series evidence captured at entry",
       "mark_bid": "0.5100",
-      "mark_observed_at": "2026-11-11T16:18:23.907020+00:00",
+      "mark_observed_at": "2026-11-11T17:07:12.140390+00:00",
       "market_ask_probability": "0.5200",
       "market_result": "",
       "market_status": "active",
@@ -4819,7 +4848,7 @@
   ],
   "realized_equity": "4995.3600",
   "realized_pnl": "-4.6400",
-  "recorded_open_cost": "3.1100",
+  "recorded_open_cost": "3.7400",
   "rejected": [
     {
       "game_id": "21717971",
@@ -5278,10 +5307,6 @@
       "reason": "Duplicate signal"
     },
     {
-      "game_id": "21718087",
-      "reason": "edge_below_threshold"
-    },
-    {
       "game_id": "21718088",
       "reason": "Duplicate signal"
     },
@@ -5295,13 +5320,14 @@
     }
   ],
   "selection_counts": {
-    "model_favorites": 35,
-    "no_contracts": 32,
-    "no_on_model_underdog": 21,
-    "total": 66
+    "model_favorites": 36,
+    "no_contracts": 33,
+    "no_on_model_underdog": 22,
+    "total": 67
   },
   "settled_positions": 59,
   "team_cost_exposure": {
+    "BKN": "0.6300",
     "BOS": "0.3500",
     "CHI": "0.1200",
     "CLE": "0.6700",
@@ -5309,6 +5335,7 @@
     "LAL": "0.1500",
     "MEM": "0.6400",
     "MIL": "0.1500",
+    "NOP": "0.6300",
     "NYK": "0.6700",
     "OKC": "0.5500",
     "ORL": "0.6300",
