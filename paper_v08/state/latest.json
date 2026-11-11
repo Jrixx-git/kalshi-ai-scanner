@@ -796,7 +796,7 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T03:00:00Z",
-            "quote_age_seconds": 0.337609,
+            "quote_age_seconds": 0.26186,
             "sides": [
               {
                 "ask": "0.4300",
@@ -804,7 +804,7 @@
                 "net_edge": "-0.092431",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 107204
+                "size": 100560
               },
               {
                 "ask": "0.5800",
@@ -812,14 +812,14 @@
                 "net_edge": "0.022431",
                 "reason": "edge_below_threshold",
                 "side": "NO",
-                "size": 31982
+                "size": 31855
               }
             ],
             "ticker": "KXNBAGAME-26NOV11WASIND-WAS"
           },
           {
             "occurrence_datetime": "2026-11-12T03:00:00Z",
-            "quote_age_seconds": 0.335761,
+            "quote_age_seconds": 0.258566,
             "sides": [
               {
                 "ask": "0.5800",
@@ -827,7 +827,7 @@
                 "net_edge": "0.022431",
                 "reason": "edge_below_threshold",
                 "side": "YES",
-                "size": 170390
+                "size": 174079
               },
               {
                 "ask": "0.4300",
@@ -835,7 +835,7 @@
                 "net_edge": "-0.092431",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 1432
+                "size": 1423
               }
             ],
             "ticker": "KXNBAGAME-26NOV11WASIND-IND"
@@ -844,8 +844,8 @@
         "game_id": "21718081",
         "identity": {
           "espn_event_id": "401909966",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T00:00Z"
         },
         "reason": "edge_below_threshold"
@@ -854,15 +854,15 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T03:00:00Z",
-            "quote_age_seconds": 0.354662,
+            "quote_age_seconds": 0.274931,
             "sides": [
               {
                 "ask": "0.6400",
                 "model_probability": "0.710505",
                 "net_edge": "0.040505",
-                "reason": "paper_entry",
+                "reason": "risk_or_duplicate_rejection: Duplicate signal",
                 "side": "YES",
-                "size": 248035
+                "size": 246327
               },
               {
                 "ask": "0.3700",
@@ -870,14 +870,14 @@
                 "net_edge": "-0.110505",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 21
+                "size": 86
               }
             ],
             "ticker": "KXNBAGAME-26NOV11CLENYK-NYK"
           },
           {
             "occurrence_datetime": "2026-11-12T03:00:00Z",
-            "quote_age_seconds": 0.340209,
+            "quote_age_seconds": 0.273767,
             "sides": [
               {
                 "ask": "0.3700",
@@ -885,7 +885,7 @@
                 "net_edge": "-0.110505",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 1122
+                "size": 364
               },
               {
                 "ask": "0.6400",
@@ -893,7 +893,7 @@
                 "net_edge": "0.040505",
                 "reason": "not_selected_lower_or_tied_edge",
                 "side": "NO",
-                "size": 22443
+                "size": 22429
               }
             ],
             "ticker": "KXNBAGAME-26NOV11CLENYK-CLE"
@@ -902,11 +902,11 @@
         "game_id": "21718082",
         "identity": {
           "espn_event_id": "401909967",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T00:00Z"
         },
-        "reason": "paper_entry",
+        "reason": "Duplicate signal",
         "signal": {
           "ask": "0.6400",
           "assumed_price": "0.6500",
@@ -914,7 +914,7 @@
           "net_edge": "0.040505",
           "probability": "0.710505",
           "side": "YES",
-          "size": 248035
+          "size": 246327
         },
         "ticker": "KXNBAGAME-26NOV11CLENYK-NYK"
       },
@@ -922,15 +922,15 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T03:00:00Z",
-            "quote_age_seconds": 0.407882,
+            "quote_age_seconds": 0.340737,
             "sides": [
               {
                 "ask": "0.3200",
                 "model_probability": "0.39542",
                 "net_edge": "0.04542",
-                "reason": "paper_entry",
+                "reason": "risk_or_duplicate_rejection: Duplicate signal",
                 "side": "YES",
-                "size": 108905
+                "size": 100172
               },
               {
                 "ask": "0.6900",
@@ -938,14 +938,14 @@
                 "net_edge": "-0.11542",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 20607
+                "size": 21691
               }
             ],
             "ticker": "KXNBAGAME-26NOV11BOSTOR-TOR"
           },
           {
             "occurrence_datetime": "2026-11-12T03:00:00Z",
-            "quote_age_seconds": 0.407339,
+            "quote_age_seconds": 0.340025,
             "sides": [
               {
                 "ask": "0.6900",
@@ -953,7 +953,7 @@
                 "net_edge": "-0.11542",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 100690
+                "size": 88225
               },
               {
                 "ask": "0.3200",
@@ -961,7 +961,7 @@
                 "net_edge": "0.04542",
                 "reason": "not_selected_lower_or_tied_edge",
                 "side": "NO",
-                "size": 13775
+                "size": 5781
               }
             ],
             "ticker": "KXNBAGAME-26NOV11BOSTOR-BOS"
@@ -970,11 +970,11 @@
         "game_id": "21718083",
         "identity": {
           "espn_event_id": "401909968",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T00:00Z"
         },
-        "reason": "paper_entry",
+        "reason": "Duplicate signal",
         "signal": {
           "ask": "0.3200",
           "assumed_price": "0.3300",
@@ -982,7 +982,7 @@
           "net_edge": "0.04542",
           "probability": "0.39542",
           "side": "YES",
-          "size": 108905
+          "size": 100172
         },
         "ticker": "KXNBAGAME-26NOV11BOSTOR-TOR"
       },
@@ -990,7 +990,7 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.198555,
+            "quote_age_seconds": 0.20424,
             "sides": [
               {
                 "ask": "0.9100",
@@ -998,22 +998,22 @@
                 "net_edge": "-0.121331",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 656507
+                "size": 647368
               },
               {
                 "ask": "0.1000",
                 "model_probability": "0.191331",
                 "net_edge": "0.071331",
-                "reason": "paper_entry",
+                "reason": "risk_or_duplicate_rejection: Duplicate signal",
                 "side": "NO",
-                "size": 4187
+                "size": 4388
               }
             ],
             "ticker": "KXNBAGAME-26NOV11SASCHI-SAS"
           },
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.195686,
+            "quote_age_seconds": 0.194998,
             "sides": [
               {
                 "ask": "0.1000",
@@ -1021,7 +1021,7 @@
                 "net_edge": "0.071331",
                 "reason": "not_selected_lower_or_tied_edge",
                 "side": "YES",
-                "size": 830
+                "size": 1490
               },
               {
                 "ask": "0.9100",
@@ -1029,7 +1029,7 @@
                 "net_edge": "-0.121331",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 18355
+                "size": 18552
               }
             ],
             "ticker": "KXNBAGAME-26NOV11SASCHI-CHI"
@@ -1038,11 +1038,11 @@
         "game_id": "21718084",
         "identity": {
           "espn_event_id": "401909969",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T01:00Z"
         },
-        "reason": "paper_entry",
+        "reason": "Duplicate signal",
         "signal": {
           "ask": "0.1000",
           "assumed_price": "0.1100",
@@ -1050,7 +1050,7 @@
           "net_edge": "0.071331",
           "probability": "0.191331",
           "side": "NO",
-          "size": 4187
+          "size": 4388
         },
         "ticker": "KXNBAGAME-26NOV11SASCHI-SAS"
       },
@@ -1058,7 +1058,7 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.480664,
+            "quote_age_seconds": 0.412415,
             "sides": [
               {
                 "ask": "0.4000",
@@ -1066,22 +1066,22 @@
                 "net_edge": "-0.127841",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 10969
+                "size": 13184
               },
               {
                 "ask": "0.6100",
                 "model_probability": "0.697841",
                 "net_edge": "0.057841",
-                "reason": "paper_entry",
+                "reason": "risk_or_duplicate_rejection: Duplicate signal",
                 "side": "NO",
-                "size": 1245
+                "size": 1239
               }
             ],
             "ticker": "KXNBAGAME-26NOV11DENMEM-MEM"
           },
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.47855,
+            "quote_age_seconds": 0.410011,
             "sides": [
               {
                 "ask": "0.6100",
@@ -1089,7 +1089,7 @@
                 "net_edge": "0.057841",
                 "reason": "not_selected_lower_or_tied_edge",
                 "side": "YES",
-                "size": 207073
+                "size": 207015
               },
               {
                 "ask": "0.4000",
@@ -1097,7 +1097,7 @@
                 "net_edge": "-0.127841",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 1866
+                "size": 2102
               }
             ],
             "ticker": "KXNBAGAME-26NOV11DENMEM-DEN"
@@ -1106,11 +1106,11 @@
         "game_id": "21718085",
         "identity": {
           "espn_event_id": "401909970",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T01:00Z"
         },
-        "reason": "paper_entry",
+        "reason": "Duplicate signal",
         "signal": {
           "ask": "0.6100",
           "assumed_price": "0.6200",
@@ -1118,7 +1118,7 @@
           "net_edge": "0.057841",
           "probability": "0.697841",
           "side": "NO",
-          "size": 1245
+          "size": 1239
         },
         "ticker": "KXNBAGAME-26NOV11DENMEM-MEM"
       },
@@ -1126,15 +1126,15 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.430697,
+            "quote_age_seconds": 0.351653,
             "sides": [
               {
                 "ask": "0.1300",
                 "model_probability": "0.250566",
                 "net_edge": "0.100566",
-                "reason": "paper_entry",
+                "reason": "risk_or_duplicate_rejection: Duplicate signal",
                 "side": "YES",
-                "size": 8801
+                "size": 8959
               },
               {
                 "ask": "0.8800",
@@ -1142,14 +1142,14 @@
                 "net_edge": "-0.150566",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 8446
+                "size": 8750
               }
             ],
             "ticker": "KXNBAGAME-26NOV11LALMIL-MIL"
           },
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.419316,
+            "quote_age_seconds": 0.344892,
             "sides": [
               {
                 "ask": "0.8800",
@@ -1157,7 +1157,7 @@
                 "net_edge": "-0.150566",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 102191
+                "size": 102134
               },
               {
                 "ask": "0.1300",
@@ -1165,7 +1165,7 @@
                 "net_edge": "0.100566",
                 "reason": "not_selected_lower_or_tied_edge",
                 "side": "NO",
-                "size": 4876
+                "size": 4861
               }
             ],
             "ticker": "KXNBAGAME-26NOV11LALMIL-LAL"
@@ -1174,11 +1174,11 @@
         "game_id": "21718086",
         "identity": {
           "espn_event_id": "401909971",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T01:00Z"
         },
-        "reason": "paper_entry",
+        "reason": "Duplicate signal",
         "signal": {
           "ask": "0.1300",
           "assumed_price": "0.1400",
@@ -1186,7 +1186,7 @@
           "net_edge": "0.100566",
           "probability": "0.250566",
           "side": "YES",
-          "size": 8801
+          "size": 8959
         },
         "ticker": "KXNBAGAME-26NOV11LALMIL-MIL"
       },
@@ -1194,46 +1194,46 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.219926,
+            "quote_age_seconds": 0.214532,
             "sides": [
               {
-                "ask": "0.6400",
+                "ask": "0.6200",
                 "model_probability": "0.677012",
-                "net_edge": "0.007012",
+                "net_edge": "0.027012",
                 "reason": "edge_below_threshold",
                 "side": "YES",
-                "size": 192681
+                "size": 195713
               },
               {
-                "ask": "0.3700",
+                "ask": "0.3900",
                 "model_probability": "0.322988",
-                "net_edge": "-0.077012",
+                "net_edge": "-0.097012",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 708
+                "size": 447
               }
             ],
             "ticker": "KXNBAGAME-26NOV11BKNNOP-NOP"
           },
           {
             "occurrence_datetime": "2026-11-12T04:00:00Z",
-            "quote_age_seconds": 0.211667,
+            "quote_age_seconds": 0.208116,
             "sides": [
               {
-                "ask": "0.3700",
+                "ask": "0.3900",
                 "model_probability": "0.322988",
-                "net_edge": "-0.077012",
+                "net_edge": "-0.097012",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 124131
+                "size": 417
               },
               {
-                "ask": "0.6400",
+                "ask": "0.6200",
                 "model_probability": "0.677012",
-                "net_edge": "0.007012",
+                "net_edge": "0.027012",
                 "reason": "edge_below_threshold",
                 "side": "NO",
-                "size": 11032
+                "size": 104557
               }
             ],
             "ticker": "KXNBAGAME-26NOV11BKNNOP-BKN"
@@ -1242,8 +1242,8 @@
         "game_id": "21718087",
         "identity": {
           "espn_event_id": "401909972",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T01:00Z"
         },
         "reason": "edge_below_threshold"
@@ -1252,46 +1252,46 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T05:00:00Z",
-            "quote_age_seconds": 0.550576,
+            "quote_age_seconds": 0.49262,
             "sides": [
               {
-                "ask": "0.4100",
+                "ask": "0.4200",
                 "model_probability": "0.281398",
-                "net_edge": "-0.158602",
+                "net_edge": "-0.168602",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 379
+                "size": 817
               },
               {
-                "ask": "0.6000",
+                "ask": "0.5900",
                 "model_probability": "0.718602",
-                "net_edge": "0.088602",
-                "reason": "paper_entry",
+                "net_edge": "0.098602",
+                "reason": "risk_or_duplicate_rejection: Duplicate signal",
                 "side": "NO",
-                "size": 63311
+                "size": 7405
               }
             ],
             "ticker": "KXNBAGAME-26NOV11ORLUTA-UTA"
           },
           {
             "occurrence_datetime": "2026-11-12T05:00:00Z",
-            "quote_age_seconds": 0.550302,
+            "quote_age_seconds": 0.492346,
             "sides": [
               {
-                "ask": "0.6000",
+                "ask": "0.5900",
                 "model_probability": "0.718602",
-                "net_edge": "0.088602",
+                "net_edge": "0.098602",
                 "reason": "not_selected_lower_or_tied_edge",
                 "side": "YES",
-                "size": 140269
+                "size": 70071
               },
               {
-                "ask": "0.4100",
+                "ask": "0.4200",
                 "model_probability": "0.281398",
-                "net_edge": "-0.158602",
+                "net_edge": "-0.168602",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 21
+                "size": 484
               }
             ],
             "ticker": "KXNBAGAME-26NOV11ORLUTA-ORL"
@@ -1300,19 +1300,19 @@
         "game_id": "21718088",
         "identity": {
           "espn_event_id": "401909973",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T02:00Z"
         },
-        "reason": "paper_entry",
+        "reason": "Duplicate signal",
         "signal": {
-          "ask": "0.6000",
-          "assumed_price": "0.6100",
+          "ask": "0.5900",
+          "assumed_price": "0.6000",
           "fee": "0.02",
-          "net_edge": "0.088602",
+          "net_edge": "0.098602",
           "probability": "0.718602",
           "side": "NO",
-          "size": 63311
+          "size": 7405
         },
         "ticker": "KXNBAGAME-26NOV11ORLUTA-UTA"
       },
@@ -1320,7 +1320,7 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T05:30:00Z",
-            "quote_age_seconds": 0.495678,
+            "quote_age_seconds": 0.423971,
             "sides": [
               {
                 "ask": "0.6900",
@@ -1328,7 +1328,7 @@
                 "net_edge": "-0.022807",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 215054
+                "size": 215623
               },
               {
                 "ask": "0.3200",
@@ -1336,14 +1336,14 @@
                 "net_edge": "-0.047193",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 39262
+                "size": 38834
               }
             ],
             "ticker": "KXNBAGAME-26NOV11GSWHOU-HOU"
           },
           {
             "occurrence_datetime": "2026-11-12T05:30:00Z",
-            "quote_age_seconds": 0.495029,
+            "quote_age_seconds": 0.416295,
             "sides": [
               {
                 "ask": "0.3200",
@@ -1351,15 +1351,15 @@
                 "net_edge": "-0.047193",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 399182
+                "size": 431160
               },
               {
-                "ask": "0.7000",
+                "ask": "0.6900",
                 "model_probability": "0.697193",
-                "net_edge": "-0.032807",
+                "net_edge": "-0.022807",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 9186
+                "size": 5467
               }
             ],
             "ticker": "KXNBAGAME-26NOV11GSWHOU-GSW"
@@ -1368,8 +1368,8 @@
         "game_id": "21718089",
         "identity": {
           "espn_event_id": "401909974",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T02:30Z"
         },
         "reason": "no_positive_net_edge_or_invalid_quote"
@@ -1378,7 +1378,7 @@
         "assessments": [
           {
             "occurrence_datetime": "2026-11-12T06:00:00Z",
-            "quote_age_seconds": 0.555137,
+            "quote_age_seconds": 0.494768,
             "sides": [
               {
                 "ask": "0.4900",
@@ -1386,22 +1386,22 @@
                 "net_edge": "-0.161465",
                 "reason": "nonpositive_net_edge",
                 "side": "YES",
-                "size": 3028
+                "size": 2992
               },
               {
                 "ask": "0.5200",
                 "model_probability": "0.641465",
                 "net_edge": "0.091465",
-                "reason": "paper_entry",
+                "reason": "risk_or_duplicate_rejection: Duplicate signal",
                 "side": "NO",
-                "size": 11124
+                "size": 13797
               }
             ],
             "ticker": "KXNBAGAME-26NOV11OKCPOR-POR"
           },
           {
             "occurrence_datetime": "2026-11-12T06:00:00Z",
-            "quote_age_seconds": 0.554677,
+            "quote_age_seconds": 0.494301,
             "sides": [
               {
                 "ask": "0.5200",
@@ -1409,7 +1409,7 @@
                 "net_edge": "0.091465",
                 "reason": "not_selected_lower_or_tied_edge",
                 "side": "YES",
-                "size": 90625
+                "size": 108221
               },
               {
                 "ask": "0.5000",
@@ -1417,7 +1417,7 @@
                 "net_edge": "-0.171465",
                 "reason": "nonpositive_net_edge",
                 "side": "NO",
-                "size": 8753
+                "size": 8919
               }
             ],
             "ticker": "KXNBAGAME-26NOV11OKCPOR-OKC"
@@ -1426,11 +1426,11 @@
         "game_id": "21718090",
         "identity": {
           "espn_event_id": "401909975",
-          "received_at": "2026-11-11T16:08:24.342304+00:00",
-          "requested_at": "2026-11-11T16:08:24.219884+00:00",
+          "received_at": "2026-11-11T16:18:22.226004+00:00",
+          "requested_at": "2026-11-11T16:18:22.089761+00:00",
           "tipoff_utc": "2026-11-12T03:00Z"
         },
-        "reason": "paper_entry",
+        "reason": "Duplicate signal",
         "signal": {
           "ask": "0.5200",
           "assumed_price": "0.5300",
@@ -1438,19 +1438,19 @@
           "net_edge": "0.091465",
           "probability": "0.641465",
           "side": "NO",
-          "size": 11124
+          "size": 13797
         },
         "ticker": "KXNBAGAME-26NOV11OKCPOR-POR"
       }
     ],
-    "entries": 7,
+    "entries": 0,
     "games": 118,
     "matched_signals": 7,
     "rejected": 3,
-    "snapshot": "10ea491e06547b609f99a8b86574ffcdcff8755aeccc2e6d4075b06fecaaeea6"
+    "snapshot": "c512d0114c9e8bd81bbf420580c711e8b91103ef42cceb036b08d16f269e47a1"
   },
   "fee_capture_errors": {},
-  "generated_at": "2026-11-11T16:08:25.572854+00:00",
+  "generated_at": "2026-11-11T16:18:23.339657+00:00",
   "markets": 68,
   "max_realized_drawdown": "5.1300",
   "open_cost": "3.1100",
@@ -1524,11 +1524,11 @@
   "reconciliation": {
     "checked": 7,
     "errors": 0,
-    "pending": 0,
-    "settled": 7
+    "pending": 7,
+    "settled": 0
   },
   "settled_trades": 59,
-  "snapshot": "paper_v08/state/snapshots/6e92127b412c2e6c7298bc54c3c01996eaece736a59e3d5fa0bcb2614686333b.json",
+  "snapshot": "paper_v08/state/snapshots/4fa94098e48fca39792aef17f2c482a1d4f0ed2637bea27f00a9c7a2c05de8ed.json",
   "target_collection_errors": 0,
-  "target_snapshot": "paper_v08/state/snapshots/10ea491e06547b609f99a8b86574ffcdcff8755aeccc2e6d4075b06fecaaeea6.json"
+  "target_snapshot": "paper_v08/state/snapshots/c512d0114c9e8bd81bbf420580c711e8b91103ef42cceb036b08d16f269e47a1.json"
 }
