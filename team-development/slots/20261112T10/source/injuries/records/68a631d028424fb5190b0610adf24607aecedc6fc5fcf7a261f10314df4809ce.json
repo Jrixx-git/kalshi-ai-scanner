@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "Content-Type": "text/html; charset=UTF-8",
+    "Date": "Thu, 12 Nov 2026 10:59:41 GMT",
+    "ETag": null,
+    "Last-Modified": null
+  },
+  "parsed_player_statuses_available": false,
+  "publication_at": null,
+  "publication_basis": "filename Eastern time; content unverified",
+  "requested_at": "2026-11-12T10:59:41.293000+00:00",
+  "retrieved_at": "2026-11-12T10:59:41.533888+00:00",
+  "sha256": "05902626eb4c2ef17fcd6590df623afe89ac199f532afdb2641a6aaa1cfa3569",
+  "status": "raw_available_unparsed",
+  "url": "https://official.nba.com/nba-injury-report-2026-27-season/"
+}
