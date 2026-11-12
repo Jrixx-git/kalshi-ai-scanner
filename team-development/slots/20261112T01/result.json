@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-11-12T02:00:00.377370+00:00",
+  "coverage": [
+    {
+      "cutoff": "2026-11-11T23:00:00+00:00",
+      "game_id": "21718081",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.798649+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "game_id": "21718082",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.798881+00:00",
+      "reason": "already_sealed"
+    },
+    {
+      "game_id": "21718083",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.799057+00:00",
+      "reason": "already_sealed"
+    },
+    {
+      "cutoff": "2026-11-12T00:00:00+00:00",
+      "game_id": "21718084",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.799281+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "game_id": "21718085",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.799555+00:00",
+      "reason": "already_sealed"
+    },
+    {
+      "game_id": "21718086",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.799713+00:00",
+      "reason": "already_sealed"
+    },
+    {
+      "game_id": "21718087",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.799902+00:00",
+      "reason": "already_sealed"
+    },
+    {
+      "cutoff": "2026-11-12T01:00:00+00:00",
+      "game_id": "21718088",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.800075+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "cutoff": "2026-11-12T23:00:00+00:00",
+      "game_id": "21718091",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.800289+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-12T23:00:00+00:00",
+      "game_id": "21718092",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.800447+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-13T00:00:00+00:00",
+      "game_id": "21718093",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.800604+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-13T01:00:00+00:00",
+      "game_id": "21718094",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:00:54.800759+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "baseline_available": true,
+      "complete_features": true,
+      "game_id": "21718089",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T01:30:00.381304+00:00",
+      "reason": "sealed",
+      "sealed_at": "2026-11-12T01:30:00.380998+00:00"
+    },
+    {
+      "baseline_available": true,
+      "complete_features": true,
+      "game_id": "21718090",
+      "launched_at": "2026-11-12T01:00:26.712639+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-12T02:00:00.376760+00:00",
+      "reason": "sealed",
+      "sealed_at": "2026-11-12T02:00:00.376467+00:00"
+    }
+  ],
+  "history_errors": {},
+  "launched_at": "2026-11-12T01:00:26.712639+00:00",
+  "live_trading": false,
+  "no_trade": true,
+  "schema": "nba-team-development-run-v1",
+  "slot": "20261112T01",
+  "source_errors": {}
+}
