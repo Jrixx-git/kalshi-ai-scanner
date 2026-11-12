@@ -1,0 +1,26 @@
+{
+  "version": "0.6",
+  "target_date": "2026-11-12",
+  "timezone": "America/New_York",
+  "generated_at_utc": "2026-11-12T17:14:32.392777+00:00",
+  "history_start": "2022-10-01",
+  "history_before": "2026-11-12",
+  "last_history_date": "2026-11-11",
+  "history_games": 5452,
+  "rated_teams": 30,
+  "schedule_games": 4,
+  "exported_games": 4,
+  "skipped": [],
+  "calibration_version": "0.5-recreated",
+  "temperature": 1.23,
+  "elo": {
+    "k": 20,
+    "initial": 1500,
+    "home_advantage": 65,
+    "updates": "after each date"
+  },
+  "live_trading_enabled": false,
+  "caveat": "Exploratory calibrated Elo; no market prices or established trading edge. History availability timestamps and schedule completeness are not independently certified.",
+  "retrieved_history_sha256": "d3de9d047919fd686b18b885fd27a79cf5fdff53e852ac43f035989d672bffdf",
+  "csv_sha256": "80fb59bfa0b377da414c9d48781cddf9422ea5fe5ed80537d629aeca2e224dee"
+}
