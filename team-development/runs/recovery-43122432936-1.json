@@ -1,0 +1,12 @@
+{
+  "schema": "authentic-artifact-recovery-v1",
+  "recovered_at": "2026-11-12 01:06:47 UTC",
+  "original_run": 43122432936,
+  "artifact_id": 13905561119,
+  "artifact_sha256": "19e23f01da56e66ad3d00063c5468f1e9cdeccbbff57acdbd729fc6098a1fdf7",
+  "original_source_commit": "aca3287d01913a244559ed3e2d3237f68ca6772c",
+  "added_games": [],
+  "existing_files_hash_matched": true,
+  "no_trade": true,
+  "method": "Preserve original closure and missingness bytes. No inputs reconstructed."
+}
