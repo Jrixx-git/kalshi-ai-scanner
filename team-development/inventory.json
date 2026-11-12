@@ -1,0 +1,19 @@
+{
+  "audited_at": "2026-11-11T23:59:07.343803+00:00",
+  "coverage": {
+    "independent_only_or_unknown_identity": 4,
+    "outside_worker_horizon": 7,
+    "worker_budget_or_window_expired": 3
+  },
+  "development_seals": 0,
+  "eligible_completed_games": 0,
+  "eligible_later_validation": 0,
+  "eligible_training": 0,
+  "full_verifier_completed_rows": 0,
+  "live_trading": false,
+  "missing_elo": 0,
+  "missing_features": 0,
+  "no_trade": true,
+  "proposed_validation_start": null,
+  "ready": false
+}

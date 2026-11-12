@@ -1,0 +1,8 @@
+{
+  "admitted_seals": 0,
+  "development_seals": 0,
+  "reason": "Local worker resumed after its actual cutoff and monotonic budget; it abstained without backdating.",
+  "result_path": "team-development/result.json",
+  "cloud_primary_used": true,
+  "no_trade": true
+}
