@@ -1,0 +1,8 @@
+{
+  "cutoff": "2026-11-13T01:00:00+00:00",
+  "game_id": "21718094",
+  "launched_at": "2026-11-12T02:01:31.753345+00:00",
+  "no_trade": true,
+  "observed_at": "2026-11-12T02:01:57.831487+00:00",
+  "reason": "outside_worker_horizon"
+}
