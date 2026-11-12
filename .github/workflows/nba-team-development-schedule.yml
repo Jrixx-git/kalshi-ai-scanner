@@ -1,16 +1,19 @@
 name: NBA prospective development schedule (no trades)
 on:
   schedule:
-    # GitHub jitter is handled by the worker; elapsed cutoffs remain missing.
+    # Actual starts govern eligibility; delayed cutoffs remain missing.
     - cron: '7 * 11-25 11 *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/nba-team-development-schedule.yml]
 permissions:
   contents: write
 jobs:
   development:
-    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-team-development.yml@aca3287d01913a244559ed3e2d3237f68ca6772c
+    uses: Jrixx-git/kalshi-ai-scanner/.github/workflows/nba-team-development.yml@bee72466b987d02ffdfa8540198050b32beb5b89
     with:
-      source_ref: aca3287d01913a244559ed3e2d3237f68ca6772c
-      max_wait_seconds: 3600
+      source_ref: bee72466b987d02ffdfa8540198050b32beb5b89
+      max_wait_seconds: ${{ github.event_name == 'push' && 1800 || 3600 }}
     secrets:
       BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
