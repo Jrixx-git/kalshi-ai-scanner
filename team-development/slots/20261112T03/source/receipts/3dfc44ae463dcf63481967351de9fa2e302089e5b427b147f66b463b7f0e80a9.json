@@ -1,0 +1,15 @@
+{
+  "bdl_requests": 0,
+  "dates": [],
+  "games": [],
+  "independent_games": [],
+  "injury_player_status": "unparsed_unverified",
+  "live_trading": false,
+  "market_requests": 0,
+  "no_trade": true,
+  "schema": "nba-v09-prospective-v2",
+  "slot": "20261112T03",
+  "source_errors": {},
+  "started_at": "2026-11-12T03:53:35.878136+00:00",
+  "stop_at": "2026-11-25T18:00:00+00:00"
+}
