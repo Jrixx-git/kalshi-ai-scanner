@@ -1,0 +1,420 @@
+{
+  "bdl_requests": 2,
+  "completed_at": "2026-11-12T20:01:05.737924+00:00",
+  "dates": [
+    {
+      "count_agrees": true,
+      "date": "2026-11-12",
+      "games": 4,
+      "independent_event_count": 4,
+      "independent_event_ids": [
+        "401909976",
+        "401909977",
+        "401909978",
+        "401909979"
+      ],
+      "independent_schedule": "raw_available",
+      "provider_game_count": 4,
+      "universe": "complete_provider_response"
+    },
+    {
+      "count_agrees": true,
+      "date": "2026-11-13",
+      "games": 9,
+      "independent_event_count": 9,
+      "independent_event_ids": [
+        "401909296",
+        "401909297",
+        "401909298",
+        "401909299",
+        "401909300",
+        "401909301",
+        "401909302",
+        "401909303",
+        "401909304"
+      ],
+      "independent_schedule": "raw_available",
+      "provider_game_count": 9,
+      "universe": "complete_provider_response"
+    }
+  ],
+  "games": [
+    {
+      "away_team": "TOR",
+      "away_team_id": 28,
+      "book_errors": {},
+      "date": "2026-11-12",
+      "event_ticker": "KXNBAGAME-26NOV12TORPHI",
+      "game_id": "21718091",
+      "home_team": "PHI",
+      "home_team_id": 23,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV12TORPHI-TOR",
+        "KXNBAGAME-26NOV12TORPHI-PHI"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 14339.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-13T00:00:00+00:00"
+    },
+    {
+      "away_team": "DET",
+      "away_team_id": 9,
+      "book_errors": {},
+      "date": "2026-11-12",
+      "event_ticker": "KXNBAGAME-26NOV12DETWAS",
+      "game_id": "21718092",
+      "home_team": "WAS",
+      "home_team_id": 30,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV12DETWAS-WAS",
+        "KXNBAGAME-26NOV12DETWAS-DET"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 14339.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-13T00:00:00+00:00"
+    },
+    {
+      "away_team": "DAL",
+      "away_team_id": 7,
+      "book_errors": {},
+      "date": "2026-11-12",
+      "event_ticker": "KXNBAGAME-26NOV12DALMIN",
+      "game_id": "21718093",
+      "home_team": "MIN",
+      "home_team_id": 18,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV12DALMIN-MIN",
+        "KXNBAGAME-26NOV12DALMIN-DAL"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 17939.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-13T01:00:00+00:00"
+    },
+    {
+      "away_team": "CHA",
+      "away_team_id": 4,
+      "book_errors": {},
+      "date": "2026-11-12",
+      "event_ticker": "KXNBAGAME-26NOV12CHAPHX",
+      "game_id": "21718094",
+      "home_team": "PHX",
+      "home_team_id": 24,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV12CHAPHX-PHX",
+        "KXNBAGAME-26NOV12CHAPHX-CHA"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 21539.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-13T02:00:00+00:00"
+    },
+    {
+      "away_team": "NYK",
+      "away_team_id": 20,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13NYKIND",
+      "game_id": "21718095",
+      "home_team": "IND",
+      "home_team_id": 12,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13NYKIND-NYK",
+        "KXNBAGAME-26NOV13NYKIND-IND"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 100739.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T00:00:00+00:00"
+    },
+    {
+      "away_team": "MIL",
+      "away_team_id": 17,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13MILORL",
+      "game_id": "21718096",
+      "home_team": "ORL",
+      "home_team_id": 22,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13MILORL-ORL",
+        "KXNBAGAME-26NOV13MILORL-MIL"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 100739.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T00:00:00+00:00"
+    },
+    {
+      "away_team": "CLE",
+      "away_team_id": 6,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13CLEMIA",
+      "game_id": "21718097",
+      "home_team": "MIA",
+      "home_team_id": 16,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13CLEMIA-MIA",
+        "KXNBAGAME-26NOV13CLEMIA-CLE"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 104339.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T01:00:00+00:00"
+    },
+    {
+      "away_team": "ATL",
+      "away_team_id": 1,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13ATLCHI",
+      "game_id": "21718098",
+      "home_team": "CHI",
+      "home_team_id": 5,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13ATLCHI-CHI",
+        "KXNBAGAME-26NOV13ATLCHI-ATL"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 104339.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T01:00:00+00:00"
+    },
+    {
+      "away_team": "MEM",
+      "away_team_id": 15,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13MEMNOP",
+      "game_id": "21718099",
+      "home_team": "NOP",
+      "home_team_id": 19,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13MEMNOP-NOP",
+        "KXNBAGAME-26NOV13MEMNOP-MEM"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 104339.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T01:00:00+00:00"
+    },
+    {
+      "away_team": "UTA",
+      "away_team_id": 29,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13UTAHOU",
+      "game_id": "21718100",
+      "home_team": "HOU",
+      "home_team_id": 11,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13UTAHOU-UTA",
+        "KXNBAGAME-26NOV13UTAHOU-HOU"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 106139.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T01:30:00+00:00"
+    },
+    {
+      "away_team": "GSW",
+      "away_team_id": 10,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13GSWSAS",
+      "game_id": "21718101",
+      "home_team": "SAS",
+      "home_team_id": 27,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13GSWSAS-SAS",
+        "KXNBAGAME-26NOV13GSWSAS-GSW"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 109739.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T02:30:00+00:00"
+    },
+    {
+      "away_team": "POR",
+      "away_team_id": 25,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13PORSAC",
+      "game_id": "21718102",
+      "home_team": "SAC",
+      "home_team_id": 26,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13PORSAC-SAC",
+        "KXNBAGAME-26NOV13PORSAC-POR"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 111539.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T03:00:00+00:00"
+    },
+    {
+      "away_team": "OKC",
+      "away_team_id": 21,
+      "book_errors": {},
+      "date": "2026-11-13",
+      "event_ticker": "KXNBAGAME-26NOV13OKCLAC",
+      "game_id": "21718103",
+      "home_team": "LAC",
+      "home_team_id": 13,
+      "market_status": "raw_pair_available",
+      "matched_contracts": [
+        "KXNBAGAME-26NOV13OKCLAC-OKC",
+        "KXNBAGAME-26NOV13OKCLAC-LAC"
+      ],
+      "no_trade": true,
+      "seconds_to_tip_at_request": 113339.781656,
+      "status": "pregame",
+      "tipoff_utc": "2026-11-14T03:30:00+00:00"
+    }
+  ],
+  "independent_games": [
+    {
+      "date": "2026-11-12",
+      "event_id": "401909976",
+      "provider_game_ids": [
+        "21718091"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-13T00:00Z"
+    },
+    {
+      "date": "2026-11-12",
+      "event_id": "401909977",
+      "provider_game_ids": [
+        "21718092"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-13T00:00Z"
+    },
+    {
+      "date": "2026-11-12",
+      "event_id": "401909978",
+      "provider_game_ids": [
+        "21718093"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-13T01:00Z"
+    },
+    {
+      "date": "2026-11-12",
+      "event_id": "401909979",
+      "provider_game_ids": [
+        "21718094"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-13T02:00Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909296",
+      "provider_game_ids": [
+        "21718095"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T00:00Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909297",
+      "provider_game_ids": [
+        "21718096"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T00:00Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909298",
+      "provider_game_ids": [
+        "21718097"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T01:00Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909299",
+      "provider_game_ids": [
+        "21718098"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T01:00Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909300",
+      "provider_game_ids": [
+        "21718099"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T01:00Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909301",
+      "provider_game_ids": [
+        "21718100"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T01:30Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909302",
+      "provider_game_ids": [
+        "21718101"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T02:30Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909303",
+      "provider_game_ids": [
+        "21718102"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T03:00Z"
+    },
+    {
+      "date": "2026-11-13",
+      "event_id": "401909304",
+      "provider_game_ids": [
+        "21718103"
+      ],
+      "status": "identity_matched",
+      "tipoff_utc": "2026-11-14T03:30Z"
+    }
+  ],
+  "injury_player_status": "unparsed_unverified",
+  "injury_raw_reports": 2,
+  "injury_records": 3,
+  "live_trading": false,
+  "market_requests": 27,
+  "no_trade": true,
+  "schema": "nba-v09-prospective-v2",
+  "slot": "20261112T20",
+  "source_errors": {},
+  "started_at": "2026-11-12T20:01:00.218344+00:00",
+  "stop_at": "2026-11-25T18:00:00+00:00"
+}
