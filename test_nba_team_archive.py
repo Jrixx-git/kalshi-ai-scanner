@@ -30,22 +30,31 @@ class EvidenceBytesTests(unittest.TestCase):
             git(worker,'read-tree',old)
             def append(name,parent):
                 (worker/name).write_text(name)
-                git(worker,'add',name)
+                git(worker,'add','--ignore-removal','--','.')
                 tree=git(worker,'write-tree').stdout.decode().strip()
                 commit=git(worker,'commit-tree',tree,'-p',parent,'-m',name).stdout.decode().strip()
                 git(worker,'push','origin',commit+':refs/heads/research/evidence')
                 return commit
             first=append('prepared',old)
+            # Another append-only recovery may add a file unknown to this
+            # worker's filesystem while the cutoff waiter is still running.
+            git(seed,'fetch','--depth=1','origin','refs/heads/research/evidence')
+            git(seed,'read-tree','FETCH_HEAD')
+            (seed/'recovered').write_text('authentic recovery')
+            git(seed,'add','--ignore-removal','--','.')
+            tree=git(seed,'write-tree').stdout.decode().strip()
+            recovered=git(seed,'commit-tree',tree,'-p',first,'-m','recovery').stdout.decode().strip()
+            git(seed,'push','origin',recovered+':refs/heads/research/evidence')
             # A tracking-ref refresh can be rejected because depth-one grafts
             # hide ancestry. FETCH_HEAD is an independent download destination.
             git(worker,'fetch','--depth=1','origin','refs/heads/research/evidence')
             current=git(worker,'rev-parse','FETCH_HEAD').stdout.decode().strip()
-            self.assertEqual(current,first)
+            self.assertEqual(current,recovered)
             git(worker,'read-tree',current)
             final=append('sealed',current)
             self.assertEqual(git(remote,'rev-parse','refs/heads/research/evidence').stdout.decode().strip(),final)
             self.assertEqual(set(git(remote,'ls-tree','--name-only',final).stdout.decode().splitlines()),
-                             {'original','prepared','sealed'})
+                             {'original','prepared','recovered','sealed'})
 
     def test_research_archive_roundtrip_with_windows_line_endings(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -17,7 +17,9 @@ else
 fi
 git config user.name github-actions[bot]
 git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-git add -- .gitattributes team-development
+# Preserve files appended by an authentic recovery since this worker restored
+# its checkpoint. Local conflicts are still rejected below; nothing is removed.
+git add --ignore-removal -- .gitattributes team-development
 if [ "${#parent[@]}" -ne 0 ] && [ -n "$(git diff --cached --name-only --diff-filter=MD "$prior" -- team-development)" ]; then
   echo 'Refusing replacement or deletion of durable evidence' >&2
   exit 1
