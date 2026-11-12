@@ -3,8 +3,11 @@ set -euo pipefail
 branch=research/nba-team-development-evidence
 parent=()
 if git ls-remote --exit-code origin "refs/heads/$branch" > /dev/null; then
-  git fetch --depth=1 origin "refs/heads/$branch:refs/remotes/origin/team-development"
-  prior=$(git rev-parse refs/remotes/origin/team-development)
+  # Repeated depth-one fetches can reject a tracking-ref update when shallow
+  # grafts hide ancestry. FETCH_HEAD needs no local ref rewrite; the push below
+  # still requires a real fast-forward on the server.
+  git fetch --depth=1 origin "refs/heads/$branch"
+  prior=$(git rev-parse FETCH_HEAD)
   git read-tree "$prior"
   parent=(-p "$prior")
 else

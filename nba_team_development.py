@@ -134,6 +134,30 @@ def prepare(history, output, *, max_wait=3600):
     return slot
 
 
+def schedule_verifier(output, *, clock=None, fetch=None):
+    from nba_v09_prospective import capture_schedule, game_record
+    from nba_v08_schedule import verify
+    clock = clock or (lambda: datetime.now(timezone.utc))
+    fetch = fetch or capture_schedule
+    schedules, requests = {}, 0
+
+    def check(t):
+        nonlocal requests
+        day = t['date'][:10]
+        now = clock()
+        if day not in schedules or (now-timestamp(schedules[day]['requested_at'])).total_seconds() > 120:
+            if requests >= 12:
+                raise ValueError('Fresh schedule request budget')
+            requests += 1
+            schedules[day] = json.loads(fetch(day, Path(output)/'fresh-schedules').read_bytes())
+        # The response cannot be verified against a time sampled before its
+        # receipt. Refresh the clock after network I/O, including the first game.
+        now = clock()
+        verify(game_record(t, now), schedules[day], now)
+
+    return check
+
+
 def resume(history, output, slot, *, operational='forward_test/state'):
     if not re.fullmatch(r'\d{8}T\d{2}', slot):
         raise ValueError('Invalid slot')
@@ -150,26 +174,8 @@ def resume(history, output, slot, *, operational='forward_test/state'):
     # A worker cannot be resumed twice, even after an incomplete attempt.
     with (evidence/'worker-claim.json').open('x') as f:
         json.dump(dict(started_at=datetime.now(timezone.utc).isoformat(), no_trade=True), f)
-    from nba_v09_prospective import capture_schedule, game_record
-    from nba_v08_schedule import verify
-    schedules = {}
-    schedule_requests = 0
-
-    def preflight(t):
-        nonlocal schedule_requests
-        # Refresh independently shortly before each cutoff, not after sealing.
-        day = t['date'][:10]
-        now = datetime.now(timezone.utc)
-        if day not in schedules or (now-timestamp(schedules[day]['requested_at'])).total_seconds() > 120:
-            if schedule_requests >= 12:
-                raise ValueError('Fresh schedule request budget')
-            schedule_requests += 1
-            schedules[day] = json.loads(capture_schedule(day, evidence/'fresh-schedules').read_bytes())
-        row = game_record(t, now)
-        verify(row, schedules[day], now)
-
     rows = supervise(history, games, operational, root,
-                     launched_at=launched, max_wait=max_wait, preflight=preflight)
+                     launched_at=launched, max_wait=max_wait, preflight=schedule_verifier(evidence))
     report = dict(schema='nba-team-development-run-v1', launched_at=launched.isoformat(),
                   completed_at=datetime.now(timezone.utc).isoformat(), slot=slot,
                   source_errors=plan['source_errors'], history_errors=plan['history_errors'],

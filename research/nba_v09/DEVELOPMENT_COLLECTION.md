@@ -83,8 +83,16 @@ split is the earliest tipoff admitting 100 previously received outcomes; it
 never chooses a split using outcomes or performance. At least 30 later eligible
 games must also exist. No scheduled workflow fits or freezes a model.
 
-Offline verification: 275 tests pass, including a real Git stage/checkout round
+Offline verification: 277 tests pass, including a real Git stage/checkout round
 trip with Windows line-ending conversion enabled, late starts, clock reversal,
 budget expiry, simultaneous cutoffs, independent omissions, immutable game and
 slot duplicates, source-plan tampering, receipt tampering, and delayed outcomes
 at the train/validation boundary. Existing strategy and risk tests still pass.
+
+Live validation exposed and fixed two boundary errors: schedule freshness now
+uses a clock sampled after receipt, including the first game in a cutoff group;
+repeated shallow archive fetches use FETCH_HEAD rather than rewriting a shallow
+tracking ref. The server push still requires an ordinary fast-forward. Regression
+tests cover the first network response and two sequential depth-one checkpoints.
+Original seals recovered from an authentic artifact retain all original bytes
+and times; recovery is never a new seal or a backdated capture.

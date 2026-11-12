@@ -4,7 +4,7 @@ import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
-from nba_team_development import supervise, run, resume
+from nba_team_development import supervise, run, resume, schedule_verifier
 from nba_team_inventory import inventory
 from nba_forward_test import immutable, encode
 
@@ -43,6 +43,30 @@ class WorkerTests(unittest.TestCase):
         self.assertEqual(r[0]['sealed_at'], self.now.isoformat())
         self.assertFalse(r[0]['baseline_available'])
         self.assertFalse(r[0]['complete_features'])
+
+    def test_first_game_verifies_against_time_after_network_receipt(self):
+        from nba_v08_schedule import BASE
+        t = dict(id=10,date='2026-11-11',datetime='2026-11-12T01:00:00Z',
+                 home_team={'id':1,'abbreviation':'ATL'},visitor_team={'id':2,'abbreviation':'BOS'},
+                 period=0,status_state='scheduled')
+        calls=[]
+        def fetch(day, output):
+            start=self.now.isoformat()
+            self.now+=timedelta(seconds=1)
+            obj=dict(schema='espn-nba-schedule-v1',requested_date=day,source=BASE+day.replace('-',''),
+                     requested_at=start,received_at=self.now.isoformat(),payload=dict(events=[dict(
+                         id='123',date=t['datetime'],competitions=[dict(id='123',competitors=[
+                             dict(homeAway='home',team=dict(id='1',abbreviation='ATL')),
+                             dict(homeAway='away',team=dict(id='2',abbreviation='BOS'))])],
+                         status=dict(type=dict(state='pre',completed=False,name='STATUS_SCHEDULED')))]))
+            p=self.root/'schedule.json'
+            p.write_bytes(encode(obj))
+            calls.append(day)
+            return p
+        check=schedule_verifier(self.root,clock=lambda:self.now,fetch=fetch)
+        check(t)
+        check(t)
+        self.assertEqual(calls,['2026-11-11'])
 
     def test_late_start_never_backdates_even_within_tolerance(self):
         self.now += timedelta(seconds=11)
