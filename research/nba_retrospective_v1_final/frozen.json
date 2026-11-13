@@ -1,0 +1,239 @@
+{
+  "freeze": {
+    "data_cutoff_at": "2026-11-13T17:27:01.170460+00:00",
+    "frozen_at": "2026-11-13T17:27:12.434707+00:00",
+    "live_trading": false,
+    "model_sha256": "c09d05fad7e7dc56b79ef5e9b42d3d36dac0a367edddacbc07a2f009104d26ee",
+    "no_trade": true,
+    "schema": "nba-retrospective-elo-offset-v1-freeze"
+  },
+  "model": {
+    "dataset_sha256": "9c2292c83b0b4eab4ef624e611c4e521f9d6598a9e951341f7f55ef040579ddd",
+    "fields": [
+      "rest",
+      "b2b",
+      "margin5",
+      "win5",
+      "margin10",
+      "win10",
+      "venue20"
+    ],
+    "historical_elo": "reconstructed_from_2025_not_archived_operational_elo",
+    "implementation_sha256": "d881a0517c818c6e71c86d8c0300b2972f55c408157e5e61e56284befb8c885c",
+    "live_trading": false,
+    "means": [
+      0.09869375907111756,
+      -0.010159651669085631,
+      0.002612481857764831,
+      0.006676342525399131,
+      0.11030478955007253,
+      0.009143686502177067,
+      0.09724238026124818
+    ],
+    "model_sha256": "c09d05fad7e7dc56b79ef5e9b42d3d36dac0a367edddacbc07a2f009104d26ee",
+    "n_train": 689,
+    "n_validation": 174,
+    "no_trade": true,
+    "policy": {
+      "evidence": "retrospective_reconstruction_not_point_in_time",
+      "history_start": "2025-10-01",
+      "injuries": "excluded",
+      "iterations": 2000,
+      "l2": 0.1,
+      "market_training": false,
+      "min_train": 500,
+      "min_validation": 100,
+      "missing": "abstain",
+      "same_date": "exclude_all",
+      "split": "2026-10-01",
+      "step": 0.1,
+      "temperature": 1.23,
+      "version": "nba-retrospective-elo-offset-v1"
+    },
+    "scales": [
+      0.9929276939892472,
+      0.47419457715975216,
+      13.599481084692409,
+      0.3771585939231362,
+      11.269992835569138,
+      0.3011646352985014,
+      0.22705203754643125
+    ],
+    "training_dates": [
+      "2026-01-11",
+      "2026-06-13"
+    ],
+    "validation": {
+      "challenger": {
+        "bins": [
+          {
+            "lower": 0.0,
+            "mean_probability": 0.08262848901570743,
+            "n": 3,
+            "observed_rate": 0.0,
+            "upper": 0.1
+          },
+          {
+            "lower": 0.1,
+            "mean_probability": 0.15346255390532026,
+            "n": 16,
+            "observed_rate": 0.125,
+            "upper": 0.2
+          },
+          {
+            "lower": 0.2,
+            "mean_probability": 0.2633674846557256,
+            "n": 15,
+            "observed_rate": 0.3333333333333333,
+            "upper": 0.3
+          },
+          {
+            "lower": 0.3,
+            "mean_probability": 0.34094742870376316,
+            "n": 18,
+            "observed_rate": 0.2777777777777778,
+            "upper": 0.4
+          },
+          {
+            "lower": 0.4,
+            "mean_probability": 0.4492561747125902,
+            "n": 15,
+            "observed_rate": 0.4,
+            "upper": 0.5
+          },
+          {
+            "lower": 0.5,
+            "mean_probability": 0.5490856201702434,
+            "n": 20,
+            "observed_rate": 0.65,
+            "upper": 0.6
+          },
+          {
+            "lower": 0.6,
+            "mean_probability": 0.6441648145077613,
+            "n": 30,
+            "observed_rate": 0.6,
+            "upper": 0.7
+          },
+          {
+            "lower": 0.7,
+            "mean_probability": 0.7451261851209027,
+            "n": 25,
+            "observed_rate": 0.52,
+            "upper": 0.8
+          },
+          {
+            "lower": 0.8,
+            "mean_probability": 0.8541573670344668,
+            "n": 22,
+            "observed_rate": 0.7727272727272727,
+            "upper": 0.9
+          },
+          {
+            "lower": 0.9,
+            "mean_probability": 0.9300529815282198,
+            "n": 10,
+            "observed_rate": 1.0,
+            "upper": 1.0
+          }
+        ],
+        "brier": 0.20335184372860385,
+        "ece": 0.0867298236573538,
+        "log_loss": 0.587155805177554,
+        "n": 174
+      },
+      "elo": {
+        "bins": [
+          {
+            "lower": 0.0,
+            "mean_probability": null,
+            "n": 0,
+            "observed_rate": null,
+            "upper": 0.1
+          },
+          {
+            "lower": 0.1,
+            "mean_probability": 0.19341516666666667,
+            "n": 6,
+            "observed_rate": 0.16666666666666666,
+            "upper": 0.2
+          },
+          {
+            "lower": 0.2,
+            "mean_probability": 0.2623483846153846,
+            "n": 13,
+            "observed_rate": 0.07692307692307693,
+            "upper": 0.3
+          },
+          {
+            "lower": 0.3,
+            "mean_probability": 0.3421358095238095,
+            "n": 21,
+            "observed_rate": 0.2857142857142857,
+            "upper": 0.4
+          },
+          {
+            "lower": 0.4,
+            "mean_probability": 0.45021465000000005,
+            "n": 20,
+            "observed_rate": 0.3,
+            "upper": 0.5
+          },
+          {
+            "lower": 0.5,
+            "mean_probability": 0.5521317058823529,
+            "n": 34,
+            "observed_rate": 0.5294117647058824,
+            "upper": 0.6
+          },
+          {
+            "lower": 0.6,
+            "mean_probability": 0.6553782564102564,
+            "n": 39,
+            "observed_rate": 0.6153846153846154,
+            "upper": 0.7
+          },
+          {
+            "lower": 0.7,
+            "mean_probability": 0.7561370000000001,
+            "n": 20,
+            "observed_rate": 0.65,
+            "upper": 0.8
+          },
+          {
+            "lower": 0.8,
+            "mean_probability": 0.84469745,
+            "n": 20,
+            "observed_rate": 0.95,
+            "upper": 0.9
+          },
+          {
+            "lower": 0.9,
+            "mean_probability": 0.91,
+            "n": 1,
+            "observed_rate": 1.0,
+            "upper": 1.0
+          }
+        ],
+        "brier": 0.20276871885090805,
+        "ece": 0.0770757816091954,
+        "log_loss": 0.5889448923066485,
+        "n": 174
+      }
+    },
+    "validation_dates": [
+      "2026-10-20",
+      "2026-11-12"
+    ],
+    "version": "nba-retrospective-elo-offset-v1",
+    "weights": [
+      0.023860915119267807,
+      -0.03205442997944052,
+      0.07713378837523843,
+      0.0225262090969621,
+      0.2063773167122295,
+      0.10201112642633646,
+      0.09198904239302269
+    ]
+  }
+}

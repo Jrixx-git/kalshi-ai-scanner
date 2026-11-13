@@ -2,6 +2,8 @@
 forward_test/** binary
 # Research copies retain original raw and baseline bytes on every platform.
 team-development/** -text
+research/nba_retrospective_v1_final/** -text
+retrospective-forward/** -text
 # Preserve official raw evidence exactly; HTML whitespace is source evidence.
 research/nba_v09/injuries/raw/** binary
 research/nba_v09/injuries/records/** -text

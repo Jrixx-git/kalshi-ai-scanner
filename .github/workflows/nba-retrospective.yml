@@ -1,0 +1,103 @@
+name: NBA retrospective challenger and genuine forward shadows
+on:
+  workflow_call:
+    inputs:
+      source_ref:
+        type: string
+        required: true
+  workflow_dispatch:
+  push:
+    branches: [develop/paper-trading-v02]
+    paths:
+      - nba_retrospective.py
+      - test_nba_retrospective.py
+      - .github/workflows/nba-retrospective.yml
+      - research/nba_retrospective_v1_final/**
+permissions:
+  contents: write
+concurrency:
+  group: nba-retrospective-v1-evidence
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      LIVE_TRADING_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all offline safeguards
+        run: python -m unittest discover -q
+      - name: Restore pinned original training evidence
+        run: |
+          git fetch --depth=1 origin 09dfa3f7333356cb46a5f963e36eb6586be92619
+          mkdir training-source
+          git archive FETCH_HEAD team-development/team-history | tar -x -C training-source
+      - name: Reproduce frozen fit and historical validation exactly
+        run: >-
+          python nba_retrospective.py reproduce
+          --history training-source/team-development/team-history
+          --output research/nba_retrospective_v1_final
+          --frozen research/nba_retrospective_v1_final/frozen.json
+      - name: Restore authentic current features and immutable Elo archives
+        run: |
+          git fetch --depth=1 origin research/nba-team-development-evidence
+          git archive FETCH_HEAD team-development | tar -x
+          if git ls-remote --exit-code origin refs/heads/research/nba-retrospective-v1-evidence > /dev/null; then
+            git fetch --depth=1 origin research/nba-retrospective-v1-evidence
+            git archive FETCH_HEAD retrospective-forward | tar -x
+          else
+            test "$?" -eq 2
+          fi
+      - name: Publish only genuine future forecasts and matched research scores
+        run: >-
+          python nba_retrospective.py daily
+          --history team-development/team-history
+          --inputs team-development --operational team-development/baseline
+          --output retrospective-forward
+          --frozen research/nba_retrospective_v1_final/frozen.json
+      - name: Preserve full or partial forward evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nba-retrospective-${{ github.run_id }}-${{ github.run_attempt }}
+          path: retrospective-forward/
+          retention-days: 90
+          if-no-files-found: warn
+      - name: Append durable research evidence
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GIT_INDEX_FILE: ${{ runner.temp }}/retrospective-index
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d retrospective-forward || exit 0
+          branch=research/nba-retrospective-v1-evidence
+          parent=()
+          if git ls-remote --exit-code origin "refs/heads/$branch" > /dev/null; then
+            git fetch --depth=1 origin "$branch"
+            prior=$(git rev-parse FETCH_HEAD)
+            git read-tree "$prior"
+            parent=(-p "$prior")
+          else
+            test "$?" -eq 2
+            git read-tree --empty
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add --ignore-removal -- retrospective-forward
+          if [ "${#parent[@]}" -ne 0 ]; then
+            test -z "$(git diff --cached --name-only --diff-filter=MD "$prior" -- retrospective-forward)"
+          fi
+          tree=$(git write-tree)
+          commit=$(printf 'Archive retrospective challenger forward receipts %s [skip ci]\n' "$GITHUB_RUN_ID" | git commit-tree "$tree" "${parent[@]}")
+          gh auth setup-git
+          git push origin "$commit:refs/heads/$branch"
+          test "$(git ls-remote origin "refs/heads/$branch" | cut -f1)" = "$commit"
