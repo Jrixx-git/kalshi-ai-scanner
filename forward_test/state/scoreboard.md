@@ -2,9 +2,9 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-11-12T17:27:38.687065+00:00
+Results checked: 2026-11-13T17:10:41.704219+00:00
 
-Refresh: 60 requests; 55 reused; 3 deferred; 0 errors. Cached source timestamps are retained.
+Refresh: 7 requests; 115 reused; 0 deferred; 0 errors. Cached source timestamps are retained.
 
 | NBA date | Archived | Scored | Accuracy | Brier | Log loss |
 |---|---:|---:|---:|---:|---:|
@@ -22,8 +22,9 @@ Refresh: 60 requests; 55 reused; 3 deferred; 0 errors. Cached source timestamps 
 | 2026-11-08 | 7 | 7 | 0.857143 | 0.124729 | 0.417546 |
 | 2026-11-09 | 8 | 8 | 0.750000 | 0.199867 | 0.585630 |
 | 2026-11-10 | 6 | 6 | 0.833333 | 0.186719 | 0.551145 |
-| 2026-11-11 | 10 | 7 | 0.714286 | 0.206474 | 0.598818 |
-| 2026-11-12 | 4 | 0 | pending | pending | pending |
+| 2026-11-11 | 10 | 10 | 0.700000 | 0.202767 | 0.590860 |
+| 2026-11-12 | 4 | 4 | 1.000000 | 0.096328 | 0.358419 |
+| 2026-11-13 | 9 | 0 | pending | pending | pending |
 
 Unresolved games are excluded from all metric denominators.
 
@@ -144,10 +145,19 @@ Unresolved games are excluded from all metric denominators.
 | 21718085 | 2026-11-11 | final |
 | 21718086 | 2026-11-11 | final |
 | 21718087 | 2026-11-11 | final |
-| 21718088 | 2026-11-11 | unknown |
-| 21718089 | 2026-11-11 | unknown |
-| 21718090 | 2026-11-11 | unknown |
-| 21718091 | 2026-11-12 | missing |
-| 21718092 | 2026-11-12 | missing |
-| 21718093 | 2026-11-12 | missing |
-| 21718094 | 2026-11-12 | missing |
+| 21718088 | 2026-11-11 | final |
+| 21718089 | 2026-11-11 | final |
+| 21718090 | 2026-11-11 | final |
+| 21718091 | 2026-11-12 | final |
+| 21718092 | 2026-11-12 | final |
+| 21718093 | 2026-11-12 | final |
+| 21718094 | 2026-11-12 | final |
+| 21718095 | 2026-11-13 | missing |
+| 21718096 | 2026-11-13 | missing |
+| 21718097 | 2026-11-13 | missing |
+| 21718098 | 2026-11-13 | missing |
+| 21718099 | 2026-11-13 | missing |
+| 21718100 | 2026-11-13 | missing |
+| 21718101 | 2026-11-13 | missing |
+| 21718102 | 2026-11-13 | missing |
+| 21718103 | 2026-11-13 | missing |

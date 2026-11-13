@@ -141,24 +141,33 @@
       }
     },
     "2026-11-11": {
-      "accuracy": 0.7142857142857143,
-      "brier": 0.20647392607542855,
-      "log_loss": 0.5988184866006071,
+      "accuracy": 0.7,
+      "brier": 0.2027671742406,
+      "log_loss": 0.5908599027566723,
       "predicted": 10,
-      "scored": 7,
+      "scored": 10,
       "statuses": {
-        "final": 7,
-        "unknown": 3
+        "final": 10
       }
     },
     "2026-11-12": {
+      "accuracy": 1.0,
+      "brier": 0.09632776096549998,
+      "log_loss": 0.3584188896094158,
+      "predicted": 4,
+      "scored": 4,
+      "statuses": {
+        "final": 4
+      }
+    },
+    "2026-11-13": {
       "accuracy": null,
       "brier": null,
       "log_loss": null,
-      "predicted": 4,
+      "predicted": 9,
       "scored": 0,
       "statuses": {
-        "missing": 4
+        "missing": 9
       }
     }
   },
@@ -1545,51 +1554,149 @@
     },
     {
       "archive": "a4ac56badc64783b5ca6c9eaecc245bdad4f8415e1c8ff9780c22339e1e82395",
+      "brier": 0.079184834404,
+      "correct": 1.0,
       "date": "2026-11-11",
       "game_id": "21718088",
+      "home_win": 0,
+      "home_win_probability": 0.281398,
+      "log_loss": 0.33044762111705656,
       "source_commit": "fa28af82093ca58c69b986271e9781577208b60d",
-      "status": "unknown"
+      "status": "final"
     },
     {
       "archive": "a4ac56badc64783b5ca6c9eaecc245bdad4f8415e1c8ff9780c22339e1e82395",
+      "brier": 0.09169207924900002,
+      "correct": 1.0,
       "date": "2026-11-11",
       "game_id": "21718089",
+      "home_win": 1,
+      "home_win_probability": 0.697193,
+      "log_loss": 0.3606930055473166,
       "source_commit": "fa28af82093ca58c69b986271e9781577208b60d",
-      "status": "unknown"
+      "status": "final"
     },
     {
       "archive": "a4ac56badc64783b5ca6c9eaecc245bdad4f8415e1c8ff9780c22339e1e82395",
+      "brier": 0.41147734622499993,
+      "correct": 0.0,
       "date": "2026-11-11",
       "game_id": "21718090",
+      "home_win": 1,
+      "home_win_probability": 0.358535,
+      "log_loss": 1.0257289946981007,
       "source_commit": "fa28af82093ca58c69b986271e9781577208b60d",
-      "status": "unknown"
+      "status": "final"
     },
     {
       "archive": "3191d27ba62a0373ee168a4d6144326ae53749f0bb9b60f4e343b91c9594ffb5",
+      "brier": 0.11700367536399998,
+      "correct": 1.0,
       "date": "2026-11-12",
       "game_id": "21718091",
+      "home_win": 1,
+      "home_win_probability": 0.657942,
+      "log_loss": 0.4186384974385542,
       "source_commit": "09926adebeab1e55db2d8342c85615ccd80fa8aa",
-      "status": "missing"
+      "status": "final"
     },
     {
       "archive": "3191d27ba62a0373ee168a4d6144326ae53749f0bb9b60f4e343b91c9594ffb5",
+      "brier": 0.034578146304,
+      "correct": 1.0,
       "date": "2026-11-12",
       "game_id": "21718092",
+      "home_win": 0,
+      "home_win_probability": 0.185952,
+      "log_loss": 0.20573594665917636,
       "source_commit": "09926adebeab1e55db2d8342c85615ccd80fa8aa",
-      "status": "missing"
+      "status": "final"
     },
     {
       "archive": "3191d27ba62a0373ee168a4d6144326ae53749f0bb9b60f4e343b91c9594ffb5",
+      "brier": 0.04601239502499998,
+      "correct": 1.0,
       "date": "2026-11-12",
       "game_id": "21718093",
+      "home_win": 1,
+      "home_win_probability": 0.785495,
+      "log_loss": 0.24144118667909448,
       "source_commit": "09926adebeab1e55db2d8342c85615ccd80fa8aa",
-      "status": "missing"
+      "status": "final"
     },
     {
       "archive": "3191d27ba62a0373ee168a4d6144326ae53749f0bb9b60f4e343b91c9594ffb5",
+      "brier": 0.18771682716899996,
+      "correct": 1.0,
       "date": "2026-11-12",
       "game_id": "21718094",
+      "home_win": 1,
+      "home_win_probability": 0.566737,
+      "log_loss": 0.5678599276608383,
       "source_commit": "09926adebeab1e55db2d8342c85615ccd80fa8aa",
+      "status": "final"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718095",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718096",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718097",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718098",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718099",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718100",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718101",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718102",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
+      "status": "missing"
+    },
+    {
+      "archive": "8521bb0cb4981c959d33bfe38f17b8728c8de01d5be83878710d865c2eab7b05",
+      "date": "2026-11-13",
+      "game_id": "21718103",
+      "source_commit": "45beca53f3de44f64b895683c1bfa15a1a35f311",
       "status": "missing"
     }
   ],
@@ -1709,97 +1816,47 @@
     "21718085": "2026-11-12T17:27:12.417044+00:00",
     "21718086": "2026-11-12T17:27:25.557648+00:00",
     "21718087": "2026-11-12T17:27:38.686975+00:00",
-    "21718088": "2026-11-11T16:07:54.098528+00:00",
-    "21718089": "2026-11-11T16:08:07.236023+00:00",
-    "21718090": "2026-11-11T16:08:20.388824+00:00"
+    "21718088": "2026-11-13T17:10:15.438826+00:00",
+    "21718089": "2026-11-13T17:10:28.562206+00:00",
+    "21718090": "2026-11-13T17:10:41.703565+00:00",
+    "21718091": "2026-11-13T17:09:22.825470+00:00",
+    "21718092": "2026-11-13T17:09:35.972703+00:00",
+    "21718093": "2026-11-13T17:09:49.129348+00:00",
+    "21718094": "2026-11-13T17:10:02.286338+00:00"
   },
-  "result_snapshot_sha256": "4502dec8d102154996adf381e98d0ff774e5c9181b519581f2faba00b73a00f7",
+  "result_snapshot_sha256": "b34dd959748c92525cbdcf5e64fd4269155498f85be527951377549a01fd523f",
   "retrieval": {
     "attempted_ids": [
-      "21718027",
-      "21718028",
-      "21718029",
-      "21718030",
-      "21718031",
-      "21718032",
-      "21718033",
-      "21718034",
-      "21718035",
-      "21718036",
-      "21718037",
-      "21718038",
-      "21718039",
-      "21718040",
-      "21718041",
-      "21718042",
-      "21718043",
-      "21718044",
-      "21718045",
-      "21718046",
-      "21718047",
-      "21718048",
-      "21718049",
-      "21718050",
-      "21718051",
-      "21718052",
-      "21718053",
-      "21718054",
-      "21718055",
-      "21718056",
-      "21718057",
-      "21718058",
-      "21718059",
-      "21718060",
-      "21718061",
-      "21718062",
-      "21718063",
-      "21718064",
-      "21718065",
-      "21718066",
-      "21718067",
-      "21718068",
-      "21718069",
-      "21718070",
-      "21718071",
-      "21718072",
-      "21718073",
-      "21718074",
-      "21718075",
-      "21718076",
-      "21718078",
-      "21718079",
-      "21718080",
-      "21718081",
-      "21718082",
-      "21718083",
-      "21718084",
-      "21718085",
-      "21718086",
-      "21718087"
+      "21718091",
+      "21718092",
+      "21718093",
+      "21718094",
+      "21718088",
+      "21718089",
+      "21718090"
     ],
-    "cached": 55,
-    "deferred": 3,
+    "cached": 115,
+    "deferred": 0,
     "errors": {},
-    "fetched": 60,
+    "fetched": 7,
     "max_requests": 60,
     "max_seconds": 1200,
-    "requests": 60,
-    "upcoming": 4
+    "requests": 7,
+    "upcoming": 9
   },
   "summary": {
-    "accuracy": 0.7304347826086957,
-    "brier": 0.1975026111070174,
+    "accuracy": 0.7377049180327869,
+    "brier": 0.19410217689382786,
     "convention": "One home-win Bernoulli per game; p=0.5 picks home; log loss clips at 1e-15",
     "live_trading_enabled": false,
-    "log_loss": 0.5763370941689793,
-    "partial_refresh": true,
-    "predicted": 122,
-    "retrieved_at": "2026-11-12T17:27:38.687065+00:00",
-    "scored": 115,
+    "log_loss": 0.5690927131904323,
+    "partial_refresh": false,
+    "predicted": 131,
+    "retrieved_at": "2026-11-13T17:10:41.704219+00:00",
+    "scored": 122,
     "statuses": {
-      "final": 115,
-      "missing": 4,
-      "unknown": 3
+      "final": 122,
+      "missing": 9
     },
     "version": "0.7"
   }
