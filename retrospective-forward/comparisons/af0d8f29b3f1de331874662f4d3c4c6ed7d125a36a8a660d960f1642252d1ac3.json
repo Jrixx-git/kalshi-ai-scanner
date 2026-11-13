@@ -1,0 +1,234 @@
+{
+  "asof": "2026-11-13T22:49:36.213143+00:00",
+  "brier_difference_date_block_ci95": {},
+  "denominator": 0,
+  "disagreement_bins": [
+    {
+      "lower": 0,
+      "n": 0,
+      "upper": 0.03
+    },
+    {
+      "lower": 0.03,
+      "n": 0,
+      "upper": 0.08
+    },
+    {
+      "lower": 0.08,
+      "n": 0,
+      "upper": 1.01
+    }
+  ],
+  "evaluation_ready": false,
+  "league_dates": 0,
+  "metrics": {
+    "challenger": {
+      "brier": null,
+      "calibration": [
+        {
+          "bin": 0,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 1,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 2,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 3,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 4,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 5,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 6,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 7,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 8,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 9,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        }
+      ],
+      "log_loss": null,
+      "n": 0
+    },
+    "elo": {
+      "brier": null,
+      "calibration": [
+        {
+          "bin": 0,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 1,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 2,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 3,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 4,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 5,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 6,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 7,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 8,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 9,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        }
+      ],
+      "log_loss": null,
+      "n": 0
+    },
+    "market": {
+      "brier": null,
+      "calibration": [
+        {
+          "bin": 0,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 1,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 2,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 3,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 4,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 5,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 6,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 7,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 8,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        },
+        {
+          "bin": 9,
+          "mean_probability": null,
+          "n": 0,
+          "win_rate": null
+        }
+      ],
+      "log_loss": null,
+      "n": 0
+    }
+  },
+  "model_sha256": "c09d05fad7e7dc56b79ef5e9b42d3d36dac0a367edddacbc07a2f009104d26ee",
+  "no_trade": true,
+  "paired_scored": 0,
+  "protocol": "nba-retrospective-elo-offset-v1",
+  "provenance": "genuine_forward_receipts",
+  "rows": [],
+  "schema": "nba-team-comparison-v1"
+}
