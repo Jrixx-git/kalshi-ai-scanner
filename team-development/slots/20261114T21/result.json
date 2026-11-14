@@ -1,0 +1,124 @@
+{
+  "completed_at": "2026-11-14T21:20:44.274335+00:00",
+  "coverage": [
+    {
+      "cutoff": "2026-11-14T23:00:00+00:00",
+      "game_id": "21718104",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.272660+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-14T23:30:00+00:00",
+      "game_id": "21718105",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.272810+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T00:00:00+00:00",
+      "game_id": "21718106",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.272930+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T00:00:00+00:00",
+      "game_id": "21718107",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273044+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T00:00:00+00:00",
+      "game_id": "21718108",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273230+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T17:00:00+00:00",
+      "game_id": "21718109",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273375+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T20:00:00+00:00",
+      "game_id": "21718110",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273494+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T20:30:00+00:00",
+      "game_id": "21718111",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273596+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T21:00:00+00:00",
+      "game_id": "21718112",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273701+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T22:00:00+00:00",
+      "game_id": "21718113",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273801+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T22:00:00+00:00",
+      "game_id": "21718114",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273898+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T23:00:00+00:00",
+      "game_id": "21718115",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.273993+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-16T00:00:00+00:00",
+      "game_id": "21718116",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.274131+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-16T01:00:00+00:00",
+      "game_id": "21718117",
+      "launched_at": "2026-11-14T21:20:25.657342+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-14T21:20:44.274235+00:00",
+      "reason": "outside_worker_horizon"
+    }
+  ],
+  "history_errors": {},
+  "launched_at": "2026-11-14T21:20:25.657342+00:00",
+  "live_trading": false,
+  "no_trade": true,
+  "schema": "nba-team-development-run-v1",
+  "slot": "20261114T21",
+  "source_errors": {}
+}
