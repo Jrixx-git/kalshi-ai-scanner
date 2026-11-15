@@ -1,0 +1,124 @@
+{
+  "completed_at": "2026-11-15T01:45:08.053397+00:00",
+  "coverage": [
+    {
+      "cutoff": "2026-11-14T23:00:00+00:00",
+      "game_id": "21718104",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.050845+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "cutoff": "2026-11-14T23:30:00+00:00",
+      "game_id": "21718105",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.051047+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "cutoff": "2026-11-15T00:00:00+00:00",
+      "game_id": "21718106",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.051225+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "cutoff": "2026-11-15T00:00:00+00:00",
+      "game_id": "21718107",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.051406+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "cutoff": "2026-11-15T00:00:00+00:00",
+      "game_id": "21718108",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.051677+00:00",
+      "reason": "missed_cutoff"
+    },
+    {
+      "cutoff": "2026-11-15T17:00:00+00:00",
+      "game_id": "21718109",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.051886+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T20:00:00+00:00",
+      "game_id": "21718110",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.052065+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T20:30:00+00:00",
+      "game_id": "21718111",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.052229+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T21:00:00+00:00",
+      "game_id": "21718112",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.052390+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T22:00:00+00:00",
+      "game_id": "21718113",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.052572+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T22:00:00+00:00",
+      "game_id": "21718114",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.052737+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-15T23:00:00+00:00",
+      "game_id": "21718115",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.052899+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-16T00:00:00+00:00",
+      "game_id": "21718116",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.053061+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-16T01:00:00+00:00",
+      "game_id": "21718117",
+      "launched_at": "2026-11-15T01:44:53.141070+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-15T01:45:08.053267+00:00",
+      "reason": "outside_worker_horizon"
+    }
+  ],
+  "history_errors": {},
+  "launched_at": "2026-11-15T01:44:53.141070+00:00",
+  "live_trading": false,
+  "no_trade": true,
+  "schema": "nba-team-development-run-v1",
+  "slot": "20261115T01",
+  "source_errors": {}
+}
