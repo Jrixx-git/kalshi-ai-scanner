@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "Content-Type": "application/pdf",
+    "Date": "Mon, 16 Nov 2026 01:50:46 GMT",
+    "ETag": "\"00fcdc3cefeeda94bf3a6baced7d5c3b\"",
+    "Last-Modified": "Mon, 16 Nov 2026 01:30:05 GMT"
+  },
+  "parsed_player_statuses_available": false,
+  "publication_at": "2026-11-16T01:30:00+00:00",
+  "publication_basis": "filename Eastern time; content unverified",
+  "requested_at": "2026-11-16T01:50:46.350700+00:00",
+  "retrieved_at": "2026-11-16T01:50:46.485505+00:00",
+  "sha256": "e219d7e8bccef49d4ec2a2be5c5baec0f50167dae876a5a165c24619afede39c",
+  "status": "raw_available_unparsed",
+  "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-15_08_30PM.pdf"
+}
