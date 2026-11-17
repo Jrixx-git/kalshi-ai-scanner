@@ -1,0 +1,148 @@
+{
+  "completed_at": "2026-11-17T21:43:52.492488+00:00",
+  "coverage": [
+    {
+      "cutoff": "2026-11-17T23:30:00+00:00",
+      "game_id": "21718126",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.489466+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T00:00:00+00:00",
+      "game_id": "21718127",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.489694+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T00:00:00+00:00",
+      "game_id": "21718128",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.489925+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T03:00:00+00:00",
+      "game_id": "21718129",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.490095+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T02:30:00+00:00",
+      "game_id": "21718130",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.490329+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T23:00:00+00:00",
+      "game_id": "21718131",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.490490+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T23:00:00+00:00",
+      "game_id": "21718132",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.490672+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T23:00:00+00:00",
+      "game_id": "21718133",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.490831+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T23:00:00+00:00",
+      "game_id": "21718134",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.490990+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T23:30:00+00:00",
+      "game_id": "21718135",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.491159+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-18T23:30:00+00:00",
+      "game_id": "21718136",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.491335+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-19T00:00:00+00:00",
+      "game_id": "21718137",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.491493+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-19T00:00:00+00:00",
+      "game_id": "21718138",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.491667+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-19T01:30:00+00:00",
+      "game_id": "21718139",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.491821+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-19T00:00:00+00:00",
+      "game_id": "21718140",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.491980+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-19T02:00:00+00:00",
+      "game_id": "21718141",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.492209+00:00",
+      "reason": "outside_worker_horizon"
+    },
+    {
+      "cutoff": "2026-11-19T02:00:00+00:00",
+      "game_id": "21718142",
+      "launched_at": "2026-11-17T21:43:34.220558+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-17T21:43:52.492363+00:00",
+      "reason": "outside_worker_horizon"
+    }
+  ],
+  "history_errors": {},
+  "launched_at": "2026-11-17T21:43:34.220558+00:00",
+  "live_trading": false,
+  "no_trade": true,
+  "schema": "nba-team-development-run-v1",
+  "slot": "20261117T21",
+  "source_errors": {}
+}
