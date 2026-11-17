@@ -2,9 +2,9 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-11-17T00:27:23.275787+00:00
+Results checked: 2026-11-17T23:32:04.288921+00:00
 
-Refresh: 55 requests; 88 reused; 0 deferred; 0 errors. Cached source timestamps are retained.
+Refresh: 5 requests; 143 reused; 0 deferred; 0 errors. Cached source timestamps are retained.
 
 | NBA date | Archived | Scored | Accuracy | Brier | Log loss |
 |---|---:|---:|---:|---:|---:|
@@ -27,7 +27,8 @@ Refresh: 55 requests; 88 reused; 0 deferred; 0 errors. Cached source timestamps 
 | 2026-11-13 | 9 | 9 | 0.444444 | 0.267033 | 0.726693 |
 | 2026-11-14 | 5 | 5 | 0.600000 | 0.258174 | 0.738617 |
 | 2026-11-15 | 7 | 7 | 1.000000 | 0.080501 | 0.312587 |
-| 2026-11-16 | 5 | 0 | pending | pending | pending |
+| 2026-11-16 | 5 | 5 | 0.400000 | 0.279559 | 0.753406 |
+| 2026-11-17 | 5 | 0 | pending | pending | pending |
 
 Unresolved games are excluded from all metric denominators.
 
@@ -176,8 +177,13 @@ Unresolved games are excluded from all metric denominators.
 | 21718115 | 2026-11-15 | final |
 | 21718116 | 2026-11-15 | final |
 | 21718117 | 2026-11-15 | final |
-| 21718121 | 2026-11-16 | missing |
-| 21718122 | 2026-11-16 | missing |
-| 21718123 | 2026-11-16 | missing |
-| 21718124 | 2026-11-16 | missing |
-| 21718125 | 2026-11-16 | missing |
+| 21718121 | 2026-11-16 | final |
+| 21718122 | 2026-11-16 | final |
+| 21718123 | 2026-11-16 | final |
+| 21718124 | 2026-11-16 | final |
+| 21718125 | 2026-11-16 | final |
+| 21718126 | 2026-11-17 | missing |
+| 21718127 | 2026-11-17 | missing |
+| 21718128 | 2026-11-17 | missing |
+| 21718129 | 2026-11-17 | missing |
+| 21718130 | 2026-11-17 | missing |
