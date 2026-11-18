@@ -1,0 +1,7 @@
+{
+  "raw_sha256": "5c08825f42ec48bb152ba95d68298f8abcd68b15f9d5647cc4f79f7285b5b222",
+  "received_at": "2026-11-18T03:37:12.242139+00:00",
+  "requested_at": "2026-11-18T03:37:12.122786+00:00",
+  "schema": "bdl-team-history-v1",
+  "source": "https://api.balldontlie.io/v1/games?seasons%5B%5D=2026&per_page=100&cursor=21718120"
+}
