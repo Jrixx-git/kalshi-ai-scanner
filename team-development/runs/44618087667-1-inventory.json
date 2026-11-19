@@ -1,0 +1,21 @@
+{
+  "audited_at": "2026-11-19T21:22:58.964391+00:00",
+  "coverage": {
+    "already_sealed": 41,
+    "fresh_schedule_unverified": 3,
+    "missed_cutoff": 65,
+    "outside_worker_horizon": 552,
+    "sealed": 15
+  },
+  "development_seals": 15,
+  "eligible_completed_games": 14,
+  "eligible_later_validation": 0,
+  "eligible_training": 14,
+  "full_verifier_completed_rows": 14,
+  "live_trading": false,
+  "missing_elo": 1,
+  "missing_features": 0,
+  "no_trade": true,
+  "proposed_validation_start": null,
+  "ready": false
+}
