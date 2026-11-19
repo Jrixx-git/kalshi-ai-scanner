@@ -1,0 +1,78 @@
+{
+  "book_received_at": "2026-11-19T23:04:05.099381+00:00",
+  "fee_change_pages": [
+    {
+      "cursor": "",
+      "event_fee_changes": []
+    }
+  ],
+  "fee_observed_at": "2026-11-19T23:04:05.140783+00:00",
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-22T01:00:00Z",
+    "created_time": "2026-11-16T01:02:01.809634Z",
+    "custom_strike": {
+      "basketball_team": "ad36c3e8-4194-4e63-920f-7c50f46191a6"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNBAGAME-26NOV19LACSAS",
+    "exchange_index": 3,
+    "expected_expiration_time": "2026-11-20T04:00:00Z",
+    "expiration_value": "",
+    "last_price_dollars": "0.8800",
+    "latest_expiration_time": "2026-11-22T01:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.1300",
+    "no_bid_dollars": "0.1200",
+    "no_sub_title": "San Antonio",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-20T04:00:00Z",
+    "open_interest_fp": "172305.24",
+    "open_time": "2026-11-16T01:06:26.21087Z",
+    "previous_price_dollars": "0.8600",
+    "previous_yes_ask_dollars": "0.8600",
+    "previous_yes_bid_dollars": "0.8300",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If San Antonio wins the Los Angeles C vs San Antonio Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+    "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 45,
+    "status": "active",
+    "strike_type": "structured",
+    "ticker": "KXNBAGAME-26NOV19LACSAS-SAS",
+    "title": "San Antonio wins",
+    "updated_time": "2026-11-16T01:06:26.671226Z",
+    "volume_24h_fp": "186217.06",
+    "volume_fp": "193793.66",
+    "yes_ask_dollars": "0.8800",
+    "yes_ask_size_fp": "501319.80",
+    "yes_bid_dollars": "0.8700",
+    "yes_bid_size_fp": "106680.23",
+    "yes_sub_title": "San Antonio"
+  },
+  "orderbook": {
+    "orderbook_fp": {
+      "no_dollars": [
+        [
+          "0.1200",
+          "501274.45"
+        ]
+      ],
+      "yes_dollars": [
+        [
+          "0.8700",
+          "106680.23"
+        ]
+      ]
+    }
+  },
+  "request_started_at": "2026-11-19T23:04:05.019971+00:00"
+}
