@@ -1,0 +1,2533 @@
+{
+  "completed_at": "2026-11-19T03:26:12.099487+00:00",
+  "errors": {},
+  "live_trading": false,
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T01:02:01.809634Z",
+      "custom_strike": {
+        "basketball_team": "ad36c3e8-4194-4e63-920f-7c50f46191a6"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19LACSAS",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.9100",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.1000",
+      "no_bid_dollars": "0.0900",
+      "no_sub_title": "San Antonio",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "8398.70",
+      "open_time": "2026-11-16T01:06:26.21087Z",
+      "previous_price_dollars": "0.8700",
+      "previous_yes_ask_dollars": "0.8700",
+      "previous_yes_bid_dollars": "0.8600",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If San Antonio wins the Los Angeles C vs San Antonio Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19LACSAS-SAS",
+      "title": "San Antonio wins",
+      "updated_time": "2026-11-16T01:06:26.671226Z",
+      "volume_24h_fp": "8601.01",
+      "volume_fp": "9956.63",
+      "yes_ask_dollars": "0.9100",
+      "yes_ask_size_fp": "36324.64",
+      "yes_bid_dollars": "0.9000",
+      "yes_bid_size_fp": "1317.19",
+      "yes_sub_title": "San Antonio"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T01:02:01.809634Z",
+      "custom_strike": {
+        "basketball_team": "daca4413-0ea1-4db2-a815-f05c181ef0a6"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19LACSAS",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.1000",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.9100",
+      "no_bid_dollars": "0.9000",
+      "no_sub_title": "Los Angeles C",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "21395.55",
+      "open_time": "2026-11-16T01:06:26.21087Z",
+      "previous_price_dollars": "0.1400",
+      "previous_yes_ask_dollars": "0.1400",
+      "previous_yes_bid_dollars": "0.1300",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Los Angeles C wins the Los Angeles C vs San Antonio Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19LACSAS-LAC",
+      "title": "Los Angeles C wins",
+      "updated_time": "2026-11-16T01:06:26.671226Z",
+      "volume_24h_fp": "20432.84",
+      "volume_fp": "25772.33",
+      "yes_ask_dollars": "0.1000",
+      "yes_ask_size_fp": "3828.47",
+      "yes_bid_dollars": "0.0900",
+      "yes_bid_size_fp": "7632.95",
+      "yes_sub_title": "Los Angeles C"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T01:02:00.388558Z",
+      "custom_strike": {
+        "basketball_team": "2229b01e-68eb-46ad-adf4-71a9533c84fc"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19PORMIL",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.7900",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.2300",
+      "no_bid_dollars": "0.2100",
+      "no_sub_title": "Portland",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "3387.89",
+      "open_time": "2026-11-16T01:06:24.591208Z",
+      "previous_price_dollars": "0.8200",
+      "previous_yes_ask_dollars": "0.8300",
+      "previous_yes_bid_dollars": "0.8000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Portland wins the Portland vs Milwaukee Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19PORMIL-POR",
+      "title": "Portland wins",
+      "updated_time": "2026-11-16T01:06:25.676963Z",
+      "volume_24h_fp": "1607.58",
+      "volume_fp": "3742.64",
+      "yes_ask_dollars": "0.7900",
+      "yes_ask_size_fp": "508.32",
+      "yes_bid_dollars": "0.7700",
+      "yes_bid_size_fp": "312.00",
+      "yes_sub_title": "Portland"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T01:02:00.388558Z",
+      "custom_strike": {
+        "basketball_team": "5dc3fe01-79a4-4f2f-a953-d922ea4a6dd3"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19PORMIL",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.2200",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.7900",
+      "no_bid_dollars": "0.7800",
+      "no_sub_title": "Milwaukee",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "3715.07",
+      "open_time": "2026-11-16T01:06:24.591208Z",
+      "previous_price_dollars": "0.2100",
+      "previous_yes_ask_dollars": "0.2000",
+      "previous_yes_bid_dollars": "0.1800",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Milwaukee wins the Portland vs Milwaukee Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19PORMIL-MIL",
+      "title": "Milwaukee wins",
+      "updated_time": "2026-11-16T01:06:25.676963Z",
+      "volume_24h_fp": "3912.59",
+      "volume_fp": "4923.13",
+      "yes_ask_dollars": "0.2200",
+      "yes_ask_size_fp": "401.45",
+      "yes_bid_dollars": "0.2100",
+      "yes_bid_size_fp": "447.00",
+      "yes_sub_title": "Milwaukee"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T01:01:58.409192Z",
+      "custom_strike": {
+        "basketball_team": "1cfe70b8-4dfc-47dc-acca-b68d4a725972"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19GSWMEM",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.6800",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.3400",
+      "no_bid_dollars": "0.3200",
+      "no_sub_title": "Memphis",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "5349.10",
+      "open_time": "2026-11-16T01:06:23.870391Z",
+      "previous_price_dollars": "0.6200",
+      "previous_yes_ask_dollars": "0.6200",
+      "previous_yes_bid_dollars": "0.6100",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Memphis wins the Golden State vs Memphis Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19GSWMEM-MEM",
+      "title": "Memphis wins",
+      "updated_time": "2026-11-16T01:06:24.670799Z",
+      "volume_24h_fp": "5114.61",
+      "volume_fp": "6714.05",
+      "yes_ask_dollars": "0.6800",
+      "yes_ask_size_fp": "1527.74",
+      "yes_bid_dollars": "0.6600",
+      "yes_bid_size_fp": "1.00",
+      "yes_sub_title": "Memphis"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T01:01:58.409192Z",
+      "custom_strike": {
+        "basketball_team": "502c629b-4da7-40fd-92ab-20cb55411c35"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19GSWMEM",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.3500",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.6800",
+      "no_bid_dollars": "0.6600",
+      "no_sub_title": "Golden State",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "2492.50",
+      "open_time": "2026-11-16T01:06:23.870391Z",
+      "previous_price_dollars": "0.3900",
+      "previous_yes_ask_dollars": "0.3900",
+      "previous_yes_bid_dollars": "0.3600",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Golden State wins the Golden State vs Memphis Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19GSWMEM-GSW",
+      "title": "Golden State wins",
+      "updated_time": "2026-11-16T01:06:24.670799Z",
+      "volume_24h_fp": "2196.13",
+      "volume_fp": "2590.93",
+      "yes_ask_dollars": "0.3400",
+      "yes_ask_size_fp": "4.72",
+      "yes_bid_dollars": "0.3200",
+      "yes_bid_size_fp": "1210.00",
+      "yes_sub_title": "Golden State"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T00:31:25.453971Z",
+      "custom_strike": {
+        "basketball_team": "67468ecc-b868-43a4-b9dc-751a52894bb0"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19NYKMIN",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.5000",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.5100",
+      "no_bid_dollars": "0.4900",
+      "no_sub_title": "New York",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "8435.03",
+      "open_time": "2026-11-16T00:36:04.076869Z",
+      "previous_price_dollars": "0.5300",
+      "previous_yes_ask_dollars": "0.5300",
+      "previous_yes_bid_dollars": "0.5000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If New York wins the New York vs Minnesota Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19NYKMIN-NYK",
+      "title": "New York wins",
+      "updated_time": "2026-11-16T00:36:04.762797Z",
+      "volume_24h_fp": "8533.49",
+      "volume_fp": "11391.95",
+      "yes_ask_dollars": "0.5100",
+      "yes_ask_size_fp": "1205.29",
+      "yes_bid_dollars": "0.4900",
+      "yes_bid_size_fp": "527.32",
+      "yes_sub_title": "New York"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:00:00Z",
+      "created_time": "2026-11-16T00:31:25.453971Z",
+      "custom_strike": {
+        "basketball_team": "29e3c04e-fadb-4006-be20-cbb8c159ce0e"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26NOV19NYKMIN",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-11-20T04:00:00Z",
+      "expiration_time": "2026-11-22T01:00:00Z",
+      "expiration_value": "",
+      "last_price_dollars": "0.5200",
+      "latest_expiration_time": "2026-11-22T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.5100",
+      "no_bid_dollars": "0.4800",
+      "no_sub_title": "Minnesota",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:00:00Z",
+      "open_interest_fp": "17540.64",
+      "open_time": "2026-11-16T00:36:04.076869Z",
+      "previous_price_dollars": "0.5000",
+      "previous_yes_ask_dollars": "0.5000",
+      "previous_yes_bid_dollars": "0.4800",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Minnesota wins the New York vs Minnesota Pro Basketball game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 45,
+      "status": "active",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26NOV19NYKMIN-MIN",
+      "title": "Minnesota wins",
+      "updated_time": "2026-11-16T00:36:04.762797Z",
+      "volume_24h_fp": "15663.87",
+      "volume_fp": "21321.97",
+      "yes_ask_dollars": "0.5200",
+      "yes_ask_size_fp": "1267.38",
+      "yes_bid_dollars": "0.4900",
+      "yes_bid_size_fp": "678.00",
+      "yes_sub_title": "Minnesota"
+    }
+  ],
+  "orderbooks": {
+    "KXNBAGAME-26NOV19GSWMEM-GSW": {
+      "observed_at": "2026-11-19T03:26:11.509297+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "321884.46"
+            ],
+            [
+              "0.0200",
+              "4172.00"
+            ],
+            [
+              "0.0300",
+              "747.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "1055.00"
+            ],
+            [
+              "0.0600",
+              "600.00"
+            ],
+            [
+              "0.0700",
+              "301.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1200",
+              "130.00"
+            ],
+            [
+              "0.1700",
+              "24.59"
+            ],
+            [
+              "0.2100",
+              "476.19"
+            ],
+            [
+              "0.2500",
+              "7.81"
+            ],
+            [
+              "0.3000",
+              "207.00"
+            ],
+            [
+              "0.3100",
+              "129.00"
+            ],
+            [
+              "0.3200",
+              "156.25"
+            ],
+            [
+              "0.3300",
+              "15.86"
+            ],
+            [
+              "0.3600",
+              "97.22"
+            ],
+            [
+              "0.3700",
+              "1228.00"
+            ],
+            [
+              "0.3900",
+              "80.00"
+            ],
+            [
+              "0.4000",
+              "207.00"
+            ],
+            [
+              "0.4100",
+              "11.05"
+            ],
+            [
+              "0.4300",
+              "2000.00"
+            ],
+            [
+              "0.4500",
+              "0.63"
+            ],
+            [
+              "0.4700",
+              "3169.00"
+            ],
+            [
+              "0.4800",
+              "1.00"
+            ],
+            [
+              "0.4900",
+              "2000.00"
+            ],
+            [
+              "0.5000",
+              "207.00"
+            ],
+            [
+              "0.5100",
+              "600.00"
+            ],
+            [
+              "0.5200",
+              "520.00"
+            ],
+            [
+              "0.5300",
+              "282.00"
+            ],
+            [
+              "0.5400",
+              "103.00"
+            ],
+            [
+              "0.5500",
+              "2000.00"
+            ],
+            [
+              "0.5600",
+              "110.00"
+            ],
+            [
+              "0.5700",
+              "110.00"
+            ],
+            [
+              "0.5800",
+              "10.00"
+            ],
+            [
+              "0.5900",
+              "185.00"
+            ],
+            [
+              "0.6000",
+              "1054.00"
+            ],
+            [
+              "0.6100",
+              "4789.54"
+            ],
+            [
+              "0.6200",
+              "1135.00"
+            ],
+            [
+              "0.6300",
+              "841.00"
+            ],
+            [
+              "0.6400",
+              "2689.25"
+            ],
+            [
+              "0.6500",
+              "1653.02"
+            ],
+            [
+              "0.6600",
+              "4.72"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "322638.00"
+            ],
+            [
+              "0.0200",
+              "5192.00"
+            ],
+            [
+              "0.0300",
+              "1163.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "1001.00"
+            ],
+            [
+              "0.0600",
+              "106.00"
+            ],
+            [
+              "0.0700",
+              "2000.00"
+            ],
+            [
+              "0.0800",
+              "769.00"
+            ],
+            [
+              "0.1000",
+              "207.00"
+            ],
+            [
+              "0.1100",
+              "22.00"
+            ],
+            [
+              "0.1200",
+              "130.00"
+            ],
+            [
+              "0.1300",
+              "2000.00"
+            ],
+            [
+              "0.1500",
+              "102.00"
+            ],
+            [
+              "0.1700",
+              "500.00"
+            ],
+            [
+              "0.1800",
+              "30.00"
+            ],
+            [
+              "0.1900",
+              "2020.00"
+            ],
+            [
+              "0.2000",
+              "210.00"
+            ],
+            [
+              "0.2100",
+              "170.00"
+            ],
+            [
+              "0.2300",
+              "210.00"
+            ],
+            [
+              "0.2400",
+              "113.00"
+            ],
+            [
+              "0.2500",
+              "2010.00"
+            ],
+            [
+              "0.2600",
+              "10.00"
+            ],
+            [
+              "0.2700",
+              "10.00"
+            ],
+            [
+              "0.2800",
+              "4933.31"
+            ],
+            [
+              "0.2900",
+              "201.00"
+            ],
+            [
+              "0.3000",
+              "1588.85"
+            ],
+            [
+              "0.3100",
+              "900.00"
+            ],
+            [
+              "0.3200",
+              "1210.00"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:11.718284+00:00"
+    },
+    "KXNBAGAME-26NOV19GSWMEM-MEM": {
+      "observed_at": "2026-11-19T03:26:11.313434+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "328602.09"
+            ],
+            [
+              "0.0200",
+              "7391.00"
+            ],
+            [
+              "0.0300",
+              "4525.00"
+            ],
+            [
+              "0.0400",
+              "6912.00"
+            ],
+            [
+              "0.0500",
+              "2069.00"
+            ],
+            [
+              "0.0600",
+              "1893.00"
+            ],
+            [
+              "0.0900",
+              "2115.00"
+            ],
+            [
+              "0.1000",
+              "1007.00"
+            ],
+            [
+              "0.1100",
+              "2920.15"
+            ],
+            [
+              "0.1200",
+              "725.50"
+            ],
+            [
+              "0.1400",
+              "966.00"
+            ],
+            [
+              "0.1500",
+              "80.00"
+            ],
+            [
+              "0.1600",
+              "100.00"
+            ],
+            [
+              "0.1700",
+              "3375.00"
+            ],
+            [
+              "0.1900",
+              "100.00"
+            ],
+            [
+              "0.2100",
+              "2319.00"
+            ],
+            [
+              "0.2200",
+              "1071.00"
+            ],
+            [
+              "0.2300",
+              "2000.00"
+            ],
+            [
+              "0.2400",
+              "104.00"
+            ],
+            [
+              "0.2500",
+              "17.62"
+            ],
+            [
+              "0.2600",
+              "112.00"
+            ],
+            [
+              "0.2700",
+              "55.71"
+            ],
+            [
+              "0.2800",
+              "4975.45"
+            ],
+            [
+              "0.2900",
+              "54.00"
+            ],
+            [
+              "0.3000",
+              "1047.95"
+            ],
+            [
+              "0.3100",
+              "649.59"
+            ],
+            [
+              "0.3200",
+              "1513.36"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "329736.00"
+            ],
+            [
+              "0.0200",
+              "9481.00"
+            ],
+            [
+              "0.0300",
+              "5719.00"
+            ],
+            [
+              "0.0500",
+              "39.00"
+            ],
+            [
+              "0.0600",
+              "1.00"
+            ],
+            [
+              "0.0900",
+              "400.00"
+            ],
+            [
+              "0.1000",
+              "7471.00"
+            ],
+            [
+              "0.1200",
+              "819.00"
+            ],
+            [
+              "0.1300",
+              "964.00"
+            ],
+            [
+              "0.1800",
+              "30.00"
+            ],
+            [
+              "0.2100",
+              "866.00"
+            ],
+            [
+              "0.2200",
+              "945.00"
+            ],
+            [
+              "0.2300",
+              "434.78"
+            ],
+            [
+              "0.2400",
+              "298.00"
+            ],
+            [
+              "0.3100",
+              "866.00"
+            ],
+            [
+              "0.3600",
+              "106.00"
+            ],
+            [
+              "0.3800",
+              "2000.00"
+            ],
+            [
+              "0.3900",
+              "80.00"
+            ],
+            [
+              "0.4100",
+              "869.00"
+            ],
+            [
+              "0.4200",
+              "2316.00"
+            ],
+            [
+              "0.4300",
+              "100.00"
+            ],
+            [
+              "0.4400",
+              "2340.00"
+            ],
+            [
+              "0.4500",
+              "695.00"
+            ],
+            [
+              "0.4700",
+              "170.00"
+            ],
+            [
+              "0.4800",
+              "100.00"
+            ],
+            [
+              "0.5000",
+              "1132.56"
+            ],
+            [
+              "0.5100",
+              "500.00"
+            ],
+            [
+              "0.5200",
+              "58.46"
+            ],
+            [
+              "0.5300",
+              "202.00"
+            ],
+            [
+              "0.5500",
+              "100.00"
+            ],
+            [
+              "0.5600",
+              "2010.00"
+            ],
+            [
+              "0.5700",
+              "10.00"
+            ],
+            [
+              "0.5800",
+              "10.00"
+            ],
+            [
+              "0.5900",
+              "2.00"
+            ],
+            [
+              "0.6000",
+              "235.00"
+            ],
+            [
+              "0.6100",
+              "4802.43"
+            ],
+            [
+              "0.6200",
+              "10.00"
+            ],
+            [
+              "0.6300",
+              "250.00"
+            ],
+            [
+              "0.6400",
+              "1077.53"
+            ],
+            [
+              "0.6500",
+              "839.68"
+            ],
+            [
+              "0.6600",
+              "1.00"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:11.509245+00:00"
+    },
+    "KXNBAGAME-26NOV19LACSAS-LAC": {
+      "observed_at": "2026-11-19T03:26:10.719005+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "339073.06"
+            ],
+            [
+              "0.0200",
+              "8517.00"
+            ],
+            [
+              "0.0300",
+              "4197.00"
+            ],
+            [
+              "0.0400",
+              "591.00"
+            ],
+            [
+              "0.0500",
+              "11.00"
+            ],
+            [
+              "0.0600",
+              "50.00"
+            ],
+            [
+              "0.0800",
+              "625.00"
+            ],
+            [
+              "0.0900",
+              "4464.00"
+            ],
+            [
+              "0.1000",
+              "27.00"
+            ],
+            [
+              "0.1200",
+              "100.00"
+            ],
+            [
+              "0.1400",
+              "60736.00"
+            ],
+            [
+              "0.1500",
+              "26.00"
+            ],
+            [
+              "0.2300",
+              "6.73"
+            ],
+            [
+              "0.2700",
+              "141.11"
+            ],
+            [
+              "0.3900",
+              "15120.00"
+            ],
+            [
+              "0.4000",
+              "17248.44"
+            ],
+            [
+              "0.4100",
+              "493.15"
+            ],
+            [
+              "0.4500",
+              "11.11"
+            ],
+            [
+              "0.4700",
+              "263.00"
+            ],
+            [
+              "0.4800",
+              "263.00"
+            ],
+            [
+              "0.5000",
+              "76.00"
+            ],
+            [
+              "0.5200",
+              "60.01"
+            ],
+            [
+              "0.5400",
+              "5263.00"
+            ],
+            [
+              "0.5600",
+              "34654.00"
+            ],
+            [
+              "0.5700",
+              "263.00"
+            ],
+            [
+              "0.5800",
+              "268.02"
+            ],
+            [
+              "0.6000",
+              "30.00"
+            ],
+            [
+              "0.6100",
+              "711.00"
+            ],
+            [
+              "0.6200",
+              "85.00"
+            ],
+            [
+              "0.6600",
+              "2.36"
+            ],
+            [
+              "0.6700",
+              "1.76"
+            ],
+            [
+              "0.6800",
+              "1478.29"
+            ],
+            [
+              "0.6900",
+              "100.00"
+            ],
+            [
+              "0.7300",
+              "125.74"
+            ],
+            [
+              "0.7400",
+              "1635.00"
+            ],
+            [
+              "0.7500",
+              "967.00"
+            ],
+            [
+              "0.7700",
+              "46814.00"
+            ],
+            [
+              "0.7800",
+              "20.00"
+            ],
+            [
+              "0.7900",
+              "739.40"
+            ],
+            [
+              "0.8000",
+              "2010.00"
+            ],
+            [
+              "0.8100",
+              "50652.00"
+            ],
+            [
+              "0.8200",
+              "110.00"
+            ],
+            [
+              "0.8300",
+              "838.72"
+            ],
+            [
+              "0.8500",
+              "8244.81"
+            ],
+            [
+              "0.8600",
+              "3004.20"
+            ],
+            [
+              "0.8700",
+              "24542.00"
+            ],
+            [
+              "0.8800",
+              "43487.04"
+            ],
+            [
+              "0.8900",
+              "40324.33"
+            ],
+            [
+              "0.9000",
+              "4162.47"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "386675.00"
+            ],
+            [
+              "0.0200",
+              "8725.00"
+            ],
+            [
+              "0.0300",
+              "8552.00"
+            ],
+            [
+              "0.0400",
+              "17714.56"
+            ],
+            [
+              "0.0500",
+              "31378.00"
+            ],
+            [
+              "0.0600",
+              "6724.99"
+            ],
+            [
+              "0.0700",
+              "5869.99"
+            ],
+            [
+              "0.0800",
+              "10971.95"
+            ],
+            [
+              "0.0900",
+              "7632.95"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:10.915356+00:00"
+    },
+    "KXNBAGAME-26NOV19LACSAS-SAS": {
+      "observed_at": "2026-11-19T03:26:10.519443+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "334226.89"
+            ],
+            [
+              "0.0200",
+              "52080.34"
+            ],
+            [
+              "0.0300",
+              "1441.27"
+            ],
+            [
+              "0.0400",
+              "56792.02"
+            ],
+            [
+              "0.0500",
+              "24824.29"
+            ],
+            [
+              "0.0600",
+              "7639.00"
+            ],
+            [
+              "0.0700",
+              "31222.29"
+            ],
+            [
+              "0.0800",
+              "33544.55"
+            ],
+            [
+              "0.0900",
+              "36324.64"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "337012.73"
+            ],
+            [
+              "0.0200",
+              "9999.00"
+            ],
+            [
+              "0.0300",
+              "5388.00"
+            ],
+            [
+              "0.0400",
+              "178.00"
+            ],
+            [
+              "0.0500",
+              "47.00"
+            ],
+            [
+              "0.0900",
+              "1.00"
+            ],
+            [
+              "0.1200",
+              "130.00"
+            ],
+            [
+              "0.1400",
+              "7033.00"
+            ],
+            [
+              "0.1500",
+              "599.00"
+            ],
+            [
+              "0.1800",
+              "30.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2500",
+              "1044.00"
+            ],
+            [
+              "0.3900",
+              "1979.00"
+            ],
+            [
+              "0.5600",
+              "4789.00"
+            ],
+            [
+              "0.5700",
+              "3214.00"
+            ],
+            [
+              "0.6100",
+              "490.00"
+            ],
+            [
+              "0.6500",
+              "38.00"
+            ],
+            [
+              "0.6700",
+              "111.94"
+            ],
+            [
+              "0.6800",
+              "1368.00"
+            ],
+            [
+              "0.6900",
+              "1776.00"
+            ],
+            [
+              "0.7300",
+              "208.00"
+            ],
+            [
+              "0.7400",
+              "1536.00"
+            ],
+            [
+              "0.7500",
+              "4874.00"
+            ],
+            [
+              "0.7800",
+              "20.00"
+            ],
+            [
+              "0.7900",
+              "2199.09"
+            ],
+            [
+              "0.8000",
+              "10.00"
+            ],
+            [
+              "0.8100",
+              "110.00"
+            ],
+            [
+              "0.8200",
+              "10.00"
+            ],
+            [
+              "0.8300",
+              "10.00"
+            ],
+            [
+              "0.8500",
+              "6346.58"
+            ],
+            [
+              "0.8600",
+              "26152.20"
+            ],
+            [
+              "0.8700",
+              "1457.00"
+            ],
+            [
+              "0.8800",
+              "7615.17"
+            ],
+            [
+              "0.8900",
+              "9934.82"
+            ],
+            [
+              "0.9000",
+              "1317.19"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:10.718944+00:00"
+    },
+    "KXNBAGAME-26NOV19NYKMIN-MIN": {
+      "observed_at": "2026-11-19T03:26:11.911233+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "318391.68"
+            ],
+            [
+              "0.0200",
+              "7878.00"
+            ],
+            [
+              "0.0300",
+              "3825.00"
+            ],
+            [
+              "0.0400",
+              "503.00"
+            ],
+            [
+              "0.0500",
+              "2127.00"
+            ],
+            [
+              "0.0600",
+              "26.00"
+            ],
+            [
+              "0.0700",
+              "2297.57"
+            ],
+            [
+              "0.0800",
+              "7045.00"
+            ],
+            [
+              "0.0900",
+              "26.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1100",
+              "2611.82"
+            ],
+            [
+              "0.1200",
+              "1011.00"
+            ],
+            [
+              "0.1300",
+              "756.00"
+            ],
+            [
+              "0.1400",
+              "35.88"
+            ],
+            [
+              "0.1500",
+              "729.70"
+            ],
+            [
+              "0.1600",
+              "830.00"
+            ],
+            [
+              "0.1700",
+              "185.85"
+            ],
+            [
+              "0.1800",
+              "96.00"
+            ],
+            [
+              "0.2000",
+              "2185.66"
+            ],
+            [
+              "0.2300",
+              "185.13"
+            ],
+            [
+              "0.2500",
+              "898.58"
+            ],
+            [
+              "0.2600",
+              "1367.26"
+            ],
+            [
+              "0.2700",
+              "2653.00"
+            ],
+            [
+              "0.2900",
+              "276.00"
+            ],
+            [
+              "0.3000",
+              "165.00"
+            ],
+            [
+              "0.3200",
+              "2176.00"
+            ],
+            [
+              "0.3300",
+              "508.98"
+            ],
+            [
+              "0.3400",
+              "100.00"
+            ],
+            [
+              "0.3500",
+              "762.00"
+            ],
+            [
+              "0.3600",
+              "312.67"
+            ],
+            [
+              "0.3700",
+              "73.81"
+            ],
+            [
+              "0.3800",
+              "4894.00"
+            ],
+            [
+              "0.3900",
+              "627.00"
+            ],
+            [
+              "0.4000",
+              "100.00"
+            ],
+            [
+              "0.4100",
+              "10.00"
+            ],
+            [
+              "0.4200",
+              "10.00"
+            ],
+            [
+              "0.4300",
+              "10.00"
+            ],
+            [
+              "0.4400",
+              "5101.78"
+            ],
+            [
+              "0.4500",
+              "1100.00"
+            ],
+            [
+              "0.4600",
+              "4844.75"
+            ],
+            [
+              "0.4700",
+              "2104.35"
+            ],
+            [
+              "0.4800",
+              "1132.15"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "317887.00"
+            ],
+            [
+              "0.0200",
+              "11109.00"
+            ],
+            [
+              "0.0300",
+              "4790.00"
+            ],
+            [
+              "0.0400",
+              "501.00"
+            ],
+            [
+              "0.0500",
+              "7246.00"
+            ],
+            [
+              "0.0600",
+              "277.00"
+            ],
+            [
+              "0.0700",
+              "2207.00"
+            ],
+            [
+              "0.0800",
+              "1199.00"
+            ],
+            [
+              "0.0900",
+              "773.00"
+            ],
+            [
+              "0.1100",
+              "177.00"
+            ],
+            [
+              "0.1200",
+              "30.00"
+            ],
+            [
+              "0.1300",
+              "769.23"
+            ],
+            [
+              "0.1400",
+              "104.00"
+            ],
+            [
+              "0.1500",
+              "662.00"
+            ],
+            [
+              "0.1600",
+              "907.00"
+            ],
+            [
+              "0.1700",
+              "1577.00"
+            ],
+            [
+              "0.1800",
+              "30.00"
+            ],
+            [
+              "0.1900",
+              "97.00"
+            ],
+            [
+              "0.2000",
+              "177.00"
+            ],
+            [
+              "0.2300",
+              "177.00"
+            ],
+            [
+              "0.2400",
+              "1290.00"
+            ],
+            [
+              "0.2500",
+              "742.00"
+            ],
+            [
+              "0.2600",
+              "312.00"
+            ],
+            [
+              "0.2900",
+              "277.00"
+            ],
+            [
+              "0.3000",
+              "2000.00"
+            ],
+            [
+              "0.3200",
+              "177.00"
+            ],
+            [
+              "0.3400",
+              "765.00"
+            ],
+            [
+              "0.3500",
+              "2532.27"
+            ],
+            [
+              "0.3700",
+              "20.00"
+            ],
+            [
+              "0.3800",
+              "394.00"
+            ],
+            [
+              "0.3900",
+              "100.00"
+            ],
+            [
+              "0.4000",
+              "100.00"
+            ],
+            [
+              "0.4100",
+              "2099.00"
+            ],
+            [
+              "0.4300",
+              "48.00"
+            ],
+            [
+              "0.4400",
+              "125.00"
+            ],
+            [
+              "0.4500",
+              "5083.51"
+            ],
+            [
+              "0.4700",
+              "882.15"
+            ],
+            [
+              "0.4800",
+              "696.85"
+            ],
+            [
+              "0.4900",
+              "678.00"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:12.099186+00:00"
+    },
+    "KXNBAGAME-26NOV19NYKMIN-NYK": {
+      "observed_at": "2026-11-19T03:26:11.718346+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "320641.13"
+            ],
+            [
+              "0.0200",
+              "7301.00"
+            ],
+            [
+              "0.0300",
+              "4253.32"
+            ],
+            [
+              "0.0400",
+              "14043.00"
+            ],
+            [
+              "0.0500",
+              "1119.00"
+            ],
+            [
+              "0.0600",
+              "785.00"
+            ],
+            [
+              "0.0700",
+              "482.00"
+            ],
+            [
+              "0.1000",
+              "1.00"
+            ],
+            [
+              "0.1200",
+              "863.33"
+            ],
+            [
+              "0.1300",
+              "2262.00"
+            ],
+            [
+              "0.1500",
+              "478.26"
+            ],
+            [
+              "0.1700",
+              "3805.00"
+            ],
+            [
+              "0.2300",
+              "8.97"
+            ],
+            [
+              "0.2400",
+              "1342.00"
+            ],
+            [
+              "0.2500",
+              "559.32"
+            ],
+            [
+              "0.2900",
+              "100.00"
+            ],
+            [
+              "0.3000",
+              "2000.00"
+            ],
+            [
+              "0.3400",
+              "865.00"
+            ],
+            [
+              "0.3500",
+              "2360.00"
+            ],
+            [
+              "0.3700",
+              "20.00"
+            ],
+            [
+              "0.3800",
+              "3066.00"
+            ],
+            [
+              "0.3900",
+              "778.00"
+            ],
+            [
+              "0.4000",
+              "10.00"
+            ],
+            [
+              "0.4100",
+              "2110.00"
+            ],
+            [
+              "0.4200",
+              "109.00"
+            ],
+            [
+              "0.4300",
+              "10.00"
+            ],
+            [
+              "0.4400",
+              "185.00"
+            ],
+            [
+              "0.4500",
+              "5865.64"
+            ],
+            [
+              "0.4600",
+              "2750.00"
+            ],
+            [
+              "0.4700",
+              "1365.48"
+            ],
+            [
+              "0.4800",
+              "1999.50"
+            ],
+            [
+              "0.4900",
+              "1205.29"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "321237.85"
+            ],
+            [
+              "0.0200",
+              "9861.00"
+            ],
+            [
+              "0.0300",
+              "5319.00"
+            ],
+            [
+              "0.0400",
+              "6767.00"
+            ],
+            [
+              "0.0500",
+              "46.00"
+            ],
+            [
+              "0.0600",
+              "470.00"
+            ],
+            [
+              "0.0700",
+              "489.00"
+            ],
+            [
+              "0.0800",
+              "1250.00"
+            ],
+            [
+              "0.0900",
+              "1161.00"
+            ],
+            [
+              "0.1100",
+              "652.38"
+            ],
+            [
+              "0.1200",
+              "946.00"
+            ],
+            [
+              "0.1500",
+              "460.00"
+            ],
+            [
+              "0.1800",
+              "30.00"
+            ],
+            [
+              "0.1900",
+              "106.00"
+            ],
+            [
+              "0.2100",
+              "1006.61"
+            ],
+            [
+              "0.2500",
+              "622.00"
+            ],
+            [
+              "0.2600",
+              "80.00"
+            ],
+            [
+              "0.2700",
+              "1056.25"
+            ],
+            [
+              "0.2800",
+              "638.00"
+            ],
+            [
+              "0.3100",
+              "165.00"
+            ],
+            [
+              "0.3300",
+              "2100.00"
+            ],
+            [
+              "0.3400",
+              "500.00"
+            ],
+            [
+              "0.3500",
+              "465.00"
+            ],
+            [
+              "0.3700",
+              "119.00"
+            ],
+            [
+              "0.3800",
+              "494.00"
+            ],
+            [
+              "0.3900",
+              "2100.00"
+            ],
+            [
+              "0.4100",
+              "10.00"
+            ],
+            [
+              "0.4200",
+              "10.00"
+            ],
+            [
+              "0.4300",
+              "43.00"
+            ],
+            [
+              "0.4400",
+              "5084.54"
+            ],
+            [
+              "0.4500",
+              "2046.50"
+            ],
+            [
+              "0.4600",
+              "2663.64"
+            ],
+            [
+              "0.4700",
+              "3016.18"
+            ],
+            [
+              "0.4800",
+              "1539.00"
+            ],
+            [
+              "0.4900",
+              "27.32"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:11.911178+00:00"
+    },
+    "KXNBAGAME-26NOV19PORMIL-MIL": {
+      "observed_at": "2026-11-19T03:26:11.103540+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "319852.51"
+            ],
+            [
+              "0.0200",
+              "4430.00"
+            ],
+            [
+              "0.0300",
+              "878.00"
+            ],
+            [
+              "0.0400",
+              "591.00"
+            ],
+            [
+              "0.0500",
+              "889.00"
+            ],
+            [
+              "0.0600",
+              "666.00"
+            ],
+            [
+              "0.0700",
+              "65.00"
+            ],
+            [
+              "0.1000",
+              "251.00"
+            ],
+            [
+              "0.1100",
+              "987.00"
+            ],
+            [
+              "0.1900",
+              "24.90"
+            ],
+            [
+              "0.3700",
+              "14.67"
+            ],
+            [
+              "0.3800",
+              "263.16"
+            ],
+            [
+              "0.4400",
+              "533.00"
+            ],
+            [
+              "0.5100",
+              "1530.83"
+            ],
+            [
+              "0.5200",
+              "80.00"
+            ],
+            [
+              "0.5300",
+              "64.00"
+            ],
+            [
+              "0.5400",
+              "533.00"
+            ],
+            [
+              "0.5700",
+              "1615.00"
+            ],
+            [
+              "0.5800",
+              "100.00"
+            ],
+            [
+              "0.6200",
+              "16.16"
+            ],
+            [
+              "0.6300",
+              "2085.00"
+            ],
+            [
+              "0.6400",
+              "100.00"
+            ],
+            [
+              "0.6500",
+              "75.00"
+            ],
+            [
+              "0.6600",
+              "2921.36"
+            ],
+            [
+              "0.6700",
+              "312.00"
+            ],
+            [
+              "0.6800",
+              "2090.13"
+            ],
+            [
+              "0.6900",
+              "10.00"
+            ],
+            [
+              "0.7000",
+              "10.00"
+            ],
+            [
+              "0.7100",
+              "10.00"
+            ],
+            [
+              "0.7200",
+              "5051.90"
+            ],
+            [
+              "0.7300",
+              "288.00"
+            ],
+            [
+              "0.7400",
+              "150.00"
+            ],
+            [
+              "0.7500",
+              "257.00"
+            ],
+            [
+              "0.7600",
+              "309.16"
+            ],
+            [
+              "0.7700",
+              "250.00"
+            ],
+            [
+              "0.7800",
+              "401.45"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "323664.00"
+            ],
+            [
+              "0.0200",
+              "6691.00"
+            ],
+            [
+              "0.0300",
+              "1835.00"
+            ],
+            [
+              "0.0400",
+              "679.00"
+            ],
+            [
+              "0.0500",
+              "2440.00"
+            ],
+            [
+              "0.0600",
+              "1597.00"
+            ],
+            [
+              "0.0700",
+              "1459.00"
+            ],
+            [
+              "0.0800",
+              "270.00"
+            ],
+            [
+              "0.0900",
+              "756.00"
+            ],
+            [
+              "0.1000",
+              "280.00"
+            ],
+            [
+              "0.1100",
+              "2174.00"
+            ],
+            [
+              "0.1300",
+              "110.00"
+            ],
+            [
+              "0.1400",
+              "10.00"
+            ],
+            [
+              "0.1500",
+              "27.00"
+            ],
+            [
+              "0.1600",
+              "61.00"
+            ],
+            [
+              "0.1700",
+              "5629.89"
+            ],
+            [
+              "0.1800",
+              "110.00"
+            ],
+            [
+              "0.1900",
+              "616.61"
+            ],
+            [
+              "0.2000",
+              "250.00"
+            ],
+            [
+              "0.2100",
+              "447.00"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:11.313360+00:00"
+    },
+    "KXNBAGAME-26NOV19PORMIL-POR": {
+      "observed_at": "2026-11-19T03:26:10.915444+00:00",
+      "raw": {
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "313160.62"
+            ],
+            [
+              "0.0200",
+              "8854.00"
+            ],
+            [
+              "0.0300",
+              "4147.00"
+            ],
+            [
+              "0.0400",
+              "934.00"
+            ],
+            [
+              "0.0500",
+              "1300.52"
+            ],
+            [
+              "0.0600",
+              "2675.00"
+            ],
+            [
+              "0.0700",
+              "147.00"
+            ],
+            [
+              "0.0800",
+              "1.31"
+            ],
+            [
+              "0.1000",
+              "81.00"
+            ],
+            [
+              "0.1100",
+              "152.00"
+            ],
+            [
+              "0.1200",
+              "2097.00"
+            ],
+            [
+              "0.1300",
+              "807.00"
+            ],
+            [
+              "0.1400",
+              "110.00"
+            ],
+            [
+              "0.1500",
+              "260.00"
+            ],
+            [
+              "0.1600",
+              "2969.00"
+            ],
+            [
+              "0.1700",
+              "6773.72"
+            ],
+            [
+              "0.1800",
+              "510.00"
+            ],
+            [
+              "0.1900",
+              "1364.35"
+            ],
+            [
+              "0.2000",
+              "1094.00"
+            ],
+            [
+              "0.2100",
+              "508.32"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "312723.00"
+            ],
+            [
+              "0.0200",
+              "10189.00"
+            ],
+            [
+              "0.0300",
+              "4886.00"
+            ],
+            [
+              "0.0400",
+              "678.00"
+            ],
+            [
+              "0.0500",
+              "39.00"
+            ],
+            [
+              "0.0700",
+              "1.00"
+            ],
+            [
+              "0.1000",
+              "250.00"
+            ],
+            [
+              "0.1100",
+              "6114.00"
+            ],
+            [
+              "0.1200",
+              "1064.00"
+            ],
+            [
+              "0.1300",
+              "624.00"
+            ],
+            [
+              "0.1800",
+              "30.00"
+            ],
+            [
+              "0.2700",
+              "1063.00"
+            ],
+            [
+              "0.3300",
+              "1968.00"
+            ],
+            [
+              "0.3400",
+              "580.00"
+            ],
+            [
+              "0.3500",
+              "1022.00"
+            ],
+            [
+              "0.4000",
+              "768.00"
+            ],
+            [
+              "0.4200",
+              "238.10"
+            ],
+            [
+              "0.4400",
+              "580.00"
+            ],
+            [
+              "0.5000",
+              "1158.00"
+            ],
+            [
+              "0.5200",
+              "186.00"
+            ],
+            [
+              "0.5400",
+              "582.00"
+            ],
+            [
+              "0.5600",
+              "1640.00"
+            ],
+            [
+              "0.5700",
+              "263.00"
+            ],
+            [
+              "0.6000",
+              "100.00"
+            ],
+            [
+              "0.6200",
+              "2036.00"
+            ],
+            [
+              "0.6400",
+              "204.00"
+            ],
+            [
+              "0.6500",
+              "120.00"
+            ],
+            [
+              "0.6800",
+              "2055.18"
+            ],
+            [
+              "0.6900",
+              "210.00"
+            ],
+            [
+              "0.7000",
+              "10.00"
+            ],
+            [
+              "0.7100",
+              "137.00"
+            ],
+            [
+              "0.7200",
+              "5115.44"
+            ],
+            [
+              "0.7300",
+              "500.00"
+            ],
+            [
+              "0.7400",
+              "328.00"
+            ],
+            [
+              "0.7500",
+              "7.00"
+            ],
+            [
+              "0.7600",
+              "372.00"
+            ],
+            [
+              "0.7700",
+              "312.00"
+            ]
+          ]
+        }
+      },
+      "received_at": "2026-11-19T03:26:11.103484+00:00"
+    }
+  },
+  "schema": "nba-kalshi-capture-v1",
+  "series": "KXNBAGAME",
+  "source": "https://external-api.kalshi.com/trade-api/v2",
+  "started_at": "2026-11-19T03:26:10.133227+00:00"
+}
