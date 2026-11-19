@@ -2,9 +2,9 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-11-18T23:08:22.369333+00:00
+Results checked: 2026-11-19T23:11:59.351129+00:00
 
-Refresh: 51 requests; 102 reused; 0 deferred; 0 errors. Cached source timestamps are retained.
+Refresh: 37 requests; 128 reused; 0 deferred; 0 errors. Cached source timestamps are retained.
 
 | NBA date | Archived | Scored | Accuracy | Brier | Log loss |
 |---|---:|---:|---:|---:|---:|
@@ -29,7 +29,8 @@ Refresh: 51 requests; 102 reused; 0 deferred; 0 errors. Cached source timestamps
 | 2026-11-15 | 7 | 7 | 1.000000 | 0.080501 | 0.312587 |
 | 2026-11-16 | 5 | 5 | 0.400000 | 0.279559 | 0.753406 |
 | 2026-11-17 | 5 | 5 | 0.600000 | 0.294395 | 0.814892 |
-| 2026-11-18 | 12 | 0 | pending | pending | pending |
+| 2026-11-18 | 12 | 12 | 0.500000 | 0.329879 | 0.915890 |
+| 2026-11-19 | 4 | 0 | pending | pending | pending |
 
 Unresolved games are excluded from all metric denominators.
 
@@ -188,15 +189,19 @@ Unresolved games are excluded from all metric denominators.
 | 21718128 | 2026-11-17 | final |
 | 21718129 | 2026-11-17 | final |
 | 21718130 | 2026-11-17 | final |
-| 21718131 | 2026-11-18 | missing |
-| 21718132 | 2026-11-18 | missing |
-| 21718133 | 2026-11-18 | missing |
-| 21718134 | 2026-11-18 | missing |
-| 21718135 | 2026-11-18 | missing |
-| 21718136 | 2026-11-18 | missing |
-| 21718137 | 2026-11-18 | missing |
-| 21718138 | 2026-11-18 | missing |
-| 21718139 | 2026-11-18 | missing |
-| 21718140 | 2026-11-18 | missing |
-| 21718141 | 2026-11-18 | missing |
-| 21718142 | 2026-11-18 | missing |
+| 21718131 | 2026-11-18 | final |
+| 21718132 | 2026-11-18 | final |
+| 21718133 | 2026-11-18 | final |
+| 21718134 | 2026-11-18 | final |
+| 21718135 | 2026-11-18 | final |
+| 21718136 | 2026-11-18 | final |
+| 21718137 | 2026-11-18 | final |
+| 21718138 | 2026-11-18 | final |
+| 21718139 | 2026-11-18 | final |
+| 21718140 | 2026-11-18 | final |
+| 21718141 | 2026-11-18 | final |
+| 21718142 | 2026-11-18 | final |
+| 21718143 | 2026-11-19 | missing |
+| 21718144 | 2026-11-19 | missing |
+| 21718145 | 2026-11-19 | missing |
+| 21718146 | 2026-11-19 | missing |
