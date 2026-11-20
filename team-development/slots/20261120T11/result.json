@@ -1,0 +1,123 @@
+{
+  "completed_at": "2026-11-20T11:18:50.412837+00:00",
+  "coverage": [
+    {
+      "game_id": "espn:401909305",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.411754+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909306",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.411867+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909307",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.411946+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909308",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412012+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909309",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412069+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909310",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412210+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909311",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412274+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909312",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412361+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909313",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412431+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910023",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412496+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910024",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412553+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910025",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412614+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910026",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412666+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910027",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412723+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910028",
+      "launched_at": "2026-11-20T11:18:40.368632+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T11:18:50.412782+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    }
+  ],
+  "history_errors": {
+    "history-2025": "HTTPError",
+    "history-2026": "HTTPError"
+  },
+  "launched_at": "2026-11-20T11:18:40.368632+00:00",
+  "live_trading": false,
+  "no_trade": true,
+  "schema": "nba-team-development-run-v1",
+  "slot": "20261120T11",
+  "source_errors": {
+    "bdl-2026-11-20": "HTTPError",
+    "bdl-2026-11-21": "HTTPError"
+  }
+}
