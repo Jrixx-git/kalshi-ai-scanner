@@ -2,9 +2,9 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-11-19T23:11:59.351129+00:00
+Results checked: 2026-11-20T22:46:02.230045+00:00
 
-Refresh: 37 requests; 128 reused; 0 deferred; 0 errors. Cached source timestamps are retained.
+Refresh: 24 requests; 145 reused; 0 deferred; 24 errors. Cached source timestamps are retained.
 
 | NBA date | Archived | Scored | Accuracy | Brier | Log loss |
 |---|---:|---:|---:|---:|---:|
