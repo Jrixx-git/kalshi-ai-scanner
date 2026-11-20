@@ -1,0 +1,15 @@
+{
+  "history_errors": {
+    "history-2025": "HTTPError",
+    "history-2026": "HTTPError"
+  },
+  "launched_at": "2026-11-20T02:58:53.394962+00:00",
+  "max_wait_seconds": 3600,
+  "no_trade": true,
+  "slot": "20261120T02",
+  "source_errors": {
+    "bdl-2026-11-19": "HTTPError",
+    "bdl-2026-11-20": "HTTPError"
+  },
+  "source_targets_sha256": "8fe19798b61f8314612327cfdb5dfa10f7c49fbb082e598c1182ba14e55c871f"
+}
