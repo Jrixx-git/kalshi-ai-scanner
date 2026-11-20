@@ -1,0 +1,109 @@
+{
+  "completed_at": "2026-11-20T02:59:03.774619+00:00",
+  "coverage": [
+    {
+      "game_id": "espn:401910019",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.772723+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910020",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.772894+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910021",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.773050+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401910022",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.773227+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909305",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.773362+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909306",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.773562+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909307",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.773691+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909308",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.773815+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909309",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.773937+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909310",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.774058+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909311",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.774231+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909312",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.774356+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    },
+    {
+      "game_id": "espn:401909313",
+      "launched_at": "2026-11-20T02:58:53.394962+00:00",
+      "no_trade": true,
+      "observed_at": "2026-11-20T02:59:03.774489+00:00",
+      "reason": "independent_only_or_unknown_identity"
+    }
+  ],
+  "history_errors": {
+    "history-2025": "HTTPError",
+    "history-2026": "HTTPError"
+  },
+  "launched_at": "2026-11-20T02:58:53.394962+00:00",
+  "live_trading": false,
+  "no_trade": true,
+  "schema": "nba-team-development-run-v1",
+  "slot": "20261120T02",
+  "source_errors": {
+    "bdl-2026-11-19": "HTTPError",
+    "bdl-2026-11-20": "HTTPError"
+  }
+}
