@@ -1,0 +1,180 @@
+{
+  "bdl_requests": 2,
+  "completed_at": "2026-11-23T00:10:59.913511+00:00",
+  "dates": [
+    {
+      "count_agrees": false,
+      "date": "2026-11-22",
+      "independent_event_count": 7,
+      "independent_event_ids": [
+        "401910029",
+        "401910030",
+        "401910031",
+        "401910032",
+        "401910033",
+        "401910034",
+        "401910035"
+      ],
+      "independent_schedule": "raw_available",
+      "provider_game_count": null,
+      "universe": "unavailable"
+    },
+    {
+      "count_agrees": false,
+      "date": "2026-11-23",
+      "independent_event_count": 10,
+      "independent_event_ids": [
+        "401910036",
+        "401910037",
+        "401910038",
+        "401910039",
+        "401910040",
+        "401910041",
+        "401910042",
+        "401910043",
+        "401910044",
+        "401910045"
+      ],
+      "independent_schedule": "raw_available",
+      "provider_game_count": null,
+      "universe": "unavailable"
+    }
+  ],
+  "games": [],
+  "independent_games": [
+    {
+      "date": "2026-11-22",
+      "event_id": "401910029",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-22T20:30Z"
+    },
+    {
+      "date": "2026-11-22",
+      "event_id": "401910030",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-22T23:00Z"
+    },
+    {
+      "date": "2026-11-22",
+      "event_id": "401910031",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-23T00:00Z"
+    },
+    {
+      "date": "2026-11-22",
+      "event_id": "401910032",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-23T00:00Z"
+    },
+    {
+      "date": "2026-11-22",
+      "event_id": "401910033",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-23T00:00Z"
+    },
+    {
+      "date": "2026-11-22",
+      "event_id": "401910034",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-23T01:00Z"
+    },
+    {
+      "date": "2026-11-22",
+      "event_id": "401910035",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-23T01:30Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910036",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T00:00Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910037",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T00:00Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910038",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T00:30Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910039",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T00:30Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910040",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T00:30Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910041",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T01:00Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910042",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T01:00Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910043",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T01:30Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910044",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T03:00Z"
+    },
+    {
+      "date": "2026-11-23",
+      "event_id": "401910045",
+      "provider_game_ids": [],
+      "status": "provider_identity_missing_or_unknown",
+      "tipoff_utc": "2026-11-24T03:00Z"
+    }
+  ],
+  "injury_player_status": "unparsed_unverified",
+  "injury_raw_reports": 0,
+  "injury_records": 1,
+  "live_trading": false,
+  "market_requests": 0,
+  "no_trade": true,
+  "schema": "nba-v09-prospective-v2",
+  "slot": "20261123T00",
+  "source_errors": {
+    "bdl-2026-11-22": "HTTPError",
+    "bdl-2026-11-23": "HTTPError",
+    "injuries": "NoRawReportAvailable"
+  },
+  "started_at": "2026-11-23T00:10:59.280043+00:00",
+  "stop_at": "2026-11-25T18:00:00+00:00"
+}
