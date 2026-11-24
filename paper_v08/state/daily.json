@@ -4,7 +4,7 @@
   "duplicate_games": [],
   "errors": [],
   "event_cost_exposure": {},
-  "generated_at": "2026-11-22T21:47:04.186925+00:00",
+  "generated_at": "2026-11-24T02:54:40.175385+00:00",
   "gross_unrealized_before_exit_fee": "0",
   "notes": "Cost risk assumes full stake loss and recorded entry fees; prices are observations, not guaranteed fills. Open marks omit exit fees and are not realized P&L. Cross-game dependence is not quantified.",
   "open_positions": 0,

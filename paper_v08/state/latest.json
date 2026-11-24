@@ -559,7 +559,7 @@
       "signal_id": "nba-game:21718146"
     }
   ],
-  "books": 70,
+  "books": 74,
   "cash": "4990.7500",
   "collection_errors": 0,
   "entries": {
@@ -1245,11 +1245,11 @@
     "games": 169,
     "matched_signals": 0,
     "rejected": 0,
-    "snapshot": "39d21fd9c971a229c090b93aeca42eef2133575e6a3dfa36799dc228824a8b4b"
+    "snapshot": "5c2d186604b07202cf941464477087789412c21e1744f3bc26b24e46ce246c94"
   },
   "fee_capture_errors": {},
-  "generated_at": "2026-11-22T21:47:03.599018+00:00",
-  "markets": 70,
+  "generated_at": "2026-11-24T02:54:39.691914+00:00",
+  "markets": 74,
   "max_realized_drawdown": "9.2500",
   "open_cost": "0",
   "open_positions": [],
@@ -1262,7 +1262,7 @@
     "settled": 0
   },
   "settled_trades": 93,
-  "snapshot": "paper_v08/state/snapshots/5cf13e3cc2d020e02c2db6142de20ae43138a6adb59e21b706c8e6bdc20f9b0f.json",
+  "snapshot": "paper_v08/state/snapshots/0b9dd050ace792c822669a2ff8f45efc32b1e78657dd3d9a38e25135602cfc1b.json",
   "target_collection_errors": 0,
-  "target_snapshot": "paper_v08/state/snapshots/39d21fd9c971a229c090b93aeca42eef2133575e6a3dfa36799dc228824a8b4b.json"
+  "target_snapshot": "paper_v08/state/snapshots/5c2d186604b07202cf941464477087789412c21e1744f3bc26b24e46ce246c94.json"
 }

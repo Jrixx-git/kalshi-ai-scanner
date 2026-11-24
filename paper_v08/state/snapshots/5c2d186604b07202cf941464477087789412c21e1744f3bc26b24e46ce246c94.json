@@ -1,0 +1,11 @@
+{
+  "completed_at": "2026-11-24T02:54:39.567761+00:00",
+  "errors": {},
+  "live_trading": false,
+  "markets": [],
+  "orderbooks": {},
+  "schema": "nba-kalshi-capture-v1",
+  "series": "KXNBAGAME",
+  "source": "https://external-api.kalshi.com/trade-api/v2",
+  "started_at": "2026-11-24T02:54:39.212836+00:00"
+}
