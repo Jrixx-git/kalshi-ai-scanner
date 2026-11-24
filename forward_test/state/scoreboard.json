@@ -2408,7 +2408,7 @@
     "21718141": "2026-11-19T23:06:18.240807+00:00",
     "21718142": "2026-11-19T23:06:31.365892+00:00"
   },
-  "result_snapshot_sha256": "2784570398638811ae12ee11f7147e668f45a6db6961666107e65eed3c266aba",
+  "result_snapshot_sha256": "75087344c81c3bb73c4e30d0bda7376c156f24573143af71bea4a953beb4c443",
   "retrieval": {
     "attempted_ids": [
       "21718091",
@@ -2532,7 +2532,7 @@
     "log_loss": 0.6101995104516509,
     "partial_refresh": true,
     "predicted": 169,
-    "retrieved_at": "2026-11-22T21:58:02.843079+00:00",
+    "retrieved_at": "2026-11-24T03:05:41.022264+00:00",
     "scored": 165,
     "statuses": {
       "final": 165,
