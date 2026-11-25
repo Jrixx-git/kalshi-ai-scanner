@@ -1,0 +1,16 @@
+{
+  "history_errors": {
+    "history-2025": "HTTPError",
+    "history-2026": "HTTPError"
+  },
+  "launched_at": "2026-11-25T12:35:44.925936+00:00",
+  "max_wait_seconds": 3600,
+  "no_trade": true,
+  "slot": "20261125T12",
+  "source_errors": {
+    "bdl-2026-11-25": "HTTPError",
+    "bdl-2026-11-26": "HTTPError",
+    "injuries": "NoRawReportAvailable"
+  },
+  "source_targets_sha256": "e90e506c0d9c3cbe59caebfc9e317803d3ff8f45ef0e5ae761fc48cd737ccfcb"
+}
