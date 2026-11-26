@@ -2,7 +2,7 @@
 
 RESEARCH_ONLY_NO_TRADING
 
-Results checked: 2026-11-25T00:56:35.359277+00:00
+Results checked: 2026-11-26T00:33:06.011500+00:00
 
 Refresh: 51 requests; 118 reused; 0 deferred; 51 errors. Cached source timestamps are retained.
 
